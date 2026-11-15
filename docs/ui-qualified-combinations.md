@@ -1,15 +1,17 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.16 with Workboard0.2.14 and
+Latest populated installed combination is core0.2.17 with Workboard0.2.14 and
 Partners0.1.2; the other three private app pins remain unchanged. The
-[core16 record](evidence/G7/20261115-ui-core016-collections-qualification/qualification.json)
-proves normal152.39s maintenance/checkpoint and exact18tables/full history/ten
-other sites. Actual in-app title/end create/start query/bottom count, empty filter
-and clear, group expansion, and dirty Back text+URL retention pass. Dark grouping/
-filter chips, dialog primary style and Notes heading remain recorded findings.
-Core0.2.17 prepares their shared-style/count refinement; not yet installed. Live
-many-page pagination and the full original matrix remain open, acceptance0/4.
-Historical canonical evidence retains its original source scope.
+[core17 record](evidence/G7/20261115-ui-core017-polish-qualification/qualification.json)
+proves normal144.328s maintenance/checkpoint, exact18tables/full history/ten other
+sites, real3-page navigation and separately paged Person group, corrected dark
+facet/group contrast and shared dialog action style. A measured390px viewport
+retains the query/footer. An intentional163-row Sample-labelled directory fixture
+uses normal Alice service calls; all3original cross-workspace partner rows and
+17other business/authority tables are preserved. Long-name column balance and
+Notes heading need the prepared Partners0.1.3 declaration successor. Native narrow
+header wrapping, full original matrix and final canonical remain open, UI0/4.
+Historical source qualifications retain their original scope.
 
 
 The provisional local platform code is0.2.12/native core19.0.0.2.12 and

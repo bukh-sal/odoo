@@ -182,3 +182,25 @@ immutable build and normal core maintenance, followed by paired actual light/dar
 group/filter/dialog and narrow captures. Fix Partners Notes in its ordinary
 full-span native declaration as the next legitimate app successor, separately
 from this unchanged-app core maintenance. No live source injection or relabelling.
+
+
+## Partners native declaration refinement (0.1.3)
+
+After core17 actual many-page/group/dark checks, the synthetic165-row A directory
+shows a long name squeezing organization/email columns. Use the EXISTING native
+width declarations (name240px, kind110px, organization240px, email240px), retain
+normal resizing/overflow, and make phone/revision optional-hidden rather than
+showing empty/technical columns by default. Keep all fields and authorization.
+Add the app-owned plain-text workspace directory description through the existing
+ControlPanel display.description seam, preserving disabled control panels and all
+inherited table/selection flags. No app-specific core CSS or new component.
+
+Correct Notes using the canonical two-column group with a label-free colspan2
+field, as already supported in native framework views. Legitimate Partners0.1.3/
+native19.0.0.1.3 successor; core17 and the four other app archives stay exact.
+Test the actual inherited display producer, existing app source/schema tests and
+archive validation, then normal two-scope upgrade and installed desktop/narrow
+column/form/description proof. Existing3cross-workspace rows and163new clearly
+Sample-labelled disposable records, all task/file/authority/history are retained.
+The original matrix remains open; native narrow header action wrapping and
+scrollbar presentation are recorded for the next coherent shared refinement.

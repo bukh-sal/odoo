@@ -395,3 +395,6 @@ UI native collections candidate0.2.16 prepared after owner screenshots/reference
 
 
 Core16 normal152.39s maintenance and actual title/query/footer/empty/group/dirty-Back URL+draft proofs complete in the linked qualification record. Core17 source refinement removes remaining fixed group/facet colours, unifies dialog primary styles, quiets native row/header treatment, improves narrow query sizing and labels group counts honestly.24focused Node/66Python/19Owl pass; installed core17 still pending; UI phase acceptance0/4.
+
+
+Core17 normally installed once144.328s (656905f8), exactcheckpoint/18tables/fullhistory/tenothers/fivepins. Actual3page plus Person-group2page navigation, corrected dark group/facet and dialog action style, measured390px fit verified.163explicit Sample records created via ordinary scoped service with preserved3originals/17other tables/history; no authority change. Actual long-name column squeeze/Notes heading drive a legitimate private Partners0.1.3 successor; no app-specific core branch. UI0/4 unchanged.

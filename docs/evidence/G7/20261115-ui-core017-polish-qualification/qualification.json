@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "source_commit": "c2e1eb35d7b05bb52c8486027191c51893eefaa2",
+  "platform": "0.2.17",
+  "operation_id": "656905f8-f513-4f20-93fc-357219e0c666",
+  "plan_hash": "sha256:ea7611b493c53c338c88b6813dea3f86eebfe8afb2b463b09023649cd98e5e9f",
+  "image_id": "sha256:540655ca1c07bb066c8312ab97ee0dcc28a5f9a78b0b65cf85817512c5fdc327",
+  "configuration": 12,
+  "apply_seconds": 144.328,
+  "checkpoint_manifest_sha256": "04f7afbd072c882a48b28b31b341410fae214a41466bf439c847c10ff168ed8f",
+  "retention": {
+    "maintenance_tables_exact": 18,
+    "maintenance_full_history_exact": true,
+    "other_targets_exact": 10,
+    "app_pins_exact": 5
+  },
+  "proof": {
+    "node_tests": 24,
+    "python_tests": 66,
+    "owl_templates": 19,
+    "freeze": "122files/11rows",
+    "image_layers": 14,
+    "project_files": 3790
+  },
+  "installed_browser": {
+    "real_pages": 3,
+    "total_visible_records": 165,
+    "last_range": "161\u2013165 of165",
+    "middle_range": "81\u2013160 of165",
+    "next_disabled_on_last": true,
+    "group_count": "2groups",
+    "person_group_pages": 2,
+    "person_group_last_range": "81\u2013122 of122",
+    "dark_group_and_facet_colors_corrected": true,
+    "dialog_action_uses_shared_palette": true,
+    "narrow_measured_width": 390,
+    "narrow_measured_height": 845,
+    "appearance_restored": "light",
+    "viewport_reset": true
+  },
+  "fixture": {
+    "created": 163,
+    "original_global_rows": 3,
+    "original_workspace_A_rows": 2,
+    "originals_exact": true,
+    "other_tables_exact": 17,
+    "original_full_history_exact": true,
+    "new_registered_outbox_events": 163,
+    "mechanism": "Normal Alice scoped registered Partners create service; exact exclusive intent/per-record receipts; clearly Sample-labelled data kept in the disposable site",
+    "pre_intent_refusal": "Initial global-count assumption2 vs actual3cross-workspace rows refused before login/intent/mutation; corrected to preserve all3"
+  },
+  "critique": [
+    "Long name squeezes organization and email: app-owned declared widths required",
+    "Phone/revision are unsuitable default columns; retain as optional-hidden",
+    "Narrow header action wraps; shared refinement queued",
+    "Partners Notes heading still misplaced until successor0.1.3"
+  ],
+  "remaining": [
+    "Partners successor actual form/directory verification",
+    "Original RTL/keyboard/realzoom/motion/contrast/authority/optional-app matrix",
+    "Final frozen canonical"
+  ],
+  "ui_phase_acceptance": "0/4",
+  "screenshots": {
+    "grouped-dark-fixed.jpg": "633109d11e6996ba3924676ef7a1f7be593a43819ab080daeda1e2b3fea9b224",
+    "partners-last-page-light.jpg": "6f1ea2ee423b7560ea7af04bb7d6acd334b81f1c8062583ce35e7a29cb20e7a2",
+    "partners-narrow390-dark.jpg": "5ac36a037ed70ba8698e1310659ddf335dd2b6255c2d1be2192517a24cea5c1b",
+    "task-primary-fixed.jpg": "1c606e4fe3030d65015be40f999cbd01da7257854aac5912aff5daac99d133d6"
+  }
+}
