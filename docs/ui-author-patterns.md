@@ -237,3 +237,12 @@ Show a returned subset as a preview, never infer a total from page length.
 Clear stale rows on scope/record/access loss and recheck before acting. These
 styles require the qualified successor; do not import unavailable exports or
 invent a disabled feature solely to fill the design.
+
+A native client action should provide its existing static translated displayName
+so the action service can name browser title/breadcrumbs. Use ordinary action
+service/additionalContext for a cross-app task handoff, and let the receiving app
+explicitly validate/consume that UUID before its normal scoped read. A plain
+full browser link is not a substitute for the native action dirty-leave guard.
+Delivery1.7 demonstrates shared related-record styles with actual current reads,
+bounded has_more guidance and a fresh existing context check before task action;
+no core business registry is required. Installed qualification is still pending.
