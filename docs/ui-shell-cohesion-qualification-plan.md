@@ -125,3 +125,29 @@ external URL, source omission, ordering change or native declaration change.
 Add counterexamples for these alterations and input immutability. The normal
 independent validator must reconstruct the same narrowly permitted delta. This
 is an intentional extension of owned-web maintenance, not an approval waiver.
+
+## Installed core30 continuation and resize correction
+
+The five-app initial install on the separate18730 cohort completed normally in
+150.047s with exact checkpoint files, five raw/ten workspace installations,
+13native modules and unchanged principals/memberships/protected targets. The real
+customer-task-document UI journey now exists there; no main-site draft or data
+was touched. See [bounded installed proof](evidence/G7/20261115-ui-shell030-installed/qualification.json).
+
+Actual desktop-to-narrow and inverse resize exposed stale AppLayout opener
+semantics before another component interaction. CSS responds, but merely reading
+`env.isSmall` does not subscribe the custom layout to the installed UI service's
+reactive breakpoint. Before the next candidate, subscribe through the existing
+UI service rather than a second matchMedia implementation; use that reactive
+value consistently for expanded/collapsed state, toggling and resize cleanup.
+Retain the standalone/dialog fallback and existing slot/portal/draft lifecycle.
+Add an actual mounted Owl regression with a reactive service breakpoint and an
+unchanging environment getter: resize alone must update aria-expanded, drawer
+state and opener focus without changing the stored desktop preference or
+remounting content. Preserve keyboard Escape and both resize directions. Do not
+count prior source-preview or post-click behavior as this installed resize proof.
+
+The remaining header/breadcrumb hierarchy, sign-in/account/action glyphs and
+overlong integration prose are real critique, not completion claims. Collect
+them with the next coherent creation/detail presentation delivery. Keep UI0/4
+and the original interaction/authority/recovery/absence/canonical cards open.

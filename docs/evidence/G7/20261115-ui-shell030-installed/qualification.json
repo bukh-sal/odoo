@@ -1,0 +1,40 @@
+{
+  "status": "installed_bounded_checks_passed_with_responsive_finding",
+  "source_commit": "3db44baf045e1f9babf7dc2f5aac3903e8e6faeb",
+  "review_head": "db3b78b9cdbab93d4af3a8cb8caff7b089cbf42b",
+  "project": "mp-r0-r1releasecd4dd6d48e72",
+  "port": 18730,
+  "image_id": "sha256:787fdd515099aca7ec8ccb3a2de0b7db4c331b538362b7f0106b2543b30cd11e",
+  "configuration_generation": 3,
+  "operation_id": "261897fe-6bef-4790-800d-a1fd1d9a66ca",
+  "plan_hash": "sha256:692d88ec1aabdf0553546326c85b0c2c19012fe37593c0adb395a8d3ef7e8ec8",
+  "bundle_sha256": "866f428ae4c832d5d7d56ca476d11b536e998501512858a163c65fa1a01dc1fc",
+  "normal_install": {
+    "raw_installations": 5,
+    "workspace_installations": 10,
+    "native_modules": 13,
+    "register_seconds": 15.219,
+    "approve_seconds": 28.125,
+    "apply_seconds": 150.047,
+    "checkpoint_files_verified": true,
+    "principals_memberships_unchanged": true,
+    "other_target_configurations_unchanged": 11,
+    "core_python_unchanged_from_core030_base": true,
+    "acknowledgments": ["trust", "permissions", "destructive"],
+    "destructive_reason": "Documents retains its conservative native lifecycle declaration; this was an initial install on the empty owned cohort."
+  },
+  "actual_browser": {
+    "browser": "in-app",
+    "synthetic_workflow": "Native customer creation and informational reader; task dialog; scoped customer relationship; normal 218-byte document upload; exact revision reference from task.",
+    "business_counts": {"customers": 1, "tasks": 1, "files": 1, "versions": 1, "customer_links": 1, "file_links": 1, "comments": 0, "jobs": 0, "outbox": 3},
+    "brief_sha256": "6e6b024702e11e0736249f7483b1131b75dc44fcf3b2cc2d46b5f3d0e11842f0",
+    "checks": ["264px expanded native context", "one custom context and one global opener", "native and custom collapse survive refresh", "different app preferences remain independent", "search survives custom collapse", "native unsent notes survive collapse and explicit Discard restores stored content", "Keep writing retains unsent comment; no comment posted", "light and dark task reading sheet", "390 CSS pixel layout has no page overflow", "narrow drawer Escape returns opener focus", "actual optional related-work section shows linked task"],
+    "warnings_errors": 0,
+    "defaults_restored": "Light appearance, default viewport, expanded context, no unsent agent drafts. Human-controlled main tab and other user tabs untouched."
+  },
+  "finding": "Installed AppLayout can retain its desktop aria-expanded/label after a viewport-only breakpoint change until the next component interaction; inverse resize can also leave stale semantics. CSS layout and subsequent drawer/Escape work. This responsive check is not accepted pending a reactive breakpoint correction.",
+  "visual_critique": ["Native record header wastes vertical space and repeats the identity hierarchy", "Breadcrumb/current title need clearer separation", "Some account/action/sort glyphs and sign-in branding remain legacy", "Workboard fallback rail icon needs correct app-owned metadata", "File/integration explanatory prose competes with the reading task"],
+  "private_evidence_root": ".local/ui-shell-cohesion030-install-01",
+  "screenshots": ["customer-populated.jpg", "workboard.jpg", "document-reader.jpg", "task-reading-sheet.jpg", "task-sheet-dark.jpg", "workboard-actual390.jpg"],
+  "limits": ["No full UI phase acceptance", "No current Arabic or true200percent zoom or reduced-motion acceptance in this pass", "No current authority/optional absence/recovery requalification in this pass", "No final canonical regression", "No finance implementation or invented financial summary", "Only one synthetic organization created; no contact created", "Private verifier initially expected obsolete filestore path; corrected read-only assertion to exact actual named /var/lib/modular volume without rerunning an operation"]
+}
