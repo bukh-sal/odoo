@@ -111,3 +111,17 @@ The login's legacy vendor branding/eye glyph and remaining account glyphs are a
 separate recorded cohesion gap for the integrated visual pass; the current slice
 has not replaced every legacy icon or every frontend surface. Preserve licence
 and provenance notices when retiring product branding.
+
+Source preflight found a deliberate maintenance limit:
+`require_web_presentation_manifest` currently permits only appended backend
+assets. A valid shared frontend dependency needs a narrowly reviewed exception.
+Before editing that host/runtime reader, extend it only for the exact Icon
+relocation: remove the three prior backend declarations, add the fixed four-path
+shared group, include that group immediately after the existing Owl module in
+the two actual roots, with every other asset declaration and native field exact.
+All four paths must exist in the independently inspected candidate inventory.
+Keep the previous backend append rule; no configurable bypass, arbitrary group,
+external URL, source omission, ordering change or native declaration change.
+Add counterexamples for these alterations and input immutability. The normal
+independent validator must reconstruct the same narrowly permitted delta. This
+is an intentional extension of owned-web maintenance, not an approval waiver.
