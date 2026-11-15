@@ -9,17 +9,17 @@ Current goal: implement the [shared shell and application UI delivery plan](ui-s
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-15T19:28:06.581570+00:00
+- Updated UTC: 2026-11-15T19:49:18.466199+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: UI-D03-D06 active; populated18730/core38/config14 and source-free18731/core38/config5. Main human18610/form protected. Full UI0/4.
-- Latest work item: [Installed38](evidence/G7/20261115-ui-retired038-installed/qualification.json) qualifies normal maintenance after app removal and one friendly stale-link dialog; [Source39](evidence/G7/20261115-ui-empty039-source/qualification.json) corrects measured empty-canvas placement/header targets.
-- Current next action: Freeze and normally deliver39 to both owned sites; verify actual empty layout and34/44px native controls, then final canonical/evidence audit. No earlier operation replay.
+- Current phase/gate: UI-D03-D06 active; populated18730/core39/config15 and source-free18731/core39/config6. Main human18610/form protected. Full UI0/4.
+- Latest work item: [Installed39](evidence/G7/20261115-ui-empty039-installed/qualification.json) proves empty layout and native targets; [Source40](evidence/G7/20261115-ui-focus040-source/qualification.json) reconciles the remaining inherited focus colour with shared tokens.
+- Current next action: Normally deliver40 on owned18730/18731, measure focused native light/dark controls, then freeze source for final canonical/evidence audit. Recheck actual newly enabled browser capabilities; no operation replay.
 - Browser IAB4 main tab4 is now under human control on the creation route, per current ambient state. Preserve its state/draft; do not navigate/reload/close/deploy over it. User2/3/12 preserved; no outstanding agent business/profile fixture. Prior28 retention proves its recorded instant; reconcile any newer human writes before a new baseline.
 - Acceptance/checklist: UI0/4 until original phase cards are complete. Historical PP01..05 remains100/100 and5/5; R1 figures below retain their original scope. The preceding canonical936cases/934pass/2existing skips qualifies its recorded core12 source, not changed core19/private apps. Final current-source canonical waits for the interaction source freeze.
-- Blocker register: Installed39 layout/target sizes and final current-source canonical remain open. Actual reduced motion unverified/manual question pending. Historical200% proof36/37 retained; current preview is back at normal zoom. Canonical036 terminal969pass/2existing skips. No active fixture/operation.
+- Blocker register: Installed40 focus and final current-source canonical remain open. Owner enabled full CDP, but current refreshed interface still has no CDP/media method. Actual reduced motion and current final-source200% remain unverified. Canonical036 terminal969pass/2existing skips. No live fixture/operation.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

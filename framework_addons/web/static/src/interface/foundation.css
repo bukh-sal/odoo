@@ -53,7 +53,9 @@
         --emphasis-color: var(--mp-ui-ink); --secondary-color: var(--mp-ui-muted);
         --secondary-bg: var(--mp-ui-hover); --border-color: var(--mp-ui-line);
         --link-color: var(--mp-ui-link);
+        --focus-ring-width: 2px; --focus-ring-color: var(--mp-ui-focus);
     }
+    .o_web_client .btn { --btn-focus-box-shadow: 0 0 0 2px var(--mp-ui-focus); }
     .o_web_client :is(h1, h2, h3, h4, h5, h6) { color: inherit; }
     .o_web_client .o_form_view :is(.oe_title, .o_form_label, .o_horizontal_separator) { color: var(--mp-ui-ink); }
     /* Native relation/contact links have their own legacy Sass colours. */

@@ -1,0 +1,97 @@
+{
+  "source": "847b2ce104618343fd550aba5c80947ecc7c5153",
+  "operations": {
+    "populated": {
+      "all_views_exact": true,
+      "apply_seconds": 174.094,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 15,
+      "image_id": "sha256:d39d6b08d0cdc53650ad08ce7967e6ae53d1dc45e23ba54169b3db1e1eaad25d",
+      "operation_id": "7ad50b84-59de-4d00-9d0a-85afe14517c4",
+      "plan_hash": "sha256:27eb9cfc3eb16ece31e48f4e0be2ddecbeb0201e67a148ae87191c52a9f15427",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "delivery_link": 1,
+        "documents_blob": 2,
+        "documents_fence": 1,
+        "documents_file": 1,
+        "documents_upload": 2,
+        "documents_version": 2,
+        "mp_job": 1,
+        "mp_membership": 6,
+        "mp_outbox": 9,
+        "mp_plugin_grant": 8,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "partners_partner": 4,
+        "taskfiles_event_cursor": 0,
+        "taskfiles_file_review": 0,
+        "taskfiles_link": 1,
+        "workboard_comment": 0,
+        "workboard_list": 0,
+        "workboard_notice": 1,
+        "workboard_reminder": 1,
+        "workboard_stage": 0,
+        "workboard_task": 2
+      },
+      "tables": 22,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "05907d949a9c21d117796da7e8f4370c89f77a9cb24b3df6c94e70d580768429",
+      "workspace_policy_epoch_increment": 0
+    },
+    "core": {
+      "all_views_exact": true,
+      "apply_seconds": 155.593,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 6,
+      "image_id": "sha256:548b0a7ca333e3df073befd943f3cad74b3e8b189b52b9ef2d047098076ab3f2",
+      "operation_id": "4eb46ed7-2f56-4b05-9fa2-627651160eea",
+      "plan_hash": "sha256:67a145692f34ce55efe3c8100c0cbf56e3db12c87b48810c80ee2cb9fb6e4e55",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "mp_job": 0,
+        "mp_membership": 6,
+        "mp_outbox": 1,
+        "mp_plugin_grant": 0,
+        "mp_principal": 4,
+        "mp_workspace": 2
+      },
+      "tables": 6,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "8e44e1f9995556f556e4ae83fa6afec311b6b07bae998c3a30750497c2baec33",
+      "workspace_policy_epoch_increment": 0
+    }
+  },
+  "browser": {
+    "core": "0.2.39",
+    "empty_action_height": 0,
+    "empty_card_top": 56,
+    "desktop_header_target": {
+      "width": 34,
+      "height": 34
+    },
+    "narrow_header_target": {
+      "width": 44,
+      "height": 44
+    },
+    "narrow_width": 390,
+    "narrow_document_width": 390,
+    "one_unavailability_dialog": true,
+    "header_close_click_works": true,
+    "native_preferences_header_works": true,
+    "native_preferences_discard_without_save": true,
+    "loaded_task_page_retained": true,
+    "business_writes": 0,
+    "theme": "light",
+    "viewport_override": "reset",
+    "unaccepted_remaining_visual": "Native footer focus still uses inherited rgba(134,122,173,.5) rather than shared --mp-ui-focus; reconcile semantic CSS variable.",
+    "motion": false
+  },
+  "scope": "Actual empty action zero height/card top56, native header34px desktop/44px at390, one dialog, native Preferences/Discard and healthy working page. Remaining inherited native focus colour corrected by source40; no reduced-motion/current40 qualification claim."
+}

@@ -3225,3 +3225,19 @@ shared native header boxes34desktop/44narrow. Source38 planner unchanged;
 geometry next, then final frozen-source canonical and original card audit.
 Human200proof is dated36/37; browser currently normal width. Motion still off,
 manual question pending. Full originalUI0/4 active; no active operation/fixture.
+
+
+15November2026 installed39: populated7ad50b84174.094s/config15 and empty
+core4eb46ed7155.593s/config6 completed normally with business/current authority/
+views/history/checkpoints preserved. Actual Shell empty action now0px and card
+top56; native header34px desktop/44px at390, no page overflow, header click and
+ordinary My Preferences/Discard work. Available/no-app copy remains truthful.
+Visual focus audit caught native Bootstrap's4px lavender shadow rather than
+shared focus token. Source40 plan precedes screen-only2px shared focus variable
+mapping plus three identities; no JS/geometry/backend/planner/app/Python change.
+7identity/freeze122files11rows pass; unchanged177Node/86planner proofs retained.
+Normal40 delivery and measured light/dark focus next, then final source freeze/
+canonical and original evidence audit. Owner enabled full CDP; refreshed current
+API still exposes no CDP/media controls, so no guessed methods or fake media.
+Current preview normal zoom; historical36/37 actual200% retained. Motion still
+off/unverified. Full originalUI0/4 active, no live operation or fixture.

@@ -194,3 +194,9 @@ card. Loaded controllers/drafts retain their allocation. Existing native Dialog
 header buttons gain component-owned34px/44px hit boxes, keeping pinned geometry,
 callbacks, labels, slots and t-call consumers. Original native Sass declarations,
 attribution and notices remain; actual installed geometry is required next.
+
+15November2026 source40: the existing screen-only foundation bridge maps native
+Bootstrap button/focus-ring variables to the shared2px theme focus token. This
+replaces the measured inherited lavender glow while retaining native focus and
+button callbacks, semantic backgrounds, geometry and print. No JavaScript,
+upstream Sass declaration, licence or notice change.
