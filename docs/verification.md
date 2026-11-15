@@ -680,3 +680,29 @@ non-screen prefix byte-exact. One fixture lacked UIservice state; retained/fixed
 Core32 unpublished, no build/operation yet. Next ONE normal exact-app core32
 candidate/audit/checkpointed upgrade and installed geometry recheck. UI0/4/full
 original goal, record-composition, authority/absence/recovery/canonical still open.
+
+
+15November2026 creation32 installed: ONE27.594s build/image187c6c78,
+six reviewed source paths/all five archives+Python unchanged, fourteen-layer3806
+file audit. Normal e58c3990/28115c78 completed148.734s/config6/workercb731e60;
+checkpoint and22tables verified. Pending idempotent reminder preserved through
+normal fence/reconcile: actor/input/key/schedule/attempts/outcome exact, only four
+source-backed release/claim/dispatch/available control fields advanced. Normal
+JobOperator two minimal native lanes delivered it once (attempt1, one personal
+notice, reminder revision2), then exact created IDs normally drained/absent;
+no clock/queue edits/authority changes/other cleanup. Actual My reminders shows
+the unread notice linking the saved task. All other tables exact.
+Installed compact650px/dialog fullscreen1363x789 edges0, sheet704px fullheight,
+390x844 narrow nooverflow/hidden redundant expansion; same input IDs/draft across
+expand/return, Escape Keep retains, Cancel Discard and all no-write UI checks
+retain22tables field-exact. Actual light/dark assets, console0, default/light
+restored; ownIAB4tab16 handed off on My reminders/no draft. Mainhuman4/new and
+user2/3/12 untouched. [Evidence](evidence/G7/20261115-ui-creation032-installed/qualification.json).
+Bounded creation prerequisite closes; full UI0/4 goal remains active. Current
+Workboard's transient retry guidance while saving is a real app presentation
+finding for its next coherent successor. Next activate fresh informational record
+composition plan using actual owner contribution seams and Meridian; explicit
+Edit, useful sections/tabs and current authority, no invented finance or generic
+business registry. Remaining shell/icon/branding/breadcrumb/technical prose and
+original locale/truezoom/motion/contrast/authority/absence/recovery/canonical cards
+remain. Source/installed/fake failure proof classes remain separate.

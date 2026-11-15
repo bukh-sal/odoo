@@ -1,0 +1,305 @@
+{
+  "utc": "2026-11-15T12:41:12.474967+00:00",
+  "source": "9c9e6256544",
+  "platform": "0.2.32",
+  "runtime": {
+    "apply_seconds": 148.734,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 6,
+    "image_id": "sha256:187c6c7867fc2e3d90517f328adcc6837d547dc06ae5c3354b95849700f66519",
+    "operation_id": "e58c3990-15ae-4159-b74d-ee5d0d7bc8ba",
+    "plan_hash": "sha256:28115c78c7c270092db65817276d6b039f8e554c8b4acbec9a0d6ea42e77727a",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 6,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 3,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 0,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "worker_id": "cb731e60e9a5aaf3f6695ed3822f0fe5ea45e4bcd69cc41111d3410570eb3e16"
+  },
+  "candidate": {
+    "artifacts": {
+      "dev.local.delivery": {
+        "addon": "mp_delivery",
+        "digest": "sha256:021524286c400b2e5b8bd1a2c294a413878dd06bddd742cf9e983797d339933c",
+        "file": "dev.local.delivery-0.1.9.mplug",
+        "plugin_id": "dev.local.delivery",
+        "version": "0.1.9"
+      },
+      "dev.local.documents": {
+        "addon": "mp_documents",
+        "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae",
+        "file": "dev.local.documents-0.1.12.mplug",
+        "plugin_id": "dev.local.documents",
+        "version": "0.1.12"
+      },
+      "dev.local.partners": {
+        "addon": "mp_partners",
+        "digest": "sha256:0166a2eae4cce3677d0791e42c90885028693c9bc6535ab90ddd1c6b81e510c2",
+        "file": "dev.local.partners-0.1.8.mplug",
+        "plugin_id": "dev.local.partners",
+        "version": "0.1.8"
+      },
+      "dev.local.taskfiles": {
+        "addon": "mp_taskfiles",
+        "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+        "file": "dev.local.taskfiles-0.1.6.mplug",
+        "plugin_id": "dev.local.taskfiles",
+        "version": "0.1.6"
+      },
+      "dev.local.workboard": {
+        "addon": "mp_workboard",
+        "digest": "sha256:eb68affbddd2014a17b7b4f8157e6b41f95025805a6bc53a9eeaad431255a09b",
+        "file": "dev.local.workboard-0.2.18.mplug",
+        "plugin_id": "dev.local.workboard",
+        "version": "0.2.18"
+      }
+    },
+    "changed_files": [
+      "addons/mp_core/__manifest__.py",
+      "addons/web/__manifest__.py",
+      "addons/web/static/src/views/view_dialogs/record_create_dialog.js",
+      "addons/web/static/src/views/view_dialogs/record_create_dialog.scss",
+      "addons/web/static/src/views/view_dialogs/record_create_dialog.xml",
+      "packages/platform_sdk/modular_platform/projection.py"
+    ],
+    "image_id": "sha256:187c6c7867fc2e3d90517f328adcc6837d547dc06ae5c3354b95849700f66519",
+    "native_manifests_exact": true,
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "record_sha256": "80c23af2f87e78b26669c04f878694b1de8bbcc858003544436c6c93b7adaf76",
+    "scope": "Candidate only",
+    "source": "9c9e62565448e564e772e7090f4f5a0811bde688",
+    "source_inputs": 4100
+  },
+  "audit": {
+    "image_id": "sha256:187c6c7867fc2e3d90517f328adcc6837d547dc06ae5c3354b95849700f66519",
+    "image_tar_sha256": "4a42d9b44916d9ca3153d79122d9e62110385983a791de8b5fcc687ec58d2d6c",
+    "layers": [
+      {
+        "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+        "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+        "index": 0
+      },
+      {
+        "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+        "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+        "index": 1
+      },
+      {
+        "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+        "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+        "index": 2
+      },
+      {
+        "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+        "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+        "index": 3
+      },
+      {
+        "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+        "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+        "index": 4
+      },
+      {
+        "diff_id": "sha256:30b3d83e92f4ff1b58bc83ec56c308cf1b435ee9f454ee0d285dcc17c9f6d0ef",
+        "digest": "sha256:7a1089ce8213e02b4bc7208c09a601e451b890f7e6098a6f4970b75fc588a618",
+        "index": 5
+      },
+      {
+        "diff_id": "sha256:b689a80797b2a95d89f29a6f422d625f426183702f6443a0443c81c2a34a1478",
+        "digest": "sha256:7208e8b2c51b5048b3ef761aebaf557f3c74ed88f2ec6618f2df7ca4d010178e",
+        "index": 6
+      },
+      {
+        "diff_id": "sha256:a3406a8243697f671bc78eedc5b661c31e14794afb1bd14ed740dcacf48a5718",
+        "digest": "sha256:90d3a3c383db46a8da062ca7b9227458f3092a98dad7bd9b70ee61e08209e0cb",
+        "index": 7
+      },
+      {
+        "diff_id": "sha256:b4b62ba4ae2aac8da766e9037b694d7550e338f6a0333a3a16e3758bf975f0cb",
+        "digest": "sha256:f5335ef32ae4dd425511a03611209d6b0151f9e053bee0d1a289b35d4f834aca",
+        "index": 8
+      },
+      {
+        "diff_id": "sha256:ddc377fa71f5f6c3debd337c6b88197aee6c1463e25ffbe591a74456573579c5",
+        "digest": "sha256:c321f9e41fe65c15935e1ed4f044bdfb65ce7dbdf5e91e8a7f967d194a597199",
+        "index": 9
+      },
+      {
+        "diff_id": "sha256:dac3bb4640c5802eaafa6798665f47b39370d3205518585db040940b92d2511f",
+        "digest": "sha256:15181c072c42104bef5f619f9e83b3f45ba2653b30bef7de4b7f825842658eab",
+        "index": 10
+      },
+      {
+        "diff_id": "sha256:1f8f7312dccea08dfdc6fe96c2e6f1c05fc959a85422e44e6018ca46cf908881",
+        "digest": "sha256:ac4a544e99e6efc9fc02645500b68bad8005ea7249b5225c191eb973f428428d",
+        "index": 11
+      },
+      {
+        "diff_id": "sha256:9d31aeae13311a378c2eb1957644a2c27350c1f36f7c17549fd8aa50993edc62",
+        "digest": "sha256:71ddc8918eab738e53638ec425028e273306dc836245d1b682cd35d6330e01cc",
+        "index": 12
+      },
+      {
+        "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+        "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+        "index": 13
+      }
+    ],
+    "non_project_whiteouts": [
+      "/etc/apt/sources.list.d/.wh.debian.sources"
+    ],
+    "project_files": 3806,
+    "result": "exact-clean-final-layers-passed",
+    "source_image_not_final_ancestor": true
+  },
+  "geometry": {
+    "fullscreen": {
+      "draft": "Unsaved layout probe",
+      "ids": [
+        "name_0",
+        "email_0",
+        "phone_0"
+      ],
+      "rect": [
+        {
+          "height": 789.0908813476562,
+          "width": 1362.7271728515625,
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "url": "http://release-cd4dd6d48e72.localhost:18730/odoo/action-85?workspace=943892c1-f556-4771-aa8d-51410c1124a7",
+      "viewport": [
+        1363,
+        789
+      ]
+    },
+    "sheet": {
+      "overflow": false,
+      "rect": [
+        {
+          "height": 789.0908813476562,
+          "width": 703.991455078125,
+          "x": 658.7357788085938,
+          "y": 0
+        }
+      ],
+      "viewport": [
+        1363,
+        789
+      ]
+    },
+    "narrow": {
+      "expandVisible": false,
+      "overflow": false,
+      "rect": [
+        {
+          "height": 843.6363525390625,
+          "width": 390,
+          "x": 0,
+          "y": 0
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  },
+  "zero_effect": {
+    "all_fields_exact": true,
+    "protected_targets_exact": true,
+    "scope": "Actual draft/expand/discard and views created zero new business or authority effects",
+    "tables": 22
+  },
+  "pending_job_carry_forward": {
+    "actor_input_key_schedule_attempts_result_exact": true,
+    "changed_fields": [
+      "available_at",
+      "claim_generation",
+      "dispatch_generation",
+      "release_digest"
+    ],
+    "job_id": "6c9b3c91-c4d9-4ad2-82ab-8bb2974c492d",
+    "no_execution": true,
+    "source": "Unchanged native job_dispatch.reconcile_release + dispatch_lifecycle fence, within approved maintenance",
+    "state": "pending"
+  },
+  "reminder_delivery": {
+    "all_other_tables_exact": true,
+    "attempts": 1,
+    "job_id": "6c9b3c91-c4d9-4ad2-82ab-8bb2974c492d",
+    "notice_count": 1,
+    "original_actor_input_key_schedule_exact": true,
+    "reminder_revision": 2,
+    "scope": "Normal native worker delivery, no fake clock/job edits",
+    "state": "completed",
+    "target_unchanged": true
+  },
+  "transient_lanes": {
+    "absent": true,
+    "exact_created_lane_ids": [
+      "64a6bfd9bc96c87f3b802beb1d3198f61a8197026adb72bc942e6a06437bafba",
+      "0368583290bef5f9ad5fdc28044da919fbfb4abf48782e153ff3fca711b2ce58"
+    ],
+    "protected_targets_exact": true,
+    "scope": "Normal JobOperator.drain stopped/removed only these two owned transient lanes, no other cleanup"
+  },
+  "browser": {
+    "compact_width": 650,
+    "fullscreen_viewport_edges": true,
+    "sheet_width": 704,
+    "narrow_css_width": 390,
+    "overflow": false,
+    "same_input_ids_and_draft": true,
+    "keep_editing_retains_draft": true,
+    "discard_no_effect": true,
+    "light_dark": true,
+    "dark_ink": [
+      240,
+      241,
+      244
+    ],
+    "dark_surface": [
+      28,
+      30,
+      35
+    ],
+    "console_errors_warnings": 0,
+    "light_default_viewport_restored": true,
+    "user_tabs_preserved": true
+  },
+  "scope": "Bounded installed creation qualification; UI phase acceptance remains0/4",
+  "limits": [
+    "Arabic/RTL source logical compilation only in this pass; full actual locale matrix pending",
+    "No true200percent zoom or formal accessibility claim",
+    "Composite partial/uncertain failures source tested, actual success and real delivery verified",
+    "App transient retry guidance during saving remains a Workboard presentation finding for next successor",
+    "Detail composition, remaining shell branding/icons/breadcrumbs, authority/optional absence/recovery/final canonical remain"
+  ]
+}
