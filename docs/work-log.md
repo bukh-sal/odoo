@@ -3106,3 +3106,20 @@ restored, AliceEnglish restored,22business tables/groups/protected targets exact
 Actual390px RTL customer/contact/task/pinned text works; mixed title alignment
 and real dark Move to trash3.68failure are retained for installed35 comparison.
 No35build/apply yet. Full original UI0/4/current canonical remains active.
+
+15November2026 installed35: ONE36.422s build945fddcd, exact8shippedfiles/five
+archives/Python,14layers3810files. Private audit key lookup failure retained;
+verification-only saved-tar continuation passed, no rebuild. Normal93a67f64 /
+8f8f83f9 completed182.891s/config11; exact22-table business/current authority/
+views/pins/checkpoint/protected proof, no operation replay. Real informational
+sheet now transparent; ordinary Edit remains native; title margin normalized.
+Nested customer/task URL reload preserves its exact route/task with zero new
+scope warnings. Actual destructive text7.63light/10.03dark and visible focus
+verified. Arabic/English normal preference roundtrip restores semantic profiles
+and all22tables. BUT title match-parent is unsupported in actual IAB (CSS.supports
+false), so RTL title alignment is unaccepted. Fresh36 compatibility plan recorded
+before code;4shippedpaths/threeidentities+CSS only, five archives exact. Canonical35
+was deliberately interrupted after creation-time/command-tree verification for
+this concrete new-source defect; original partiallog/exit1150.656s preserved,
+no green/fullhost claim/no timeout restart. All35 operations terminal; no pending
+profile/authority/business fixture. Original full UI0/4 remains active.

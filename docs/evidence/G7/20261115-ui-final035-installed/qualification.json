@@ -1,0 +1,200 @@
+{
+  "source": "dcb8c590e698d41f749edef255f4ca3a4b3508e5",
+  "operation": {
+    "all_views_exact": true,
+    "apply_seconds": 182.891,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 11,
+    "image_id": "sha256:945fddcdb8d505a41c7525495620bfb14f94fbc304d4d55a627175bd775a01a9",
+    "operation_id": "93a67f64-a412-4463-88df-37f94b269497",
+    "plan_hash": "sha256:8f8f83f915bb60f29a620d120c7a285317cff5a70ad1142fa64acad00514756e",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 7,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 4,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_bound_to_actual_ready_receipt": true,
+    "worker_id": "577d29cb04ce6738f3bf46ebf84fd52608a5afa4d1a4393109bf1e3e76007e32",
+    "workspace_policy_epoch_increment": 0
+  },
+  "build": {
+    "all_native_manifests_exact": true,
+    "artifacts": {
+      "dev.local.delivery": {
+        "addon": "mp_delivery",
+        "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f",
+        "file": "dev.local.delivery-0.1.10.mplug",
+        "plugin_id": "dev.local.delivery",
+        "version": "0.1.10"
+      },
+      "dev.local.documents": {
+        "addon": "mp_documents",
+        "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae",
+        "file": "dev.local.documents-0.1.12.mplug",
+        "plugin_id": "dev.local.documents",
+        "version": "0.1.12"
+      },
+      "dev.local.partners": {
+        "addon": "mp_partners",
+        "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76",
+        "file": "dev.local.partners-0.1.10.mplug",
+        "plugin_id": "dev.local.partners",
+        "version": "0.1.10"
+      },
+      "dev.local.taskfiles": {
+        "addon": "mp_taskfiles",
+        "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+        "file": "dev.local.taskfiles-0.1.6.mplug",
+        "plugin_id": "dev.local.taskfiles",
+        "version": "0.1.6"
+      },
+      "dev.local.workboard": {
+        "addon": "mp_workboard",
+        "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415",
+        "file": "dev.local.workboard-0.2.19.mplug",
+        "plugin_id": "dev.local.workboard",
+        "version": "0.2.19"
+      }
+    },
+    "changed_files": [
+      "addons/mp_core/__manifest__.py",
+      "addons/mp_identity/__manifest__.py",
+      "addons/mp_identity/static/src/native_webclient.js",
+      "addons/web/__manifest__.py",
+      "addons/web/static/src/interface/foundation.css",
+      "addons/web/static/src/interface/record_sections.css",
+      "addons/web/static/src/interface/surfaces.css",
+      "packages/platform_sdk/modular_platform/projection.py"
+    ],
+    "image_id": "sha256:945fddcdb8d505a41c7525495620bfb14f94fbc304d4d55a627175bd775a01a9",
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "record_sha256": "714d87377b12e397d72dbb88ef418e246211946812e83d13fe4593feec60ce70",
+    "scope": "Not deployed/admitted",
+    "source": "dcb8c590e698d41f749edef255f4ca3a4b3508e5",
+    "source_inputs": 4105
+  },
+  "build_seconds": 36.406,
+  "audit_sha256": "68e067830aa5f79561ce6f7f2fbeb0103e6e6e0220e28239048e76286b698c7d",
+  "audit_continuation": {
+    "image_id": "sha256:945fddcdb8d505a41c7525495620bfb14f94fbc304d4d55a627175bd775a01a9",
+    "old_image_receipt_sha256": "ed567540dad2295b8608976ee28b61d2eb05a80b4ca688ea9cd3fdfcb3d72388",
+    "original_script_sha256": "922d410ab5bb2e3efb023c95a61578c2d6a71f9f13eb30d1a4966e74685790de",
+    "scope": "Verification only against existing saved image tar, no rebuild or save replay"
+  },
+  "installed_sheet": {
+    "info": [
+      "o_form_view o_partners_revision_form_view o_view_controller o_action mp-informational-record"
+    ],
+    "pageWidth": 1363,
+    "sheet": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "border": "0px",
+        "margin": "0px",
+        "scopedSelectorMatch": true
+      }
+    ],
+    "title": [
+      {
+        "margin": "0px",
+        "x": 343.9772644042969,
+        "y": 132.92613220214844
+      }
+    ],
+    "width": 1363
+  },
+  "ordinary_edit": {
+    "focus": null,
+    "informational": 0,
+    "sheets": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "border": "0.909091px"
+      }
+    ]
+  },
+  "native_deep_reload": {
+    "before": "http://release-cd4dd6d48e72.localhost:18730/odoo/action-84/1/workboard?workspace=943892c1-f556-4771-aa8d-51410c1124a7&workboard_view=mine&workboard_listId=&workboard_layout=list&workboard_groupBy=stage&workboard_query=&workboard_priority=&workboard_status=&workboard_assignee=&workboard_sort=newest&workboard_task=86dc101b-3c9b-4962-91d4-038aa4cafd03",
+    "after": "http://release-cd4dd6d48e72.localhost:18730/odoo/action-84/1/workboard?workspace=943892c1-f556-4771-aa8d-51410c1124a7&workboard_view=mine&workboard_listId=&workboard_layout=list&workboard_groupBy=stage&workboard_query=&workboard_priority=&workboard_status=&workboard_assignee=&workboard_sort=newest&workboard_task=86dc101b-3c9b-4962-91d4-038aa4cafd03",
+    "newWarningsErrors": [],
+    "earlierWarningsRetained": 2
+  },
+  "contrast": {
+    "light_destructive_text": 7.63,
+    "dark_destructive_text": 10.03,
+    "dark_visible_items": 27,
+    "keyboard_focus": {
+      "background": "rgb(60, 36, 43)",
+      "border": "rgb(255, 181, 193)",
+      "color": "rgb(255, 181, 193)",
+      "focusVisible": true,
+      "focused": true,
+      "outline": "rgb(179, 186, 255) solid 1.81818px",
+      "outlineOffset": "1.81818px",
+      "shadow": "rgba(220, 53, 69, 0.5) 0px 0px 0px 4px"
+    },
+    "scope": "Representative computed visible text/ancestor backdrop measurements, not formal full accessibility certification"
+  },
+  "retention": {
+    "business22tables_field_exact": true,
+    "profiles_groups_exact": true,
+    "protected_targets_exact": true,
+    "scope": "final",
+    "utc": "2026-11-15T16:31:35.013108+00:00"
+  },
+  "title_correction_unaccepted": {
+    "image": "sha256:945fddcdb8d505a41c7525495620bfb14f94fbc304d4d55a627175bd775a01a9",
+    "actualCssContainsMatchParent": true,
+    "matchParentSupported": false,
+    "actualComputedAlignment": "start",
+    "actualContentDirection": "ltr",
+    "actualParentDirection": "rtl",
+    "titleStillAlignsLeft": true,
+    "scope": "Installed35 failure retained; do not call title correction accepted"
+  },
+  "canonical35": {
+    "exit": {
+      "exit": 1,
+      "seconds": 1150.656,
+      "pid": 9696,
+      "windows_creation_filetime": 134392327834372250,
+      "finished_utc": "2026-11-15T16:32:14.091529+00:00",
+      "log_sha256": "57c0248d148ff7b14d3d093341993473e492e9cc3d6ee3374bdac63de85f2ea5"
+    },
+    "intentionally_interrupted_for_new_source": true,
+    "complete": false,
+    "green_claim": false
+  },
+  "screenshots": {
+    "customer-light.png": "b1e81a45ebd960f5daf50f3240c10a881f376fddcdded3937226b2b5d09b0713",
+    "customer-rtl-light.png": "64d609254e2cfed335bd755251df0ba4f22faccfa15b2d6bb0989b76879920b5",
+    "documents-dark-focused.png": "e0391bf0fe44d62eee204473287409e7580961f026dfa1786b6bb38d9d03beca"
+  },
+  "next_plan": "docs/ui-document-direction-compatibility-plan.md",
+  "scope": "Installed35 useful/cascade/contrast/deep-link corrections verified, unsupported title rule remains unaccepted. Original full goal active."
+}
