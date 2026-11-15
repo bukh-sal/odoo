@@ -13,6 +13,7 @@ import { session } from "@web/session";
 import { Component, onMounted, onWillStart, useExternalListener, useState } from "@odoo/owl";
 import { router, routerBus } from "@web/core/browser/router";
 import { browser } from "@web/core/browser/browser";
+import { clearUncommittedChanges } from "@web/webclient/actions/action_service";
 import { rpcBus } from "@web/core/network/rpc";
 
 export class WebClient extends Component {
@@ -44,9 +45,13 @@ export class WebClient extends Component {
         this.state = useState({
             fullscreen: false,
         });
-        useBus(routerBus, "ROUTE_CHANGE", async () => {
+        useBus(routerBus, "ROUTE_CHANGE", async ({ detail }) => {
             document.body.style.pointerEvents = "none";
             try {
+                if (!(await clearUncommittedChanges(this.env))) {
+                    router.cancelRouteChange(detail);
+                    return;
+                }
                 await this.loadRouterState();
             } finally {
                 document.body.style.pointerEvents = "auto";

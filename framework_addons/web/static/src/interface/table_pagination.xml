@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.TablePagination">
+    <nav class="mp-pagination d-print-none" t-ref="pagination" t-att-aria-label="label" t-att-aria-busy="state.busy ? 'true' : 'false'">
+      <span class="mp-pagination-range" role="status" aria-live="polite" tabindex="-1" t-esc="range"/>
+      <div t-if="showControls" class="mp-pagination-pages">
+        <button type="button" class="mp-page-button mp-page-previous" t-att-disabled="state.busy or !canPrevious" t-att-data-hotkey="props.withAccessKey ? 'p' : undefined" t-on-click="() => this.go(previousPage)"><i class="fa fa-chevron-left" aria-hidden="true"/><span>Previous</span></button>
+        <t t-foreach="pages" t-as="page" t-key="page">
+          <button t-if="typeof page === 'number'" type="button" class="mp-page-button mp-page-number" t-att-aria-label="pageLabel(page)" t-att-aria-current="page === current ? 'page' : undefined" t-att-disabled="state.busy" t-on-click="() => this.go(page)" t-esc="page"/>
+          <span t-else="" class="mp-pagination-gap" aria-hidden="true">…</span>
+        </t>
+        <button type="button" class="mp-page-button mp-page-next" t-att-disabled="state.busy or !canNext" t-att-data-hotkey="props.withAccessKey ? 'n' : undefined" t-on-click="() => this.go(current + 1)"><span>Next</span><i class="fa fa-chevron-right" aria-hidden="true"/></button>
+      </div>
+      <button t-if="limited" type="button" class="mp-page-button" t-att-disabled="state.busy" t-on-click="count">Count results</button>
+      <p t-if="state.error" class="mp-pagination-error" role="alert" t-esc="state.error"/>
+    </nav>
+  </t>
+</templates>

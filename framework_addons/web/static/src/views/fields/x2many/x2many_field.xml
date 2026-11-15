@@ -28,7 +28,7 @@
                         </t>
                     </div>
                 </t>
-                <div t-if="props.record.data[props.name].count > props.record.data[props.name].limit" class="o_cp_pager" role="search">
+                <div t-if="props.viewMode !== 'list' and props.record.data[props.name].count > props.record.data[props.name].limit" class="o_cp_pager" role="search">
                     <Pager t-props="pagerProps"/>
                 </div>
             </div>

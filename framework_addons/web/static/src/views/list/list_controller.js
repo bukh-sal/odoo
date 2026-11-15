@@ -182,7 +182,7 @@ export class ListController extends Component {
             },
             () => [this.model.root.selection.length, this.model.root.isDomainSelected]
         );
-        this.searchBarToggler = useSearchBarToggler();
+        this.searchBarToggler = useSearchBarToggler({ alwaysVisible: true });
         this.firstLoad = true;
         onWillPatch(() => {
             this.firstLoad = false;
@@ -512,6 +512,7 @@ export class ListController extends Component {
             ...this.props.display,
             controlPanel: {
                 ...controlPanel,
+                table: true,
                 layoutActions: !this.hasSelectedRecords,
             },
         };

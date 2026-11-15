@@ -117,6 +117,7 @@
                             class="o_searchview_input o_input d-print-none flex-grow-1 w-auto border-0"
                             accesskey="Q"
                             placeholder="Search..."
+                            aria-label="Search records"
                             role="searchbox"
                             t-ref="autofocus"
                             t-on-click="onSearchClick"

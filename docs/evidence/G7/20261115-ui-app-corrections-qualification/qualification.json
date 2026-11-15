@@ -1,0 +1,72 @@
+{
+  "source": "63b63297b4c0554577315a551d6aca650f8bfeee",
+  "private_sources": {
+    "partners": "6a4da837540bdceab6ffc70d1dcb5857b1c9d0fe",
+    "workboard": "717c788b26fc12662294db811ae61561d043e36f",
+    "delivery": "ee96475c0bb1c9fb319fa0770f3b61cda5b88b36",
+    "documents": "6aef5feec70788a2c9fd41d72c4beaaeb421c61a",
+    "taskfiles": "7bbbd847200b8a29f914622545b5e90ba71cc6d1"
+  },
+  "archives": {
+    "dev.local.partners": {
+      "version": "0.1.2",
+      "digest": "sha256:38fbf3c627c00ee863e7e098085596fb30e590c27af1ec695fbbee393d62c878",
+      "file": "dev.local.partners-0.1.2.mplug",
+      "bytes": 29320
+    },
+    "dev.local.workboard": {
+      "version": "0.2.14",
+      "digest": "sha256:7b34dad0a1c1163bef75eb1ec31a1f150c26f6d5c2c12eef58211d1ed4aaef08",
+      "file": "dev.local.workboard-0.2.14.mplug",
+      "bytes": 64346
+    },
+    "dev.local.delivery": {
+      "version": "0.1.6",
+      "digest": "sha256:8f5dc104883bab17f997958385d82ea289443a7a240444c48fd41c1e7c47bee4",
+      "file": "dev.local.delivery-0.1.6.mplug",
+      "bytes": 29815
+    },
+    "dev.local.documents": {
+      "version": "0.1.9",
+      "digest": "sha256:f89fb7a4f34b6c4e1d0e044c5cef14e1a738bb458bfd6893d91c917668d839fe",
+      "file": "dev.local.documents-0.1.9.mplug",
+      "bytes": 52815
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.5",
+      "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759",
+      "file": "dev.local.taskfiles-0.1.5.mplug",
+      "bytes": 38405
+    }
+  },
+  "image_id": "sha256:f04b6f5349fa2b22f8756666dc3292b2704fa4eaaaf0e62b7f0f92b457dd5e32",
+  "platform": "0.2.15",
+  "operation_id": "391e9079-593a-47f4-a6dd-69da4aeb2518",
+  "plan_hash": "sha256:258e020a399e6a78f81c8bfb0fec380007d02ec8022fdf5ebca1bcedd9008b23",
+  "apply_seconds": 172.484,
+  "checkpoint_manifest_sha256": "95a0cbd386ea9b229330740648905379551dee074fbd602faa9674d8bc23a382",
+  "business_tables_exact": 18,
+  "job_outbox_full_rows_exact": true,
+  "other_targets_exact": 10,
+  "source_tests": {
+    "node": 32,
+    "python": 24,
+    "failed": 0,
+    "new_red_cases": 3
+  },
+  "rendered": {
+    "actualInApp": true,
+    "dirtyBackRetainsDraft": true,
+    "keepEditingRetainsDraft": true,
+    "explicitDiscardWorks": true,
+    "notesWidth": 901.349,
+    "sheetWidth": 1010.753,
+    "remaining": [
+      "Refused browser Back retains draft but URL changes; shared router rollback required",
+      "Single-column Notes group expands field but heading and text share a row; use full-span field in ordinary two-column group"
+    ],
+    "savedBusinessWrites": false,
+    "fullNavigationMatrixAccepted": false
+  },
+  "full_ui_phases_accepted": 0
+}

@@ -1,5 +1,15 @@
 # Shared UI qualification and support boundaries
 
+Latest populated installed combination is core0.2.15 with Workboard0.2.14 and
+Partners0.1.2; the other three private app pins are unchanged. Its normal upgrade
+and exact data/history retention are in the [app correction record](evidence/G7/20261115-ui-app-corrections-qualification/qualification.json).
+Actual browser draft retention works; refused-history URL consistency and Notes
+heading placement remained findings. The [native collections plan](ui-native-collections-plan.md)
+now has source candidate0.2.16, not yet installed or visually accepted. Historical
+core12 canonical evidence below remains scoped to its original source. The full
+UI goal and original matrix remain unaccepted0/4.
+
+
 The provisional local platform code is0.2.12/native core19.0.0.2.12 and
 web19.0.2.12.0. Its shared presentation exports and app-owned responsibilities
 are documented in the [author patterns](ui-author-patterns.md). No publication,

@@ -4,7 +4,7 @@ import { Dropdown } from "@web/core/dropdown/dropdown";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_service";
 import { localization } from "@web/core/l10n/localization";
-import { Pager } from "@web/core/pager/pager";
+import { TablePagination } from "@web/interface/table_pagination";
 import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { registry } from "@web/core/registry";
 import { useAutofocus, useBus, useService } from "@web/core/utils/hooks";
@@ -109,7 +109,7 @@ export class ListRenderer extends Component {
         ViewButton,
         CheckBox,
         Dropdown,
-        Pager,
+        TablePagination,
         Widget,
         ActionHelper,
         GroupConfigMenu,
@@ -131,6 +131,7 @@ export class ListRenderer extends Component {
         "nestedKeyOptionalFieldsData?",
         "optionalActiveFields?",
         "readonly?",
+        "pagination?",
     ];
 
     setup() {
@@ -1159,6 +1160,7 @@ export class ListRenderer extends Component {
         // For a single leveled group with a countLimit, we already have the full count.
         const total = list.isGrouped ? list.count : group.count;
         return {
+            label: String(group.displayName ?? ""),
             offset: list.offset,
             limit: list.limit,
             total,
@@ -1329,6 +1331,9 @@ export class ListRenderer extends Component {
         switch (direction) {
             case "up": {
                 let futureRow = row.previousElementSibling;
+                while (futureRow?.classList.contains("mp-group-pagination")) {
+                    futureRow = futureRow.previousElementSibling;
+                }
                 futureRow = futureRow || row.parentElement.previousElementSibling?.lastElementChild;
 
                 if (futureRow) {
@@ -1354,6 +1359,9 @@ export class ListRenderer extends Component {
             }
             case "down": {
                 let futureRow = row.nextElementSibling;
+                while (futureRow?.classList.contains("mp-group-pagination")) {
+                    futureRow = futureRow.nextElementSibling;
+                }
                 futureRow = futureRow || row.parentElement.nextElementSibling?.firstElementChild;
                 if (futureRow) {
                     const addCell = [...futureRow.children].find((c) =>

@@ -189,3 +189,18 @@ not protect browser-history or app-action navigation.
 For a single native multiline field without a label, declare a single-column
 group (col="1") so the normal form grid allocates the full width. Partners0.1.2
 uses this for Notes. Do not add an app-named shared CSS exception.
+
+
+Native collection candidate0.2.16 uses the existing ControlPanel display object
+with a table presentation variant; optional description is plain text. Standard
+native lists use the shared header/query/footer layout without an app selector.
+Custom collections may import TablePagination from @web/interface/table_pagination
+and declare core>=0.2.16. Supply actual offset/limit/total and an awaited onUpdate
+callback; the component never advances model state optimistically. updateTotal
+means the count is limited and permits an explicit exact-count action, not a
+fabricated last page. Groups and embedded tables must supply their own callback
+scope and disable duplicate global pager hotkeys. A custom native renderer that
+replaces ListRenderer owns accepting/rendering the optional pagination input.
+Native form record traversal and non-table Kanban navigation remain separate.
+The current shared paginator uses modern container sizing for narrow grouped
+footers; installed browser support is provisional until the actual matrix passes.

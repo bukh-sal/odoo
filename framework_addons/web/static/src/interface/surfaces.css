@@ -59,3 +59,53 @@
 @media (prefers-reduced-motion: reduce) {
     .mp-page *, .mp-shell-frame * { scroll-behavior: auto; }
 }
+
+/* Shared native collection frame and model-driven table pagination. */
+.mp-search-filter-label { display: none; }
+@media screen {
+    .o_web_client .mp-native-table-controls { padding: 24px 24px 16px !important; gap: 20px !important; }
+    .mp-native-table-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px 24px; }
+    .mp-native-table-heading { flex: 1; min-width: 0; }
+    .mp-native-table-heading .o_breadcrumb { font-family: var(--mp-ui-font); min-width: 0; }
+    .mp-native-table-header .mp-page-actions { justify-content: flex-end; flex: 0 0 auto; }
+    .mp-native-table-query { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .mp-native-table-query > .o_control_panel_actions { flex: 1; min-width: 0; }
+    .mp-native-table-tools { display: flex; gap: 8px; align-items: center; }
+    .mp-native-table-tools .o_control_panel_navigation { flex-grow: 0 !important; }
+    .mp-native-table-tools .o_control_panel_navigation:empty { display: none !important; }
+    .mp-native-table-query .o_cp_searchview { width: 100%; max-width: 640px; gap: 8px; flex-wrap: nowrap; }
+    .mp-native-table-query .o_searchview { min-width: 0; border-inline-end: 1px solid var(--mp-ui-control-line) !important; border-radius: var(--mp-ui-radius) !important; }
+    .mp-native-table-query .o_searchview_dropdown_toggler { display: inline-flex; gap: 8px; align-items: center; border-radius: var(--mp-ui-radius) !important; margin-inline-start: 0 !important; }
+    .mp-native-table-query .mp-search-filter-label { display: inline; }
+    .o_list_view > .o_content, .o_list_view .o_content:has(> .o_list_renderer) { padding: 0 24px 24px; }
+    .o_list_view .o_list_renderer { --ListRenderer-table-padding-x: 16px; }
+    .o_list_renderer { container-type: inline-size; }
+    .o_list_view .o_list_table { border: 1px solid var(--mp-ui-line); }
+    .mp-pagination { position: sticky; inset-inline-start: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%; padding: 16px 0; color: var(--mp-ui-ink); background: var(--mp-ui-canvas); }
+    .mp-pagination-range { color: var(--mp-ui-muted); font-size: 12px; line-height: 20px; flex: 1; }
+    .mp-pagination-pages { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 4px; }
+    .mp-page-button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 36px; min-height: 36px; padding: 6px 10px; border: 1px solid transparent; border-radius: var(--mp-ui-radius); background: transparent; color: var(--mp-ui-ink); font: 500 13px/20px var(--mp-ui-font); white-space: nowrap; }
+    .mp-page-button:hover:not(:disabled) { background: var(--mp-ui-hover); }
+    .mp-page-button[aria-current="page"] { border-color: var(--mp-ui-line); background: var(--mp-ui-surface); }
+    .mp-page-button:disabled { color: var(--mp-ui-muted); opacity: .6; cursor: default; }
+    .mp-page-button:focus-visible, .mp-pagination-range:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; }
+    .mp-pagination-gap { color: var(--mp-ui-muted); padding-inline: 6px; }
+    .mp-pagination-error { flex-basis: 100%; margin: 0; color: var(--mp-ui-danger-ink); }
+    .mp-group-pagination > td { padding-block: 0 !important; }
+    .mp-group-pagination .mp-pagination { width: 100cqi; max-width: 100%; padding: 8px 0; background: var(--mp-ui-surface); }
+    :dir(rtl) .mp-page-previous > i, :dir(rtl) .mp-page-next > i { transform: rotate(180deg); }
+}
+@media screen and (max-width: 767px) {
+    .o_web_client .mp-native-table-controls { padding: 20px 16px 12px !important; }
+    .mp-native-table-header { flex-wrap: wrap; gap: 12px; }
+    .mp-native-table-heading { flex-basis: 55%; }
+    .mp-native-table-query { flex-wrap: wrap; }
+    .mp-native-table-query > .o_control_panel_actions { flex-basis: 100%; }
+    .mp-native-table-tools { margin-inline-start: auto; }
+    .o_list_view > .o_content, .o_list_view .o_content:has(> .o_list_renderer) { padding: 0 16px 16px; }
+    .mp-pagination { gap: 8px; }
+    .mp-pagination-pages { flex-basis: 100%; }
+    .mp-pagination-range { flex-basis: 100%; }
+    .mp-page-button { min-width: 44px; min-height: 44px; }
+    .mp-page-previous > span, .mp-page-next > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+}

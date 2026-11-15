@@ -1,5 +1,7 @@
 /* Loaded by the existing native dark bundle, after the shared light defaults. */
 :root {
+    color-scheme: dark;
+    --mp-ui-close-filter: invert(1);
     --mp-ui-canvas: #151619;
     --mp-ui-surface: #1c1e23;
     --mp-ui-ink: #f0f1f4;

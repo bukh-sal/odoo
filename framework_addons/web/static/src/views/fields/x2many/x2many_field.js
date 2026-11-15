@@ -213,6 +213,7 @@ export class X2ManyField extends Component {
 
         const editable =
             (this.archInfo.activeActions.edit && archInfo.editable) || this.props.editable;
+        props.pagination = { ...this.pagerProps, label: String(this.field.string || "") };
         props.activeActions = this.activeActions;
         props.cycleOnTab = false;
         props.editable = !this.props.readonly && editable;

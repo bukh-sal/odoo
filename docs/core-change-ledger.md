@@ -389,3 +389,6 @@ UI dark native bridge source0.2.15: after real core14 reader proof, correct fixe
 
 
 UI rendered native theme bridge0.2.15 normally installed/verified: actual native list/form and custom dialog foreground/background now match semantic dark tokens; original matrix/close-icon contrast still open. Workboard0.2.14 and Partners0.1.2 private source corrections tested, archives assembled but not admitted/deployed; no change to backend/authority/storage.
+
+
+UI native collections candidate0.2.16 prepared after owner screenshots/reference audit. Shared footer paginator/model callbacks, header/query layout, narrow search, history refusal rollback and final dark control integration.38Node/66Python,19Owl and Sass/RTL source proofs pass; genuine previous-source navigation failure retained. Native build/maintenance/actual UI evidence pending; phase acceptance remains0/4.

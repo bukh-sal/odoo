@@ -104,3 +104,49 @@ desktop/narrow light/dark and RTL/keyboard/zoom with measured viewport and contr
 Bring screenshot-backed visual judgments to the owner. Retain the full original
 matrix and one final canonical run once executable sources are frozen; do not
 claim this layout alone completes D03-D06.
+
+
+## Exact implementation activation on configuration10
+
+Source63b63297/core15, current imagef04b6f534/config10 and app upgrade391e9079
+are terminal. Ten other targets/eighteen tables/full history remain exact.
+Private Workboard717c788/0.2.14 and Partners6a4da83/0.1.2 are installed.
+Reserve previously unassigned core0.2.16/web19.0.2.16.0/native19.0.0.2.16.
+
+Use ControlPanel's existing display configuration for a table presentation
+variant selected by native ListController; keep the non-table template intact.
+Reuse its native breadcrumb/action/selection/view slots, with an end-aligned
+create command and separate start-aligned query row. Factor the existing view
+navigation fragment once, without a table header pager. Keep list search visible
+through an optional alwaysVisible argument on the existing search-bar toggler;
+other callers retain defaults. Name the existing filter disclosure visibly.
+
+Retain usePager's current model callback producer. Pass its reactive props into
+ListRenderer's optional pagination input and render TablePagination immediately
+after the actual table INSIDE the existing scroll container, preserving native
+scroll/history export. Group pagers move to a following group footer row.
+x2many lists pass their OWN pager props; their Kanban/form-record navigation is
+separate. Remove blank filler rows, retain actual create/aggregate rows. Add only
+the two fixed interface JS/XML exports to the existing manifest; style them and
+the table frame in shared CSS. App backend/source/artifact pins stay unchanged.
+
+Actual browser testing now proves dirty Back keeps the Workboard editor/text,
+but the router commits the destination URL before the leave refusal. Correct
+this in the existing router/WebClient path, before menu/action loading: preserve
+the last committed presentation route, attach positions to newly owned browser
+history entries, undo a refused known Back/Forward without loading/discarding,
+and cancel a rejected internal-link route. For a legacy entry lacking a position,
+restore the visible committed route in place; document that exact pre-upgrade
+legacy history-stack preservation is not proved. History positions are navigation
+metadata, never workspace/actor/permission authority. Test refusal, acceptance,
+known Back/Forward, legacy fallback and stale event handling. Never bypass the
+existing action or authority guards.
+
+Batch native light/dark color-scheme and close-SVG contrast in the existing theme
+files. The Notes single-column app declaration expands width but puts heading
+and field in one grid row; retain this failure and queue a normal full-span field
+app successor after core16. Do not silently relabel its installed0.1.2 archive.
+
+No new source is accepted by documentation: actual Owl compilation, meaningful
+source/controller tests, exact image/layers, normal checkpointed core maintenance
+and the original actual in-app interaction/visual matrix remain required.

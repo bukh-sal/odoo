@@ -121,3 +121,6 @@ ADR0089 corrects the owned web native appearance reader to select the existing d
 
 
 Actual dark-bundle audit exposed inherited fixed light native table/header/modal/input/label colors. Core0.2.15 bridges these existing presentation variables and screen-only heading/label styles to the shared semantic light/dark tokens. No native controller, field, print, authority or data behavior changes; notices retained. Installed theme requalification remains required.
+
+
+Core0.2.16 reworks owned native collection presentation with existing ControlPanel display/slots and list model pagination callback: shared bounded footer pagination, grouped/embedded consumer placement, explicit narrow query and end create action. Native non-table form record traversal remains separate. Owned router/WebClient preserves dirty action/URL consistency using presentation-only history positions and ordinary leave guards; no actor/workspace/permission authority is derived from this metadata. Theme files add native color-scheme and visible close SVG/focus. No wire/backend/storage/notice changes. Actual installed qualification pending.

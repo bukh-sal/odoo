@@ -244,6 +244,59 @@ let pushTimeout;
 let pushArgs;
 let _lockedKeys;
 let _hiddenKeysFromUrl = new Set();
+// Presentation history only. This metadata never supplies workspace or actor authority.
+let historySession;
+let historyBranch = 0;
+let committedRoute;
+let navigationSerial = 0;
+let currentNavigation;
+let undoNavigation;
+
+function historyPosition(entry = browser.history.state) {
+    const position = entry?.mpRouterPosition;
+    return position?.session === historySession && Number.isSafeInteger(position.index)
+        && position.index >= 0 ? position.index : null;
+}
+
+function rememberRoute() {
+    committedRoute = {
+        route: structuredClone(state),
+        url: browser.location.href,
+        entry: structuredClone(browser.history.state),
+    };
+}
+
+function requestRouteChange(kind) {
+    currentNavigation = { id: ++navigationSerial, kind, previous: committedRoute,
+        position: historyPosition() };
+    routerBus.trigger("ROUTE_CHANGE", currentNavigation);
+}
+
+function cancelRouteChange(navigation = currentNavigation) {
+    if (navigation && (navigation.id !== navigationSerial || navigation.previous !== committedRoute)) {
+        return false;
+    }
+    const previous = navigation?.previous || committedRoute;
+    if (!previous) return false;
+    browser.clearTimeout(pushTimeout);
+    pushTimeout = null;
+    pushArgs = { replace: false, reload: false, state: {} };
+    state = structuredClone(previous.route);
+    const previousPosition = historyPosition(previous.entry);
+    const delta = previousPosition !== null && navigation?.position !== null
+        ? previousPosition - navigation.position : 0;
+    if (navigation?.kind === "pop" && Number.isSafeInteger(delta) && delta !== 0
+        && Math.abs(delta) <= 0x7fffffff) {
+        undoNavigation = { url: previous.url, position: previousPosition };
+        browser.history.go(delta);
+    } else {
+        // Legacy/unindexed entries cannot identify a traversal direction. Keep the
+        // current UI/draft and restore its address without executing a destination.
+        browser.history.replaceState(previous.entry, "", previous.url);
+        rememberRoute();
+    }
+    return true;
+}
 
 export function startRouter() {
     const url = new URL(browser.location);
@@ -263,6 +316,14 @@ export function startRouter() {
     };
     _lockedKeys = new Set(["debug", "lang"]);
     _hiddenKeysFromUrl = new Set([...PATH_KEYS, "actionStack"]);
+    const position = browser.history.state?.mpRouterPosition;
+    historySession = typeof position?.session === "string" && position.session.length > 0 && position.session.length <= 80
+        && Number.isSafeInteger(position.index) && position.index >= 0
+        ? position.session : `${browser.performance.timeOrigin}:${++historyBranch}`;
+    const index = historyPosition() ?? 0;
+    browser.history.replaceState({ ...browser.history.state, nextState: state,
+        mpRouterPosition: { session: historySession, index } }, "", browser.location.href);
+    rememberRoute();
 }
 
 /**
@@ -273,17 +334,20 @@ export function startRouter() {
  */
 browser.addEventListener("popstate", (ev) => {
     browser.clearTimeout(pushTimeout);
-    if (!ev.state) {
-        // We are coming from a click on an anchor.
-        // Add the current state to the history entry so that a future loadstate behaves as expected.
-        browser.history.replaceState({ nextState: state }, "", browser.location.href);
+    state = ev.state?.nextState || router.urlToState(new URL(browser.location));
+    if (undoNavigation && browser.location.href === undoNavigation.url
+        && historyPosition() === undoNavigation.position) {
+        undoNavigation = null;
+        rememberRoute();
         return;
     }
-    state = ev.state?.nextState || router.urlToState(new URL(browser.location));
+    undoNavigation = null;
     // Some client actions want to handle loading their own state. This is a ugly hack to allow not
     // reloading the webclient's state when they manipulate history.
     if (!ev.state?.skipRouteChange && !router.skipLoad) {
-        routerBus.trigger("ROUTE_CHANGE");
+        requestRouteChange("pop");
+    } else {
+        rememberRoute();
     }
     router.skipLoad = false;
 });
@@ -298,7 +362,7 @@ browser.addEventListener("popstate", (ev) => {
 browser.addEventListener("pageshow", (ev) => {
     if (ev.persisted) {
         browser.clearTimeout(pushTimeout);
-        routerBus.trigger("ROUTE_CHANGE");
+        requestRouteChange("restore");
     }
 });
 
@@ -331,7 +395,7 @@ browser.addEventListener("click", (ev) => {
             if (url.pathname.startsWith("/odoo") && url.hash) {
                 browser.history.pushState({}, "", url.href);
             }
-            new Promise((res) => setTimeout(res, 0)).then(() => routerBus.trigger("ROUTE_CHANGE"));
+            new Promise((res) => setTimeout(res, 0)).then(() => requestRouteChange("link"));
         }
     }
 });
@@ -344,6 +408,12 @@ function makeDebouncedPush(mode) {
         // Calculates new route based on aggregated search and options
         const nextState = computeNextState(pushArgs.state, pushArgs.replace);
         const url = browser.location.origin + router.stateToUrl(nextState);
+        let position = historyPosition();
+        if (position === null || position === Number.MAX_SAFE_INTEGER) {
+            historySession = `${browser.performance.timeOrigin}:${++historyBranch}`;
+            position = 0;
+        }
+        const entry = (index) => ({ nextState, mpRouterPosition: { session: historySession, index } });
         if (!compareUrls(url + browser.location.hash, browser.location.href)) {
             // If the route changed: pushes or replaces browser state
             if (mode === "push") {
@@ -353,16 +423,17 @@ function makeDebouncedPush(mode) {
                 // then restore the title to what it's supposed to be
                 const originalTitle = document.title;
                 document.title = pushArgs.title;
-                browser.history.pushState({ nextState }, "", url);
+                browser.history.pushState(entry(position + 1), "", url);
                 document.title = originalTitle;
             } else {
-                browser.history.replaceState({ nextState }, "", url);
+                browser.history.replaceState(entry(position), "", url);
             }
         } else {
             // URL didn't change but state might have, update it in place
-            browser.history.replaceState({ nextState }, "", browser.location.href);
+            browser.history.replaceState(entry(position), "", browser.location.href);
         }
         state = nextState;
+        rememberRoute();
         if (pushArgs.reload) {
             browser.location.reload();
         }
@@ -421,6 +492,7 @@ export const router = {
     pushState: makeDebouncedPush("push"),
     replaceState: makeDebouncedPush("replace"),
     cancelPushes: () => browser.clearTimeout(pushTimeout),
+    cancelRouteChange,
     addLockedKey: (key) => _lockedKeys.add(key),
     hideKeyFromUrl: (key) => _hiddenKeysFromUrl.add(key),
     skipLoad: false,

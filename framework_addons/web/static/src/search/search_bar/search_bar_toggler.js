@@ -12,7 +12,7 @@ export class SearchBarToggler extends Component {
     };
 }
 
-export function useSearchBarToggler() {
+export function useSearchBarToggler({ alwaysVisible = false } = {}) {
     const ui = useService("ui");
 
     let isToggled = false;
@@ -22,7 +22,7 @@ export function useSearchBarToggler() {
     });
     const updateState = () => {
         state.isSmall = ui.isSmall;
-        state.showSearchBar = !ui.isSmall || isToggled;
+        state.showSearchBar = alwaysVisible || !ui.isSmall || isToggled;
     };
     updateState();
 
@@ -45,7 +45,7 @@ export function useSearchBarToggler() {
         component: SearchBarToggler,
         get props() {
             return {
-                isSmall: state.isSmall,
+                isSmall: state.isSmall && !alwaysVisible,
                 showSearchBar: state.showSearchBar,
                 toggleSearchBar,
             };

@@ -91,7 +91,7 @@
                         <t t-set="list" t-value="props.list"/>
                     </t>
                 </tbody>
-                <tfoot t-on-click="() => props.list.leaveEditMode()" class="o_list_footer cursor-default" t-att-class="{o_sample_data_disabled: props.list.model.useSampleModel}">
+                <tfoot t-if="Object.keys(aggregates).length or (props.list.isGrouped and canCreateGroup)" t-on-click="() => props.list.leaveEditMode()" class="o_list_footer cursor-default" t-att-class="{o_sample_data_disabled: props.list.model.useSampleModel}">
                     <tr>
                         <t t-set="groupNameCellColspan" t-value="getGroupNameCellColSpan()"/>
                         <td t-if="groupNameCellColspan > 0" t-att-colspan="groupNameCellColspan">
@@ -133,6 +133,7 @@
                     </tr>
                 </tfoot>
             </table>
+            <TablePagination t-if="props.pagination and !props.list.model.useSampleModel" t-props="props.pagination"/>
         </div>
     </t>
 
@@ -171,11 +172,7 @@
                     </t>
                 </td>
             </tr>
-            <t t-if="!props.list.isGrouped and !props.noContentHelp">
-                <tr t-foreach="getEmptyRowIds" t-as="emptyRowId" t-key="emptyRowId">
-                    <td t-att-colspan="nbCols">&#8203;</td>
-                </tr>
-            </t>
+
         </t>
         <t t-else="">
             <t t-foreach="list.groups" t-as="group" t-key="group.id">
@@ -199,6 +196,9 @@
                                 Add a line
                             </a>
                         </td>
+                    </tr>
+                    <tr t-if="showGroupPager(group)" class="mp-group-pagination" t-on-click.stop="">
+                        <td t-att-colspan="nbCols"><TablePagination t-props="getGroupPagerProps(group)"/></td>
                     </tr>
                 </t>
             </t>
@@ -240,9 +240,7 @@
                             </t>
                         </t>
                     </div>
-                    <div t-if="showGroupPager(group)" t-on-click.stop="" class="ms-auto">
-                        <Pager t-props="getGroupPagerProps(group)"/>
-                    </div>
+
                 </div>
             </th>
             <td t-on-keydown="(ev) => this.onCellKeydown(ev, group)" t-foreach="getAggregateColumns(group)" t-as="column" t-key="column.id" t-att-class="{'o_list_number': column.type === 'field'}">

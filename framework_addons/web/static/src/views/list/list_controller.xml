@@ -5,8 +5,8 @@
         <div t-att-class="className" t-ref="root">
             <Layout className="model.useSampleModel ? 'o_view_sample_data' : ''" display="display">
                 <t t-set-slot="control-panel-create-button">
-                    <button t-if="!editedRecord and activeActions.create and props.showButtons" type="button" class="btn btn-primary o_list_button_add" data-hotkey="c" t-on-click="onClickCreate" data-bounce-button="">
-                        New
+                    <button t-if="!editedRecord and activeActions.create and props.showButtons" type="button" class="btn btn-primary o_list_button_add d-inline-flex align-items-center gap-2" data-hotkey="c" t-on-click="onClickCreate" data-bounce-button="">
+                        <i class="fa fa-plus" aria-hidden="true"/> New
                     </button>
                     <t t-if="props.showButtons and !env.inDialog" t-call="web.ListView.EditableButtons"/>
                 </t>
@@ -96,6 +96,7 @@
                     noContentHelp="props.info.noContentHelp"
                     onAdd.bind="createRecord"
                     optionalActiveFields="optionalActiveFields"
+                    pagination="env.config.pagerProps"
                     readonly="props.readonly"
                 />
             </Layout>
