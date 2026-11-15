@@ -1,14 +1,14 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.18, Partners0.1.3,
+Latest populated installed combination is core0.2.19, Partners0.1.3,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
-[Core18 direct evidence](evidence/G7/20261115-ui-core018-records-qualification/qualification.json)
-proves normal maintenance and actual record semantics/save/refusal checks.
-The owned165-row workspace directory remains; only one intended Sample row
-advanced to revision2, all other rows/history/authority exact. Real desktop
-navigation sizing, dark lines and conflict guidance still need correction.
-Core19 source checks pass under the [follow-up plan](ui-record-polish-followup-plan.md);
-no installed successor claim yet. Original matrix/final canonical stay open/UI0of4.
+[Core19 direct evidence](evidence/G7/20261115-ui-core019-record-polish-qualification/qualification.json)
+proves normal147.75s maintenance/config15 and actual compact navigation/shared
+dark boundaries/390px layout. All18tables/full history/five apps/ten sites exact.
+Partners0.1.4 native layout is source-qualified, not installed yet. The existing
+native error boundary has fixed safe conflict guidance; actual warning proof is
+queued with the hidden-revision app save/conflict check. No full matrix or final
+canonical acceptance is implied. UI0of4; historical qualifications retain scope.
 
 The provisional local platform code is0.2.12/native core19.0.0.2.12 and
 web19.0.2.12.0. Its shared presentation exports and app-owned responsibilities

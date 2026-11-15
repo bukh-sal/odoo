@@ -1,3 +1,7 @@
+## Core19 installed layout -15November2026
+
+Normal operation5a0e0832 completed147.75s/config15, checkpoint/full retention exact. Actual desktop controls206px/36high versus76px/84high; dark line#42454e, measured390px no overflow. No draft/theme fixture retained. Safe warning installed proof remains queued with app14 invisible loaded revision. Original full matrix/current frozen canonical open.
+
 ## Installed record follow-up -15November2026
 
 Core18 installed proof exposed inherited zero-flex-basis navigation, light dark-sheet

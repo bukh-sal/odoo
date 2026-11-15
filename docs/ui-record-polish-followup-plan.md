@@ -40,7 +40,11 @@ measurements and a fresh bounded stale-record witness must verify the result.
 
 Then use a legitimate Partners0.1.4/native19.0.0.1.4 successor: ordinary col4
 contact group, hidden-but-loaded readonly revision for its existing CAS context,
-full-span Notes unchanged. No app-specific core CSS, invented fields, service or
+full-span Notes unchanged. Installed narrow inspection also showed that a long
+name is clipped inside the one-line title input. Use the existing native TextField
+widget (already supports char) with line_breaks=false/one row and its normal
+autoresize for soft wrapping; preserve the app's200-character/no-newline server
+validation. No new field/formatter/widget or app CSS. No app-specific core CSS, invented fields, service or
 authorization change. Test real declarations/revision context, deterministic
 archive, normal two-scope upgrade with exact core/four other apps; inspect the
 installed density and useful native editing. Separate app admission/operation

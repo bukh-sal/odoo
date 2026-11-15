@@ -1,0 +1,89 @@
+{
+  "source": "7bbb6a60e265398ac2805e6fa038f85fa9ba78bb",
+  "platform": "0.2.19",
+  "operation_id": "5a0e0832-c694-4014-9fdc-22eaf8287baa",
+  "plan_hash": "sha256:b30597e56621d59a1ee20f8ea21617a525b15db54dada57bc10de3be950e6f53",
+  "image_id": "sha256:a8fb83c633d276d508fb8c4fae91f67c24087497a12f87053a2e5b7997d2ae7d",
+  "configuration": 15,
+  "apply_seconds": 147.75,
+  "maintenance": {
+    "tables_exact": 18,
+    "history_full_rows": true,
+    "other_targets": 10,
+    "apps_exact": 5,
+    "layers": 14,
+    "project_files": 3792
+  },
+  "installed_layout": {
+    "desktop": {
+      "count": {
+        "bottom": 149.97158813476562,
+        "height": 20,
+        "left": 1132.5709228515625,
+        "right": 1254.758415222168,
+        "top": 129.97158813476562,
+        "width": 122.18749237060548,
+        "x": 1132.5709228515625,
+        "y": 129.97158813476562
+      },
+      "flex": "0 1 auto",
+      "nav": {
+        "bottom": 157.96874237060547,
+        "height": 35.99431610107422,
+        "left": 1132.5709228515625,
+        "right": 1338.7356872558594,
+        "top": 121.97442626953124,
+        "width": 206.16476440429688,
+        "x": 1132.5709228515625,
+        "y": 121.97442626953124
+      }
+    },
+    "dark": [
+      {
+        "border": "rgb(66, 69, 78)",
+        "cls": "o_form_sheet position-relative",
+        "shadow": "none"
+      },
+      {
+        "border": "rgb(240, 241, 244)",
+        "cls": "o_horizontal_separator mt-4 mb-3 text-uppercase fw-bolder small",
+        "shadow": "rgb(66, 69, 78) 0px 1px 0px 0px"
+      },
+      {
+        "border": "rgb(240, 241, 244)",
+        "cls": "o_horizontal_separator mt-4 mb-3 text-uppercase fw-bolder small",
+        "shadow": "rgb(66, 69, 78) 0px 1px 0px 0px"
+      }
+    ],
+    "narrow": {
+      "height": 845,
+      "nav": {
+        "bottom": 203.9488525390625,
+        "height": 20,
+        "left": 265.2272644042969,
+        "right": 374.0056686401367,
+        "top": 183.9488525390625,
+        "width": 108.77840423583984,
+        "x": 265.2272644042969,
+        "y": 183.9488525390625
+      },
+      "scroll": 390,
+      "width": 390
+    },
+    "lightRestored": true,
+    "viewportReset": true,
+    "conflictInstalledProof": "Pending combined Partners successor hidden-revision test"
+  },
+  "source_checks": {
+    "node": 37,
+    "python": 72,
+    "freeze_files": 122,
+    "sass_rtl": true,
+    "predecessor_conflict_red": true
+  },
+  "limitations": [
+    "Actual installed native conflict warning pending combined hidden-revision app test",
+    "Original full visual matrix/final canonical remain open"
+  ],
+  "private_evidence": ".local/ui-record-polish019-01"
+}
