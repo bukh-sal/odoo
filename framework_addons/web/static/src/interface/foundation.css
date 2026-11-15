@@ -8,6 +8,8 @@
 :root {
     color-scheme: light;
     --mp-ui-close-filter: none;
+    --mp-ui-check-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m4 8 3 3 5-6'/%3e%3c/svg%3e");
+    --mp-ui-mixed-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8h8'/%3e%3c/svg%3e");
     --mp-ui-font: "MP Geist", "Segoe UI", system-ui, sans-serif;
     --mp-ui-canvas: #f7f7f8;
     --mp-ui-surface: #fff;
@@ -84,7 +86,7 @@
         --btn-active-bg: var(--mp-ui-hover); --btn-active-color: var(--mp-ui-ink);
         --btn-active-border-color: var(--mp-ui-control-line);
     }
-    .o_web_client .btn-secondary { --btn-bg: var(--mp-ui-surface); }
+    .o_web_client .btn-secondary { --btn-bg: var(--mp-ui-surface); --btn-disabled-bg: var(--mp-ui-surface); --btn-disabled-color: var(--mp-ui-muted); --btn-disabled-border-color: var(--mp-ui-line); }
     .o_web_client .btn-link { color: var(--mp-ui-link); }
     .o_web_client .dropdown-menu {
         --dropdown-bg: var(--mp-ui-surface); --dropdown-color: var(--mp-ui-ink);
@@ -180,4 +182,23 @@
     .mp-app-sidebar { border-inline-end: 0; border-bottom: 1px solid var(--mp-ui-line); padding: 8px; }
     .mp-query[open] { flex-basis: 100%; }
     .mp-query-fields { position: static; width: 100%; margin-block-start: 6px; box-shadow: none; }
+}
+
+@media screen {
+    .o_web_client .btn-outline-primary {
+        --btn-color: var(--mp-ui-ink); --btn-border-color: var(--mp-ui-control-line);
+        --btn-hover-color: var(--mp-ui-on-action); --btn-hover-bg: var(--mp-ui-action);
+        --btn-hover-border-color: var(--mp-ui-action); --btn-active-bg: var(--mp-ui-action);
+        --btn-active-color: var(--mp-ui-on-action); --btn-active-border-color: var(--mp-ui-action);
+    }
+    .o_web_client .o-checkbox:not(.form-switch):not(.o_switch) .form-check-input:checked {
+        background-color: var(--mp-ui-action); border-color: var(--mp-ui-action);
+        --form-check-bg-image: var(--mp-ui-check-image);
+    }
+    .o_web_client .o-checkbox:not(.form-switch):not(.o_switch) .form-check-input:indeterminate {
+        background-color: var(--mp-ui-action); border-color: var(--mp-ui-action);
+        --form-check-bg-image: var(--mp-ui-mixed-image);
+    }
+    .o_web_client .form-check-input:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; box-shadow: none; }
+    .o_web_client :is(.o_content, .o_list_renderer, .mp-app-content, .modal-body) { scrollbar-color: var(--mp-ui-control-line) var(--mp-ui-canvas); }
 }

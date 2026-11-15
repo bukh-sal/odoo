@@ -2,6 +2,8 @@
 :root {
     color-scheme: dark;
     --mp-ui-close-filter: invert(1);
+    --mp-ui-check-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23202127' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m4 8 3 3 5-6'/%3e%3c/svg%3e");
+    --mp-ui-mixed-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23202127' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8h8'/%3e%3c/svg%3e");
     --mp-ui-canvas: #151619;
     --mp-ui-surface: #1c1e23;
     --mp-ui-ink: #f0f1f4;

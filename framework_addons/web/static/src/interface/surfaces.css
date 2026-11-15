@@ -116,3 +116,49 @@
     .mp-page-button { min-width: 44px; min-height: 44px; }
     .mp-page-previous > span, .mp-page-next > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
 }
+
+/* Native records keep their model and field declarations; this owns their frame. */
+@media screen {
+    .o_web_client .mp-native-record-controls { padding: 20px 24px 16px !important; gap: 12px !important; }
+    .mp-native-record-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; }
+    .mp-native-record-heading { flex: 1; min-width: 0; }
+    .mp-native-record-heading .o_breadcrumb { flex-direction: row !important; align-items: center; justify-content: flex-start !important; gap: 8px; }
+    .mp-native-record-heading .breadcrumb { margin: 0; font-size: 12px; }
+    .mp-native-record-heading .o_last_breadcrumb_item { font-size: 13px !important; font-weight: 500; color: var(--mp-ui-muted); }
+    .mp-native-record-header > .mp-record-actions { justify-content: flex-end; margin-inline-start: auto; }
+    .mp-native-record-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; }
+    .mp-native-record-toolbar > .o_control_panel_navigation { margin-inline-start: auto; flex-grow: 0 !important; }
+    .mp-native-record-toolbar .o_control_panel_navigation:empty { display: none !important; }
+    .mp-native-record-toolbar:has(> .o_control_panel_actions:empty):has(> .o_control_panel_navigation:empty) { display: none; }
+    .mp-record-navigation { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+    .mp-record-position { flex: 0 1 auto; margin: 0; }
+    .mp-record-step-buttons { display: inline-flex; align-items: center; gap: 4px; }
+    .mp-record-step-buttons .mp-page-button { border-color: var(--mp-ui-line); background: var(--mp-ui-surface); }
+    .mp-form-status { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+    .mp-form-save-state { color: var(--mp-ui-muted); font-size: 12px; line-height: 20px; }
+    .mp-form-status.is-invalid .mp-form-save-state { color: var(--mp-ui-danger-ink); }
+    .o_web_client .o_list_renderer .mp-choose-columns { min-width: 36px; min-height: 36px; border-radius: var(--mp-ui-radius); }
+    .mp-choose-columns:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: -2px; }
+    .o_web_client .o_form_view .o_form_sheet .oe_title { margin-bottom: 24px; }
+    .o_web_client .o_form_view .o_form_sheet .oe_title > h1 { min-height: 0; margin-bottom: 0; }
+    .o_web_client .o_form_view .o_form_sheet > .o_group { margin-block: 24px; }
+    .o_web_client .o_form_view .o_form_sheet .o_horizontal_separator { font-size: 14px; font-weight: 600; text-transform: none !important; }
+    .o_web_client .o_form_view .o_form_sheet .o_form_label { color: var(--mp-ui-muted); font-size: 12px; font-weight: 500; }
+    .o_web_client .o_form_sheet .o_field_widget:not(.o_readonly_modifier) :is(input.o_input, textarea.o_input) {
+        border: 1px solid var(--mp-ui-control-line); border-radius: 5px; min-height: 34px; padding: 6px 10px;
+    }
+    .o_web_client .o_form_sheet .oe_title .o_field_widget input.o_input { padding: 0; border-color: transparent; border-radius: 0; }
+    .o_web_client .o_form_sheet .o_field_widget :is(input.o_input, textarea.o_input):focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 2px; }
+    .mp-native-table-header .mp-page-actions { width: auto; }
+    :dir(rtl) .mp-record-step-buttons i { transform: rotate(180deg); }
+}
+@media screen and (max-width: 767px) {
+    .o_web_client .mp-native-record-controls { padding: 16px !important; }
+    .mp-native-record-header { gap: 12px; }
+    .mp-native-record-header > .mp-record-actions { flex-basis: 100%; }
+    .o_web_client .mp-native-record-controls .btn, .o_web_client .o_list_renderer .mp-choose-columns { min-height: 44px; min-width: 44px; }
+    .mp-native-record-toolbar { justify-content: flex-end; }
+    .o_web_client .o_form_sheet .o_field_widget:not(.o_readonly_modifier) :is(input.o_input, textarea.o_input) { min-height: 44px; }
+}
+
+@media screen { .mp-form-save-state:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 3px; border-radius: 3px; } }

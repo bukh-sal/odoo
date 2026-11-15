@@ -17,6 +17,10 @@ authority/optional-app matrix. Final canonical waits for final source freeze.
 This is continued Meridian-led critique, not final visual acceptance. UI0/4.
 Historical source qualifications retain their original scope.
 
+Next source candidate0.2.18 implements the shared native record frame/status/
+loaded-ID navigation and semantic/control corrections under the [fresh plan](ui-native-records-refinement-plan.md). Its source/compiler proofs are recorded separately;
+it is not installed or visually accepted. Current private app pins remain exact.
+
 
 The provisional local platform code is0.2.12/native core19.0.0.2.12 and
 web19.0.2.12.0. Its shared presentation exports and app-owned responsibilities

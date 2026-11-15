@@ -207,3 +207,6 @@ footers; installed browser support is provisional until the actual matrix passes
 
 
 Native collection pagination uses the current model offset/limit/total and existing onUpdate callback. TablePagination accepts optional isGrouped for honest group totals; nested consumers supply their own grouping/count scope. The flag changes wording only, never queries or permissions. Single pages show a quiet count; limited counts never invent a final page.
+
+
+Native record forms select the shared ControlPanel record frame automatically; in-dialog forms retain their ordinary footer. RecordNavigation consumes the existing loaded-ID offset/limit1/count/onUpdate, names the loaded scope honestly and does not wrap or advance optimistically. The ordinary form save, validation, revision CAS and save-on-leave behavior remain. FormStatusIndicator describes its own explicit pending commands and the actual model/local-field dirty/valid state; failed/refused callbacks do not become Saved. Native input hooks provide a title fallback from field metadata without overriding app labels/ARIA/title. Authors should still supply visible labels or section context; this is not a replacement for app semantics.

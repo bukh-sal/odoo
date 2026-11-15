@@ -2886,3 +2886,6 @@ Owner native collection direction and five local references reviewed. Source cor
 
 
 15November2026: private Partners9667ce1/0.1.3 archive06d8f48d29454B, onef41a69e2candidate, normal85d1237dtwo-scope upgrade149.141s/config13. Actual desktop header/query/columns/page3 and Notes heading/fullwidth960.95px, narrow314.02px at390x845 verified; no UI save/draft. Original and Sample166rows plus other17tables/history/tenothers exact. Visually critique next native form actionstrip/sparse fieldgrid, unnamed Notes control/columnchooser and absent list h1; nextsharedpass must address these together, not accept screenshots as finalquality.
+
+
+15November2026: activated fresh ui-native-records-refinement-plan from Meridian partner360 and current installed17/app13. Implemented sourcecore18 without app changes.37affected Node/66Python pass,27real templates compile, realOwl mounted navigation/status/TextField with actual native button/bus/input hooks proves refusal/pending/validity and label association. A parent-only label patch exposed initial ARIA fallback overriding the app label; changed to native title fallback per HTML-AAM. Preserved helper realm/reactive fixture failures. Core18 source/image/normal maintenance/actual in-app verification next; no canonical rerun or phase acceptance yet.

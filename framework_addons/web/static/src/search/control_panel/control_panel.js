@@ -2,6 +2,7 @@ import { _t } from "@web/core/l10n/translation";
 import { browser } from "@web/core/browser/browser";
 import { getActiveHotkey } from "@web/core/hotkeys/hotkey_service";
 import { Pager } from "@web/core/pager/pager";
+import { RecordNavigation } from "@web/interface/record_navigation";
 import { useService } from "@web/core/utils/hooks";
 import { Dropdown } from "@web/core/dropdown/dropdown";
 import { useCommand } from "@web/core/commands/command_hook";
@@ -91,6 +92,7 @@ export class ControlPanel extends Component {
     static template = "web.ControlPanel";
     static components = {
         Pager,
+        RecordNavigation,
         SearchBar,
         Dropdown,
         DropdownItem,

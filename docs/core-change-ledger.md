@@ -401,3 +401,6 @@ Core17 normally installed once144.328s (656905f8), exactcheckpoint/18tables/full
 
 
 Partners0.1.3 normally installed149.141s (85d1237d) on unchangedcore17/fourotherarchives. Actual native columns/subtitle/optional technical fields and fullwidth Notes heading atdesktop390px verified. All166partners/17other tables/fullhistory/tenothers exact. Shared native form anatomy/field and chooser names/title heading/narrow controls remain observed findings; fullUI0/4 and finalcanonical still open.
+
+
+Native record source0.2.18 prepared: shared frame, loaded-ID navigation, truthful pending/invalid save state, field/browser label fallback, heading/chooser names, coherent form/control styling.37Node/66Python/27real Owl templates and locked Sass/RTL pass. Actual Owl/TextField/native useBus/button helper witness passes with passive layout boundaries stubbed; original input/status code fails two discriminating witnesses. Initial fixture syntax/realm/reactive setup failures and real ARIA-fallback counterexample retained. Native image/maintenance/installed semantics and full original matrix still pending; UI0/4.

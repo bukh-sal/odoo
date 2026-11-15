@@ -10,7 +10,7 @@
         <div t-if="collapsedBreadcrumbs.length || visiblePathBreadcrumbs.length" class="o_breadcrumb d-flex flex-row flex-md-column align-self-stretch justify-content-between min-w-0">
             <t t-if="env.isSmall">
                 <t t-set="previousBreadcrumb" t-value="visiblePathBreadcrumbs.at(-1)"/>
-                <button class="o_back_button btn btn-link d-print-none px-1 py-0" t-on-click.prevent="previousBreadcrumb.onSelected">
+                <button type="button" class="o_back_button btn btn-link d-print-none px-1 py-0" t-att-aria-label="getBreadcrumbTooltip(previousBreadcrumb)" t-on-click.prevent="previousBreadcrumb.onSelected">
                     <i class="oi oi-fw oi-arrow-left"/>
                 </button>
             </t>
@@ -18,7 +18,7 @@
                 <ol class="breadcrumb flex-nowrap text-nowrap lh-sm">
                     <li t-if="collapsedBreadcrumbs.length" class="breadcrumb-item d-inline-flex min-w-0">
                         <Dropdown>
-                            <button class="btn btn-light btn-sm px-1 p-0">
+                            <button type="button" class="btn btn-light btn-sm px-1 p-0" aria-label="More navigation" title="More navigation">
                                 <i class="oi oi-ellipsis-h"/>
                             </button>
                             <t t-set-slot="content">
@@ -38,7 +38,7 @@
                 </ol>
             </t>
             <div class="d-flex gap-1 text-truncate">
-                <div class="o_last_breadcrumb_item active d-flex gap-2 align-items-center min-w-0 lh-sm">
+                <div class="o_last_breadcrumb_item active d-flex gap-2 align-items-center min-w-0 lh-sm" t-att-role="props.headingLevel ? 'heading' : undefined" t-att-aria-level="props.headingLevel">
                     <span class="min-w-0 text-truncate"><t t-call="web.Breadcrumb.Name"/></span>
                 </div>
                 <t t-call="web.Breadcrumb.Actions"/>
@@ -46,7 +46,7 @@
         </div>
 
         <div t-else="" class="o_breadcrumb d-flex gap-1 text-truncate">
-            <div class="o_last_breadcrumb_item active d-flex fs-4 min-w-0 align-items-center">
+            <div class="o_last_breadcrumb_item active d-flex fs-4 min-w-0 align-items-center" t-att-role="props.headingLevel ? 'heading' : undefined" t-att-aria-level="props.headingLevel">
                 <span class="min-w-0 text-truncate"><t t-call="web.Breadcrumb.Name"/></span>
             </div>
             <t t-call="web.Breadcrumb.Actions"/>

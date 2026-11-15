@@ -25,6 +25,19 @@ export function useInputField(params) {
     const fieldName = params.fieldName || component.props.name;
     const shouldSave = params.shouldSave ?? (() => false);
 
+    // A native title is a fallback; associated labels and explicit ARIA names win,
+    // even when an outside label changes without patching this field component.
+    useEffect(() => {
+        const input = inputRef.el;
+        if (!input || input.hasAttribute("title") || input.hasAttribute("aria-label") || input.hasAttribute("aria-labelledby")) return;
+        const label = component.props.record.fields[fieldName]?.string;
+        if (!label) return;
+        input.setAttribute("title", label);
+        return () => {
+            if (input.getAttribute("title") === label) input.removeAttribute("title");
+        };
+    });
+
     /*
      * A field is dirty if it is no longer sync with the model
      * More specifically, a field is no longer dirty after it has *tried* to update the value in the model.

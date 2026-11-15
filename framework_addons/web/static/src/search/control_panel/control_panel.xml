@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
 
     <t t-name="web.ControlPanel">
-        <div class="o_control_panel d-flex flex-column gap-3 px-3 pt-2 pb-3" t-ref="root" data-command-category="actions" t-att-class="{ 'mp-native-table-controls': display.table }">
+        <div class="o_control_panel d-flex flex-column gap-3 px-3 pt-2 pb-3" t-ref="root" data-command-category="actions" t-att-class="{ 'mp-native-table-controls': display.table, 'mp-native-record-controls': display.record }">
             <Transition t-if="!env.isSmall" visible="state.embeddedInfos.showEmbedded" name="'o-fade'" t-slot-scope="transition" leaveDuration="500">
                 <div class="o_embedded_actions d-flex flex-wrap w-100 align-items-center justify-content-center gap-2" t-att-class="transition.className">
                     <t t-foreach="state.embeddedInfos.embeddedActions" t-as="action" t-key="action.id">
@@ -22,7 +22,7 @@
             <t t-if="display.table">
                 <header class="mp-native-table-header">
                     <div class="mp-native-table-heading">
-                        <Breadcrumbs breadcrumbs="breadcrumbs">
+                        <Breadcrumbs breadcrumbs="breadcrumbs" headingLevel="1">
                             <t t-set-slot="breadcrumb-status-indicator"><t t-slot="control-panel-status-indicator"/></t>
                         </Breadcrumbs>
                         <p t-if="display.description" class="mp-page-description" t-esc="display.description"/>
@@ -42,6 +42,22 @@
                         <t t-slot="control-panel-additional-actions"/>
                         <t t-call="web.ControlPanel.Navigation"/>
                     </div>
+                </div>
+            </t>
+            <t t-elif="display.record">
+                <header class="mp-native-record-header">
+                    <div t-if="!env.config.noBreadcrumbs" class="mp-native-record-heading"><Breadcrumbs breadcrumbs="breadcrumbs"/></div>
+                    <div class="o_control_panel_main_buttons mp-record-actions d-print-none" t-on-keydown="onMainButtonsKeydown">
+                        <t t-slot="control-panel-create-button"/>
+                        <t t-slot="layout-buttons"/>
+                        <t t-slot="control-panel-always-buttons"/>
+                        <t t-slot="control-panel-additional-actions"/>
+                        <t t-slot="control-panel-status-indicator"/>
+                    </div>
+                </header>
+                <div class="mp-native-record-toolbar">
+                    <div class="o_control_panel_actions d-empty-none"><t t-if="display.layoutActions" t-slot="layout-actions"/><t t-slot="control-panel-selection-actions"/></div>
+                    <t t-call="web.ControlPanel.Navigation"/>
                 </div>
             </t>
             <div t-else="" class="o_control_panel_main d-flex flex-wrap flex-lg-nowrap justify-content-between align-items-lg-start gap-2 gap-lg-3 flex-grow-1">
@@ -112,7 +128,8 @@
                     <t t-if="state.embeddedInfos.embeddedActions?.length and env.isSmall">
                         <t t-call="web.embeddedActionsDropdown" />
                     </t>
-                    <div t-if="!display.table and pagerProps and pagerProps.total > 0" class="o_cp_pager text-nowrap " role="search">
+                    <RecordNavigation t-if="display.record and pagerProps and pagerProps.total > 0" t-props="pagerProps"/>
+                    <div t-elif="!display.table and pagerProps and pagerProps.total > 0" class="o_cp_pager text-nowrap " role="search">
                         <Pager t-props="pagerProps"/>
                     </div>
                     <button t-if="state.embeddedInfos.embeddedActions?.length and !env.isSmall" name="embedded_actions" class="btn btn-secondary"

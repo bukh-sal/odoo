@@ -127,3 +127,6 @@ Core0.2.16 reworks owned native collection presentation with existing ControlPan
 
 
 Core0.2.17 replaces fixed native group/facet colour utilities with semantic shared styles and expands the existing primary-action mapping to native dialogs. Uniform rows retain hover/selection; native query controls shrink/wrap and group counts are labelled through an optional presentation flag on existing paginator producers. No query/model/authorization changes; original source notices retained.
+
+
+Core0.2.18 adds the shared native record ControlPanel variant and explicit loaded-record navigation while retaining FormController save/load/leave and model code. Native status controls name state/actions, prevent duplicate pending commands, retain validation disabled state after the existing button executor, and return focus without taking it from another dialog. Breadcrumb heading semantics, native chooser names/keyboard, native input title fallback and semantic checkbox/outline/scrollbar/form styles are owned web presentation edits. The native label precedence was checked against W3C HTML-AAM; no backend/data/schema/authority change or notice removal.
