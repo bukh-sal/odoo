@@ -1,0 +1,105 @@
+{
+  "source": "268d61e957bff44621b1324b865ea866742a3c15",
+  "image_id": "sha256:7e5a0513dee1c08fd44004c07f59f9ab29d9296f4a50eb0a597ab44fa40b888a",
+  "configuration": 24,
+  "operation_id": "ae7b68ce-e3c2-4126-a2f0-5d78a8844a68",
+  "plan_hash": "sha256:8e5b9d9ca171dd7dc28bfe82b5ea5dd0a198f1e61328a9948124fdb038e2bd12",
+  "apply_seconds": 159.047,
+  "source_checks": {
+    "legacy_declarations_unchanged": true,
+    "added_screen_native_rules": 4,
+    "non_screen_rules_exact": true,
+    "rtl_compiled": true,
+    "identity_tests": 10,
+    "unchanged_field_dialog_scroll_sources": {
+      "framework_addons/web/static/src/views/form/form_controller.js": "ff7434f0dafbff1952cdd7570bff67f9c2f3da7ae0357d2489e130109d60ef1a",
+      "framework_addons/web/static/src/views/fields/field.js": "5c94e42485de57ef8acdb4836401fb98d6f05c2b9791e08d119f1a7eefca2388",
+      "framework_addons/web/static/src/core/dialog/dialog.xml": "ad8cc26316837bd734811eecf7526c75e40cb4bda5885d88239e630155feb9de",
+      "framework_addons/web/static/src/webclient/webclient_layout.scss": "a8859e43abccde66846ce18a92230e8bd61f5e8eeb14e388156d4740b248d68b",
+      "framework_addons/web/static/src/interface/surfaces.css": "67c3213c3ee39d300d41b911add3d7855083f741178dac4a04c9edaa3f2800ab"
+    },
+    "limit": "Locked Sass/RTL/CSS selector source proof, not installed colour/hover/layout qualification"
+  },
+  "installed": {
+    "actualLightContrast": 6.9221807091351195,
+    "actualDarkContrast": 9.039793150332017,
+    "narrowDarkContrast": 9.039793150332017,
+    "keyboardFocusVisible": true,
+    "sharedFocusTokenActual": true,
+    "nativeKeyboardRelationNavigationCorrect": true,
+    "backReturnsCorrectCustomer": true,
+    "compactSummaryRetained": true,
+    "nativeEditNameFocusAndCancel": true,
+    "narrowWidthAndBody390": true,
+    "hoverProof": "Locked stylesheet/compiler only; no actual pointer-hover claim",
+    "lightRestored": true,
+    "viewportReset": true,
+    "businessWritesExpected": 0,
+    "remainingCritique": "Native outer frame still heavier than Meridian; no full RTL/zoom/contrast matrix or accessibility claim"
+  },
+  "zero_write_retention": {
+    "full_history_exact": true,
+    "other_targets_exact": 10,
+    "partners": 166,
+    "sample_revision": 3,
+    "tables_exact": 18,
+    "task_original_revision": 2,
+    "utc": "2026-11-15T05:35:01.788634+00:00"
+  },
+  "native_save": {
+    "ui": {
+      "twoNativeSnapshotsBeforeSave": true,
+      "onePrimarySave": true,
+      "saveReturnsReaderAndFocusEdit": true,
+      "staleSaveRefusedWithNamedInvalidOperation": true,
+      "staleDraftPreservedAfterWarning": true,
+      "explicitDiscardThenReloadShowsLatest": true,
+      "ownStaleTab10Closed": true,
+      "noOtherDrafts": true,
+      "warningOverlayMeasurementNotContentSize": true,
+      "warningContentSize": "Inspect retained screenshot; initial JSON measured overlay, not modal content",
+      "remaining": "Database retention verification follows; no self-acceptance from UI only"
+    },
+    "retention": {
+      "all_prior_jobs_outbox_exact": true,
+      "one_new_event": [
+        {
+          "actor_id": 2,
+          "aggregate_id": "e6678e6d-aa4c-43b0-b841-2e7e95039dca",
+          "aggregate_sequence": 4,
+          "causation_id": null,
+          "correlation_id": "cd30d772-259b-406f-b6c2-24fefa54c2e7",
+          "dispatch_generation": 81,
+          "id": 216,
+          "installation_id": 3,
+          "occurred_at": "2026-11-15T05:35:45.395276",
+          "payload": {
+            "kind": "updated",
+            "partner_id": "e6678e6d-aa4c-43b0-b841-2e7e95039dca",
+            "revision": 4
+          },
+          "plugin_id": "dev.local.partners",
+          "public_id": "14ee3885-8165-4a97-9a87-2cc66d241fc1",
+          "release_digest": "sha256:9869b59d3df226c063685bdfb72b55d50d4bd9a1639f538d38dab13adb57a803",
+          "schema_version": 1,
+          "site_id": "47daad99-91f8-46e4-9c19-79b107ee70f4",
+          "state": "pending",
+          "topic": "dev.local.partners.changed",
+          "workspace_id": 1
+        }
+      ],
+      "other_partners_exact": 165,
+      "other_tables_exact": 17,
+      "other_targets_exact": 10,
+      "sample_revision": 4,
+      "utc": "2026-11-15T05:36:42.180385+00:00"
+    }
+  },
+  "limits": [
+    "Actual native light6.92/dark9.04 contrast and keyboard focus only, not full rendered contrast/a11y matrix",
+    "Hover styles compiler-proved; actual pointer hover not claimed",
+    "Warning JSON measures overlay; medium content is verified visually in retained screenshot, no numeric DOM size claim",
+    "Original RTL/real200%zoom/motion/current authority/optional-app/current appfree boot and final canonical remain open",
+    "Native outer plus inner card framing remains a visual refinement consideration"
+  ]
+}

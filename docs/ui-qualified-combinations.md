@@ -1,13 +1,14 @@
 # Shared UI qualification and support boundaries
 
-Latest combination is core0.2.24/config23, Workboard0.2.15, Delivery0.1.7,
+Latest combination is core0.2.25/config24, Workboard0.2.15, Delivery0.1.7,
 Documents0.1.10, Partners0.1.6 and Taskfiles0.1.5.
-[Installed reader evidence](evidence/G7/20261115-ui-partners016-reader-qualification/qualification.json)
-proves compact real-data/empty/status summary, full native Edit/Cancel, current
-viewer controls, paired themes/narrow wrapping/reachability and exact retention.
-Dark native relation link2.69to1 is a measured defect, pending shared correction.
-Original full matrix/current canonical/UI0of4 remain open. No formal accessibility,
-full translation, broad compatibility or publication claim.
+[Direct current evidence](evidence/G7/20261115-ui-core025-links-qualification/qualification.json)
+proves actual native light6.92/dark9.04 link contrast/focus/navigation, compact
+reader, and one real native Save3to4 plus stale refusal/draft retention/Discard.
+Only the declared sample note changed/oneevent; all other data/history/sites exact.
+Actual full RTL/200%zoom/motion/contrast/current authority/optional-app/appfree
+cards and final canonical remain open; UI0of4. No formal accessibility/full
+translation/broad compatibility/publication claim.
 
 The preceding populated combination was core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
