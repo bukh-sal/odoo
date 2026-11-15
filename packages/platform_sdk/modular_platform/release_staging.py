@@ -64,8 +64,35 @@ WEB_LOCALE_READER_BEFORE=WEB_APPEARANCE_READER_AFTER
 WEB_LOCALE_READER_AFTER='eada15def5a6756eab93e0e76f67cc0a3d88ae189c54b882c4429256cdf55f63'
 
 
+def _reviewed_icon_asset_relocation(before,after,files):
+    """One exact shared-primitive move, not a configurable asset-graph escape."""
+    group='web._assets_interface_icons'
+    primitive=['web/static/src/interface/'+name for name in
+        ('icons/lucide.js','icon.js','icon.xml','icon.scss')]
+    if not isinstance(before,dict) or not isinstance(after,dict) or group in before:
+        return False
+    expected=copy.deepcopy(before)
+    backend=expected.get('web.assets_backend')
+    foundation='web/static/src/interface/foundation.css'
+    if not isinstance(backend,list) or backend.count(foundation)!=1:
+        return False
+    index=backend.index(foundation)+1
+    if backend[index:index+3]!=primitive[:3] or any(backend.count(path)!=1 for path in primitive[:3]):
+        return False
+    del backend[index:index+3]
+    for bundle in ('web._assets_core','web.assets_frontend'):
+        values=expected.get(bundle)
+        owl='web/static/lib/owl/odoo_module.js'
+        if not isinstance(values,list) or values.count(owl)!=1:
+            return False
+        values.insert(values.index(owl)+1,['include',group])
+    expected[group]=primitive
+    return expected==after and all(isinstance(files.get('addons/'+path),str)
+        and re.fullmatch('[0-9a-f]{64}',files['addons/'+path]) for path in primitive)
+
+
 def require_web_presentation_manifest(previous,target,files):
-    """Keep native declarations, allowing only appended local shared UI assets.
+    """Keep declarations; allow local appends or the exact shared Icon move.
 
     The exact manifest/file hashes still enter the staged runtime and approval.
     This permits publishing new reusable components, not arbitrary asset graph
@@ -77,6 +104,7 @@ def require_web_presentation_manifest(previous,target,files):
         raise OperatorError('Web presentation maintenance must preserve manifest declarations')
     before,after=previous.get('assets'),target.get('assets')
     if before==after:return
+    if _reviewed_icon_asset_relocation(before,after,files):return
     message='Web maintenance permits only appended inventoried shared-interface asset references'
     if (not isinstance(before,dict) or not isinstance(after,dict) or before.keys()!=after.keys()
             or any(before[key]!=after[key] for key in before if key!='web.assets_backend')):

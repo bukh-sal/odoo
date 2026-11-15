@@ -98,6 +98,9 @@ The source focus-request checks do not substitute for browser focus/draft checks
 
 These additions are source/preview qualified; installed qualification is pending.
 The previously installed core0.2.28 remains the control until normal delivery.
+Installed029 subsequently exposed a frontend asset-closure failure. ADR0092
+corrects the shared primitive packaging in candidate0.2.30; do not treat029 as
+clean installed UI support. The component API is unchanged.
 
 Pass `contextKey="'your.stable.plugin.id'"` to `AppLayout` to remember desktop
 collapse. The key must be a stable identifier, never a translated title, record ID,

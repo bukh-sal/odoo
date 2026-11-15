@@ -1,0 +1,8 @@
+/* Shared with every actual Icon consumer, including the frontend palette. */
+.mp-icon { display: inline-block; flex: 0 0 auto; vertical-align: -.16em; pointer-events: none; }
+:dir(rtl) .mp-icon.is-directional { transform: scaleX(-1); }
+@media screen {
+    .mp-icon-loading { animation: mp-icon-loading 1s linear infinite; }
+    @keyframes mp-icon-loading { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .mp-icon-loading { animation: none; } }
+}

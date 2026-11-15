@@ -4,7 +4,7 @@
 {
     'name': 'Web',
     'category': 'Hidden',
-    'version': '19.0.2.29.0',
+    'version': '19.0.2.30.0',
     'description': """
 Odoo Web core module.
 ========================
@@ -127,9 +127,6 @@ This module provides the core of the Odoo Web Client.
             # Form style should be computed before
             'web/static/src/views/form/button_box/*.scss',
             'web/static/src/interface/foundation.css',
-            'web/static/src/interface/icons/lucide.js',
-            'web/static/src/interface/icon.js',
-            'web/static/src/interface/icon.xml',
             'web/static/src/interface/context_preference.js',
             'web/static/src/interface/breadcrumb_trail.js',
             'web/static/src/interface/breadcrumb_trail.xml',
@@ -215,6 +212,7 @@ This module provides the core of the Odoo Web Client.
 
             'web/static/lib/owl/owl.js',
             'web/static/lib/owl/odoo_module.js',
+            ('include', 'web._assets_interface_icons'),
             'web/static/lib/jquery/jquery.js',
             'web/static/lib/popper/popper.js',
             'web/static/lib/bootstrap/js/dist/util/index.js',
@@ -379,6 +377,13 @@ This module provides the core of the Odoo Web Client.
         # with the addition of a prefixed underscore to reflect the "private"
         # aspect.
 
+        # Shared SVG primitive: backend and frontend have separate asset roots.
+        'web._assets_interface_icons': [
+            'web/static/src/interface/icons/lucide.js',
+            'web/static/src/interface/icon.js',
+            'web/static/src/interface/icon.xml',
+            'web/static/src/interface/icon.scss',
+        ],
         # Bare javascript essentials: module loader, core folder and core libs
         'web._assets_core': [
             # module loader
@@ -388,6 +393,7 @@ This module provides the core of the Odoo Web Client.
             'web/static/lib/owl/owl.js',
             'web/static/lib/owl/odoo_module.js',
             # core
+            ('include', 'web._assets_interface_icons'),
             'web/static/src/env.js',
             'web/static/src/session.js',
             'web/static/src/core/utils/transitions.scss',

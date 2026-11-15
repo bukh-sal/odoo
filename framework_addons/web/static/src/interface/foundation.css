@@ -41,9 +41,6 @@
 }
 
 @media screen {
-    .mp-icon-loading { animation: mp-icon-loading 1s linear infinite; }
-    @keyframes mp-icon-loading { to { transform: rotate(360deg); } }
-    @media (prefers-reduced-motion: reduce) { .mp-icon-loading { animation: none; } }
     .o_web_client code { color: var(--mp-ui-ink); }
     /* Legacy brand utilities still appear in native facets, links and badges. */
     .o_web_client :is(.text-primary, .text-action, .text-favourite) { color: var(--mp-ui-link) !important; }
@@ -147,9 +144,6 @@
     .o_web_client .o_form_view .oe_title h1,
     .mp-page .mp-page-title { font: var(--mp-ui-title); letter-spacing: -.025em; }
 }
-
-.mp-icon { display: inline-block; flex: 0 0 auto; vertical-align: -.16em; pointer-events: none; }
-:dir(rtl) .mp-icon.is-directional { transform: scaleX(-1); }
 
 .mp-query { position: relative; }
 .mp-query-trigger {

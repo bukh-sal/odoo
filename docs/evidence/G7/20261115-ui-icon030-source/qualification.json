@@ -1,0 +1,66 @@
+{
+  "base_head": "8f3e8b407771d2ecb09c965c8aaa0af152524b2d",
+  "candidate": "0.2.30",
+  "source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "38b574198ba3f19f810eb0c0e17d8d8b5d7c2e657f017d8b0a924228f572628d",
+    "framework_addons/web/__manifest__.py": "cd8c9565e9444468680fda95b20f964b8e94274fe27db9a04d1dbf6445bf0ebe",
+    "framework_addons/web/static/src/interface/foundation.css": "42b67539ba35ebb703fba8423b77e56935cbf7415a4451fccf2207b8bd572585",
+    "framework_addons/web/static/src/interface/icon.scss": "9071d113f0ed81b52c98707138d20ad621e097a804f1076dc52561b31e5d992c",
+    "packages/platform_sdk/modular_platform/projection.py": "c0109de2c23e21ad4bda3a52487005093971f080b1ea8603be73f043193b1aac",
+    "packages/platform_sdk/modular_platform/release_staging.py": "75ab3156eccb1796d54bb62a6b07bc2d9ebbfc38195f645e007d77133c7d8fe6"
+  },
+  "cause": {
+    "path": "/web/assets/574f4c7/web.assets_frontend_lazy.min.js",
+    "sha256": "43afe546e33906d51971718f1533953459d7076801bc2c0d38e3b726def982cd",
+    "defined": 238,
+    "icon_defined": false,
+    "direct_icon_consumers": {
+      "@web/core/commands/command_palette": [
+        "@web/interface/icon",
+        "@web/core/dialog/dialog",
+        "@web/core/hotkeys/hotkey_hook",
+        "@web/core/l10n/translation",
+        "@web/core/utils/concurrency",
+        "@web/core/utils/hooks",
+        "@web/core/utils/scrolling",
+        "@web/core/utils/search",
+        "@web/core/utils/timing",
+        "@web/core/browser/feature_detection",
+        "@web/core/utils/html",
+        "@odoo/owl"
+      ]
+    },
+    "command_palette_included": true
+  },
+  "native_asset_and_maintenance_tests": {
+    "cases": 7,
+    "seconds": 0.617,
+    "failed": 0,
+    "actual_native_consumer": true,
+    "orm_lookup_fake": true
+  },
+  "existing_release_staging": {
+    "cases": 9,
+    "seconds": 15.184,
+    "failed": 0
+  },
+  "native_versions": {
+    "cases": 7,
+    "seconds": 1.57,
+    "failed": 0
+  },
+  "css": {
+    "actual_pinned_sass_rtl": true,
+    "ltr_rtl_all_selector_declarations_equal": true,
+    "print_and_reduced_motion_rules_equal": true,
+    "geometry_js_and_public_component_unchanged": true,
+    "scope": "Shared stylesheet relocation only; installed/frontend dependency closure separate"
+  },
+  "scope": "Source only; installed029 frontend errors retained. No030 image or normal upgrade yet.",
+  "pending": [
+    "commit source before new immutable images",
+    "normal zero-app core upgrade with exact independent approval",
+    "new unauthenticated sign-in/zero-app check before app admission",
+    "original creation/detail/interaction/lifecycle/canonical full goal"
+  ]
+}
