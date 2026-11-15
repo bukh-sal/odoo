@@ -12,7 +12,7 @@
                     t-on-click.stop="save"
                     t-ref="save"
                     t-att-disabled="!!state.pending or (!props.model.root.isNew and indicatorMode === 'invalid')">
-                    Save changes
+                    <t t-esc="saveLabel"/>
                 </button>
                 <button
                     type="button"
@@ -20,7 +20,7 @@
                     data-hotkey="j"
                     t-on-click.stop="discard"
                     t-att-disabled="!!state.pending">
-                    Discard
+                    <t t-esc="discardLabel"/>
                 </button>
             </div>
         </div>

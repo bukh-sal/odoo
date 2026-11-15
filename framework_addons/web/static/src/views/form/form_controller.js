@@ -265,6 +265,12 @@ export class FormController extends Component {
         }
 
         this.rootRef = useRef("root");
+        this.editButton = useRef("editButton");
+        this.requestedRecordFocus = null;
+        useEffect(() => this.focusRequestedRecordMode(), () => [
+            this.model.root.isInEdition, this.model.root.resId,
+            this.editButton.el, this.rootRef.el,
+        ]);
         useViewButtons(this.rootRef, {
             beforeExecuteAction: this.beforeExecuteActionButton.bind(this),
             afterExecuteAction: this.afterExecuteActionButton.bind(this),
@@ -313,7 +319,7 @@ export class FormController extends Component {
             useEffect(
                 (isInEdition) => {
                     if (
-                        !isInEdition &&
+                        !this.readFirst && !isInEdition &&
                         !this.rootRef.el
                             .querySelector(".o_content")
                             .contains(document.activeElement)
@@ -355,6 +361,11 @@ export class FormController extends Component {
         };
     }
 
+    get readFirst() {
+        return !!this.display.controlPanel?.record && !this.env.inDialog &&
+            !this.props.readonly && !this.props.saveRecord && !this.props.discardRecord;
+    }
+
     get modelParams() {
         return {
             config: {
@@ -364,7 +375,7 @@ export class FormController extends Component {
                 fields: this.props.fields,
                 activeFields: {}, // will be generated after loading sub views (see willStart)
                 isMonoRecord: true,
-                mode: this.props.readonly ? "readonly" : "edit",
+                mode: this.props.readonly || (this.readFirst && this.props.resId) ? "readonly" : "edit",
                 context: this.props.context,
             },
             state: this.props.state?.modelState,
@@ -471,14 +482,19 @@ export class FormController extends Component {
 
     async onPagerUpdate({ offset, resIds }) {
         const dirty = await this.model.root.isDirty();
+        const nextId = resIds[offset];
         try {
             if (dirty) {
-                await this.model.root.save({
+                const saved = await this.model.root.save({
                     onError: (error, options) => this.onSaveError(error, options, true),
-                    nextId: resIds[offset],
+                    nextId,
                 });
+                if (saved === false) return false;
+                if (this.readFirst && this.model.root.resId === nextId) {
+                    await this.finishRecordEdit(this.model.root, { focus: false });
+                }
             } else {
-                await this.model.load({ resId: resIds[offset] });
+                await this.model.load({ resId: nextId, ...(this.readFirst ? { mode: "readonly" } : {}) });
             }
         } catch (e) {
             if (e instanceof FetchRecordError) {
@@ -665,7 +681,7 @@ export class FormController extends Component {
         // FIXME: disable/enable not done in onPagerUpdate
         if (canProceed) {
             await executeButtonCallback(this.ui.activeElement, () =>
-                this.model.load({ resId: false })
+                this.model.load({ resId: false, ...(this.readFirst ? { mode: "edit" } : {}) })
             );
         }
     }
@@ -687,8 +703,54 @@ export class FormController extends Component {
         return saved;
     }
 
+    async editRecord() {
+        const record = this.model.root;
+        if (!this.readFirst || !this.canEdit || record.isNew || record.isInEdition) return;
+        this.requestedRecordFocus = { kind: "field", record };
+        try {
+            return await executeButtonCallback(this.ui.activeElement, () => record.switchMode("edit"));
+        } catch (error) {
+            this.requestedRecordFocus = null;
+            throw error;
+        }
+    }
+
+    async finishRecordEdit(record, { focus = true } = {}) {
+        if (!this.readFirst || status(this) === "destroyed" || this.model.root !== record || record.isNew) return;
+        if (record.isInEdition) {
+            this.requestedRecordFocus = focus ? { kind: "command", record } : null;
+            await record.switchMode("readonly");
+        }
+    }
+
+    focusRequestedRecordMode() {
+        const requested = this.requestedRecordFocus;
+        if (!requested) return;
+        const record = this.model.root;
+        if (record !== requested.record || status(this) === "destroyed") {
+            this.requestedRecordFocus = null;
+            return;
+        }
+        if ((requested.kind === "field") !== record.isInEdition) return;
+        this.requestedRecordFocus = null;
+        if (this.archInfo.disableAutofocus || hasTouch()) return;
+        const root = this.rootRef.el;
+        if (document.activeElement !== document.body && !root?.contains(document.activeElement)) return;
+        const target = requested.kind === "command" ? this.editButton.el : root?.querySelector(
+            '.o_form_sheet .o_field_widget input:not([disabled]):not([readonly]):not([type="hidden"]), ' +
+            '.o_form_sheet .o_field_widget textarea:not([disabled]):not([readonly]), ' +
+            '.o_form_sheet .o_field_widget select:not([disabled]):not([readonly])'
+        );
+        target?.focus({ preventScroll: true });
+    }
+
     saveButtonClicked(params = {}) {
-        return executeButtonCallback(this.ui.activeElement, () => this.save(params));
+        const record = this.model.root;
+        return executeButtonCallback(this.ui.activeElement, async () => {
+            const saved = await this.save(params);
+            if (saved) await this.finishRecordEdit(record);
+            return saved;
+        });
     }
 
     async discard() {
@@ -696,7 +758,8 @@ export class FormController extends Component {
             this.props.discardRecord(this.model.root);
             return;
         }
-        await this.model.root.discard();
+        const record = this.model.root;
+        await record.discard();
         if (this.props.onDiscard) {
             this.props.onDiscard(this.model.root);
         }
@@ -704,6 +767,8 @@ export class FormController extends Component {
             await this.env.dialogData.close();
         } else if (this.model.root.isNew) {
             this.env.config.historyBack();
+        } else {
+            await this.finishRecordEdit(record);
         }
     }
 

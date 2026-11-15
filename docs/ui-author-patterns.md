@@ -220,3 +220,7 @@ Native collection pagination uses the current model offset/limit/total and exist
 
 
 Native record forms select the shared ControlPanel record frame automatically; in-dialog forms retain their ordinary footer. RecordNavigation consumes the existing loaded-ID offset/limit1/count/onUpdate, names the loaded scope honestly and does not wrap or advance optimistically. The ordinary form save, validation, revision CAS and save-on-leave behavior remain. FormStatusIndicator describes its own explicit pending commands and the actual model/local-field dirty/valid state; failed/refused callbacks do not become Saved. Native input hooks provide a title fallback from field metadata without overriding app labels/ARIA/title. Authors should still supply visible labels or section context; this is not a replacement for app semantics.
+
+## Native read-first source candidate0.2.20
+
+Standard full-page native existing records read before editing; named Edit enters the existing model mode, explicit successful Save/Discard returns to reading. New/dialog/custom persistence/forcedreadonly flows keep their own contract. Native widgets still own their behavior; reading mode is presentation, never write authority or an immutable-view/sandbox guarantee. Backend current scope/revision guards decide every mutation. Original native save-on-leave/visibility remains while editing; do not advertise manual-save-only semantics. No app ID or extra author registry/flag is needed. Source/component proof only until normal installed qualification.

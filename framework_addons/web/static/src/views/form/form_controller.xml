@@ -10,6 +10,7 @@
                     </t>
 
                     <t t-set-slot="layout-buttons">
+                        <button t-if="readFirst and canEdit and !model.root.isNew and !model.root.isInEdition" t-ref="editButton" type="button" class="btn btn-primary o_form_button_edit" data-hotkey="e" t-on-click.stop="editRecord"><i class="fa fa-pencil me-1" aria-hidden="true"/>Edit</button>
                         <t t-if="env.inDialog">
                             <t t-if="footerArchInfo">
                                 <t t-component="props.Renderer" record="model.root" Compiler="props.Compiler" archInfo="footerArchInfo">
@@ -39,7 +40,7 @@
 
                     <t t-set-slot="control-panel-status-indicator">
                         <t t-if="canEdit">
-                            <FormStatusIndicator model="model" discard.bind="discard" save.bind="saveButtonClicked" />
+                            <FormStatusIndicator model="model" discard.bind="discard" save.bind="saveButtonClicked" editing="readFirst and model.root.isInEdition" />
                         </t>
                     </t>
 

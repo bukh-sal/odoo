@@ -8,6 +8,7 @@ export class FormStatusIndicator extends Component {
         model: Object,
         save: Function,
         discard: Function,
+        editing: { type: Boolean, optional: true },
     };
 
     setup() {
@@ -35,7 +36,7 @@ export class FormStatusIndicator extends Component {
     }
 
     get displayButtons() {
-        return this.indicatorMode !== "saved" || !!this.state.pending;
+        return this.indicatorMode !== "saved" || !!this.state.pending || !!this.props.editing;
     }
 
     get indicatorMode() {
@@ -53,7 +54,16 @@ export class FormStatusIndicator extends Component {
         if (this.state.pending === "discard") return _t("Discarding changes…");
         if (this.indicatorMode === "invalid") return _t("Check fields");
         if (this.props.model.root.isNew) return _t("New record");
+        if (this.indicatorMode === "saved" && this.props.editing) return _t("Editing");
         return this.indicatorMode === "dirty" ? _t("Unsaved changes") : _t("Saved");
+    }
+
+    get saveLabel() {
+        return this.props.editing && this.indicatorMode === "saved" ? _t("Done") : _t("Save changes");
+    }
+
+    get discardLabel() {
+        return this.props.editing && this.indicatorMode === "saved" ? _t("Cancel") : _t("Discard");
     }
 
     async perform(kind, callback) {

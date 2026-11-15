@@ -1,3 +1,7 @@
+## Native read-first interaction source0.2.20 -15November2026
+
+Deliberately replace editing-first on standard full-page existing records using existing native modes and explicit Edit. New/dialog/custom persist/forcedreadonly controls retain contract. Normal Save/Discard/pager switch only after successful existing callback; refusal/error keeps draft; destroyed/replaced controllers and external focus guarded. Clean-editing optional status preserves legacy callers. Medium ordinary warning; no native storage/grant/leave/autosave/public wire/app/lock change.50Node66Python/32Owl/freeze122 pass, actual initial producer predecessor-red, real native component/mode/save pipeline with fake ORM boundary passes. Actual immutable installed qualification next, not claimed source-only.
+
 ## Core19 warning and native app declaration proof -15November2026
 
 Partners1.5 actual equal groups/longname/hiddenCAS and core19 fixed warning pass. Stale Notes text remained until explicit Discard, additional witness produced no commit; other data/history/ten sites exact. Generic native Edit/read hierarchy and medium warning are the next separately planned interaction batch; no source20 claim yet. App titles stay app-owned via existing displayName, not a core business-ID branch.
