@@ -1,0 +1,41 @@
+{
+  "source": "7567ccb96776b6d26c93fbc848daa7dbb7d14d30",
+  "platform": "0.2.23",
+  "image_id": "sha256:fb79874044cd440478f1ef792a5519c13336a7afe8b7b378298f4bceb84e8778",
+  "operation_id": "1b90c356-f527-4e30-b8db-eacba2e0f084",
+  "plan_hash": "sha256:222b398e8365d0811a9e7dbfa47a03a67c29ba10cd9bd9ea81187108ed676f97",
+  "configuration": 20,
+  "apply_seconds": 147.266,
+  "source_checks": {
+    "python_identity": 10,
+    "css_rtl": true,
+    "freeze_files": 122,
+    "unchanged_node_attested": 54
+  },
+  "installed": {
+    "narrowWidth": 390,
+    "narrowPageWidth": 390,
+    "editVisibleLight": true,
+    "editVisibleDark": true,
+    "editMinHeight": 43.99147415161133,
+    "keyboardEditFocusName": true,
+    "cleanCancelReturnsReaderEditFocus": true,
+    "cleanDoneReturnsReaderEditFocus": true,
+    "newEditableFocusedName": true,
+    "newDiscardNoTyping": true,
+    "desktopRetained": true,
+    "lightRestored": true,
+    "viewportReset": true,
+    "critique": "Reader still sparse/form-like; app-owned real related-work preview next, not fabricated totals.",
+    "writesExpected": 0
+  },
+  "retention": {
+    "full_history_exact": true,
+    "no_orphan": true,
+    "other_targets_exact": 10,
+    "partners_count": 166,
+    "tables_exact": 18,
+    "utc": "2026-11-15T04:01:01.281442+00:00"
+  },
+  "limit": "Narrow lost-action correction proved; shared related-record styles compiled, actual app preview pending. Original full matrix/current canonical/UI0of4 remain open."
+}

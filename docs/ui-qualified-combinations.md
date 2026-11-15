@@ -1,11 +1,12 @@
 # Shared UI qualification and support boundaries
 
-Latest installed combination is core0.2.22/config19 with unchanged five apps.
-[Direct evidence](evidence/G7/20261115-ui-core022-focus-dialog-qualification/qualification.json)
-proves154.516s maintenance/retention, actual keyboard Edit/Done/Discard/New and
-Preferences dialog repair, zero business/history writes and no orphan. Actual
-390px dark reader exposes inherited hidden Edit; responsive card remains open.
-Original full matrix/UI0of4 remains open.21partial failures are retained.
+Latest installed combination is core0.2.23/config20 with unchanged five apps.
+[Direct responsive evidence](evidence/G7/20261115-ui-core023-responsive-qualification/qualification.json)
+proves147.266s maintenance/exact retention and actual390px light/dark Edit,
+Done/Cancel/New/control visibility without page overflow or business writes.
+Core22's actual focus/Preferences repair remains current. Shared preview styles
+are compiled; app-owned context is the next slice. Original full matrix/current
+canonical/UI0of4 remains open; no formal accessibility or broad support claim.
 
 The preceding populated combination was core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
