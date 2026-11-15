@@ -661,3 +661,13 @@ was deliberately interrupted after creation-time/command-tree verification for
 this concrete new-source defect; original partiallog/exit1150.656s preserved,
 no green/fullhost claim/no timeout restart. All35 operations terminal; no pending
 profile/authority/business fixture. Original full UI0/4 remains active.
+
+15November2026 source36 compatibility: replace unsupported match-parent
+with basic explicit alignment selected by validated root dir=ltr/rtl, preserving
+content dir=auto and both values through pinned RTL-ignore compilation. Actual
+Sass/PostCSS/RTL maps prove only that title rule changes; all other rules exact.
+Four shipped deltas: web/mp_core/SDK identities0.2.36 plus surfaces.css. Native
+identity1.11/transport, all other source and five private app archives unchanged.
+Seven identity tests/freeze122files11rows pass; prior166Node/45Python retain
+unchanged-source scope. Installed actual title check precedes final canonical;
+source35 interrupted partial run is not green. No36build/operation yet.

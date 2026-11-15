@@ -1,0 +1,63 @@
+{
+  "source_base": "ff1b3b214cd54ab5e6f6ac3a525f1d6836a7281e",
+  "candidate": "0.2.36_unpublished",
+  "shipped_source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "074520534cb0fa71046ec5fb9f265ed1d19c5fb7b2d8094de5f0dcc1e8eb9c0e",
+    "framework_addons/web/__manifest__.py": "40d27d55e661f5ad2a0e2224cae880e9704aeafbd9f73ae0229be26cae0c9a13",
+    "framework_addons/web/static/src/interface/surfaces.css": "fa221bab8926b436171dbcc7b903da9172730a9dc61b20831565f2dbafb98fd3",
+    "packages/platform_sdk/modular_platform/projection.py": "b4cadfdb8a03596a21a5ac0d41bdf2537e80615cf0067bdbb630d9027917accc"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "artifacts": {
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    }
+  },
+  "native_transport_unchanged_sha256": "14fd795e5cf98259ac4242735db44fc697f7bcdaef8a8db1d03745308bd07ca8",
+  "css": {
+    "pinned_sass_postcss_rtl": true,
+    "explicit_root_direction_rules_preserved_in_both_bundles": true,
+    "all_other_rules_exact": true,
+    "source_sha256": "fa221bab8926b436171dbcc7b903da9172730a9dc61b20831565f2dbafb98fd3",
+    "scope": "Actual compiler/rule maps; installed geometry required, no source injection"
+  },
+  "native_versions": {
+    "cases": 7,
+    "log_sha256": "6e09616e2330b02f5fe8011bb02c4fe30fab182a0b28f59778eb0d55d539e685"
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "unchanged_source035_node166_python45_scope": "All JS/transport/form/staging source bytes unchanged; no broad repeat for stylesheet compatibility. Full current-source canonical deferred until actual installed36 title proof.",
+  "limits": [
+    "Sass and rule-map proof only; actual in-app browser alignment remains required",
+    "No36 image/operation yet; current35 other corrections verified and all business retained",
+    "Full original UI goal remains active"
+  ]
+}
