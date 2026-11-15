@@ -77,3 +77,37 @@ data, not drift to undo. Report gaps; do not claim all legacy icons/Arabic copy 
 the original four phase cards complete from this bounded installed check. Keep
 resources/evidence for the later creation/detail and integrated lifecycle matrix;
 exact cleanup requires a later current ownership inventory, never prefix/prune.
+
+## Installed finding: shared icon dependency closure
+
+The first empty-core29 visit renders the backend shell but sign-in reports two
+module-loader errors. The actual rendered login lazy bundle contains
+`@web/core/commands/command_palette`, now importing `@web/interface/icon`, while
+that primitive was declared only in `web.assets_backend`. The minimal loader's
+console URL is the reporter, not the consuming bundle. Captured lazy-bundle bytes
+and dependency graph prove the missing import. Do not waive these errors or admit
+the app-enabled29 image. The main site's old28 form remains untouched.
+
+Before another image: add one native included asset group containing only the
+pinned Icon/data/XML and its two base SVG style rules. Include it in backend's
+`web._assets_core` and frontend's actual independently assembled
+`web.assets_frontend`; the latter does not include `_assets_core`. Remove the old
+backend-only duplicate and move the same base icon styles out of foundation.css.
+Do not load sidebar preferences, Shell, business UI or a second Owl into the
+minimal login bundle. Keep all routing/authority/runtime guards unchanged.
+
+Add a regression using the actual native manifest include/remove/ordered-path
+consumer, with only ORM records/path expansion mocked. Reproduce missing Icon in
+the old frontend manifest, prove current frontend/backend dependency closure and
+minimal-bundle independence. Preserve the actual old bundle/logs. Reserve new
+core/web/native0.2.30 identities because29 images already exist; private app bytes
+need no new relabel. New immutable images and a fresh normal review are required.
+First inspect whether the existing zero-app target supports a normal reviewed
+core upgrade; if it refuses, record the actual reason and use a new normal empty
+bootstrap rather than bypassing a scope or image check. No29 app admission or
+blind retry. Repeat installed sign-in/empty-core checks before app installation.
+
+The login's legacy vendor branding/eye glyph and remaining account glyphs are a
+separate recorded cohesion gap for the integrated visual pass; the current slice
+has not replaced every legacy icon or every frontend surface. Preserve licence
+and provenance notices when retiring product branding.
