@@ -100,3 +100,58 @@ Keep UI acceptance counts separate from implementation progress. Historical
 R1/PP acceptance stays intact. Publish no source, image, private app or data.
 Finish the goal only when all four original phases and explicit deliverables
 are proved; otherwise leave it active with the exact next safe action.
+
+## Current-source findings and bounded correction35
+
+The fresh cohort disproved the already-active-language assumption: Arabic was
+defined/inactive. The existing native administrator has no platform workspace;
+normal login correctly shows an empty chooser. A journaled normal authenticated
+native base.language.install wizard, overwrite=false, activated that existing
+locale and loaded its normal translations. No new principal/group/access/module
+was introduced. Browser login auto-filled the administrator timezone; this was
+detected and restored through normal native profile API before the locale pass.
+Arabic remains active as disposable test configuration; Alice returned to her
+exact original English profile. All22 business tables, groups, other semantic
+profiles and protected targets are exact. Private preflight mistakes/refusals
+remain preserved; the actual native language wizard ran exactly once.
+
+Actual current first Arabic reload has ar-001/rtl and RTL asset URLs; first
+English return has en-US/ltr and LTR assets.390px customer/contact/task and real
+pinned Documents routes have no page overflow. Phone/email and escaped218B text
+stay LTR. Logical Left/Enter tab activation works. App translations are partial,
+not a full Arabic product claim. A settled dark Documents measurement finds
+Move to trash at3.68:1; native visible text samples pass. A zero-element sample
+during reload and a hidden account-text aggregation are not acceptance evidence.
+
+One more real navigation finding: native nested customer/task URL reload calls
+/web/action/load_breadcrumbs. That readonly endpoint reads scoped model names,
+but native_webclient currently adds pinned headers only to dataset routes.
+Console records two missing-scope warnings. A real authenticated read-only
+differential reproduces both missing-scope errors, then reads the real A names
+with existing pinned headers; B refuses the foreign record without its name.
+No server guard needs changing or authority context needs forging.
+
+Implement this coherent35 batch before freezing:
+
+- Sufficient generic informational sheet selector specificity; preserve ordinary
+  forms/New/Edit/dialog/print. Remove the redundant8px default margin only on
+  the shared mp-page-title; retain roomier grid gaps and44px narrow actions.
+- Shared dir=auto page titles use match-parent alignment, retaining content
+  isolation while respecting the surrounding RTL identity layout.
+- Outline destructive buttons use existing semantic danger tokens in default,
+  hover/active/disabled states; keep focus-visible policy and actual actions.
+- Native RPC adds the same immutable page workspace/release headers and no-cache
+  rule to exactly /web/action/load_breadcrumbs, alongside the existing dataset
+  prefix. Unknown/action/run/foreign URLs stay unchanged. Existing server scope/
+  current-release/read/access checks, locked workspace and caller overrides stay
+  authoritative. Missing/foreign/stale requests still refuse. Test actual source
+  transport, malicious caller headers and the real endpoint differential.
+
+Reserve core0.2.35/web19.0.2.35.0/mp_core19.0.0.2.35 and the required monotonic
+mp_identity19.0.0.1.11 identity for its changed static bytes. Expected8 shipped
+paths: those three manifests, SDK projection, native_webclient.js and shared
+foundation/surfaces/record_sections styles. All five app archives, Python,
+backend/schemas/frozen protocols/notices remain exact. No new public wire field,
+scope grant or app registry. Native preferences/login retain some legacy glyphs;
+record them as separate surfaces, not a false all-icons-retired claim. Use one
+normal immutable core rollout and actual installed checks before accepting35.
