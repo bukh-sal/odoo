@@ -18,6 +18,36 @@ const updateMethod=formSource.match(/    async onPagerUpdate\(\{ offset, resIds 
 const FormPager=new Function('FetchRecordError','return class {'+updateMethod+'}')(class extends Error{});
 const displaySetup=formSource.slice(formSource.indexOf('        this.display = { ...this.props.display };'),formSource.indexOf('        this.formInDialog = 0;'));
 const setupDisplay=new Function(displaySetup);
+
+test('compact native record count preserves the full status and existing loaded-ID traversal',async()=>{
+    const calls=[],props={offset:1,limit:1,total:3,compact:true,onUpdate:async(...args)=>calls.push(args)};
+    const n=new RecordNavigation(props);n.setup();assert.equal(n.range,'Record 2 of 3 loaded');assert.equal(n.compactRange,'2 / 3');
+    await n.go(3);assert.deepEqual(calls,[[{offset:2,limit:1},true]]);assert.equal(props.offset,1,'No optimistic record change');
+    for(const extra of [{total:0,offset:0},{limit:2},{offset:8}]) {
+        const invalid=new RecordNavigation({...props,...extra});invalid.setup();assert.equal(invalid.compactRange,invalid.range);
+    }
+});
+
+test('actual informational frame class is opt-in and never changes edit, New or dialog class defaults',()=>{
+    const method=formSource.match(/^    get className\(\) \{[^]*?^    }/m)[0];
+    const Controller=new Function('SIZES','hasTouch','return class {'+method+'}')({XS:0,SM:1,XXL:5},()=>false);
+    const c=new Controller();c.ui={size:3};c.props={className:'author-class'};c.env={inDialog:false};c.model={root:{isNew:false,isInEdition:false}};c.display={controlPanel:{recordBodyTitle:true}};
+    assert.equal(c.className['mp-informational-record'],true);assert.equal(c.className['author-class'],true);
+    for(const change of [()=>c.env.inDialog=true,()=>{c.env.inDialog=false;c.model.root.isNew=true;},()=>{c.model.root.isNew=false;c.model.root.isInEdition=true;},()=>{c.model.root.isInEdition=false;c.display.controlPanel.recordBodyTitle=false;}]) {
+        change();assert.equal(Object.hasOwn(c.className,'mp-informational-record'),false);assert.equal(c.className['author-class'],true);
+    }
+});
+
+test('actual native layout derives readonly-only presentation without mutating the author display object',()=>{
+    const method=formSource.match(/^    get layoutDisplay\(\) \{[^]*?^    }/m)[0];const Controller=new Function('return class {'+method+'}')();
+    const c=new Controller();c.display={controlPanel:{record:true,recordBodyTitle:true,searchBar:false},searchPanel:false};c.env={inDialog:false};c.model={root:{isNew:false,isInEdition:false}};
+    const before=structuredClone(c.display);assert.equal(c.layoutDisplay,c.display);
+    for(const mode of ['edit','new','dialog','unloaded']) {
+        c.env.inDialog=mode==='dialog';c.model.root=mode==='unloaded'?undefined:{isNew:mode==='new',isInEdition:mode==='edit'};
+        assert.equal(c.layoutDisplay.controlPanel.recordBodyTitle,false);assert.equal(c.layoutDisplay.controlPanel.record,true);assert.equal(c.layoutDisplay.controlPanel.searchBar,false);assert.equal(c.layoutDisplay.searchPanel,false);assert.deepEqual(c.display,before);
+    }
+    c.display.controlPanel=false;assert.equal(c.layoutDisplay,c.display);
+});
 test('actual form presentation selection preserves caller data and disabled/dialog control panels',()=>{
     for(const controlPanel of [false,true,{table:true,searchBar:false}])for(const inDialog of [false,true]) {
         const props={display:{controlPanel,searchPanel:false}},before=structuredClone(props);

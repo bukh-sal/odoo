@@ -5,6 +5,7 @@ import { CheckBox } from "@web/core/checkbox/checkbox";
 import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
 import { session } from "@web/session";
+import { Icon } from "@web/interface/icon";
 
 import { Component } from "@odoo/owl";
 import { imageUrl } from "@web/core/utils/urls";
@@ -13,7 +14,7 @@ const userMenuRegistry = registry.category("user_menuitems");
 
 export class UserMenu extends Component {
     static template = "web.UserMenu";
-    static components = { DropdownGroup, Dropdown, DropdownItem, CheckBox };
+    static components = { DropdownGroup, Dropdown, DropdownItem, CheckBox, Icon };
     static props = {};
 
     setup() {

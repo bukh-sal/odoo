@@ -80,3 +80,5 @@ archives, failed private verification traces and native cleanup evidence remain.
    card geometry, compare screenshots and critique. Preserve main18610 human form
    and user tabs. Finish original integrated matrix after this coherent source
    pass, rather than treating a pretty screenshot as full qualification.
+
+Source inspection addendum: native list headers did not expose aria-sort; the correction adds truthful primary sort state without changing sorting. Existing shared Icon aliases already resolve legacy names; remove the remaining FontAwesome presentation classes and direct gear/account glyphs. The native frontend test asset is inventoried/shipped already; preserve and update its two useful SVG/ARIA assertions, but do not claim it ran. No whole-tree packaging change in this UI slice.

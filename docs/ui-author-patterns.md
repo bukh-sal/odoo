@@ -379,3 +379,5 @@ does not grant access or sandbox trusted code. Other record-owning apps may expo
 their own explicit content seam while reusing the same core cards/navigation.
 Document the exact qualified owner/provider combination. Backend scope, current
 capabilities, release identity and revision checks remain authoritative.
+
+Core>=0.2.34 derives informational framing from an existing readonly record; New, Edit and dialogs retain their ordinary layout even when an author keeps recordBodyTitle set. RecordNavigation compact is presentation-only and retains the full accessible status and loaded-ID callback. Partners>=0.1.10 resolves actual native TranslatedString descriptors after translation readiness, retaining plain-label validation; component literal props can use native .translate.

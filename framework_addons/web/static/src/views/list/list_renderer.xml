@@ -20,6 +20,7 @@
                         <t t-foreach="columns" t-as="column" t-key="column.id">
                             <th t-if="column.type === 'field'"
                                 t-att-data-name="column.name"
+                                t-att-aria-sort="getSortDirection(column)"
                                 t-att-class="getColumnClass(column) + ' opacity-trigger-hover w-print-auto'"
                                 t-on-pointerup="onColumnTitleMouseUp"
                                 t-on-click="() => this.onClickSortColumn(column)"
@@ -34,7 +35,7 @@
                                         <span class="d-block min-w-0 text-truncate flex-grow-1 flex-shrink-1" t-att-class="isNumeric ? 'o_list_number_th' : ''"
                                               t-esc="column.label"/>
                                         <div class="o_list_header_label_spacer"/>
-                                        <Icon name="getSortableIconClass(column)" className="'o_list_sortable_icon ' + getSortableIconClass(column)" size="14"/>
+                                        <Icon name="getSortableIconName(column)" className="'o_list_sortable_icon ' + getSortableIconClass(column)" size="14"/>
                                     </div>
                                     <span
                                           class="o_resize position-absolute top-0 end-0 bottom-0 ps-1 bg-black-25 opacity-0 opacity-50-hover z-1"

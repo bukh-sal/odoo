@@ -164,3 +164,5 @@ Core0.2.18 adds the shared native record ControlPanel variant and explicit loade
 15November2026 creation32: scope desktop fullscreen and flush side-sheet geometry to opt-in creation surfaces, keeping inherited ordinary Dialog and print declarations. Expanded creation ignores drag offsets without changing the mounted native form/model. Native compact creation selects existing md size. Source proof separate from installed; no upstream notices removed.
 
 15November2026 record33: add presentation-only native record tabs/cards; optional recordBodyTitle selects compact inline breadcrumbs while ordinary native form controls, validation, CAS, print and callbacks retain defaults. No upstream licence/provenance removed.
+
+15November2026 record34: model-derived opt-in informational native frame/traversal presentation; ordinary forms and native state/handlers retained. Normalize shared card margin, use pinned semantic SVG sort/menu/account marks and accurate aria-sort. Existing native sort behavior assertions retained with current SVG/ARIA expectations. No attribution/licence changes.

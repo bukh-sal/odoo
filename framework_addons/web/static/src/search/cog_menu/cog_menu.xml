@@ -5,8 +5,8 @@
         <div t-if="hasItems" class="o_cp_action_menus d-flex align-items-center gap-1" t-att-class="{'pe-2': !env.isSmall}">
             <div class="lh-1">
                 <Dropdown menuClass="'lh-base'" beforeOpen.bind="loadPrintItems">
-                    <button class="d-print-none btn" t-att-class="env.isSmall ? 'btn-secondary' : 'lh-sm p-0 border-0'" data-hotkey="u" data-tooltip="Actions" aria-label="Actions menu">
-                        <i class="fa fa-fw fa-cog"/>
+                    <button class="d-print-none btn btn-secondary" data-hotkey="u" data-tooltip="Actions" aria-label="Actions menu">
+                        <Icon name="'ellipsis'"/>
                     </button>
 
                     <t t-set-slot="content">
@@ -14,7 +14,7 @@
                         <t t-if="state.printItems.length">
                             <Dropdown t-if="state.printItems.length > 1">
                                 <button>
-                                    <i class="fa fa-print me-1"/> <t t-out="props.printDropdownTitle"/>
+                                    <Icon name="'printer'" className="'me-1'"/> <t t-out="props.printDropdownTitle"/>
                                 </button>
                                 <t t-set-slot="content">
                                     <DropdownItem

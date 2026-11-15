@@ -1,0 +1,127 @@
+{
+  "source_base": "d4c0ff03c1cf2538fd77c727d26a747581552be5",
+  "candidate": "0.2.34_unpublished",
+  "source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "029460c68a851c0d8976f8a5537e01d941b6ec5256cc7fce5ae18f1a8320ed8c",
+    "framework_addons/web/__manifest__.py": "c8bba9753197fbdff64b4dbf6a7ead2fca2744e2c5c3632e5395f84b46f40f3f",
+    "framework_addons/web/static/src/interface/record_navigation.js": "152843ee014544da4fd77dc8776a1823953b11293f996ea61022e76462b31d3e",
+    "framework_addons/web/static/src/interface/record_navigation.xml": "6d2b5b43bd45ac3de7c2ebe0d29621ec62e578a0b091208821b0d509f487b90f",
+    "framework_addons/web/static/src/interface/record_sections.css": "d4e70e9b27ef313bee2cc401d9fa04d25e2d7f28feb19721f21e8d624e8fd08b",
+    "framework_addons/web/static/src/search/cog_menu/cog_menu.xml": "d66548b8eb2fbccc6396ac9a2c5fd21ccbd443fd656b2b441e154b914c3b6984",
+    "framework_addons/web/static/src/search/control_panel/control_panel.xml": "cf0eda1731c284c5c71cca8ea5c1a324b20be92b09649370d63f083d94d398c7",
+    "framework_addons/web/static/src/views/form/form_controller.js": "d6ba67937e80a872ca293deef93e1293058eeb6f157bec87baf7e418b003552f",
+    "framework_addons/web/static/src/views/form/form_controller.xml": "1a03d18a19f33e95311ced46327d3ea062be4a6ab597200112f560fc299c620c",
+    "framework_addons/web/static/src/views/list/list_renderer.js": "99877a4fea1e560b07026161c8883126f2540f7165d14205a0237f9e83e4de07",
+    "framework_addons/web/static/src/views/list/list_renderer.xml": "43fccfe45e8553e4ab1c3c35ac420f39ef95680e85ceea3397615aef3ec26386",
+    "framework_addons/web/static/src/webclient/user_menu/user_menu.js": "5fef8c2c319cc2853b7e04493df80b503c99723c496141f628df4b67b29ba4d3",
+    "framework_addons/web/static/src/webclient/user_menu/user_menu.xml": "76a0671dd9c63db051b39dadc7ae70eac61c6fa2d26b0a6a991e3198fc76f8c7",
+    "framework_addons/web/static/tests/views/list/list_view.test.js": "c4691c519bb14e8f679709d4e0c402d40e4808abf6605dfe3b38260e0cd55a27",
+    "packages/platform_sdk/modular_platform/projection.py": "e1fdbcb0e9f0519d90d6995f8981f3c16ebcab1bcd3aa8d6db45a219b96e8c74",
+    "tests/test_native_record_frame.mjs": "54e173712113a1f6f38dd1467fee46d79a741fe50d411b1de3fd2fddedd046ef",
+    "tests/test_native_semantic_icons.mjs": "fb04b2fb9860b0901c76d27e56eb7416927f679d1638593ef7e2ab023646d59c"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "source_cases": {
+    "node": 58,
+    "partners_python": 8,
+    "native_versions": 7,
+    "asset_consumer": 10,
+    "actual_templates": 40
+  },
+  "actual_native_translation": {
+    "actualOwl": true,
+    "actualNativeUseService": true,
+    "actualOwnerReader": true,
+    "actualSharedTabsAndCards": true,
+    "actualAppExternalTemplate": true,
+    "actualNativeLazyTranslationRegisteredBeforeReady": true,
+    "noRepeatedContextReadsOnSelection": true,
+    "currentDenialClearsRenderedFields": true,
+    "actualDeliveryOwnerIntegration": true,
+    "companionDenialRemovesTabAndData": true,
+    "externalNativeFieldORMHTTPBoundary": true,
+    "installed": false
+  },
+  "actual_native_frame": {
+    "actualOwl": true,
+    "actualControlPanelTemplate": true,
+    "actualNativeBreadcrumbAndRecordNavigation": true,
+    "controllerAndModelExternalBoundary": true,
+    "oneTraversalInstancePerMode": true,
+    "compactAccessibleCount": true,
+    "ordinaryAndDialogPlacementRetained": true,
+    "awaitedVetoAndModelOwnedOffset": true,
+    "installed": false
+  },
+  "native_creation_defaults": {
+    "actualOwl": true,
+    "actualFormController": true,
+    "actualFormViewDialog": true,
+    "actualDialogAndConfirmation": true,
+    "actualNativeInputHookAndTextField": true,
+    "actualAskChangesAndDirty": true,
+    "actualNativeFocusHookWithTestVisibilityBoundary": true,
+    "nativeViewLookupAndORMExternal": true,
+    "dialogAndSheet": true,
+    "fullscreenSameInputAndModel": true,
+    "expansionWrites": 0,
+    "keepEditingRetainsDraft": true,
+    "headerEscapeAndNativeCancelGuarded": true,
+    "visibilityAndUnloadNoSave": true,
+    "synchronousUnloadWarning": true,
+    "validationRefusal": true,
+    "explicitSaves": 2,
+    "pristineCancelNoWrite": true,
+    "actualWorkEditorAndSharedHeader": true,
+    "taskThenReminderUnderFakeServiceBoundary": true,
+    "pendingSecondaryCopyNoRetryControls": true,
+    "actualWorkDetailErrorComponent": true,
+    "customFullscreenKeepsDraftWithoutEffect": true,
+    "sourceOnlyNotInstalled": true
+  },
+  "css": {
+    "pinned_sass_rtl": true,
+    "logical_css_equal": true,
+    "source_sha256": {
+      "framework_addons/web/static/src/interface/record_sections.css": "d4e70e9b27ef313bee2cc401d9fa04d25e2d7f28feb19721f21e8d624e8fd08b",
+      "applications/external/partners/native/mp_partners/static/src/relationship.css": "d073873b7430c9a9474a12759fff13d4d14619afdeaf73e2eb8d1824ff394fec"
+    },
+    "target_sha256": "036ac5f8cbcb18c8805e3f2e302a45789d7e3c84acbd07b77f52f7d88cfa2e7a",
+    "scope": "Read-only stdin compiler. No installed CSS/layout qualification."
+  },
+  "archives": {
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    }
+  },
+  "freeze": "122files_11rows_passed",
+  "limits": [
+    "HTTP/ORM/model/Field boundaries external in mounted tests; installed qualification required",
+    "Native frontend Hoot assertions updated without running that suite; source Node and later installed sorting are separate evidence",
+    "No34 image/admission/operation yet; current33 Work tab remains unaccepted",
+    "Full UI0/4 original matrix/recovery/canonical remains active"
+  ]
+}

@@ -795,6 +795,13 @@ export class FormController extends Component {
         }
     }
 
+    get layoutDisplay() {
+        const panel = this.display.controlPanel;
+        if (!panel?.recordBodyTitle || (!this.env.inDialog && this.model?.root &&
+            !this.model.root.isNew && !this.model.root.isInEdition)) return this.display;
+        return { ...this.display, controlPanel: { ...panel, recordBodyTitle: false } };
+    }
+
     get className() {
         const result = {};
         const { size } = this.ui;
@@ -807,6 +814,10 @@ export class FormController extends Component {
             result[this.props.className] = true;
         }
         result["o_field_highlight"] = size < SIZES.SM || hasTouch();
+        if (this.display?.controlPanel?.recordBodyTitle && !this.env.inDialog &&
+            this.model?.root && !this.model.root.isNew && !this.model.root.isInEdition) {
+            result["mp-informational-record"] = true;
+        }
         return result;
     }
 }
