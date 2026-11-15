@@ -1,0 +1,52 @@
+{
+  "source_base": "77d46d1d448",
+  "candidate": "0.2.32_unpublished",
+  "source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "b214c2399e38ca46757a5eb47ab8c6f018d0ef61e9a53aebcffdb601cbcad30e",
+    "framework_addons/web/__manifest__.py": "67bf6940df0c1c13e5c0c8222eae12aa22630ba6df1a4bf6ddf07b11350c334c",
+    "framework_addons/web/static/src/views/view_dialogs/record_create_dialog.js": "7f2ea71fdbb35939562aa6bba3746de31a977cb30b955d0d545bcb71f047ef5b",
+    "framework_addons/web/static/src/views/view_dialogs/record_create_dialog.scss": "55cd705d9e6ed338b1ab79d916324f29fee04b8c67e6ab6a16f7a35527d2e1d8",
+    "framework_addons/web/static/src/views/view_dialogs/record_create_dialog.xml": "de70549d761d2d31e24a52e55a052570515405d07751d23f5f112f3491479c82",
+    "packages/platform_sdk/modular_platform/projection.py": "d3c3ab29ffa711dbeaadec51e1132e8521db9ae2a471cd473e7f8b7b6d429f98"
+  },
+  "unit_cases": 15,
+  "native_version_cases": 7,
+  "mounted": {
+    "actualOwl": true,
+    "actualFormController": true,
+    "actualFormViewDialog": true,
+    "actualDialogAndConfirmation": true,
+    "actualNativeInputHookAndTextField": true,
+    "actualAskChangesAndDirty": true,
+    "actualNativeFocusHookWithTestVisibilityBoundary": true,
+    "nativeViewLookupAndORMExternal": true,
+    "dialogAndSheet": true,
+    "fullscreenSameInputAndModel": true,
+    "expansionWrites": 0,
+    "keepEditingRetainsDraft": true,
+    "headerEscapeAndNativeCancelGuarded": true,
+    "visibilityAndUnloadNoSave": true,
+    "synchronousUnloadWarning": true,
+    "validationRefusal": true,
+    "explicitSaves": 2,
+    "pristineCancelNoWrite": true,
+    "actualWorkEditorAndSharedHeader": true,
+    "taskThenReminderUnderFakeServiceBoundary": true,
+    "customFullscreenKeepsDraftWithoutEffect": true,
+    "sourceOnlyNotInstalled": true
+  },
+  "css": {
+    "non_screen_prefix_exact": true,
+    "added_screen_only": true,
+    "logical_ltr_rtl_identical": true
+  },
+  "sass": {
+    "pinned_sass_rtl": true,
+    "logical_css_identical_both_directions": true,
+    "source_sha256": "55cd705d9e6ed338b1ab79d916324f29fee04b8c67e6ab6a16f7a35527d2e1d8",
+    "worker_id": "6c4f3054174cfdeccf5455a7295550ae7321dfcc335d091aaa3791a493abe8aa",
+    "target_sha256": "90953344aaf5f97081cca72a1b68d49c785d84e7f10b4d92df3c58c38f45db21",
+    "scope": "Read-only stdin/stdout compiler only; no installed CSS or layout qualification"
+  },
+  "scope": "Source only, no32 image/operation/installed fix"
+}

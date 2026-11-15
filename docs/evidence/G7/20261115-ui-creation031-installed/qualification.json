@@ -1,0 +1,297 @@
+{
+  "source": "9a205440d84a0e88d235781b780225e98871a443",
+  "core": {
+    "apply_seconds": 156.266,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 4,
+    "image_id": "sha256:ca41c0ad36beb03e975864422d196e37e1e779b2af41f6d72999390741000bd0",
+    "operation_id": "361d5d94-4cc2-4038-b21f-ee350e7314a7",
+    "plan_hash": "sha256:947fefd0ca80e330d24d89257aa733a9d7d09b7081957b1927ed9521485a4761",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 0,
+      "mp_membership": 6,
+      "mp_outbox": 3,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 1,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 0,
+      "workboard_reminder": 0,
+      "workboard_stage": 0,
+      "workboard_task": 1
+    },
+    "tables": 22,
+    "worker_id": "e70bdcd39412794928672014f864fe7d1c83819654fa1ed68ecfa9a5809e908f"
+  },
+  "apps": {
+    "apply_seconds": 161.468,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 5,
+    "image_id": "sha256:ff0dc7b05ead581e529d06236efcefbcc89f4569f80a93779b201b80b5a88957",
+    "operation_id": "210fb564-f0d9-4518-983c-ce267b6b16db",
+    "plan_hash": "sha256:fd4328cdf0aef632ba34cecfb0394cfdb06193d07ccc42febe0f353e83cd8774",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal operation complete; verification continuation accepts only source-backed control epoch, browser pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 0,
+      "mp_membership": 6,
+      "mp_outbox": 3,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 1,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 0,
+      "workboard_reminder": 0,
+      "workboard_stage": 0,
+      "workboard_task": 1
+    },
+    "tables": 22,
+    "worker_id": "6c4f3054174cfdeccf5455a7295550ae7321dfcc335d091aaa3791a493abe8aa",
+    "workspace_control_epoch_increment": 1
+  },
+  "audits": {
+    "core": {
+      "image_id": "sha256:ca41c0ad36beb03e975864422d196e37e1e779b2af41f6d72999390741000bd0",
+      "image_tar_sha256": "46272d9f92a93e4607a74a1cf45a1530b63bad955ef1a2ab0eabd4c1e8e01f66",
+      "layers": [
+        {
+          "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+          "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+          "index": 0
+        },
+        {
+          "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+          "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+          "index": 1
+        },
+        {
+          "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+          "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+          "index": 2
+        },
+        {
+          "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+          "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+          "index": 3
+        },
+        {
+          "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+          "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+          "index": 4
+        },
+        {
+          "diff_id": "sha256:30b3d83e92f4ff1b58bc83ec56c308cf1b435ee9f454ee0d285dcc17c9f6d0ef",
+          "digest": "sha256:7a1089ce8213e02b4bc7208c09a601e451b890f7e6098a6f4970b75fc588a618",
+          "index": 5
+        },
+        {
+          "diff_id": "sha256:9ed60ed531174f99ffd500e387a6d51b0d94e6dbca30c4790fa7c9ab6e3d700f",
+          "digest": "sha256:70e4977a75efd40e28133f3446c255d2f7905b8638c305a49351c14a472d36a9",
+          "index": 6
+        },
+        {
+          "diff_id": "sha256:ddc60926e0f4eea226eb1b70f50b8dc77d37135478c1d99d5e3e524a5705825b",
+          "digest": "sha256:f9ca5010c9a3a8addd8fc983ec353cd5e64a4d15ab3aa183b1c79bb1ad7dbe47",
+          "index": 7
+        },
+        {
+          "diff_id": "sha256:469cfd357d5567c30cfd9fe33c0f72d9d9833f0f085cefebcf221f5236bb4897",
+          "digest": "sha256:f6575ce7bad16b16d99be61a33aa498aa18913d8ec5b75d3f48bb59d03019c53",
+          "index": 8
+        },
+        {
+          "diff_id": "sha256:a863327c28b050cab03f241f9889d871964602512f7b12a81fa4619c5693d764",
+          "digest": "sha256:68f9ee42be6c3d78368b5e76de9c3854498e973c8395a2bfb8a7871e80e60b97",
+          "index": 9
+        },
+        {
+          "diff_id": "sha256:261c1b59f52bf4129c04c02224b002258d54d318da3df900349b4a1a3db4c15e",
+          "digest": "sha256:3a49e13774785077e3e13ac24f358a76723ec6701a2c12e2eee86a5696038a9a",
+          "index": 10
+        },
+        {
+          "diff_id": "sha256:c67336da64f3228a8acbbbbb87caa4d4b61734f4e712e9bd511de6739a33f34f",
+          "digest": "sha256:14b47471bf9ef9025598ca46759d51e660c9715a3ede7480f19e3655a0b49f6d",
+          "index": 11
+        },
+        {
+          "diff_id": "sha256:f303ff9a00faace8b963b68c7ad8b52c1c5575682732258d0a72bceaa6554e84",
+          "digest": "sha256:c775c3427248fffee763803029ba888749b46e3be6e519fbb66b7e46a3966ba6",
+          "index": 12
+        },
+        {
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "index": 13
+        }
+      ],
+      "non_project_whiteouts": [
+        "/etc/apt/sources.list.d/.wh.debian.sources"
+      ],
+      "project_files": 3806,
+      "result": "exact-clean-final-layers-passed",
+      "source_image_not_final_ancestor": true
+    },
+    "apps": {
+      "image_id": "sha256:ff0dc7b05ead581e529d06236efcefbcc89f4569f80a93779b201b80b5a88957",
+      "image_tar_sha256": "f738c8cb348d25d77711c42021147646e052f377dc570d5dc2d0314c15c8a219",
+      "layers": [
+        {
+          "diff_id": "sha256:9b35de7893378218e365c34c2c735fb0032a859112fb7345ca8ea73f9aa1db70",
+          "digest": "sha256:11422d7ca1a44390a32bd8d8d9dc5946b4d053b3bbd9507d682e35584ba84a26",
+          "index": 0
+        },
+        {
+          "diff_id": "sha256:b3bae30c55ab87d0887c31deb8ed934c6637fe340ec75564273305a0e6f0b6db",
+          "digest": "sha256:885bf1a36b0b51bbaba3f5f15a7d547dddec48762124540f2a9c53f7bdcd2873",
+          "index": 1
+        },
+        {
+          "diff_id": "sha256:dd564072af8b37c8132b585d23c74d2f353750e45cd711fff6273f98f1cbc0fd",
+          "digest": "sha256:f5742dbd088f6bb005082e058c9e3aa3d4a54c75e245e1be09814b24a04cfe2f",
+          "index": 2
+        },
+        {
+          "diff_id": "sha256:18c85da906679018f8e4cdb2802f5d195ae7e6fec20d42af1f6875d9604a65b0",
+          "digest": "sha256:c9d76861f813936b24ce6e1b66dc36fa0e014e07772f5ffa700d89b659521799",
+          "index": 3
+        },
+        {
+          "diff_id": "sha256:5e6c99993a82081c3ae278283321a1f9dc1c4e2f827818d3bd26b5e53f53b975",
+          "digest": "sha256:e616da176d003c671d3afa68fe4deefcab04eb948fa97356d3c287323c4f5b3d",
+          "index": 4
+        },
+        {
+          "diff_id": "sha256:30b3d83e92f4ff1b58bc83ec56c308cf1b435ee9f454ee0d285dcc17c9f6d0ef",
+          "digest": "sha256:7a1089ce8213e02b4bc7208c09a601e451b890f7e6098a6f4970b75fc588a618",
+          "index": 5
+        },
+        {
+          "diff_id": "sha256:ffcba3d56ffb3caca881847837c175900a8c24ec52cba6a99040bea4ce98cfc7",
+          "digest": "sha256:f549df87df2b99c0c439993112375910cd60b05278998e8b21301bcf5d3fb3a9",
+          "index": 6
+        },
+        {
+          "diff_id": "sha256:480a5a8ec424320f4255c8cd2aca612f6d3cba82dd9768aa151468321e5df45b",
+          "digest": "sha256:37e58b2f8319e3935b33d6874cba9f7f8f6b01ee273ee6a8b4ca7fb3806ea7dd",
+          "index": 7
+        },
+        {
+          "diff_id": "sha256:c867c2559ed9dba802cceb4e8778de5075f5600c0decbd181d93f79093bb152e",
+          "digest": "sha256:846d9a54a84bac0a3a03c3a54946ce889006d6864991187ff6b949d77f8f7893",
+          "index": 8
+        },
+        {
+          "diff_id": "sha256:6a21ea263e7f29a82c49a40b229c07e7bf4be6c0f64c5ff8c9b6bf6414aca2ac",
+          "digest": "sha256:a1656c1e490f14d02ee424306ee38da563217427a55f9f7ef23d279a3a210963",
+          "index": 9
+        },
+        {
+          "diff_id": "sha256:df8d3adb88cdd85800b1299ad48af4084b48c80fd2598a61174d4679bee09105",
+          "digest": "sha256:bbb0039f03244bbfe319248aa338a025ce4111f87f21fd74102c5a0b0acb8e07",
+          "index": 10
+        },
+        {
+          "diff_id": "sha256:2c9984be070baf448bb1d71583b7d57ade066bebd5e5e6afe3df91467e703808",
+          "digest": "sha256:5fc5bf4349c36bfef4355fc6439ed8bf19f3bff28e363fc14073dea5f6d0b6c9",
+          "index": 11
+        },
+        {
+          "diff_id": "sha256:0d11e2d33f89be6b464978891d85fc6d1c03f04c01fed9922f2dcb116ad38501",
+          "digest": "sha256:019af25e4978d316a72d903a8109838604c707c2adc6e82c0b7855ba424dc332",
+          "index": 12
+        },
+        {
+          "diff_id": "sha256:5f70bf18a086007016e948b04aed3b82103a36bea41755b6cddfaf10ace3c6ef",
+          "digest": "sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1",
+          "index": 13
+        }
+      ],
+      "non_project_whiteouts": [
+        "/etc/apt/sources.list.d/.wh.debian.sources"
+      ],
+      "project_files": 3806,
+      "result": "exact-clean-final-layers-passed",
+      "source_image_not_final_ancestor": true
+    }
+  },
+  "browser": {
+    "native_dialog_sheet_page": true,
+    "required_field_refusal": true,
+    "dirty_escape_keep_and_header_discard": true,
+    "cancel_tables_exact": true,
+    "person_and_organization_saved": true,
+    "durable_person_reader": true,
+    "task_reminder_separate_effects": true,
+    "reminder_pending_not_delivered": true,
+    "breakpoint_native_and_custom_reactive": true,
+    "css_width390_no_overflow": true,
+    "true_zoom": false,
+    "console_errors_warnings": 0
+  },
+  "business": {
+    "no_authority_change": true,
+    "original_business_rows_exact": true,
+    "protected_targets_exact": true,
+    "result": "observed_verified",
+    "scope": "Read-only independent DB observation; browser interactions recorded separately",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 6,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 3,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 0,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    }
+  },
+  "findings": [
+    "Desktop fullscreen state retains draft but inherited CSS keeps980x301 content in1363x789 viewport",
+    "Side sheet704px at logical end inherits28px vertical padding;733px content",
+    "Composite retry-only guidance briefly visible during successful in-flight reminder"
+  ],
+  "scope": "Partial installed qualification; fullscreen/edge layout unaccepted; no full UI phase acceptance"
+}

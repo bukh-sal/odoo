@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
   <t t-name="web.RecordCreateDialog">
-    <Dialog title="title" size="'lg'" fullscreen="state.fullscreen" contentClass="contentClass"
+    <Dialog title="title" size="'md'" fullscreen="state.fullscreen" contentClass="contentClass"
             sheet="props.surface === 'sheet'" withBodyPadding="false" modalRef="modalRef" requestClose.bind="requestClose">
       <t t-set-slot="header">
         <RecordCreationHeader title="title" fullscreen="state.fullscreen" close.bind="requestClose" onExpand.bind="toggleFullscreen" busy="state.saving or state.closing" closeLabel="'Close creation'"/>

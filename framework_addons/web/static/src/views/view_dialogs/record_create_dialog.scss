@@ -24,3 +24,27 @@
 @media print {
     .mp-record-create .mp-create-expand { display: none; }
 }
+// Native full-modal geometry is mobile-only. The creation surface explicitly
+// supports desktop expansion without replacing its form or applying drag offsets.
+@media screen {
+    .o_dialog:has(.mp-record-create) > .modal.o_modal_full {
+        .modal-dialog {
+            inline-size: 100%;
+            max-inline-size: 100%;
+            block-size: 100%;
+            min-block-size: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .mp-record-create {
+            block-size: 100dvh;
+            max-block-size: 100dvh;
+            border-radius: 0;
+        }
+        .modal-body { min-block-size: 0; flex: 1 1 auto; overflow-y: auto; }
+        .modal-header { cursor: default; }
+    }
+    .o_dialog:has(.mp-create-sheet) > .modal:not(.o_modal_full) .modal-dialog {
+        padding: 0;
+    }
+}

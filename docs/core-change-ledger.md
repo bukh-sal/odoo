@@ -506,3 +506,25 @@ no approval/contract relaxation. Core31 unpublished; live18730 stays30/config3,
 main human18610 untouched. Next immutable core31 with five OLD pins, then exact
 two-app successor admission/upgrade and installed creation workflow. UI0/4 and
 all original matrix/authority/absence/recovery/canonical requirements remain.
+
+
+15November2026 creation31 installed on owned18730: core361d5d94/947fefd0
+completed156.266s, app210fb564/fd4328cd completed161.468s/config5/imageff0dc7b0;
+two fourteen-layer3806file audits. Exact fifteen core files, then two app archives /
+eight app inventory paths; Python and other three pins unchanged.22tables captured;
+only normal install_metadata workspace control epochs5to6 changed during app
+upgrade, independently re-observed after initial overstrict assertion, no replay.
+Actual person dialog/org sheet/page, native validation/dirty Keep/Discard/cancel
+zeroeffects, durable reader and task+personal-reminder success verified. Original
+customer/task/218Bbrief/pins/authority retained. New synthetic2partners/1task/
+1pendingreminder+job/3outbox; scheduled is not delivered. Both native/custom pure
+resize semantics fixed;390nooverflow/console0, no truezoom claim. Found actual
+fullscreen geometry980x301 and sheet28px padding plus transient app retry prose;
+layout unaccepted. Fresh layout correction plan precedes core32 source: screen-only
+geometry and no drag offsets while expanded, native compact650px md; ordinary
+Dialog/print/native model/save/authority and app bytes unchanged.15source Node/
+7native versions/actual mounted native draft+WorkEditor and pinned Sass/RTL pass;
+non-screen prefix byte-exact. One fixture lacked UIservice state; retained/fixed.
+Core32 unpublished, no build/operation yet. Next ONE normal exact-app core32
+candidate/audit/checkpointed upgrade and installed geometry recheck. UI0/4/full
+original goal, record-composition, authority/absence/recovery/canonical still open.

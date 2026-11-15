@@ -12,7 +12,7 @@ export class CreationSurfaceDialog extends Dialog {
     setup() { super.setup(); this.ui = useService("ui"); }
     get isFullscreen() { return this.props.fullscreen || this.ui.isSmall; }
     async dismiss() { return this.props.requestClose(); }
-    get contentStyle() { return this.props.sheet ? "" : super.contentStyle; }
+    get contentStyle() { return this.props.sheet || this.isFullscreen ? "" : super.contentStyle; }
 }
 
 export class RecordCreationHeader extends Component {

@@ -49,6 +49,15 @@ test('fullscreen expansion changes presentation only and retains record and draf
     assert.equal(f.c.record.data.name,'Unsaved example');assert.deepEqual(f.calls,[]);assert.equal(f.closed(),0);
 });
 
+test('creation fullscreen and sheet suppress drag offsets without changing ordinary dialog style',()=>{
+    const f=fixture(),dialog=Object.create(f.classes.CreationSurfaceDialog.prototype);
+    dialog.props={fullscreen:false,sheet:false};dialog.ui={isSmall:false};
+    assert.equal(dialog.contentStyle,'original');
+    dialog.props.fullscreen=true;assert.equal(dialog.contentStyle,'');
+    dialog.props.fullscreen=false;dialog.ui.isSmall=true;assert.equal(dialog.contentStyle,'');
+    dialog.ui.isSmall=false;dialog.props.sheet=true;assert.equal(dialog.contentStyle,'');
+});
+
 test('pristine close flushes pending changes; dirty close is one decision and Keep editing retains it',async()=>{
     const empty=fixture();assert.equal(await empty.c.requestClose(),true);assert.equal(empty.closed(),1);
     const f=fixture({dirty:true});const first=f.c.requestClose(),second=f.c.requestClose();await turn();
@@ -61,7 +70,7 @@ test('pristine close flushes pending changes; dirty close is one decision and Ke
 
 test('header and Escape use the guarded dismiss owner, including a veto',async()=>{
     const f=fixture(),dialog=new f.classes.CreationSurfaceDialog();let asked=0;
-    dialog.props={requestClose:async()=>{asked++;return false;},sheet:true};
+    dialog.props={requestClose:async()=>{asked++;return false;},sheet:true};dialog.ui={isSmall:false};
     assert.equal(await dialog.dismiss(),false);assert.equal(asked,1);assert.equal(f.closed(),0);
     assert.equal(dialog.contentStyle,'');dialog.props.sheet=false;assert.equal(dialog.contentStyle,'original');
 });
