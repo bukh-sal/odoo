@@ -1,12 +1,14 @@
 # Shared UI qualification and support boundaries
 
-Latest installed combination is core0.2.23/config20 with unchanged five apps.
-[Direct responsive evidence](evidence/G7/20261115-ui-core023-responsive-qualification/qualification.json)
-proves147.266s maintenance/exact retention and actual390px light/dark Edit,
-Done/Cancel/New/control visibility without page overflow or business writes.
-Core22's actual focus/Preferences repair remains current. Shared preview styles
-are compiled; app-owned context is the next slice. Original full matrix/current
-canonical/UI0of4 remains open; no formal accessibility or broad support claim.
+Latest combination is core0.2.23/config21, Workboard0.2.15, Delivery0.1.7,
+Documents0.1.10, Partners0.1.5 and Taskfiles0.1.5.
+[Direct installed evidence](evidence/G7/20261115-ui-customer-context007-qualification/qualification.json)
+proves168.406s normal app maintenance, actual customer/task/pinned-current brief,
+honest empty card, four action titles, viewer read-only controls and zero-write
+retention. Desktop light/dark pass this bounded review. Actual390px native
+vertical scrolling and preview target sizes fail; shared24 correction is next.
+Original full matrix/current canonical/UI0of4 remains open. No broad support,
+formal accessibility, publication or full translation claim.
 
 The preceding populated combination was core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.

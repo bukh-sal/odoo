@@ -1,0 +1,82 @@
+{
+  "source": "5752afe021a619cb1d5ccd7f2c23ba3704d2e3a5",
+  "image_id": "sha256:e552280d2627aa38900e440a26e675d826cd45f394bc2082974d896103e2870a",
+  "operation_id": "0f767c55-0344-4c1b-86f2-2298ea188169",
+  "plan_hash": "sha256:18127d1e288742b387f5719ad3ba974f5454d15d7caeec479fc43468c0f67e9a",
+  "configuration": 21,
+  "apply_seconds": 168.406,
+  "core": "0.2.23",
+  "apps": {
+    "dev.local.partners": {
+      "version": "0.1.5",
+      "digest": "sha256:d8a2e8107f26a5a8e0e2f44044c7f54fe9bb81357176a840e174565462ad8aac"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.15",
+      "digest": "sha256:e7568065236a3b531d0182b7ff5629003a7dc24eee6a781bf9c39a49ac735d48"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.7",
+      "digest": "sha256:a3e38b628f117482620e894baa42395708374d7d2b63186d9ed0a23ec7ee2186"
+    },
+    "dev.local.documents": {
+      "version": "0.1.10",
+      "digest": "sha256:189ff0a2a7489b93bf2ab97fde73c9d6513b9a1fc167b9d390145a5c503f7e87"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.5",
+      "digest": "sha256:c36d3412ab0aad0d1d22244f117d3791a21fa21ed62415f8132df95babc25759"
+    }
+  },
+  "source_checks": {
+    "node_effective": 80,
+    "delivery_final": 16,
+    "python_pass": 23,
+    "python_skip": 1,
+    "owl_templates": 13
+  },
+  "installed": {
+    "realNorthstarTaskPreview": true,
+    "taskKeyboardOpenWithCustomer": true,
+    "pinnedVersion": 1,
+    "currentVersion": 2,
+    "pinnedEscapedTextViewed": true,
+    "historyCloseBackReopensTaskThenBackReturnsCustomer": true,
+    "emptySampleHonest": true,
+    "titles": [
+      "Workboard",
+      "Customer work",
+      "Documents",
+      "My reminders"
+    ],
+    "viewerNativeNoNewOrEdit": true,
+    "viewerTaskNoTeamWriteControls": true,
+    "viewerReminderEditorRequiredNotice": true,
+    "desktopLightDark": true,
+    "narrowScrollFailed": true,
+    "previewHitAreasNeedIncrease": true,
+    "lightRestored": true,
+    "viewportReset": true,
+    "temporaryTabsClosed": [
+      7,
+      8
+    ],
+    "businessWritesExpected": 0,
+    "critique": "Sparse contact form; pending owner preference for compact relationship summary. Narrow native content clipping and small preview targets are shared-layout defects, not support policy."
+  },
+  "retention": {
+    "history_full_rows_exact": true,
+    "other_targets_exact": 10,
+    "partners": 166,
+    "sample_revision": 3,
+    "tables_exact": 18,
+    "task_original_revision": 2,
+    "utc": "2026-11-15T04:34:19.128159+00:00"
+  },
+  "limits": [
+    "Current desktop/read/navigation/viewer functionality proved, not full UI acceptance",
+    "390px native content clips with no usable scroll owner; measured preview targets undersized",
+    "Arabic/RTL, actual200%zoom, motion/contrast/current optional-app matrix and final current canonical remain open",
+    "Owner compact-summary preference pending, not treated as approval"
+  ]
+}
