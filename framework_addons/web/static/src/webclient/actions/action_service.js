@@ -33,6 +33,7 @@ import { isHtmlEmpty } from "@web/core/utils/html";
 import { omit, pick, shallowEqual } from "@web/core/utils/objects";
 import { session } from "@web/session";
 import { exprToBoolean } from "@web/core/utils/strings";
+import { openRecordCreation } from "@web/views/view_dialogs/record_creation";
 
 class BlankComponent extends Component {
     static props = ["onMounted", "withControlPanel", "*"];
@@ -725,7 +726,11 @@ export function makeActionManager(env, router = _router) {
             resModel: action.res_model,
             type: view.type,
             selectRecord: openFormView,
-            createRecord: () => openFormView(false),
+            createRecord: ({ onRecordSaved } = {}) => openRecordCreation({
+                context, resModel: action.res_model, title: action.name,
+                viewId: action.views.find((item) => item[1] === "form")?.[0],
+                dialog: env.services.dialog, openPage: () => openFormView(false), onRecordSaved,
+            }),
         });
         if (view.type === "form") {
             if (target === "new") {

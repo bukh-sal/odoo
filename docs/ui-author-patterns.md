@@ -319,3 +319,29 @@ for breakpoint presentation. Standalone AppLayout and dialog fallback mean no
 shell portal is required; they still use the ordinary web service environment.
 Do not build another matchMedia store or read env.isSmall alone for a component
 that must redraw on resize. This changes no application routes or authority.
+
+## Author-selected creation, candidate0.2.31
+
+Use action context `create_surface` with `page`, `dialog` or `sheet`. Absence
+preserves existing native behavior, including editable lists; an explicit choice
+overrides inline creation after the existing edited-row leave decision succeeds.
+For dialog/sheet, optional `create_form_view_ref` selects a creation-only native
+form. Page uses the action's declared ordinary form. Existing-record links keep
+their ordinary durable reader and explicit Edit. Choose by workflow, not field
+count. An invalid surface refuses before opening a form.
+
+Dialog/sheet use the actual native View, application model override and server
+validation. Expand changes the same mounted form to fullscreen, with no save,
+navigation or draft serialization. Cancel, header close and Escape share the
+dirty-draft decision; these creation surfaces suppress automatic visibility or
+leave saves. Native ORM creation is not idempotent: a lost response is uncertain
+and blocks blind retry. A confirmed save followed by failed list refresh is
+labelled created. Presentation never grants authority.
+
+Custom app forms can reuse `CreationSurfaceDialog` and `RecordCreationHeader`
+from `@web/views/view_dialogs/record_create_dialog`, with a required guarded
+`requestClose` and ordinary web UI service. The app still owns persistence and
+partial outcomes. Workboard's task-plus-personal-reminder flow confirms task
+identity first, then schedules with a separate immutable key; it can retry the
+reminder or finish with the saved task without pretending to roll it back.
+These are source-qualified contracts until the installed successor passes.

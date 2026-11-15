@@ -2949,3 +2949,22 @@ Owner native collection direction and five local references reviewed. Source cor
 15November2026 core30 apps installed on isolated18730: normal exact ten-scope five-app operation261897fe/plan692d88ec completed150.047s, config3/image787fdd51/worker1aa2be58. Checkpoint files/exact5pins/13modules/principals/memberships/11protected targets verified. Actual IAB native customer summary+explicit Edit, task dialog, customer link, normal218B brief upload+exact version reference; one customer/task/file/version, no posted comment/jobs; native and custom drafts retained/cancelled without record change. Per-app collapse/reload/search/lightdark/390nooverflow/Escape focus pass; installed viewport-only resize exposes stale custom opener semantics, unaccepted pending reactive UI-service subscription. Private wrong filestore-path assertion corrected read-only; no operation replay. Original UI0/4/fullgoal/matrix/creation-detail/canonical remain open; main human form untouched.
 
 15November2026 unpublished core31: actual installed resize finding reproduced against old source using mounted Owl+real native useService/reactive UI service, without action-bus events. Native Shell and custom AppLayout now subscribe to ui.isSmall; stored desktop preference/content/drafts/portal/focus stay intact in both resize directions. Same mounted regression now passes,28 native templates compile,22 affected Node+7native-version tests pass. New unit fixture needed document/contains boundary; old failed log retained. Three coherent31identities reserved, no31 image/installed claim; current18730 remains30/config3/787f. No CSS/business/authority/wire changes. Future creation/detail delivery can share this unpublished candidate; no cosmetic image loop.
+
+
+15November2026 creation31 source: author-selected page/dialog/sheet through actual
+native View/FormController/model, guarded draft close and same-mounted fullscreen;
+explicit edited-list leave veto retained. No visibility/unload autosave in these
+opt-in creation surfaces; lost native response is held uncertain, confirmed-save /
+refresh failure never recreates. ADR0093; generic task icon alias and three pinned
+Lucide geometries retain attribution. Partners1.8 compact person/dialog and
+organization/sheet retain ordinary reader; Workboard2.18 task then separately
+idempotent personal reminder records honest partial/uncertain outcomes. Backend /
+service/security bytes unchanged.109 focused Node/18actual Owl templates/8actual
+asset-consumer cases pass; real mounted native form/dialog/input/dirty/focus plus
+WorkEditor under external ORM/service fixtures; pinned Sass logical LTR=RTL;
+freeze122files11rows unchanged. Source proof only, not installed acceptance.
+Private parser/fixture/prop/compiler/manifest-icon failures retained and corrected,
+no approval/contract relaxation. Core31 unpublished; live18730 stays30/config3,
+main human18610 untouched. Next immutable core31 with five OLD pins, then exact
+two-app successor admission/upgrade and installed creation workflow. UI0/4 and
+all original matrix/authority/absence/recovery/canonical requirements remain.

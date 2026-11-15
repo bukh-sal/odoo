@@ -1555,5 +1555,86 @@ export const ICON_NODES = {
       },
       "key": "zix9uf"
     }
+  ],
+  "maximize-2": [
+    {
+      "tag": "polyline",
+      "attrs": {
+        "points": "15 3 21 3 21 9"
+      },
+      "key": "mznyad"
+    },
+    {
+      "tag": "polyline",
+      "attrs": {
+        "points": "9 21 3 21 3 15"
+      },
+      "key": "1avn1i"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": "21",
+        "x2": "14",
+        "y1": "3",
+        "y2": "10"
+      },
+      "key": "ota7mn"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": "3",
+        "x2": "10",
+        "y1": "21",
+        "y2": "14"
+      },
+      "key": "1atl0r"
+    }
+  ],
+  "minimize-2": [
+    {
+      "tag": "polyline",
+      "attrs": {
+        "points": "4 14 10 14 10 20"
+      },
+      "key": "11kfnr"
+    },
+    {
+      "tag": "polyline",
+      "attrs": {
+        "points": "20 10 14 10 14 4"
+      },
+      "key": "rlmsce"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": "14",
+        "x2": "21",
+        "y1": "10",
+        "y2": "3"
+      },
+      "key": "o5lafz"
+    },
+    {
+      "tag": "line",
+      "attrs": {
+        "x1": "3",
+        "x2": "10",
+        "y1": "21",
+        "y2": "14"
+      },
+      "key": "1atl0r"
+    }
+  ],
+  "minus": [
+    {
+      "tag": "path",
+      "attrs": {
+        "d": "M5 12h14"
+      },
+      "key": "1ays0h"
+    }
   ]
 };

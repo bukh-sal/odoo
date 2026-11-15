@@ -20,6 +20,7 @@ import { SearchBar } from "@web/search/search_bar/search_bar";
 import { useSearchBarToggler } from "@web/search/search_bar/search_bar_toggler";
 import { session } from "@web/session";
 import { ListCogMenu } from "./list_cog_menu";
+import { creationSurface } from "@web/views/view_dialogs/record_creation";
 import { DropdownItem } from "@web/core/dropdown/dropdown_item";
 import { SelectionBox } from "@web/views/view_components/selection_box";
 import { useExportRecords, useDeleteRecords } from "@web/views/view_hook";
@@ -335,10 +336,16 @@ export class ListController extends Component {
     async onWillSaveRecord(record) {}
 
     async createRecord({ group } = {}) {
+        const surface = this.props.context.create_surface;
+        if (surface !== undefined) creationSurface(surface);
         if (!this.model.isReady && !this.model.config.groupBy.length && this.editable) {
             // If the view isn't grouped and the list is editable, a new record row will be added,
             // in edition. In this situation, we must wait for the model to be ready.
             await this.model.whenReady;
+        }
+        if (surface !== undefined) {
+            if (await this.model.root.leaveEditMode() === false) return;
+            return this.props.createRecord({ onRecordSaved: () => this.model.load() });
         }
         const list = (group && group.list) || this.model.root;
         if (this.editable && !list.isGrouped) {
@@ -351,7 +358,7 @@ export class ListController extends Component {
             }
             this.render();
         } else {
-            await this.props.createRecord();
+            await this.props.createRecord({ onRecordSaved: () => this.model.load() });
         }
     }
 

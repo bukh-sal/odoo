@@ -24,7 +24,7 @@ Dialog/focus service. Author choices are explicit action context:
 | create_surface=page | Native full-page creation route |
 | create_surface=dialog | Native form in a centered dialog, directory retained |
 | create_surface=sheet | The same native form in a logical-end sheet, directory retained |
-| create_form_view_ref optional | Creation-only native form reference; existing-record detail continues to use its ordinary form |
+| create_form_view_ref optional | Dialog/sheet-only native form reference; page uses the action's declared form, and existing-record detail keeps its ordinary form |
 
 Reject unknown values before opening anything. No automatic field-count rule,
 model/app ID branch, new ORM, alternate permission root or universal business

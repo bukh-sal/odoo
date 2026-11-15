@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.RecordCreateDialog">
+    <Dialog title="title" size="'lg'" fullscreen="state.fullscreen" contentClass="contentClass"
+            sheet="props.surface === 'sheet'" withBodyPadding="false" modalRef="modalRef" requestClose.bind="requestClose">
+      <t t-set-slot="header">
+        <RecordCreationHeader title="title" fullscreen="state.fullscreen" close.bind="requestClose" onExpand.bind="toggleFullscreen" busy="state.saving or state.closing" closeLabel="'Close creation'"/>
+      </t>
+      <div t-if="state.error" class="mp-create-message" role="alert" t-esc="state.error"/>
+      <fieldset class="mp-create-fields" t-att-disabled="state.saving or state.closing or state.uncertain or state.saved" t-on-input="onInput" t-on-change="onInput">
+        <View t-props="viewProps"/>
+      </fieldset>
+      <t t-set-slot="footer"/>
+    </Dialog>
+  </t>
+  <t t-name="web.RecordCreationHeader">
+    <h2 class="modal-title flex-grow-1" t-esc="props.title"/>
+    <button t-if="props.onExpand and !ui.isSmall" type="button" class="btn mp-create-expand" t-att-aria-label="expandLabel" t-att-title="expandLabel" t-on-click="() => props.onExpand()">
+      <Icon name="props.fullscreen ? 'minimize-2' : 'maximize-2'"/>
+    </button>
+    <button type="button" class="btn" t-att-aria-label="closeLabel" t-att-disabled="props.busy" t-on-click="() => props.close()"><Icon name="'x'"/></button>
+  </t>
+  <t t-name="web.RecordCreateDialog.buttons">
+    <button t-if="!env.recordCreation.state.saved" type="button" class="btn btn-primary o_form_button_save"
+            t-att-disabled="env.recordCreation.state.saving or env.recordCreation.state.closing or env.recordCreation.state.uncertain"
+            t-on-click.stop="() => this.saveButtonClicked({closable: true})">Create</button>
+    <button type="button" class="btn btn-secondary o_form_button_cancel" t-att-disabled="env.recordCreation.state.saving or env.recordCreation.state.closing"
+            t-on-click.stop="discard"><t t-if="env.recordCreation.state.saved or env.recordCreation.state.uncertain">Close panel</t><t t-else="">Cancel</t></button>
+  </t>
+</templates>

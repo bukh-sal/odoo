@@ -70,6 +70,7 @@ test('local icons accept semantic/explicit legacy aliases and fall back for unkn
     assert.equal(iconName('fa fa-fw fa-pencil'), 'pencil');
     assert.equal(iconName('oi oi-view-list'), 'list');
     assert.equal(iconName('fa fa-sliders'), 'sliders-horizontal');
+    assert.equal(iconName('tasks'), 'list-checks');
     const icon = new Icon({name: 'constructor', size: NaN});
     assert.equal(icon.nodes, geometry.box); assert.equal(icon.size, 18);
 });

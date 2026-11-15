@@ -150,6 +150,8 @@ export class FormController extends Component {
         preventEdit: { type: Boolean, optional: true },
         onDiscard: { type: Function, optional: true },
         onSave: { type: Function, optional: true },
+        onRecordReady: { type: Function, optional: true },
+        preventAutoSave: { type: Boolean, optional: true },
     };
     static defaultProps = {
         preventCreate: false,
@@ -214,6 +216,10 @@ export class FormController extends Component {
             this.model.config.fields = fields;
         };
         this.model = useState(useModel(this.props.Model, this.modelParams, { beforeFirstLoad }));
+        useEffect(() => {
+            this.props.onRecordReady?.(this.model.root);
+            return () => this.props.onRecordReady?.(null);
+        }, () => [this.model.root]);
         useSubEnv({
             model: this.model,
             onNativeRecordFieldReady: this.readFirst ? () => this.focusRequestedRecordMode() : undefined,
@@ -511,6 +517,7 @@ export class FormController extends Component {
     }
 
     beforeVisibilityChange() {
+        if (this.props.preventAutoSave) return;
         const root = this.model.root;
         const isEditingX2Many = Object.keys(root.activeFields).some((fieldName) => {
             const field = root.fields[fieldName];
@@ -526,6 +533,7 @@ export class FormController extends Component {
     }
 
     async beforeLeave({ forceLeave } = {}) {
+        if (this.props.preventAutoSave) return !(await this.model.root.isDirty());
         if (this.model.root.dirty && !forceLeave) {
             return this.save({
                 reload: false,
@@ -535,6 +543,7 @@ export class FormController extends Component {
     }
 
     async beforeUnload(ev) {
+        if (this.props.preventAutoSave) return;
         const succeeded = await this.model.root.urgentSave();
         if (!succeeded) {
             ev.preventDefault();

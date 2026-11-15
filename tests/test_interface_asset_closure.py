@@ -97,6 +97,21 @@ class SharedIconAssetClosure(unittest.TestCase):
         for path in ['interface/context_preference.js', 'interface/app_layout.js', 'webclient/shell/shell.js']:
             self.assertNotIn('web/static/src/' + path, frontend)
 
+    def test_native_creation_closure_is_backend_only_in_existing_native_glob(self):
+        backend = native_asset_paths('web.assets_backend')
+        frontend = native_asset_paths('web.assets_frontend_lazy')
+        minimal = native_asset_paths('web.assets_frontend_minimal')
+        additions = ['record_creation.js', 'record_create_dialog.js', 'record_create_dialog.xml', 'record_create_dialog.scss']
+        for name in additions:
+            path = 'web/static/src/views/view_dialogs/' + name
+            self.assertIn(path, backend)
+            self.assertNotIn(path, frontend)
+            self.assertNotIn(path, minimal)
+        for dependency in ['views/view_dialogs/form_view_dialog.js', 'views/form/form_controller.js',
+                           'core/dialog/dialog.js', 'core/network/rpc.js', 'interface/icon.js']:
+            self.assertIn('web/static/src/' + dependency, backend)
+        self.assertNotIn('web/static/src/webclient/actions/action_service.js', frontend)
+
 
 class SharedIconMaintenanceFence(unittest.TestCase):
     def setUp(self):

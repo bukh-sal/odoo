@@ -1,0 +1,114 @@
+{
+  "utc": "2026-11-15T11:52:40.604455+00:00",
+  "scope": "Source and mounted/fake-boundary qualification only; no31 build/admission/install",
+  "platform_version": "0.2.31",
+  "source_sha256": {
+    "framework_addons/web/static/lib/lucide/provenance.json": "7748cfe7a7283d3a608060c5b1044976d22f1d18185fad0f6539e5dbf326f080",
+    "framework_addons/web/static/src/interface/icon.js": "3d74561842e715b34e32d2e0f73c80ce3c25f9ba41b4b732a1310b717815e72f",
+    "framework_addons/web/static/src/interface/icons/lucide.js": "dc6def17a8cdb717f6b57ddc0f026319803484f541670c6506ae7a7870f3264b",
+    "framework_addons/web/static/src/views/form/form_controller.js": "dc59dfe5b11057c97e049ea54dc55e75d43a878120e040d8243297f84f2cbc32",
+    "framework_addons/web/static/src/views/list/list_controller.js": "f997a9ea645eaf33fa6934b306f3fa8084b62f1be861a82df914344c14a63d39",
+    "framework_addons/web/static/src/views/view_dialogs/record_create_dialog.js": "ce54cfc550ef3f5215ebade8a1630c1566e1860ed5d724597d98b8fb586801e8",
+    "framework_addons/web/static/src/views/view_dialogs/record_create_dialog.scss": "2f9d828612f88f46ba2e4dac036ec985e5b81c9246b8719580b4f3c6bea289db",
+    "framework_addons/web/static/src/views/view_dialogs/record_create_dialog.xml": "a4edfa695bbbb9e108e2863881ebecbeffd3e810c0da97dee9a10148c91ffe3e",
+    "framework_addons/web/static/src/views/view_dialogs/record_creation.js": "53598e65f7e67108c2cd0bd0ca3cf124874cad21b69dcc180255c2fb981ac5b4",
+    "framework_addons/web/static/src/webclient/actions/action_service.js": "c466b9d7fe3081b434040fc98747dac8adbb1ae798f292627670d5f0617349db"
+  },
+  "private_heads": {
+    "partners": "53293c863a57d2c35ea09999fa5c8e187a33ce8f",
+    "workboard": "11b6e21581113de4fb49c1317feff9ac16b63b30",
+    "delivery": "842e61de59ef982709f62323e4c06eb54682f4b1",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "tests": {
+    "node": {
+      "cases": 109,
+      "failures": 0,
+      "log_sha256": "dae55da3b055ae686f930082358c59b434f7e68a47970373247aa2438a5fb902"
+    },
+    "actual_app_templates": 18,
+    "asset_consumer_cases": 8,
+    "freeze": {
+      "files": 122,
+      "rows": 11,
+      "unchanged": true
+    }
+  },
+  "mounted": {
+    "actualOwl": true,
+    "actualFormController": true,
+    "actualFormViewDialog": true,
+    "actualDialogAndConfirmation": true,
+    "actualNativeInputHookAndTextField": true,
+    "actualAskChangesAndDirty": true,
+    "actualNativeFocusHookWithTestVisibilityBoundary": true,
+    "nativeViewLookupAndORMExternal": true,
+    "dialogAndSheet": true,
+    "fullscreenSameInputAndModel": true,
+    "expansionWrites": 0,
+    "keepEditingRetainsDraft": true,
+    "headerEscapeAndNativeCancelGuarded": true,
+    "visibilityAndUnloadNoSave": true,
+    "synchronousUnloadWarning": true,
+    "validationRefusal": true,
+    "explicitSaves": 2,
+    "pristineCancelNoWrite": true,
+    "actualWorkEditorAndSharedHeader": true,
+    "taskThenReminderUnderFakeServiceBoundary": true,
+    "customFullscreenKeepsDraftWithoutEffect": true,
+    "sourceOnlyNotInstalled": true
+  },
+  "sass": {
+    "pinned_sass_rtl": true,
+    "logical_css_identical_both_directions": true,
+    "source_sha256": "2f9d828612f88f46ba2e4dac036ec985e5b81c9246b8719580b4f3c6bea289db",
+    "worker_id": "1aa2be58ab8749728c57783d70cf2be754da79f97f328c907d5e1085e82e3c41",
+    "target_sha256": "7f88508898b6b3b526555304dfd7767613b26f84b3af660b8a3cf63ce6c900bd",
+    "scope": "Read-only stdin/stdout compiler only; no installed CSS or layout qualification"
+  },
+  "archives": {
+    "dev.local.delivery": {
+      "addon": "mp_delivery",
+      "digest": "sha256:021524286c400b2e5b8bd1a2c294a413878dd06bddd742cf9e983797d339933c",
+      "file": "dev.local.delivery-0.1.9.mplug",
+      "plugin_id": "dev.local.delivery",
+      "version": "0.1.9"
+    },
+    "dev.local.documents": {
+      "addon": "mp_documents",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae",
+      "file": "dev.local.documents-0.1.12.mplug",
+      "plugin_id": "dev.local.documents",
+      "version": "0.1.12"
+    },
+    "dev.local.partners": {
+      "addon": "mp_partners",
+      "digest": "sha256:0166a2eae4cce3677d0791e42c90885028693c9bc6535ab90ddd1c6b81e510c2",
+      "file": "dev.local.partners-0.1.8.mplug",
+      "plugin_id": "dev.local.partners",
+      "version": "0.1.8"
+    },
+    "dev.local.taskfiles": {
+      "addon": "mp_taskfiles",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+      "file": "dev.local.taskfiles-0.1.6.mplug",
+      "plugin_id": "dev.local.taskfiles",
+      "version": "0.1.6"
+    },
+    "dev.local.workboard": {
+      "addon": "mp_workboard",
+      "digest": "sha256:eb68affbddd2014a17b7b4f8157e6b41f95025805a6bc53a9eeaad431255a09b",
+      "file": "dev.local.workboard-0.2.18.mplug",
+      "plugin_id": "dev.local.workboard",
+      "version": "0.2.18"
+    }
+  },
+  "limitations": [
+    "Not installed/native browser qualification",
+    "Native ORM create remains non-idempotent; uncertain response blocks blind retry",
+    "Composite task/reminder uses separate existing services, not one transaction",
+    "Page uses ordinary action form; creation-only view ref is for dialog/sheet",
+    "Full UI goal and0/4 phase acceptance remain open"
+  ]
+}

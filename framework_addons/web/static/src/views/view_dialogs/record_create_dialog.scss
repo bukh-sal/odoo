@@ -1,0 +1,26 @@
+.mp-record-create {
+    color: var(--mp-ui-ink);
+    background: var(--mp-ui-surface);
+    .modal-header { gap: .5rem; }
+    .modal-title { font-size: 1.125rem; font-weight: 600; }
+    .mp-create-message { margin: 1rem; padding: .75rem; border: 1px solid var(--mp-ui-line); border-radius: var(--mp-ui-radius); }
+    .mp-create-fields { min-inline-size: 0; margin: 0; border: 0; padding: 0; }
+    .o_form_sheet_bg { min-height: 0; }
+    .o_form_sheet { margin-block: 0; border: 0; box-shadow: none; }
+}
+.o_dialog:has(.mp-create-sheet) > .modal:not(.o_modal_full) {
+    .modal-dialog {
+        inline-size: 44rem;
+        max-inline-size: 100%;
+        min-block-size: 100%;
+        block-size: 100%;
+        margin-block: 0;
+        margin-inline-start: auto;
+        margin-inline-end: 0;
+    }
+    .mp-create-sheet { block-size: 100dvh; border-radius: 0; }
+    .modal-header { cursor: default; }
+}
+@media print {
+    .mp-record-create .mp-create-expand { display: none; }
+}

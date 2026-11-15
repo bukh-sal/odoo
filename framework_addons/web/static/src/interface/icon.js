@@ -2,7 +2,7 @@ import { Component } from "@odoo/owl";
 import { ICON_NODES } from "@web/interface/icons/lucide";
 
 const aliases = {
-    cube: "box", apps: "grid-2x2", users: "users", bars: "menu", edit: "pencil",
+    cube: "box", apps: "grid-2x2", users: "users", bars: "menu", edit: "pencil", tasks: "list-checks",
     cog: "settings-2", sliders: "sliders-horizontal", columns: "columns-3",
     "angle-left": "chevron-left", "angle-right": "chevron-right",
     "angle-down": "chevron-down", "angle-up": "chevron-up",
