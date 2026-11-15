@@ -1,0 +1,65 @@
+{
+  "source_base": "79cea0cf95a8d6c1a9a609b5d35590439c0bcee9",
+  "candidate": "0.2.41_unpublished",
+  "shipped_source_sha256": {
+    "packages/platform_sdk/modular_platform/projection.py": "d0e25d8084fb11e53c7e79abc4df9410c26e16bc9d17cd8ada2810e42ea5e53f",
+    "framework_addons/mp_core/__manifest__.py": "26f5e54d695d8e76b06940cdec998e6ffa5d1ab63c1b9ebd0674db61fe83a4f6",
+    "framework_addons/web/__manifest__.py": "ea67541ac9b887bf621c3c0ed9b5d55ce6833d9ddc80208a434ebb598aca0ae0",
+    "framework_addons/web/static/src/interface/foundation.css": "e50d4d5e37a030f2bd820913c1f8e7e5c1280a1f720b5c8ce5d8b91a6e46a960",
+    "framework_addons/web/static/src/interface/foundation.dark.scss": "d30df4bca539cd27f21e4ce33cd8742813c74958d82a826ddcfcafd6cdd13373"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "artifacts": {
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    }
+  },
+  "native_transport_unchanged_sha256": "14fd795e5cf98259ac4242735db44fc697f7bcdaef8a8db1d03745308bd07ca8",
+  "focused_cases": 20,
+  "logs": {
+    "native-versions": "9d2ba5dae1d2f586e00556f8e40c5a0e6769a2e0cb00b387df87172dc76586de",
+    "compatibility": "4db6db49df099f9af85b7a257989c59ab4bc94696e9cb1c7450f382d7e432744",
+    "asset-closure": "7c495b00d8da9afe33e840b70cee01c3de73cdf234f7d49dee95ac48acf24d2e",
+    "freeze": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "unchanged_node_suite": {
+    "source": "847b2ce104618343fd550aba5c80947ecc7c5153",
+    "cases": 177,
+    "log_sha256": "b3c50c2b7555e92b1cd2726a184d3ac1f26ab4d92b350c8d270d892a5af98ecf"
+  },
+  "unchanged_planner_suite": {
+    "source": "3aa8ba3618d13b93a566de3a8ffa4ef2ab8d0c30",
+    "cases": 86,
+    "log_sha256": "3f19a81db251e0276be4b95e1ade7c382a73822a8825267865d984c9cbea992f"
+  },
+  "scope": "Generic screen-only link RGB/hover and theme-correct native select indicator; three identities. No JS/geometry/print/backend/authority/recovery/app source change. Real installed colour consumers remain required."
+}

@@ -8,6 +8,7 @@
 :root {
     color-scheme: light;
     --mp-ui-close-filter: none;
+    --mp-ui-select-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2360636c' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
     --mp-ui-check-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m4 8 3 3 5-6'/%3e%3c/svg%3e");
     --mp-ui-mixed-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8h8'/%3e%3c/svg%3e");
     --mp-ui-font: "MP Geist", "Segoe UI", system-ui, sans-serif;
@@ -23,6 +24,7 @@
     --mp-ui-focus-ring: #5065bc38;
     --mp-ui-control-line: #868a96;
     --mp-ui-link: #4453a6;
+    --mp-ui-link-rgb: 68, 83, 166;
     --mp-ui-danger-ink: #923240;
     --mp-ui-danger-surface: #fff1f3;
     --mp-ui-danger-line: #efbdc5;
@@ -53,6 +55,9 @@
         --emphasis-color: var(--mp-ui-ink); --secondary-color: var(--mp-ui-muted);
         --secondary-bg: var(--mp-ui-hover); --border-color: var(--mp-ui-line);
         --link-color: var(--mp-ui-link);
+        --link-color-rgb: var(--mp-ui-link-rgb);
+        --link-hover-color: var(--mp-ui-link);
+        --link-hover-color-rgb: var(--mp-ui-link-rgb);
         --focus-ring-width: 2px; --focus-ring-color: var(--mp-ui-focus);
     }
     .o_web_client .btn { --btn-focus-box-shadow: 0 0 0 2px var(--mp-ui-focus); }
@@ -88,6 +93,8 @@
     .o_web_client :is(.form-control, .form-select, .o_input) {
         color: var(--mp-ui-ink); background-color: var(--mp-ui-surface);
     }
+    /* Keep the separate validation image and native select geometry intact. */
+    .o_web_client .form-select { --form-select-bg-img: var(--mp-ui-select-image); }
     .o_web_client :is(.form-control, .o_input)::placeholder { color: var(--mp-ui-muted); }
     .o_web_client :is(.form-control, .form-select, .o_input):disabled {
         color: var(--mp-ui-muted); background-color: var(--mp-ui-hover);

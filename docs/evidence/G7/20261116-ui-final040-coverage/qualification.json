@@ -1,0 +1,258 @@
+{
+  "source": "748c5e32b3b4480ac7471b7b7a8a06301a26544b",
+  "result": "Three measured contrast findings require correction; no full UI pass.",
+  "failures": {
+    "relatedAndFileLinks": {
+      "foreground": [
+        102,
+        89,
+        143
+      ],
+      "background": [
+        28,
+        30,
+        35
+      ],
+      "contrast": 2.692,
+      "availableSharedLink": "#b3baff",
+      "actualLegacyRgbVariable": "101.56719368, 88.756917, 142.743083"
+    },
+    "fileMetadata": {
+      "foreground": [
+        94,
+        108,
+        124
+      ],
+      "background": [
+        28,
+        30,
+        35
+      ],
+      "contrast": 3.106
+    },
+    "selectIndicator": {
+      "foreground": [
+        52,
+        58,
+        64
+      ],
+      "background": [
+        28,
+        30,
+        35
+      ],
+      "contrast": 1.449,
+      "outlineContrast": 3.777
+    }
+  },
+  "captures": [
+    {
+      "name": "customer-work-light-desktop",
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "customer-work-light-narrow",
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390,
+      "captureAccepted": false,
+      "reason": "High-level screenshot raster shrank old1280px surface; layout metrics remain390px. Preserved as tool-side capture counterexample."
+    },
+    {
+      "name": "customer-work-light-narrow-current",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": false,
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390
+    },
+    {
+      "name": "customer-work-dark-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390
+    },
+    {
+      "name": "customer-work-light-narrow-surface0",
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "background": "rgb(247, 247, 248)",
+      "method": "CDP explicit viewport clip; visually inspected full capture",
+      "captureAccepted": true
+    },
+    {
+      "name": "customer-work-dark-desktop",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "reminders-dark-desktop",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "reminders-dark-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390
+    },
+    {
+      "name": "reminders-light-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390
+    },
+    {
+      "name": "reminders-light-desktop",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "board-light-desktop",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "board-light-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(247, 247, 248)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390
+    },
+    {
+      "name": "board-dark-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 390,
+      "height": 844,
+      "lang": "en-US",
+      "width": 390
+    },
+    {
+      "name": "board-dark-desktop",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "task-dark-desktop",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": true,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 1280,
+      "height": 900,
+      "lang": "en-US",
+      "width": 1280
+    },
+    {
+      "name": "task-dark-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": false,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 355,
+      "height": 767,
+      "lang": "en-US",
+      "width": 355,
+      "captureLimit": "CSS/DIP zoom mismatch crops viewport at native110%; computed contrast remains evidence, not full-width screenshot proof."
+    },
+    {
+      "name": "task-links-dark-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": false,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 355,
+      "height": 767,
+      "lang": "en-US",
+      "width": 355,
+      "captureLimit": "CSS/DIP zoom mismatch crops viewport at native110%; computed contrast remains evidence, not full-width screenshot proof."
+    },
+    {
+      "name": "select-dark-narrow",
+      "method": "CDP Page.captureScreenshot explicit actual CSS viewport clip",
+      "captureAccepted": false,
+      "background": "rgb(21, 22, 25)",
+      "dir": "ltr",
+      "documentWidth": 355,
+      "height": 767,
+      "lang": "en-US",
+      "width": 355,
+      "captureLimit": "CSS/DIP zoom mismatch crops viewport at native110%; computed contrast remains evidence, not full-width screenshot proof."
+    }
+  ],
+  "private_evidence_sha256": "a7abac46acadfc0c73ad4b73b28153e09d716f4d39e56059b6366b5e5e83f50f",
+  "restoration": {
+    "appearance": "light",
+    "workboardView": "list",
+    "deviceMetricsOverride": "cleared",
+    "businessWrites": 0,
+    "markReadClicked": false,
+    "attachmentOrReferenceMutation": false,
+    "originalTabsNavigated": false
+  },
+  "scope": "Read-only full source40 customer/reminders/board coverage exposed contrast gaps. Not final acceptance. Explicit screenshot capture/zoom limits retained."
+}

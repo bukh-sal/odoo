@@ -1,0 +1,31 @@
+{
+  "source": "79cea0cf95a8d6c1a9a609b5d35590439c0bcee9",
+  "runtime_source": "748c5e32b3b4480ac7471b7b7a8a06301a26544b",
+  "result": "deliberately_interrupted_partial_not_green",
+  "stop": {
+    "utc": "2026-11-15T22:44:37.170606+00:00",
+    "classification": "deliberately_interrupted_partial_not_green",
+    "actions": [
+      {
+        "pid": 34996,
+        "terminated_owned_host_test": true
+      },
+      {
+        "pid": 39220,
+        "terminated_owned_host_test": true
+      }
+    ],
+    "log_sha256": "1ab2e623cd813ce6e49b6d79c3856f8cf8b93276b6147f5bf06f1ceecb0293c9",
+    "observed_completions": 411,
+    "reason": "Deliberate supersession after three measured contrast failures require core41/Taskfiles styling successor. Not a timeout or automatic retry."
+  },
+  "exit": {
+    "exit": 130,
+    "seconds": 2617.25,
+    "pid": 39220,
+    "windows_creation_filetime": 134392536599301439,
+    "finished_utc": "2026-11-15T22:44:37.171586+00:00",
+    "log_sha256": "1ab2e623cd813ce6e49b6d79c3856f8cf8b93276b6147f5bf06f1ceecb0293c9"
+  },
+  "reason": "Three measured contrast failures require new frozen candidate41; exact owned host test tree deliberately stopped, supervisor retained. No timeout retry, no Docker/site operation interrupted."
+}

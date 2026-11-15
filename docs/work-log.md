@@ -1,3 +1,22 @@
+## Expanded current UI audit and contrast41 source -16November2026
+
+Current read-only1280/390light/dark Customer work/reminders/board checks pass
+layout, but task reading exposes generic anchor RGB2.692:1, native select arrow
+1.449:1 and app-owned file metadata3.106:1. Preserved good and rejected/clipped
+capture artifacts; actual dimensions/native zoom recorded, no forced app styles.
+Appearance light/list restored, CDPoverride cleared, only own29tab closed;
+no reminder read/reference/business mutation. Wrote concrete reconciliation plan.
+Deliberately stopped only creation-time-bound owned corrected host-test tree
+39220/34996 after411observed completions; supervisor recorded exit130. Partial
+is not green and not a timeout/product failure. No Docker/site operation stopped.
+
+Source41 five shipped paths only: existing link RGB/hover variables and native
+select image token using unchanged SVG geometry/validation layer, three identities.
+20affected tests/freeze122files11rows pass.177Node/86planner exact-source proofs
+retained; all five app archives/heads and15critical backend/recovery files exact.
+Next normal core-only delivery old archives first, then Taskfiles palette successor
+and one new final frozen canonical. Full goal/D06 remains unaccepted.
+
 ## Canonical40 observation-clock test race -16November2026
 
 First full run completed981cases/978pass/onefailure/two existing skips in5080.5s.
