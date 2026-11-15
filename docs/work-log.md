@@ -3190,3 +3190,20 @@ No maintenance-fence change needed: existing static web boundary admits these
 presentation files. No backend/recovery/authority/app archive change. Installed
 37 proof next on owned18730 and source-free18731; main human18610 untouched.
 True200%confirmed; motion unchanged/unverified. Original UI0/4 remains active.
+
+
+15November2026 source38: normal source37 populated upgrade2204eef5 completed
+163.562s/config13, all22tables/app views/current authority/checkpoint exact.
+Actual200% missing-model route now has one fixed Page unavailable dialog; Escape
+closes it and normal Partners navigation recovers. A misleading no-applications
+fallback was caught visually. Source37 empty8 build/audit passed; stage succeeded
+but plan refused retained removed-history rows before any bundle/register/apply.
+Fresh recorded plan precedes generic source38 correction: exact complete retired
+state stays in observed/hash-bound history, not executable scope; partial/live/
+unknown/bound scopes still refuse. Every live native scope remains targeted.
+Shell distinguishes available apps/no selected page from genuinely empty core.
+Five shipped source38 paths, unchanged five apps/Python/authority/recovery;
+86affected Python/176Node pass, freeze122files11rows passes. New immutable38
+populated and exact-policy core maintenance next, then actual empty-site stale
+URL and original matrix/final canonical. True200 confirmed; motion unchanged.
+Full original UI0/4 active; no canonical38, no cleanup or source injection.

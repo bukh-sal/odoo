@@ -242,16 +242,25 @@ def prepare_plan(state, target_release, solution, targets, *, bindings=(), endpo
         clean_targets.append(target)
     changed = {key for key, value in new.items() if key not in old or value['digest'] != old[key]['digest']}
     if operation_type in ('deploy','core_upgrade'):
-        # Native maintenance targets all native scopes. Metadata-only roots are
-        # retained exactly, including inert unregister tombstones; they do not
-        # become fake native deploy targets or gain runtime-control authority.
-        native_scopes={key:row for key,row in installed.items() if old.get(row['plugin_id'],{}).get('runtime')=='native'}
+        # History remains in the observed/hash-bound state, but is not code to
+        # deploy. Only the complete normal removal state is inert; suspension
+        # alone never exempts an installed native scope from maintenance.
+        retired={key:row for key,row in installed.items()
+                 if row.get('state')=='not_installed' and row.get('metadata_state')=='removed'
+                 and row.get('feature_state')=='suspended'}
+        if any(binding_matches_scope(binding,row['site_id'],row['workspace_id'])
+               and row['installation_id'] in (binding.get('consumer_installation_id'),binding.get('provider_installation_id'))
+               for row in retired.values() for binding in state.get('bindings',[])):
+            raise PlanningError('Removed installation history cannot retain current service bindings')
+        native_scopes={key:row for key,row in installed.items() if key not in retired
+                       and old.get(row['plugin_id'],{}).get('runtime')=='native'}
         expected_scopes=set(native_scopes)
         allowed_new=set()
         external=[p for p in old.values() if p['runtime']=='external_service']
         if (changed-allowed_new or set(new)!=set(old)|allowed_new or seen!=expected_scopes or permission_changes or trust_changes
                 or any(row.get('state')!='installed' or row.get('metadata_state','installed')!='installed' for row in native_scopes.values())
-                or any(old.get(row['plugin_id'],{}).get('runtime') not in {'native','external_service'} for row in installed.values())
+                or any(old.get(row['plugin_id'],{}).get('runtime') not in {'native','external_service'}
+                       for key,row in installed.items() if key not in retired)
                 or any(locked_new.get(p['plugin_id'])!=p for p in external)
                 or any(item['runtime']!='native' for item in artifacts.values())):
             raise PlanningError('Platform deploy requires every installed native scope and unchanged artifacts/grants')

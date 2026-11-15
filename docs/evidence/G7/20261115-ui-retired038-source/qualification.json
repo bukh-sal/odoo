@@ -1,0 +1,70 @@
+{
+  "source_base": "df2efe4292dd85cf983095646b3024e5e9c8c671",
+  "candidate": "0.2.38_unpublished",
+  "shipped_source_sha256": {
+    "packages/platform_sdk/modular_platform/plans.py": "f0f76d5c1c8da1636b722f21d800bf7f84d7ffe507646a3c6fe039baded6f5ce",
+    "packages/platform_sdk/modular_platform/projection.py": "5f128a5e3e6f4d9c73bea0fd4bae40e8525470f8db85fc79c012a09e62bd388c",
+    "framework_addons/mp_core/__manifest__.py": "3b8d91b26b3af0ee9f4aa4bf8e1e5d47beef460306bc03e1cc0e75ff4d4b9b11",
+    "framework_addons/web/__manifest__.py": "4959422bb641f618196f660a0e5902a62f523b640ba3a41095c58dc9d8064ed0",
+    "framework_addons/web/static/src/webclient/shell/shell.js": "1b77a741a951f5ccf340d26f12889e85997007c90338450d97438abb489c3a9f"
+  },
+  "private_heads": {
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698",
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "taskfiles": "b36be0afc587ac87efe8837e23a90bbf5c807e81"
+  },
+  "artifacts": {
+    "dev.local.partners": {
+      "version": "0.1.10",
+      "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76"
+    },
+    "dev.local.workboard": {
+      "version": "0.2.19",
+      "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415"
+    },
+    "dev.local.delivery": {
+      "version": "0.1.10",
+      "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f"
+    },
+    "dev.local.documents": {
+      "version": "0.1.12",
+      "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae"
+    },
+    "dev.local.taskfiles": {
+      "version": "0.1.6",
+      "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e"
+    }
+  },
+  "native_transport_unchanged_sha256": "14fd795e5cf98259ac4242735db44fc697f7bcdaef8a8db1d03745308bd07ca8",
+  "tests": {
+    "focused_python": 86,
+    "python_failures": 0,
+    "node_cases": 176,
+    "node_failures": 0,
+    "logs": {
+      "source-python.out.txt": "3f19a81db251e0276be4b95e1ade7c382a73822a8825267865d984c9cbea992f",
+      "source-node.out.txt": "612d59e64a80315b313c3908fcd4898df368421f0b59f9df4853cdfc5b249d72",
+      "freeze.out.txt": "527bef9c83feabb747ed4e99ceb69093d59d20917360fa7e96c7083691db65aa"
+    }
+  },
+  "freeze": {
+    "result": "passed",
+    "contract_major": 1,
+    "files": 122,
+    "rows": 11
+  },
+  "scope": "Generic maintenance scope correction and truthful Shell fallback. Source tests only; installed source38 pending. Actual failed source37 zero-site proposal retained; no register/apply on that fixture.",
+  "core_source_sha256": {
+    "framework_addons/mp_core/__manifest__.py": "3b8d91b26b3af0ee9f4aa4bf8e1e5d47beef460306bc03e1cc0e75ff4d4b9b11",
+    "framework_addons/web/__manifest__.py": "4959422bb641f618196f660a0e5902a62f523b640ba3a41095c58dc9d8064ed0",
+    "framework_addons/web/static/src/core/dialog/dialog.xml": "f80950610c152ce93729a7a529082c67e97bb0de0c68ff869d12e8feadf059a5",
+    "framework_addons/web/static/src/core/errors/error_dialogs.js": "892bfa7a00d5fe57361d90fe12071579c7e3bc76d5a0e13d778becdfac628e92",
+    "framework_addons/web/static/src/core/errors/error_dialogs.xml": "97657dc32bae634b7db1200d8a8faff7780ef8b48a47dc0109b60923c0d3208f",
+    "framework_addons/web/static/src/core/errors/error_handlers.js": "d9ee2099e0662c20b554dada59516dc034c5262b80c3eeac7bf69434981c4c30",
+    "framework_addons/web/static/src/webclient/shell/shell.js": "1b77a741a951f5ccf340d26f12889e85997007c90338450d97438abb489c3a9f",
+    "packages/platform_sdk/modular_platform/plans.py": "f0f76d5c1c8da1636b722f21d800bf7f84d7ffe507646a3c6fe039baded6f5ce",
+    "packages/platform_sdk/modular_platform/projection.py": "5f128a5e3e6f4d9c73bea0fd4bae40e8525470f8db85fc79c012a09e62bd388c"
+  }
+}

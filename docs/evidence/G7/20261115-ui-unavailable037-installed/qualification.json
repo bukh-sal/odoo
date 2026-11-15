@@ -1,0 +1,140 @@
+{
+  "source": "4423f5d81f0b75953e961b6a2ebdae824953118f",
+  "populated": {
+    "all_views_exact": true,
+    "apply_seconds": 163.562,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 13,
+    "image_id": "sha256:e3e7af9c50e61d7ebda0ad2ddb4f99043eb7b442a0b8554d3885203df313ff06",
+    "operation_id": "2204eef5-68c5-4d38-aad9-f86f31e8a4fd",
+    "plan_hash": "sha256:7bdea984564147a38cc92154e67cf2687ff63d6046b1e9f758616e8ff4c88ac4",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 2,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 2,
+      "documents_version": 2,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 9,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 4,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_bound_to_actual_ready_receipt": true,
+    "worker_id": "3860816ec19f3265897d9d8d69566befe022073c883efe240d79bf3cadefa505",
+    "workspace_policy_epoch_increment": 0
+  },
+  "populated_build": {
+    "all_native_manifests_exact": true,
+    "artifacts": {
+      "dev.local.delivery": {
+        "addon": "mp_delivery",
+        "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f",
+        "file": "dev.local.delivery-0.1.10.mplug",
+        "plugin_id": "dev.local.delivery",
+        "version": "0.1.10"
+      },
+      "dev.local.documents": {
+        "addon": "mp_documents",
+        "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae",
+        "file": "dev.local.documents-0.1.12.mplug",
+        "plugin_id": "dev.local.documents",
+        "version": "0.1.12"
+      },
+      "dev.local.partners": {
+        "addon": "mp_partners",
+        "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76",
+        "file": "dev.local.partners-0.1.10.mplug",
+        "plugin_id": "dev.local.partners",
+        "version": "0.1.10"
+      },
+      "dev.local.taskfiles": {
+        "addon": "mp_taskfiles",
+        "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+        "file": "dev.local.taskfiles-0.1.6.mplug",
+        "plugin_id": "dev.local.taskfiles",
+        "version": "0.1.6"
+      },
+      "dev.local.workboard": {
+        "addon": "mp_workboard",
+        "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415",
+        "file": "dev.local.workboard-0.2.19.mplug",
+        "plugin_id": "dev.local.workboard",
+        "version": "0.2.19"
+      }
+    },
+    "changed_files": [
+      "addons/mp_core/__manifest__.py",
+      "addons/web/__manifest__.py",
+      "addons/web/static/src/core/dialog/dialog.xml",
+      "addons/web/static/src/core/errors/error_dialogs.js",
+      "addons/web/static/src/core/errors/error_dialogs.xml",
+      "addons/web/static/src/core/errors/error_handlers.js",
+      "addons/web/static/src/webclient/shell/shell.js",
+      "packages/platform_sdk/modular_platform/projection.py"
+    ],
+    "image_id": "sha256:e3e7af9c50e61d7ebda0ad2ddb4f99043eb7b442a0b8554d3885203df313ff06",
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "record_sha256": "305afe0771283af1490652e50fd19b06d210ae19e268166b4d7a5caec12e6df4",
+    "scope": "Not deployed/admitted",
+    "source": "4423f5d81f0b75953e961b6a2ebdae824953118f",
+    "source_inputs": 4105
+  },
+  "browser": {
+    "core": "0.2.37",
+    "missing_model_route_one_fixed_dialog": true,
+    "dialog_count": 1,
+    "keyboard_escape_closes": true,
+    "normal_partners_link_recovers": true,
+    "foreign_workspace_native_list_has_no_records_or_new": true,
+    "business_writes": 0,
+    "actual_human_confirmed_zoom": "200%",
+    "reduced_motion": false,
+    "unaccepted_finding": "Fallback canvas falsely says no applications despite available rail destinations; correction planned."
+  },
+  "empty_core_build": {
+    "all_native_manifests_exact": true,
+    "artifacts": {},
+    "changed_files": [
+      "addons/mp_core/__manifest__.py",
+      "addons/web/__manifest__.py",
+      "addons/web/static/src/core/dialog/dialog.xml",
+      "addons/web/static/src/core/errors/error_dialogs.js",
+      "addons/web/static/src/core/errors/error_dialogs.xml",
+      "addons/web/static/src/core/errors/error_handlers.js",
+      "addons/web/static/src/webclient/shell/shell.js",
+      "packages/platform_sdk/modular_platform/projection.py"
+    ],
+    "image_id": "sha256:660ea1b87e9074da695ae8ae537ed719accc43ea226eda699564d71d6c996a8c",
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "record_sha256": "c34cfdaf53ae23a8c92ea4dc0a5e273a7183a8d947424fa325ca92eb73378039",
+    "scope": "Not deployed/admitted",
+    "source": "b8f7760fcebf73657d4b0f49dca41fb79043f177",
+    "source_inputs": 4012
+  },
+  "empty_site_plan_error": {
+    "error": "VALIDATION_FAILED",
+    "message": "Platform deploy requires every installed native scope and unchanged artifacts/grants"
+  },
+  "empty_site_apply_invocations": 0,
+  "limits": "Single missing-model message and Escape/recovery actually rendered at human-confirmed200%. False no-applications canvas remains unaccepted; source38 corrects it. Source-free fixture remains36/config4; source38 normal maintenance proof required. No replay or cleanup."
+}

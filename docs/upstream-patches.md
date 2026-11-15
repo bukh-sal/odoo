@@ -181,3 +181,9 @@ Lucide SVG geometry in the shared header template, preserving native callers,
 callbacks, slots and notices. No request retry, automatic navigation, draft
 save/discard, server authority or recovery change. Source checks pass; installed
 qualification is pending under ui-unavailable-page-correction-plan.md.
+
+15November2026 source38: Shell's existing fallback title/description now distinguish
+available app destinations with no selected page from a genuinely empty workspace.
+The rendered source37 missing-model route supplied the counterexample. Existing
+blocked-access branch, action mount, navigation and draft behavior are unchanged.
+No vendor notice, attribution, asset dependency or application byte changed.

@@ -47,8 +47,13 @@ export class Shell extends Component {
 
     get apps() { return this.menu.getApps(); }
     get workspaceTitle() { return _t("Your workspace"); }
-    get noAppsTitle() { return _t("No applications available in this workspace"); }
-    get noAppsDescription() { return _t("Background jobs and account options remain available from the workspace menu."); }
+    get noAppsTitle() {
+        return this.apps.length ? _t("Choose a page to continue") : _t("No applications available in this workspace");
+    }
+    get noAppsDescription() {
+        return this.apps.length ? _t("Open an application from the sidebar, All apps, or search.") :
+            _t("Background jobs and account options remain available from the workspace menu.");
+    }
     get emptyChooserLabel() {
         return this.menu.unavailable ? _t("Applications unavailable. Reload to try again.") : _t("No applications available in this workspace.");
     }

@@ -72,3 +72,21 @@ test('actual Shell retains its inline hidden-canvas contract without opening a s
  const shell=new module.Shell();shell.env={bus:{}};shell.setup();effects.forEach(fn=>fn());assert.equal(shell.blocked,true);assert.equal(dialogs.length,0);assert.equal(services.action.currentController,controller);assert.equal(controller.model,model);assert.equal(model.text,'owned unsaved draft');assert.deepEqual(actions,[]);
  const template=await readFile(resolve(root,base+'webclient/shell/shell.xml'),'utf8');assert.match(template,/class="mp-shell-action" t-att-hidden="blocked"><t t-slot="default"/);assert.match(template,/t-if="blocked"[^>]*role="alert"/);assert.match(template,/t-on-click="reopenWorkspace"/);
 });
+
+test('actual Shell distinguishes no selected page from an empty or unavailable workspace',async()=>{
+ const blank=class{};
+ const {Shell}=await evaluate('webclient/shell/shell.js',{Component,Dropdown:blank,DropdownItem:blank,ErrorHandler:blank,UserMenu:blank,PageHeader:blank,StatusMessage:blank,Icon:blank,_t:text=>text},'Shell');
+ const shell=Object.create(Shell.prototype);let apps=[];
+ shell.menu={getApps:()=>apps,unavailable:false,currentAppUnavailable:false};
+ assert.equal(shell.noAppsTitle,'No applications available in this workspace');
+ assert.match(shell.noAppsDescription,/Background jobs/);
+ apps=[{id:1,name:'Available application'}];
+ assert.equal(shell.noAppsTitle,'Choose a page to continue');
+ assert.match(shell.noAppsDescription,/sidebar, All apps, or search/);
+ assert.equal(shell.blocked,false);
+ shell.menu.unavailable=true;assert.equal(shell.blocked,true);
+ const template=await readFile(resolve(root,base+'webclient/shell/shell.xml'),'utf8');
+ assert.match(template,/t-if="blocked"/);
+ assert.match(template,/t-elif="!current and !action.currentController"/);
+ assert.ok(template.indexOf('t-if="blocked"')<template.indexOf('t-elif="!current and !action.currentController"'));
+});
