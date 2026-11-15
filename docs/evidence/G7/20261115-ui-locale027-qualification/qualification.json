@@ -1,0 +1,95 @@
+{
+  "source": "88b244a3f9636a09418ac90d6a92921583028439",
+  "image_id": "sha256:13271f46a9bf5d04a158dd0d723f63df80f3f1ca2d1c1d0eda87b4017a22cad5",
+  "operation_id": "4be9c0cc-2d8b-4cbe-8b12-5753563ae346",
+  "plan_hash": "sha256:8a70d2a39d75f299f17effd4f2e394d8bb10a97969c566e75a0718a7088fb4e6",
+  "configuration": 26,
+  "apply_seconds": 160.36,
+  "source_checks": {
+    "source": "88b244a3f9636a09418ac90d6a92921583028439",
+    "focused_tests": 59,
+    "seconds": 104.926,
+    "freeze_files": 122,
+    "freeze_rows": 11,
+    "css": {
+      "old_rules_exact": true,
+      "new_screen_rule": ".mp-shell-action > .o_action_manager > .o_form_view .o_form_readonly .o_form_sheet:has(> .mp-record-surface)",
+      "print_non_screen_exact": true,
+      "rtl_compiled": true,
+      "scope": "Sass/RTL/source selector witness, actual installed reader/edit/dialog framing pending"
+    },
+    "differential": "Actual old rendering/native asset consumer reproduces4 old direction failures; fixed actual request merge/native consumer passes both directions/cached+debug; unrelated context and exact reader bytes preserved",
+    "scope": "Source/fake external environment only; installed first-reload/RTL/framing proof pending",
+    "files": {
+      "framework_addons/web/models/ir_http.py": "eada15def5a6756eab93e0e76f67cc0a3d88ae189c54b882c4429256cdf55f63",
+      "framework_addons/web/static/src/interface/surfaces.css": "67c13599773f154caae73fb3c7dc5343850d6c212dd7265e1bef2b5d24dd3485",
+      "packages/platform_sdk/modular_platform/release_staging.py": "6b5187c530dc1ebbb2d8ac0a2185c4cb1fe0225abfad23016d856922bc1553a7",
+      "tests/test_web_locale_rendering.py": "d002975d3acfffdb221e8c167998adeddd60eb24f00b280082ead177c675b70c",
+      "tests/test_core_upgrade.py": "fe98dd2ce9e845864481d406b198df6b93388e73f1617f517e94a91a0c272e5b"
+    }
+  },
+  "first_arabic_reload": {
+    "bodyDirection": "rtl",
+    "dir": "rtl",
+    "lang": "ar-001",
+    "pageWidth": 1363,
+    "styles": [
+      "/web/assets/a70b86a/web.assets_web_print.rtl.min.css",
+      "/web/assets/70b4f75/web.assets_web.rtl.min.css"
+    ],
+    "width": 1363
+  },
+  "first_english_return": {
+    "bodyDirection": "ltr",
+    "dir": "ltr",
+    "lang": "en-US",
+    "styles": [
+      "/web/assets/a03b771/web.assets_web_print.min.css",
+      "/web/assets/4063b51/web.assets_web_dark.min.css"
+    ]
+  },
+  "readonly_sheet": [
+    {
+      "background": "rgba(0, 0, 0, 0)",
+      "border": "0px",
+      "shadow": "none",
+      "sharedDirect": true
+    }
+  ],
+  "native_edit": {
+    "focus": "name_0",
+    "sharedVisible": [
+      false,
+      true
+    ],
+    "sheet": [
+      {
+        "background": "rgb(255, 255, 255)",
+        "border": "0.909091px"
+      }
+    ]
+  },
+  "restoration": {
+    "history_exact": true,
+    "language": "en_US",
+    "only_actor6_language_changed": false,
+    "other_targets_exact": 10,
+    "profiles_semantically_exact": true,
+    "tables_exact": 18,
+    "utc": "2026-11-15T06:41:01.263135+00:00"
+  },
+  "installed_observations": [
+    "Ordinary My Preferences first reload selects Arabic html/body/RTL assets and first return selects English html/body/LTR dark assets; no extra manual reload or forced direction.",
+    "Full-page shared-card reader outer sheet transparent/unbordered; native Edit white sheet remains bordered, Name receives focus; Cancel makes no business writes.",
+    "Actual RTL customer/task/document journey at desktop and measured390px, light/dark, native collection and task drawer scrolling; no page overflow in recorded views.",
+    "One screenshot immediately after viewport change was transitional; settled DOM390px/page390px and subsequent actual screenshot used. No zoom claim."
+  ],
+  "open_findings": [
+    "Phone number inherits RTL and visibly reverses groups; English notes punctuation follows surrounding RTL.",
+    "Escaped document pre inherits RTL: English Markdown heading marker and list dashes move to the wrong side. Hash code also inherits RTL.",
+    "App translation coverage remains partial; this is not a full Arabic translation or formal accessibility claim."
+  ],
+  "phase_acceptance": "UI0/4; full original matrix/canonical remains open",
+  "business_writes": 0,
+  "cleanup": false
+}
