@@ -15,6 +15,14 @@
 .mp-record-surface { padding: 24px; border: 1px solid var(--mp-ui-line); border-radius: var(--mp-ui-radius); background: var(--mp-ui-surface); color: var(--mp-ui-ink); }
 .mp-record-section + .mp-record-section { margin-block-start: 24px; padding-block-start: 24px; border-block-start: 1px solid var(--mp-ui-line); }
 .mp-record-section-title { margin: 0 0 12px; font: 600 14px/22px var(--mp-ui-font); }
+.mp-record-section-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px 16px; margin-block-end: 12px; }
+.mp-record-section-header .mp-record-section-title { margin: 0; }
+.mp-related-records { display: grid; margin: 0; padding: 0; list-style: none; }
+.mp-related-record { display: flex; align-items: center; justify-content: space-between; gap: 12px 16px; min-height: 48px; padding-block: 12px; border-block-end: 1px solid var(--mp-ui-line); }
+.mp-related-record:last-child { border-block-end: 0; }
+.mp-related-record-title { min-width: 0; color: var(--mp-ui-link); font: 500 14px/22px var(--mp-ui-font); overflow-wrap: anywhere; }
+.mp-related-record-title:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 3px; border-radius: 3px; }
+.mp-record-state { flex: 0 0 auto; max-width: 45%; padding: 2px 8px; border: 1px solid var(--mp-ui-line); border-radius: var(--mp-ui-radius); color: var(--mp-ui-muted); background: var(--mp-ui-hover); font: 500 12px/20px var(--mp-ui-font); overflow-wrap: anywhere; }
 .mp-identifier { direction: ltr; unicode-bidi: isolate; overflow-wrap: anywhere; }
 .mp-message { margin-block: 12px; padding: 16px; color: var(--mp-ui-ink); background: var(--mp-ui-hover); border: 1px solid var(--mp-ui-line); border-radius: var(--mp-ui-radius); overflow-wrap: anywhere; }
 .mp-message > p { margin: 0; font-size: 13px; line-height: 21px; }

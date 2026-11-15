@@ -224,3 +224,16 @@ Native record forms select the shared ControlPanel record frame automatically; i
 ## Native read-first source candidate0.2.20
 
 Standard full-page native existing records read before editing; named Edit enters the existing model mode, explicit successful Save/Discard returns to reading. New/dialog/custom persistence/forcedreadonly flows keep their own contract. Native widgets still own their behavior; reading mode is presentation, never write authority or an immutable-view/sandbox guarantee. Backend current scope/revision guards decide every mutation. Original native save-on-leave/visibility remains while editing; do not advertise manual-save-only semantics. No app ID or extra author registry/flag is needed. Source/component proof only until normal installed qualification.
+
+## Related-record preview styles, candidate0.2.23
+
+Inside an existing `.mp-record-surface`, use `.mp-record-section-header` for a
+named `.mp-record-section-title` and normal action. A semantic list can use
+`.mp-related-records`/`.mp-related-record`, a real link or button with
+`.mp-related-record-title`, and an optional `.mp-record-state`. Styles only own
+logical spacing, wrapping, tokens and focus; the app owns current-authority
+reads, empty/error/loading states, honest bounded results and destinations.
+Show a returned subset as a preview, never infer a total from page length.
+Clear stale rows on scope/record/access loss and recheck before acting. These
+styles require the qualified successor; do not import unavailable exports or
+invent a disabled feature solely to fill the design.
