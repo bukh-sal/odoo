@@ -1,3 +1,7 @@
+## Core19 warning and native app declaration proof -15November2026
+
+Partners1.5 actual equal groups/longname/hiddenCAS and core19 fixed warning pass. Stale Notes text remained until explicit Discard, additional witness produced no commit; other data/history/ten sites exact. Generic native Edit/read hierarchy and medium warning are the next separately planned interaction batch; no source20 claim yet. App titles stay app-owned via existing displayName, not a core business-ID branch.
+
 ## Core19 installed layout -15November2026
 
 Normal operation5a0e0832 completed147.75s/config15, checkpoint/full retention exact. Actual desktop controls206px/36high versus76px/84high; dark line#42454e, measured390px no overflow. No draft/theme fixture retained. Safe warning installed proof remains queued with app14 invisible loaded revision. Original full matrix/current frozen canonical open.

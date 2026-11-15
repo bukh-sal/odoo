@@ -1,0 +1,146 @@
+{
+  "utc": "2026-11-15T02:41:59.966474+00:00",
+  "source": "c6a5d9ce6be8f571214bec4a0171c344f2a82e63",
+  "private_partner_source": "dcf85a6dfff8bde97c796c852f1a48966f2b3100",
+  "platform": "0.2.19",
+  "partners": {
+    "version": "0.1.5",
+    "digest": "sha256:d8a2e8107f26a5a8e0e2f44044c7f54fe9bb81357176a840e174565462ad8aac",
+    "file": "dev.local.partners-0.1.5.mplug",
+    "bytes": 29510
+  },
+  "operation_id": "6fffacde-42f5-4abf-8af5-7c8ec378c655",
+  "plan_hash": "sha256:d69e699a81e9e6b669fb28d4bb61fe5612112d817ca10ab01364be2fa0c705a8",
+  "configuration": 17,
+  "image_id": "sha256:71c68bb33cdf8a22d77909bcb9248cb5adb6298fbdc4602c9f8e80cdf735d3f3",
+  "apply_seconds": 154.89,
+  "core_and_four_other_apps_exact": true,
+  "source_inputs": 4085,
+  "layers": 14,
+  "installed_browser": {
+    "desktop": {
+      "groups": [
+        {
+          "box": {
+            "bottom": 497.0454406738281,
+            "height": 109.81533813476562,
+            "left": 344.8863525390625,
+            "right": 841.3493957519531,
+            "top": 387.2301025390625,
+            "width": 496.4630432128906,
+            "x": 344.8863525390625,
+            "y": 387.2301025390625
+          },
+          "cls": "o_inner_group grid col-lg-6"
+        },
+        {
+          "box": {
+            "bottom": 474.8579406738281,
+            "height": 87.62783813476562,
+            "left": 841.3635864257812,
+            "right": 1337.826629638672,
+            "top": 387.2301025390625,
+            "width": 496.4630432128906,
+            "x": 841.3635864257812,
+            "y": 387.2301025390625
+          },
+          "cls": "o_inner_group grid col-lg-6"
+        }
+      ],
+      "height": 789,
+      "revisionVisible": false,
+      "scroll": 1363,
+      "width": 1363
+    },
+    "narrow": {
+      "groups": [
+        {
+          "bottom": 725.9517059326172,
+          "height": 179.95738220214844,
+          "left": 43.99147415161133,
+          "right": 389.9999885559082,
+          "top": 545.9943237304688,
+          "width": 346.0085144042969,
+          "x": 43.99147415161133,
+          "y": 545.9943237304688
+        },
+        {
+          "bottom": 889.9005126953125,
+          "height": 163.9488525390625,
+          "left": 43.99147415161133,
+          "right": 389.9999885559082,
+          "top": 725.95166015625,
+          "width": 346.0085144042969,
+          "x": 43.99147415161133,
+          "y": 725.95166015625
+        }
+      ],
+      "height": 845,
+      "name": [
+        {
+          "clientHeight": 182,
+          "clientWidth": 312,
+          "scrollHeight": 182,
+          "scrollWidth": 312
+        }
+      ],
+      "scroll": 390,
+      "width": 390
+    },
+    "warningTitle": "Invalid Operation",
+    "fixedRecoveryText": true,
+    "noTechnicalDetailsButton": true,
+    "staleNotesKept": true,
+    "staleNotesExplicitlyDiscarded": true,
+    "phoneEqualityAmbiguousAndNotClaimed": true,
+    "lightRestored": true,
+    "viewportReset": true,
+    "extraStaleTabClosed": true,
+    "dirty": false,
+    "journey": [
+      "Native Northstar",
+      "Customer work current selected Northstar and real task link",
+      "Task details: existing revision2 task, customer and pinned v1/current-newer document context",
+      "Close task; return native"
+    ],
+    "remainingCritique": [
+      "Native record is still editing-first and visually form-heavy compared with Meridian",
+      "Warning dialog too wide",
+      "Custom Workboard browser title falls back to Odoo",
+      "Original RTL/real200zoom/motion/contrast/current-authority/optional-app cards remain"
+    ]
+  },
+  "useful_edit": {
+    "record": "Owned Sample fixture only",
+    "one_notes_commit_revision_2_to_3": true,
+    "one_new_event": true,
+    "other_165_partners_exact": true,
+    "other_17_tables_exact": true,
+    "original_full_history_exact": true,
+    "additional_stale_notes_witness_commits": 0,
+    "ten_protected_targets_exact": true
+  },
+  "source_checks": {
+    "app_python": 6,
+    "unchanged_app_node_prior": 3,
+    "deterministic_archive": true,
+    "installed_cas_and_warning": true
+  },
+  "evidence_private": ".local/ui-partners-record015-01",
+  "screenshots": {
+    "current-task-context.jpg": "9b1dc2c02bc8d507aa5357f428a3e6fa3ab4b8b83e51abaa4a7186e2a702d666",
+    "customer-work-current.jpg": "ee17b935257d5418614515dd39440446af4dcfa55a58cbac5bb6e2883271f6db",
+    "northstar-balanced-light.jpg": "fed3a8115152117cc2a19f31d5b68a6ca8aa91ba9a8ee690324a37150e800fe6",
+    "sample-balanced-dark.jpg": "a384f611d395472698762ada86e45ac60891531f389a8302fb2d857ceead6413",
+    "sample-balanced-desktop-light.jpg": "6538f169566e0006f2f9ee7c10df373e7f108fbabb54a72d019ba44dacb2d373",
+    "sample-stacked-narrow390-dark.jpg": "249545d02ff9321d31192f3f75f6cfbc4e4721452296bba69d8026206272accd",
+    "stale-notes-kept.jpg": "d1edc0b1978ed27a81c5b579934e5ccd8963bd1ca19d1488436d3b17536d4a26",
+    "stale-save-safe-warning.jpg": "b4a32ea90b282501ef5c852dddfe7955ad3a411041bbb9b3661c5865f08350d8"
+  },
+  "limits": [
+    "No full original UI matrix/final canonical acceptance",
+    "Phone DOM equality was ambiguous/redacted; unredacted Notes witness proved retained draft",
+    "Normal native visibility/leave autosave unchanged; no exact HTTP-attempt count claim",
+    "View/edit hierarchy and medium warning refinement planned separately"
+  ]
+}

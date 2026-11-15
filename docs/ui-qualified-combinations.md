@@ -1,16 +1,23 @@
 # Shared UI qualification and support boundaries
 
-Latest populated installed combination is core0.2.19, Partners0.1.3,
+Latest populated installed combination is core0.2.19, Partners0.1.5,
 Workboard0.2.14, Delivery0.1.6, Documents0.1.9 and Taskfiles0.1.5.
-[Core19 direct evidence](evidence/G7/20261115-ui-core019-record-polish-qualification/qualification.json)
-proves normal147.75s maintenance/config15 and actual compact navigation/shared
-dark boundaries/390px layout. All18tables/full history/five apps/ten sites exact.
-Partners0.1.4 native layout is source-qualified, not installed yet. The existing
-native error boundary has fixed safe conflict guidance; actual warning proof is
-queued with the hidden-revision app save/conflict check. No full matrix or final
-canonical acceptance is implied. UI0of4; historical qualifications retain scope.
+[Current direct record](evidence/G7/20261115-ui-partners015-record-qualification/qualification.json)
+proves normal154.89s upgrade/config17 with core/four apps unchanged; actual equal
+native columns/390px stacking, long-name wrap and hidden loaded revision CAS.
+One useful owned Sample Notes edit2→3 saved; stale save warning kept an unredacted
+draft until explicit Discard. One event; all other165partners/17tables/prior
+full history/ten protected sites exact. Native→customer work→existing task and
+pinned-v1/current-newer document context remains functional on this combination.
 
-The provisional local platform code is0.2.12/native core19.0.0.2.12 and
+The actual flat-col4 counterexample remains preserved as unaccepted1.4layout;
+there was no business write under its superseded UI intent. Source/native success
+was not called visual acceptance. Current critique is an editing-first native
+reader, xl warning and custom action title fallback; follow the fresh
+[native read-first plan](ui-native-record-read-first-plan.md). No core20 claim yet.
+Original full rendered matrix/current frozen canonical remain open/UI0of4.
+
+The historical integrated baseline was0.2.12/native core19.0.0.2.12 and
 web19.0.2.12.0. Its shared presentation exports and app-owned responsibilities
 are documented in the [author patterns](ui-author-patterns.md). No publication,
 production, stable ABI, long-term-support or Odoo compatibility promise is made.
