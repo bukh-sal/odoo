@@ -3133,3 +3133,22 @@ identity1.11/transport, all other source and five private app archives unchanged
 Seven identity tests/freeze122files11rows pass; prior166Node/45Python retain
 unchanged-source scope. Installed actual title check precedes final canonical;
 source35 interrupted partial run is not green. No36build/operation yet.
+
+15November2026 installed36: ONE36.125s immutable build35a33040, four shipped
+source deltas/five archives/Python exact,14layers3810files. Normal694425a6 /
+5938ecbf completed166.437s/config12, checkpoint/views/data/current authority and
+protected targets verified. Actual IAB English-name-in-RTL title aligns right
+with supported basic CSS; first English return aligns left. Real390px RTL/dark
+native reader has no overflow and18sampled visible text items pass4.5. Profiles/
+groups and22business tables exact after locale roundtrip. Current native save
+changes one synthetic contact Notes/revision1->2 and creates one owner event;
+all original rows exact. Stale native Save refuses/keeps draft, Discard restores
+local snapshot and explicit reopen reads current revision. Bviewer has no New
+or A records; direct foreign record denies without names. Normal existing other
+administrator API removes/adds exactly Alice A membership once, same original
+administrator role restored; policy+2, other authority/business exact. Fresh
+denied reload hides customer/breadcrumb/apps; healthy reload restores. Previously
+rendered bytes are not erased automatically; optional Work denial clears only
+its contribution. Private pre-role/client mistakes stopped before mutation and
+are preserved. All fixtures closed; no new product defect/source change needed.
+Original UI0/4/current canonical/zero-one-absence/zoom-motion cards remain open.

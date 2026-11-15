@@ -1,0 +1,209 @@
+{
+  "utc": "2026-11-15T17:08:28.226731+00:00",
+  "source": "bf78f392900e72523bca722415ef7040deadb902",
+  "operation": {
+    "all_views_exact": true,
+    "apply_seconds": 166.437,
+    "business_exact": true,
+    "checkpoint_verified": true,
+    "generation": 12,
+    "image_id": "sha256:35a33040908bdf8f12b5f6f5c3399347df0a2c95bb8e9d01f964351149f936d8",
+    "operation_id": "694425a6-c36e-41e3-b8c7-be543b413517",
+    "plan_hash": "sha256:5938ecbf0ab340127b854fba466624488fa14551614ea698d7f886b44ca07c57",
+    "protected_targets_exact": true,
+    "result": "completed_verified",
+    "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+    "table_counts": {
+      "delivery_link": 1,
+      "documents_blob": 1,
+      "documents_fence": 1,
+      "documents_file": 1,
+      "documents_upload": 1,
+      "documents_version": 1,
+      "mp_job": 1,
+      "mp_membership": 6,
+      "mp_outbox": 7,
+      "mp_plugin_grant": 8,
+      "mp_principal": 4,
+      "mp_workspace": 2,
+      "partners_partner": 4,
+      "taskfiles_event_cursor": 0,
+      "taskfiles_file_review": 0,
+      "taskfiles_link": 1,
+      "workboard_comment": 0,
+      "workboard_list": 0,
+      "workboard_notice": 1,
+      "workboard_reminder": 1,
+      "workboard_stage": 0,
+      "workboard_task": 2
+    },
+    "tables": 22,
+    "terminal_job_control_bound_to_actual_ready_receipt": true,
+    "worker_id": "3a8da1c99a66104a34e78f9f7650ca9761696485b0dc922f0f87a6c3b1cc8a22",
+    "workspace_policy_epoch_increment": 0
+  },
+  "build": {
+    "all_native_manifests_exact": true,
+    "artifacts": {
+      "dev.local.delivery": {
+        "addon": "mp_delivery",
+        "digest": "sha256:156ff3e11553bed77a24a9075d1cac145e080f22a8ad6698f9e6b321b77f816f",
+        "file": "dev.local.delivery-0.1.10.mplug",
+        "plugin_id": "dev.local.delivery",
+        "version": "0.1.10"
+      },
+      "dev.local.documents": {
+        "addon": "mp_documents",
+        "digest": "sha256:d4519518b6a6166eb3f4ae1eceaebf6d06843cc6bdae84d76c86d8148efbb9ae",
+        "file": "dev.local.documents-0.1.12.mplug",
+        "plugin_id": "dev.local.documents",
+        "version": "0.1.12"
+      },
+      "dev.local.partners": {
+        "addon": "mp_partners",
+        "digest": "sha256:4ae2ebf599067c1fb89511715781a1e38c26ff68a589981363bc738ed4a4bd76",
+        "file": "dev.local.partners-0.1.10.mplug",
+        "plugin_id": "dev.local.partners",
+        "version": "0.1.10"
+      },
+      "dev.local.taskfiles": {
+        "addon": "mp_taskfiles",
+        "digest": "sha256:280fc74b8fba6a3178ea0b564082fe7882b6306fbfed8c8ce12d6acc42ca607e",
+        "file": "dev.local.taskfiles-0.1.6.mplug",
+        "plugin_id": "dev.local.taskfiles",
+        "version": "0.1.6"
+      },
+      "dev.local.workboard": {
+        "addon": "mp_workboard",
+        "digest": "sha256:009a146797e298702be66192f302edc6ab3f7f170b1069ac95e6981698534415",
+        "file": "dev.local.workboard-0.2.19.mplug",
+        "plugin_id": "dev.local.workboard",
+        "version": "0.2.19"
+      }
+    },
+    "changed_files": [
+      "addons/mp_core/__manifest__.py",
+      "addons/web/__manifest__.py",
+      "addons/web/static/src/interface/surfaces.css",
+      "packages/platform_sdk/modular_platform/projection.py"
+    ],
+    "image_id": "sha256:35a33040908bdf8f12b5f6f5c3399347df0a2c95bb8e9d01f964351149f936d8",
+    "protected_targets_exact": true,
+    "python_exact": true,
+    "record_sha256": "8f7a71458874ed640abd837be1c7fc3991b00d7c2ca115952ef93a2ad29dd6b8",
+    "scope": "Not deployed/admitted",
+    "source": "bf78f392900e72523bca722415ef7040deadb902",
+    "source_inputs": 4105
+  },
+  "title_rtl": {
+    "dir": "rtl",
+    "lang": "ar-001",
+    "pageWidth": 1363,
+    "sheetBackground": "rgba(0, 0, 0, 0)",
+    "supported": true,
+    "title": [
+      {
+        "align": "right",
+        "contentDirection": "ltr",
+        "dir": "auto",
+        "matched": true,
+        "parentDirection": "rtl",
+        "text": "Northline Studio"
+      }
+    ],
+    "width": 1363
+  },
+  "first_english_return": {
+    "dir": "ltr",
+    "lang": "en-US",
+    "pageWidth": 1363,
+    "styles": [
+      "/web/assets/d60e951/web.assets_web_print.min.css",
+      "/web/assets/ac07546/web.assets_web_dark.min.css"
+    ],
+    "title": [
+      {
+        "align": "left",
+        "contentDirection": "ltr"
+      }
+    ],
+    "width": 1363
+  },
+  "locale_retention": {
+    "business22tables_field_exact": true,
+    "profiles_groups_exact": true,
+    "protected_targets_exact": true,
+    "scope": "final",
+    "utc": "2026-11-15T16:51:15.134994+00:00"
+  },
+  "native_save": {
+    "new_updated_event": 1,
+    "only_intended_notes_and_normal_write_date_changed": true,
+    "other21tables_and_original_three_partners_exact": true,
+    "revision": 2
+  },
+  "native_stale": {
+    "all22tables_exact_after_confirmed_save": true,
+    "no_second_write_or_event": true,
+    "protected_targets_exact": true,
+    "utc": "2026-11-15T16:57:30.406896+00:00"
+  },
+  "native_final": {
+    "all22tables_exact_after_confirmed_save": true,
+    "no_second_write_or_event": true,
+    "protected_targets_exact": true,
+    "utc": "2026-11-15T16:57:31.554212+00:00"
+  },
+  "authority_browser": {
+    "viewer_no_create": true,
+    "viewer_records": 0,
+    "foreign_denied_no_private_names": true,
+    "workspace_switch_opened_separate_scoped_tab": true,
+    "known_membership_loss_reload_hidden_names_and_write_controls": true,
+    "already_rendered_before_fresh_reload_not_automatically_erased": true,
+    "cached_optional_work_removed_while_native_record_remained_before_reload": true,
+    "restored_same_url_healthy": true,
+    "human_tabs_untouched": true
+  },
+  "authority_final": {
+    "all22tables_exact_after_known_restoration": true,
+    "no_active_fixture": true,
+    "protected_targets_exact": true
+  },
+  "receipts": {
+    ".local/ui-final-core036-rollout-01/complete.json": "20914ebdb9b678a77e397d090ee99e5a00fb5cb91085fd3389f8ab9712b9b40c",
+    ".local/ui-final-populated036-01/verified.json": "bed60454dd4a469c2fcfd22f01a3792a28619578ae126c6942bc969051a66b02",
+    ".local/ui-final-installed036-browser-01/title-rtl.json": "8e412a7cd1a2076d69ff1ae647d26ff92d61cd7811c19cab10446663918afeca",
+    ".local/ui-final-installed036-browser-01/english-return.json": "9584253ffd3c12ffeee0c0b4ecd95081e6013ded81d60067f5101bc232be463a",
+    ".local/ui-final-installed036-browser-01/native-rtl-dark-narrow-contrast.json": "3d5c80d4df75ad417829c169af1433281a81f841d0a0a45f33a4984e2a2b8d54",
+    ".local/ui-final-installed036-browser-01/final-verified.json": "ed9fd2e95d316c36de71692e262b30dde4f31624ed1594900390e6134930d955",
+    ".local/ui-final-interactions036-01/saved-verified.json": "dfc3b54db1e0ad1edc944e9f418981647ef082a829264d8448e09cec64909999",
+    ".local/ui-final-interactions036-01/stale-verified.json": "c72634e1e6e1335a530c07c07bf7bd6c8cc9a3e60674afda6af498472f93b772",
+    ".local/ui-final-interactions036-01/final-verified.json": "e6ca4256602b564bea10eac1a611cec872e53f1c23d0714572c45e905b61cbc6",
+    ".local/ui-final-authority036-01/browser-summary.json": "1646c59aaff3b0c7d054cfd70a25d4985eabfe98289b0bf2c18180bd67ef7bd0",
+    ".local/ui-final-authority036-01/final-verified.json": "8017207cc3ac6c7e26594815d0f2e6b893c70bcde060bfc5ab8736681d4f6d7d"
+  },
+  "scope": "Bounded installed36 rendering, native save/conflict and current membership checks. Original full UI acceptance remains0/4; final canonical and current zero/one/source-absence matrix remain open.",
+  "contrast": {
+    "visible_native_rtl_dark_narrow_items": 18,
+    "minimum_required_ratio": 4.5,
+    "all_sampled_items_pass": true,
+    "scope": "Representative computed visible text; not formal accessibility certification"
+  },
+  "draft_semantics": "A stale native Save refuses and preserves the draft. Discard restores its loaded local snapshot; explicit reopen then reads the confirmed revision. No automatic server refresh is claimed.",
+  "authority_semantics": "Normal existing workspace administrator API revoked/restored exactly one original membership with its original administrator role; policy advanced monotonically twice, other authority and business rows exact. Fresh denied reload clears names/content/actions. Already-rendered bytes are not revoked; optional contribution denial hides its own content, not unrelated cached native fields.",
+  "retained_failures": [
+    "Wrong assumed fixture role refused before intent/API mutation; original helper preserved.",
+    "Private HTTP-client name shadow failed before network/revoke intent; original helper preserved and corrected.",
+    "Predecessor35 unsupported CSS and deliberately interrupted canonical retained; no green claim."
+  ],
+  "screenshots": {
+    ".local/ui-final-installed036-browser-01/customer-rtl.png": "2f276e16297f45046c7910b76fdd847a3ede91ad473afb0069f8c3c71545ed2b",
+    ".local/ui-final-installed036-browser-01/customer-light.png": "82a19181e927ab011056b1eb5669a491b10b4413ad754cc4c2e19d5054ab5b4e",
+    ".local/ui-final-installed036-browser-01/customer-rtl-dark-narrow.png": "8691b414a250c40a7f2160f3d016e26d54b23c2828ac77d11233f25bb73bb7f4",
+    ".local/ui-final-interactions036-01/stale-conflict.png": "ae8e2a4980302ce45248baa6936e61390f13f4031ebc7aaad9f4dbd95987e893",
+    ".local/ui-final-authority036-01/foreign-denial.png": "5cde11173fd986dc8b6d238e0e0025205c71da6d3405da6897778e4651d02b30",
+    ".local/ui-final-authority036-01/fresh-revoked.png": "0057292f05fdffa4fbc32fbb4e2f85a53bc056a84973a8a239450efaea7db50f",
+    ".local/ui-final-authority036-01/restored-customer.png": "debae279b13ab8b2a0b478a4f1ba5aa0122a82d53cd962a02f59e9a618a7f6e9"
+  }
+}

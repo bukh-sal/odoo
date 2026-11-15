@@ -1,13 +1,13 @@
 # Shared UI qualification and support boundaries
 
-Current isolated review cohort is core0.2.34/config10, Partners0.1.10,
-Workboard0.2.19, Delivery0.1.10, Documents0.1.12 and Taskfiles0.1.6.
-[Installed reader/contact evidence](evidence/G7/20261115-ui-record034-installed/qualification.json)
-proves the bounded native informational/optional Work/contact workflow and its
-exact data effects. Desktop/narrow/theme/keyboard/sidebar checks are recorded;
-they do not close the original Arabic/RTL/authority/absence/zoom/recovery and
-final canonical cards. UI0/4 remains active. Historical combinations below
-retain their original source scope.
+Current isolated cohort: core0.2.36/config12; five app archives unchanged from34.
+[Installed36 evidence](evidence/G7/20261115-ui-final036-installed/qualification.json)
+proves supported RTL title alignment, locale restoration, native save/conflict,
+viewer/foreign denial and normal current membership loss/restoration. Discard
+restores its loaded snapshot; explicit reopen reads the saved revision. Fresh
+denied reload hides private record content and app destinations; already-rendered
+bytes are not retroactively erased. Current canonical, zero/one/source-absence,
+true zoom/motion and other original phase cards remain open. Full UI0/4.
 
 An earlier combination was core0.2.26/config25, Workboard0.2.15, Delivery0.1.7,
 Documents0.1.10, Partners0.1.6 and Taskfiles0.1.5.

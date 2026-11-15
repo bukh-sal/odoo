@@ -9,17 +9,17 @@ Current goal: implement the [shared shell and application UI delivery plan](ui-s
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-15T16:37:12.070241+00:00
+- Updated UTC: 2026-11-15T17:08:28.226731+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: UI-D03-D06 active; isolated18730/core0.2.35/config11, five unchanged current apps. Main human18610/form protected. Sheet/contrast/breadcrumb fixes installed; RTL title unsupported and unaccepted. Full UI0/4.
-- Latest work item: [Source36 browser compatibility correction](evidence/G7/20261115-ui-final036-source/qualification.json) qualified: four shipped files, basic root-direction title alignment, all other CSS/JS/backend/five archives unchanged. Actual installed36 proof required before final canonical.
-- Current next action: ONE immutable36 populated candidate/audit, exact four-file core-only proposal/review/checkpointed apply, IAB RTL title proof and English/profile/data restoration. Then final canonical on frozen successful source and remaining original zero/one/many/authority/absence/zoom/motion cards. Prior35 complete operations never replay.
+- Current phase/gate: UI-D03-D06 active; isolated18730/core0.2.36/config12, five unchanged apps. Main human18610/form protected. Installed title/locale/save/current-membership checks pass their bounded scope. Full UI0/4.
+- Latest work item: [Installed36 evidence](evidence/G7/20261115-ui-final036-installed/qualification.json): actual supported RTL title, native Save/stale draft/reopen, B viewer/foreign denial and normal membership-loss/restoration; all fixtures closed.
+- Current next action: Freeze current executable source for one observed canonical run; current eight-addon/one-provider/normal source-absence fixture, original remaining interaction and true zoom/motion cards. Never replay completed operations.
 - Browser IAB4 main tab4 is now under human control on the creation route, per current ambient state. Preserve its state/draft; do not navigate/reload/close/deploy over it. User2/3/12 preserved; no outstanding agent business/profile fixture. Prior28 retention proves its recorded instant; reconcile any newer human writes before a new baseline.
 - Acceptance/checklist: UI0/4 until original phase cards are complete. Historical PP01..05 remains100/100 and5/5; R1 figures below retain their original scope. The preceding canonical936cases/934pass/2existing skips qualifies its recorded core12 source, not changed core19/private apps. Final current-source canonical waits for the interaction source freeze.
-- Blocker register: Remaining concrete title defect is unsupported match-parent in actual IAB;36 bounded source correction next. Canonical35 deliberately stopped for this shipped-source change; incomplete, no green claim. All35 operations terminal, English/light/default viewport/profile restored, no uncertain mutation. Genuine zoom human-window hold remains.
+- Blocker register: Original full matrix and final canonical remain incomplete. Actual installed36 resolves unsupported title. True200%zoom/reduced-motion tooling/human-window boundary remains unverified. No active authority/profile/business fixture or uncertain mutation.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
