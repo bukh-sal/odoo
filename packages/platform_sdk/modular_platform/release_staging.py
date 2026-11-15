@@ -54,6 +54,10 @@ LEGACY_WEB_MANIFEST='ece45d6a149396b0910db9d6076488d840f0eb8a83f1b27506e3f98a2b1
 WEB_APPEARANCE_READER_PATH='addons/web/models/ir_http.py'
 WEB_APPEARANCE_READER_BEFORE='717be34c311b75b9f7b9ab5fa547fc0ec9eacc6d9cb47edb1eaa903f4312292e'
 WEB_APPEARANCE_READER_AFTER='7e01deba6fb7b6007b3ce34dd9984b156adbbe8d0940bc33ca6c5ff3479967ab'
+# ADR0090: exact authenticated document metadata, not general QWeb/backend access.
+WEB_BOOTSTRAP_VIEW_PATH='addons/web/views/webclient_templates.xml'
+WEB_BOOTSTRAP_VIEW_BEFORE='075e913c055a049b1b4c4647dc4cac15b4ec500ac27c66d351372ab93a359458'
+WEB_BOOTSTRAP_VIEW_AFTER='e60f16121067bfeb3dfbafe24d8ab54605573f5d46de240dbad5f6b3a8cb1eae'
 
 
 def require_web_presentation_manifest(previous,target,files):
@@ -174,6 +178,9 @@ def validate_core_upgrade(base,runtime,descriptor):
     reviewed_appearance=('web' in allowed
         and old.get(WEB_APPEARANCE_READER_PATH)==WEB_APPEARANCE_READER_BEFORE
         and new.get(WEB_APPEARANCE_READER_PATH)==WEB_APPEARANCE_READER_AFTER)
+    reviewed_bootstrap=('web' in allowed
+        and old.get(WEB_BOOTSTRAP_VIEW_PATH)==WEB_BOOTSTRAP_VIEW_BEFORE
+        and new.get(WEB_BOOTSTRAP_VIEW_PATH)==WEB_BOOTSTRAP_VIEW_AFTER)
     parser_changed=PARSER_PATH in changed
     if parser_changed and (not reviewed_transition(before,after) or 'mp_compat' not in allowed
             or 'addons/mp_compat/__manifest__.py' not in changed):
@@ -181,7 +188,8 @@ def validate_core_upgrade(base,runtime,descriptor):
     if not parser_changed and before.get('generated_patches',[])!=after.get('generated_patches',[]):
         raise OperatorError('Core upgrade cannot alter generated patch attestations')
     if any(not name.startswith(prefixes) and name!=web_manifest and not (parser_changed and name==PARSER_PATH)
-           and not (reviewed_appearance and name==WEB_APPEARANCE_READER_PATH) for name in changed):
+           and not (reviewed_appearance and name==WEB_APPEARANCE_READER_PATH)
+           and not (reviewed_bootstrap and name==WEB_BOOTSTRAP_VIEW_PATH) for name in changed):
         raise OperatorError('Core upgrade includes packaged/upstream/unsupported native changes')
     touched={name for name in allowed if any(path.startswith(f'addons/{name}/') for path in changed)}
     if not touched or any(manifests[name]!=new_manifests[name] for name in manifests.keys()-touched):
