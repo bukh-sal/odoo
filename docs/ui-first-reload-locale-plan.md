@@ -43,3 +43,19 @@ and mixed identifiers. Collect related layout findings before a coherent fix;
 restore original language/theme/viewport and all semantic profiles. No required
 extra refresh or translation-completeness claim. Finish the original true zoom,
 motion/contrast/current authority/optional-app/current appfree/final canonical.
+
+## Pre-build visual addendum
+
+Before the source27 build, include the repeatedly observed redundant framing
+correction. The installed native reader wraps app-declared mp-record-surface
+cards inside another bordered/shadowed sheet, unlike the flatter Meridian
+hierarchy. Screen-only, at the existing shared shell's full-page native mount,
+remove the outer sheet border/shadow/background only in readonly mode when it
+has a direct shared record-surface child. Keep padding/width/scroll ownership,
+all inner cards, native Edit/new, ordinary non-card forms, dialogs and print.
+No app/domain selector or new opt-in API. This is the existing shared surface
+declaration, not an inference about app names. Compile actual Sass/RTL; prove
+all old/non-screen rule maps identical and only that selector added. Actual
+desktop/narrow/themes compare both reading and unchanged editing frames.
+This adds surfaces.css as a sixth shipped delta; the59 affected Python tests
+already passed before this stylesheet-only addition and need no broad repeat.
