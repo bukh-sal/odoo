@@ -1,5 +1,11 @@
 # UI-D06 integrated qualification implementation plan
 
+> Current acceptance reconciliation15November: installed core0.2.40 closes
+> D03/D04/D05 (3/4). D06 is pending only the single final-source canonical and
+> terminal release audit. See [acceptance matrix](ui-delivery-acceptance.md) and
+> [current supported combinations](ui-qualified-combinations.md). Entry-state
+> blockers below are historical plan context, not current tool/UI status.
+
 Activated14November2026 against host839f0d2a367 and the frozen source described
 below, before its execution work. This phase completes the existing
 [delivery plan](ui-shell-delivery-plan.md); it introduces no new UI framework,

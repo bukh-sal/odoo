@@ -1,5 +1,11 @@
 # UI-D05 shared work surfaces implementation
 
+> Current acceptance reconciliation15November: installed core0.2.40 closes
+> D03/D04/D05 (3/4). D06 is pending only the single final-source canonical and
+> terminal release audit. See [acceptance matrix](ui-delivery-acceptance.md) and
+> [current supported combinations](ui-qualified-combinations.md). Entry-state
+> blockers below are historical plan context, not current tool/UI status.
+
 Activated 14 November 2026, before source edits, against platforma2438476e35.
 The coherent review site remains port18610/configuration4/core0.2.11. Its private
 app sources are Workboard5d93503 (.2.12), Documents82fe5ae (.1.8),

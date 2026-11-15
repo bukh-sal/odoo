@@ -1,3 +1,24 @@
+## Final source40 browser matrix and acceptance reconciliation -15November2026
+
+Both immutable40 updates completed normally: populatedconfig16/168.672s and
+source-freeconfig7/149.047s. Native light/dark2px focus uses shared tokens with
+measured5.345:1/9.04:1 surface contrast. Refresh exposed actual documented CDP:
+real reduced-motion media changes0.15s to0s,18controls have zero motion and
+palette/sidebar/focus work; overrides cleared, global OS unchanged. Human final
+200% measures681CSS/DPR2.2/scale1; native/custom reflow, Enter and pointer reader
+opening pass. Earlier pointer click hit sticky header over a scrolled-under row;
+ordinary wheel exposes the TD and same click works. No product/event patch.
+Control-click opens a separate scoped Documents tab with original reader intact.
+All22populated/sixempty tables equal post40 baseline; no business/access/profile
+writes.15critical recovery files match scoped historical fault/restore proof;
+source38 planner correction separately proved by real zero-target maintenance.
+
+Reconciled stale support/author docs and original cards: D03/D04/D05pass3/4,
+D06pending final canonical/terminal audit. One canonical040 started on frozen
+748c5e32 source, actual PID28852/creation134392482456224040; only docs changed
+after launch. No full-run restart, finalgreen or goalcompletion claim. Main human
+form, protected targets, private apps/checkpoints/images and failures retained.
+
 ## Actual rendered first pass and correction source -15November2026
 
 Restart exposed working first-party in-app CUA controls. Preserved the owner's

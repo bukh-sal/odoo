@@ -31,3 +31,17 @@ CDP/media override. Recheck actual available tools at the next browser pass;
 do not guess hidden methods or claim that viewport sizing is200% page zoom.
 The earlier real200% source36/37 proof remains dated. Reduced motion remains
 unverified until an actual documented control/preference is available.
+
+
+## Installed outcome
+
+Source40 is installed on owned18730/config16 and18731/config7 after independent
+review/checkpoint/apply. Real native focus computes2px/shared tokens: light
+5.345:1 and dark9.04:1 contrast against the actual dialog surface. Browser reset
+then exposed documented CDP controls; genuine reduced-motion media switches the
+native transition0.15s→0s and preserves palette/sidebar/focus behavior. Overrides
+were cleared. The owner reset the final preview to200%, measured681CSS px,
+DPR2.2/visualScale1; native/custom layouts and pointer/keyboard record opening
+pass. Global OS preference unchanged, no app/media monkeypatch. Earlier tool
+absence and failed raw zoom controls remain historical, not a current blocker.
+See the installed40 evidence and the current original-card acceptance matrix.

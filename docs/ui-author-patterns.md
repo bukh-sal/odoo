@@ -1,20 +1,26 @@
 # Shared application interface patterns
 
-The owned web interface supplies common presentation for native views and
-independent applications. Applications own their data, services, permissions,
-routes and drafts. These components ship with provisional core0.2.12; an app
-that imports them must declare that minimum in its platform compatibility.
-Existing native field/form/list renderers remain the default record interface.
+The owned interface supplies shared presentation for native views and independent
+apps. Apps own data, services, authority, routes and drafts. The current installed
+cohort is core0.2.40; [qualified combinations](ui-qualified-combinations.md) and the
+[acceptance matrix](ui-delivery-acceptance.md) separate actual interaction proof,
+unchanged-source applicability and the remaining final canonical run.
 
-The current source integrations use the same components in tasks, personal
-reminders, customer work and Documents. Native Partners retains its normal form
-model, fields, validation, revision controller and save/leave lifecycle. Installed
-core delivery is recorded in the [core qualification](evidence/G7/20261114-shared-work-surface-core-01/qualification.json).
-The [installed app record](evidence/G7/20261114-shared-work-surface-apps-01/qualification.json)
-now proves normal upgrade preservation, native metadata and the scoped API
-journey. Rendered interaction and visual qualification remain open in the
-[D05 plan](ui-work-surfaces-plan.md); source checks and API success are distinct
-from that evidence.
+| Pattern | First supported source | Author fallback |
+| --- | --- | --- |
+| PageHeader, StatusMessage, AppLayout and shared tokens/classes | core0.2.12 | Ordinary native views/styles; do not import missing exports. |
+| TablePagination / standard below-table native paging | core0.2.16 | Existing native controller with supported UI on an older cohort. |
+| Remembered context, shared Icon and breadcrumb array | introduced0.2.29; qualified packaging from0.2.30 | Native shell/action navigation. The029 asset-closure failure is preserved, not supported. |
+| Author-selected page/dialog/sheet creation | core0.2.31 | Ordinary native creation; do not emulate uncertain saves. |
+| RecordSection / RecordTabs | core0.2.33 | App-owned semantic sections with shared tokens. |
+| Informational native frame / compact record navigation | core0.2.34 | Standard native record controller. |
+
+Declare the minimum for the exports/behavior actually used; these provisional
+minimums are not a future stable ABI promise. The current exact five-app cohort
+uses shared task/reminder/customer/document surfaces and the native Partners
+reader/Edit model. Source40 has real desktop/narrow/theme/RTL/keyboard/native200%
+and reduced-motion evidence. That does not automatically qualify another app's
+layout, data transitions or browser combination.
 
 ## Header and actions
 
@@ -94,13 +100,11 @@ When `showContext` becomes false, its context slot is removed; the default slot
 remains. This is presentation behavior, not a permission boundary or draft store.
 The source focus-request checks do not substitute for browser focus/draft checks.
 
-### Shell additions in candidate0.2.29
+### Shared shell, context, icons and breadcrumbs
 
-These additions are source/preview qualified; installed qualification is pending.
-The previously installed core0.2.28 remains the control until normal delivery.
-Installed029 subsequently exposed a frontend asset-closure failure. ADR0092
-corrects the shared primitive packaging in candidate0.2.30; do not treat029 as
-clean installed UI support. The component API is unchanged.
+Introduced in0.2.29; ADR0092 corrected an actual asset-closure failure in0.2.30.
+Current40 installed context collapse, palette, scope and focus evidence passes.
+The failed029 record remains historical; its component API was unchanged.
 
 Pass `contextKey="'your.stable.plugin.id'"` to `AppLayout` to remember desktop
 collapse. The key must be a stable identifier, never a translated title, record ID,
@@ -226,7 +230,8 @@ links, focus and semantic error/warning/success colours. Light defaults and the
 existing native dark bundle both define these tokens. Use logical inline/block
 spacing, the shared26/34px title,34px controls,36px search,44px minimum rows and
 264px context. Let content grow; constrain internal boards rather than causing
-page overflow. Preserve native field widgets, paging, filter menus and names.
+page overflow. Preserve native field widgets, names and model paging callbacks. Lists use the
+shared below-table paginator; form record traversal remains distinct.
 
 Keep app styles scoped to their root or owned dialog content. Avoid broad
 `h1`, `h2`, button or field overrides that restyle shared children. Use a native
@@ -268,8 +273,9 @@ fabricated last page. Groups and embedded tables must supply their own callback
 scope and disable duplicate global pager hotkeys. A custom native renderer that
 replaces ListRenderer owns accepting/rendering the optional pagination input.
 Native form record traversal and non-table Kanban navigation remain separate.
-The current shared paginator uses modern container sizing for narrow grouped
-footers; installed browser support is provisional until the actual matrix passes.
+The shared paginator uses modern container sizing for narrow grouped footers.
+Installed native multi-page/grouped-list and current narrow/zoom checks are
+bounded to the recorded browser/cohort, not every custom renderer.
 
 
 Native collection pagination uses the current model offset/limit/total and existing onUpdate callback. TablePagination accepts optional isGrouped for honest group totals; nested consumers supply their own grouping/count scope. The flag changes wording only, never queries or permissions. Single pages show a quiet count; limited counts never invent a final page.
@@ -277,11 +283,13 @@ Native collection pagination uses the current model offset/limit/total and exist
 
 Native record forms select the shared ControlPanel record frame automatically; in-dialog forms retain their ordinary footer. RecordNavigation consumes the existing loaded-ID offset/limit1/count/onUpdate, names the loaded scope honestly and does not wrap or advance optimistically. The ordinary form save, validation, revision CAS and save-on-leave behavior remain. FormStatusIndicator describes its own explicit pending commands and the actual model/local-field dirty/valid state; failed/refused callbacks do not become Saved. Native input hooks provide a title fallback from field metadata without overriding app labels/ARIA/title. Authors should still supply visible labels or section context; this is not a replacement for app semantics.
 
-## Native read-first source candidate0.2.20
+## Native read-first records
 
-Standard full-page native existing records read before editing; named Edit enters the existing model mode, explicit successful Save/Discard returns to reading. New/dialog/custom persistence/forcedreadonly flows keep their own contract. Native widgets still own their behavior; reading mode is presentation, never write authority or an immutable-view/sandbox guarantee. Backend current scope/revision guards decide every mutation. Original native save-on-leave/visibility remains while editing; do not advertise manual-save-only semantics. No app ID or extra author registry/flag is needed. Source/component proof only until normal installed qualification.
+Standard full-page native existing records read before editing; named Edit enters the existing model mode, explicit successful Save/Discard returns to reading. New/dialog/custom persistence/forcedreadonly flows keep their own contract. Native widgets still own their behavior; reading mode is presentation, never write authority or an immutable-view/sandbox guarantee. Backend current scope/revision guards decide every mutation. Original native save-on-leave/visibility remains while editing; do not advertise manual-save-only semantics. No app ID or extra author registry/flag is needed. Native Save/conflict/Discard and current access were exercised on36; the same
+record controller/app bytes remain exact in40. Discard restores its loaded
+snapshot; explicitly reopen to fetch a newer saved revision.
 
-## Related-record preview styles, candidate0.2.23
+## Related-record preview styles
 
 Inside an existing `.mp-record-surface`, use `.mp-record-section-header` for a
 named `.mp-record-section-title` and normal action. A semantic list can use
@@ -301,7 +309,8 @@ explicitly validate/consume that UUID before its normal scoped read. A plain
 full browser link is not a substitute for the native action dirty-leave guard.
 Delivery1.7 demonstrates shared related-record styles with actual current reads,
 bounded has_more guidance and a fresh existing context check before task action;
-no core business registry is required. Installed qualification is still pending.
+no core business registry is required. Current Delivery0.1.10 is installed and
+exercised with Partners0.1.10 and Workboard0.2.19; older examples are historical.
 
 An application can build a compact read-first summary directly in native XML:
 readonly fields in a semantic definition list, a shared mp-record-surface and
@@ -310,9 +319,9 @@ Keep the full existing fields in explicit Edit/new; mode classes control only
 presentation. Partners0.1.6 demonstrates this without a new widget or request.
 Retain loaded readonly revision/CAS and server authority. Native labels/fields
 remain localized/escaped through the ordinary renderer. Verify no duplicated
-visible controls in either mode. Native relation links still need the recorded
-shared dark contrast correction; token reuse around a field does not restyle
-the field's own legacy Sass declaration automatically.
+visible controls in either mode. Native relation links received the recorded shared dark contrast correction.
+Token reuse around a field alone does not restyle its own legacy Sass; inspect
+actual computed colors and focus on your app's final surface.
 
 The native Shell and Owl AppLayout use the normal web host's reactive UI service
 for breakpoint presentation. Standalone AppLayout and dialog fallback mean no
@@ -320,7 +329,7 @@ shell portal is required; they still use the ordinary web service environment.
 Do not build another matchMedia store or read env.isSmall alone for a component
 that must redraw on resize. This changes no application routes or authority.
 
-## Author-selected creation, candidate0.2.31
+## Author-selected creation
 
 Use action context `create_surface` with `page`, `dialog` or `sheet`. Absence
 preserves existing native behavior, including editable lists; an explicit choice
@@ -344,8 +353,10 @@ from `@web/views/view_dialogs/record_create_dialog`, with a required guarded
 partial outcomes. Workboard's task-plus-personal-reminder flow confirms task
 identity first, then schedules with a separate immutable key; it can retry the
 reminder or finish with the saved task without pretending to roll it back.
-These are source-qualified contracts until the installed successor passes.
-# Informational records and app-owned sections
+Installed creation31/32 and record34 prove the compact/native surfaces and
+normal task-plus-reminder outcome. Current archives are unchanged; app authors
+still qualify their own partial, uncertain and leave outcomes.
+## Informational records and app-owned sections
 
 `RecordSection` and `RecordTabs` require core>=0.2.33. Use `RecordSection` for a truthful informational card (title, optional icon,
 heading level, action/default slots), and controlled `RecordTabs` for section
@@ -381,3 +392,66 @@ Document the exact qualified owner/provider combination. Backend scope, current
 capabilities, release identity and revision checks remain authoritative.
 
 Core>=0.2.34 derives informational framing from an existing readonly record; New, Edit and dialogs retain their ordinary layout even when an author keeps recordBodyTitle set. RecordNavigation compact is presentation-only and retains the full accessible status and loaded-ID callback. Partners>=0.1.10 resolves actual native TranslatedString descriptors after translation readiness, retaining plain-label validation; component literal props can use native .translate.
+
+
+## A reusable informational section
+
+Use the exported card and controlled tabs without teaching core an app model:
+
+```js
+import { RecordSection, RecordTabs } from "@web/interface/record_sections";
+// static components = { RecordSection, RecordTabs, ... };
+// The owner supplies localized plain labels and unique DOM panel IDs.
+get sectionItems() {
+    return [
+        { id: "overview", panelId: "customer-overview", label: _t("Overview") },
+        { id: "work", panelId: "customer-work", label: _t("Work") },
+    ];
+}
+async selectSection(id) {
+    if (!(await this.mayLeaveCurrentSection())) return false;
+    this.state.section = id;
+    return true;
+}
+```
+
+```xml
+<RecordTabs items="sectionItems" idPrefix="'customer-sections'"
+            selectedId="state.section" onSelect.bind="selectSection"/>
+<div id="customer-overview" role="tabpanel"
+     aria-labelledby="customer-sections-tab-overview"
+     t-att-hidden="state.section !== 'overview'">
+  <RecordSection title.translate="Relationship" icon="'users'">
+    <!-- Escaped, currently authorized owner data; honest missing values. -->
+  </RecordSection>
+</div>
+```
+
+The owner must render every declared panel with matching ID/label, including
+its Work panel; the excerpt only shows Overview. Keep drafts mounted when
+needed. A section label is not permission or a promise of unavailable data.
+Do not fetch from a rendering getter or optimistically change the selected tab
+before the owning leave decision. Partners/Delivery supply the actual optional
+provider example; Documents and Workboard supply independent page/sheet usage.
+
+## Current error, focus and qualification guidance
+
+The shared native missing/access-page dialog has fixed translated recovery copy,
+one concurrent presentation per environment and no automatic request/save retry.
+Apps retain explicit owner dialogs/notifications and business conflict handling.
+Do not pass server exception text into a business-facing empty state. A fresh
+known denial clears/hides cached protected content; it cannot erase bytes the
+browser already rendered or downloaded.
+
+Native button focus maps to the shared2px token in light/dark. App-local normal
+CSS overrides remain available; qualify contrast against actual backgrounds.
+Use logical properties and directionally isolate identifiers rather than forcing
+whole human-name sections LTR. Respect prefers-reduced-motion in app animation.
+Current browser CDP media proof is genuine browser preference emulation, not an
+OS-setting or formal accessibility certification.
+
+Before declaring another app ready, exercise its useful workflow in the in-app
+browser: loading/empty/filter/error, draft/save/cancel/conflict, current access,
+optional provider absence, keyboard/focus, desktop/narrow, both themes, actual
+locale/RTL and200%zoom. Shared source tests cannot replace those checks. Retain
+exact app versions/digests and install them through normal immutable delivery.

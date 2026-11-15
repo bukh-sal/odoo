@@ -1,5 +1,11 @@
 # Shared shell and application UI delivery plan
 
+> Current acceptance reconciliation15November: installed core0.2.40 closes
+> D03/D04/D05 (3/4). D06 is pending only the single final-source canonical and
+> terminal release audit. See [acceptance matrix](ui-delivery-acceptance.md) and
+> [current supported combinations](ui-qualified-combinations.md). Entry-state
+> blockers below are historical plan context, not current tool/UI status.
+
 **Handoff, 14 November 2026. Start with UI-D03.** The owner accepted the roomier Meridian direction and the first installed shared styles. The next visible result is a single shell around a native list and a custom task page. The end of this sequence is a useful cross-app workflow on a populated, upgradeable app-free platform. Implementation belongs to the next work session.
 
 ## Starting point

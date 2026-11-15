@@ -1,0 +1,230 @@
+{
+  "utc": "2026-11-15T20:31:56.699791+00:00",
+  "source": "748c5e32b3b4480ac7471b7b7a8a06301a26544b",
+  "operations": {
+    "populated": {
+      "all_views_exact": true,
+      "apply_seconds": 168.672,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 16,
+      "image_id": "sha256:9335a01e023b1de8de0652732a946b1e77f2a492064a4cc38e79cc7756329854",
+      "operation_id": "99adc876-5a0c-437f-badb-e96c12a30c6f",
+      "plan_hash": "sha256:34d2d4e1cc3aa9eebba37014083f61cba77ef6d0023699afc354b6194ef1da64",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "delivery_link": 1,
+        "documents_blob": 2,
+        "documents_fence": 1,
+        "documents_file": 1,
+        "documents_upload": 2,
+        "documents_version": 2,
+        "mp_job": 1,
+        "mp_membership": 6,
+        "mp_outbox": 9,
+        "mp_plugin_grant": 8,
+        "mp_principal": 4,
+        "mp_workspace": 2,
+        "partners_partner": 4,
+        "taskfiles_event_cursor": 0,
+        "taskfiles_file_review": 0,
+        "taskfiles_link": 1,
+        "workboard_comment": 0,
+        "workboard_list": 0,
+        "workboard_notice": 1,
+        "workboard_reminder": 1,
+        "workboard_stage": 0,
+        "workboard_task": 2
+      },
+      "tables": 22,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "2e836a051be26404d90585ab2f1b45fbc01934f3c32cd3b9a0e7b22a4437b816",
+      "workspace_policy_epoch_increment": 0
+    },
+    "core": {
+      "all_views_exact": true,
+      "apply_seconds": 149.047,
+      "business_exact": true,
+      "checkpoint_verified": true,
+      "generation": 7,
+      "image_id": "sha256:d30bb72ef80ec59d3389eb85c6ffc7fd560f77890666121f2ffa2cf9f1a297a5",
+      "operation_id": "5ab41a09-4df0-4b83-9bdd-1979237da0c2",
+      "plan_hash": "sha256:110e450140ce3248235ea5a1bf60c579b5cc4e169fa1d1eeea97906675b772d6",
+      "protected_targets_exact": true,
+      "result": "completed_verified",
+      "scope": "Normal operation and installed metadata/data verified; actual UI pending",
+      "table_counts": {
+        "mp_job": 0,
+        "mp_membership": 6,
+        "mp_outbox": 1,
+        "mp_plugin_grant": 0,
+        "mp_principal": 4,
+        "mp_workspace": 2
+      },
+      "tables": 6,
+      "terminal_job_control_bound_to_actual_ready_receipt": true,
+      "worker_id": "e8ed808cb13a75defa0fd8a86dfc4d4a06dd3ed2e8e964536790fe8b53052687",
+      "workspace_policy_epoch_increment": 0
+    }
+  },
+  "browser": {
+    "core": "0.2.40",
+    "light": {
+      "buttonBackground": "rgb(32, 33, 39)",
+      "buttonColor": "rgb(255, 255, 255)",
+      "focusToken": "#5065bc",
+      "shadow": "rgb(80, 101, 188) 0px 0px 0px 2px",
+      "surface": "rgb(255, 255, 255)"
+    },
+    "dark": {
+      "buttonBackground": "rgb(240, 241, 244)",
+      "buttonColor": "rgb(32, 33, 39)",
+      "documentWidth": 1280,
+      "focusToken": "#b3baff",
+      "shadow": "rgb(179, 186, 255) 0px 0px 0px 2px",
+      "surface": "rgb(28, 30, 35)",
+      "width": 1280
+    },
+    "contrast": {
+      "lightFocus": 5.345,
+      "darkFocus": 9.04,
+      "lightButtonText": 16.052,
+      "darkButtonText": 14.212
+    },
+    "reduced": {
+      "dialogCount": 1,
+      "documentWidth": 1280,
+      "focusToken": "#5065bc",
+      "motion": true,
+      "shadow": "rgb(80, 101, 188) 0px 0px 0px 2px",
+      "transition": "0s",
+      "width": 1280
+    },
+    "normal": {
+      "motion": false,
+      "shadow": "rgb(80, 101, 188) 0px 0px 0px 2px",
+      "transition": "0.15s, 0.15s, 0.15s, 0.15s"
+    },
+    "narrow": {
+      "documentWidth": 390,
+      "headerTarget": 44,
+      "height": 844,
+      "motion": true,
+      "transition": "0s",
+      "width": 390
+    },
+    "reducedMotionInteraction": {
+      "sidebarCollapseExpand": true,
+      "paletteKeyboardOpenEscapeFocusReturn": true,
+      "representativeControls": 18,
+      "allTransitionAndAnimationDurations": "0s",
+      "runningAnimations": 0
+    },
+    "method": "Documented tab CDP browser media/device emulation; no application source or matchMedia monkeypatch.",
+    "nativeZoom": {
+      "rawInputDispatchBlocked": true,
+      "supportedControlEqualNoEffect": true,
+      "baselineDpr": 1,
+      "baselineWidth": 1280,
+      "notClaimedAs200": true
+    },
+    "restored": {
+      "dpr": 1,
+      "focusShadow": "rgb(80, 101, 188) 0px 0px 0px 2px",
+      "motion": false,
+      "surface": "rgb(255, 255, 255)",
+      "visualScale": 1,
+      "width": 1280
+    },
+    "businessWrites": 0,
+    "temporaryOverridesCleared": true,
+    "protocolSources": [
+      "https://chromedevtools.github.io/devtools-protocol/tot/Emulation/",
+      "https://chromedevtools.github.io/devtools-protocol/tot/Input/"
+    ]
+  },
+  "final_native_zoom": {
+    "source": "748c5e32b3b4480ac7471b7b7a8a06301a26544b",
+    "user_confirmed_zoom": "200%",
+    "measurements": {
+      "documentWidth": 681,
+      "dpr": 2.200000047683716,
+      "height": 394,
+      "visualScale": 1,
+      "width": 681
+    },
+    "native_list": "Four actual records and below-table pagination; body horizontal overflow absent; table has local horizontal scrolling for its columns.",
+    "native_reader": "Leah Ortiz opens by Enter and normal pointer click after scrolling target into view; Saved, Edit, Overview/Work and return breadcrumb available.",
+    "pointer_observation": "Earlier locator click targeted a row scrolled under the sticky header; document.elementFromPoint proved header interception. Ordinary wheel up returned scrollTop to0, hit-test returned TD and the same locator click opened reader. No product change or event injection.",
+    "custom": "Current Workboard screenshot workboard-native200.png retained; navigation preserves zoom.",
+    "core": "Updated owned18731 source40 shows useful empty workspace/account/jobs guidance.",
+    "writes": "No business/profile/authority mutation in this zoom check.",
+    "limitations": "Measured manual native page zoom, not viewport emulation. No formal accessibility certification."
+  },
+  "post_browser_retention": {
+    "populated_tables": 22,
+    "empty_core_tables": 6,
+    "all_fields_exact_to_post040_apply": true,
+    "protected_target_hashes_exact": true,
+    "private_app_heads_and_trees_exact": true
+  },
+  "recovery_applicability": {
+    "historical_source": "7fff9a81fec69c81901c97f82742a9bade557bde",
+    "critical_files_unchanged": {
+      "packages/platform_sdk/modular_platform/native_executor.py": "8e4ba4026f635027bf4ea50b6364ce629aef9b70d5825f7224100531660f2fb9",
+      "packages/platform_sdk/modular_platform/native_uninstall.py": "c04d2e051f41f17309345d9c7b36c5a5debc8aa8af68a4aa9e6e2ae34ddcfab8",
+      "packages/platform_sdk/modular_platform/uninstall_metadata.py": "2f3c227bc8f7ef1e240d358efee0c732aa960769bc505459e6a41ec2264375ba",
+      "packages/platform_sdk/modular_platform/remove_metadata.py": "7abbab897410a7e3193f14cae48ef02c7a2a428d91e7ffeb05d5fa48bce1c618",
+      "packages/platform_sdk/modular_platform/operator_store.py": "07211b5c11f4b82a23b2f3f80cfb4cc4aaba7eee565156ff27e61740b26988ee",
+      "packages/platform_sdk/modular_platform/restore_executor.py": "fd97877a5d203482924d0bccee0334518da7025cc06d9020bc1134bc00b491c6",
+      "packages/platform_sdk/modular_platform/restore_continuation.py": "77819b723ea9bf3560cd6145d28d46fb6f8a6d164754cfd8d486f5b87c329dd5",
+      "packages/platform_sdk/modular_platform/unchanged_recovery.py": "d024f2e3fb94c9aa86f68bbf681c7c77ccc3452dacc55a8f2d8e2f488a7a8171",
+      "packages/platform_sdk/modular_platform/completed_checkpoint.py": "3d2d460653aa1224b1d372e77048f186ad77bf05aae4100f60d905ad710b9e0c",
+      "packages/platform_sdk/modular_platform/checkpoint_recovery_journal.py": "59532903c6b25572851dea65f2b8d99ce10e646fcefdf8101e39a4f9d7350fb1",
+      "packages/platform_sdk/modular_platform/dispatch_lifecycle.py": "8fe44ef14932af93b916af0b4702a3c6a6dab15d053c3689e33bbbc1e667d3fc",
+      "packages/platform_sdk/modular_platform/dispatch_operator.py": "0b67d767429dd4eb13b6609b37b294c2f2a8ba2ae705706c1fb73609c4b68838",
+      "packages/platform_sdk/modular_platform/native_feature_executor.py": "63667d646dcf18c6544ad31aba64064d67ca594e2f2d494ee63a964fe31fccec",
+      "packages/platform_sdk/modular_platform/feature_executor.py": "75b7d3b35d9aff2504900e23ed0a0d7fe6e196646a129531f77792181ef1fd69",
+      "packages/platform_sdk/modular_platform/recovery_reviews.py": "85443de3fc31916c3110d513dd8024b1126fbe97254ff802ca1d7f6bfff06f31"
+    },
+    "scope": "Exact fifteen executor/dispatch/store/recovery files remain unchanged from the recorded historical proof. Source38 plans.py correction separately admits only complete unbound removed history; actual independently approved zero-target checkpointed maintenance completed on38,39,40. Historical fault/fresh restore/newer authority/separate resume is applicable to these unchanged boundaries; no new fault/restore claim."
+  },
+  "private_receipt_sha256": {
+    ".local/ui-focus040-01/browser/result.json": "a31bc90a3705cfd0ae93a5963a963c3f676dddc78f8cae64fd305f478c5fd830",
+    ".local/ui-focus040-01/browser/native-zoom200.json": "40639da07094d79c91b7bd28842a9235a906a289c6744b69aad60a75ae26d9c3",
+    ".local/ui-focus040-01/populated-post-browser-tables.json": "3257a8b2781aca83ea4b513786ffc77a741340b9853ff30a3029f09ecf8adb54",
+    ".local/ui-focus040-01/core-post-browser-tables.json": "ee20405d91eb2d7825881a6308fc713986a4f189e6d2b85d4fb7b317e07af00b",
+    ".local/ui-focus040-populated-rollout-01/complete.json": "dfc8b6b442b46220ffed20a3a32a52de2a0277fe767fb2bbd7b1feb31ab6ac67",
+    ".local/ui-focus040-populated-rollout-01/apply-exit.json": "b85691d1338839fa70a6ce88bebafbfcb81bd5f04df6feaa54f741b12480fe9a",
+    ".local/ui-focus040-core-rollout-01/complete.json": "d7d1fe0fb85dedddb026af9c432c2edebd0a92d66b8f42245e093b7b539303ad",
+    ".local/ui-focus040-core-rollout-01/apply-exit.json": "99f402bffdecf4dcef55a129207cb8b2764f01186b2304e8a8bfed352af7665a",
+    ".local/ui-focus040-01/browser/modified-link.json": "6867f47f3ce03875f5f885d75e17e85a8f8207f6337637049cb212f00514a317",
+    ".local/ui-focus040-01/retained-resources.json": "9ff317e7f0af112d26a1dbca230111a46b34096b8582999bcc815c9f51dce756"
+  },
+  "scope": "Installed40 focus/motion/native200/empty core plus normal checkpointed populated and source-free maintenance. Canonical040 is separately running;036 green does not qualify040.",
+  "modified_link": {
+    "source": "748c5e32b3b4480ac7471b7b7a8a06301a26544b",
+    "controlClick": "Documents rail link",
+    "result": "New scoped Documents tab28; source16 retains Leah Ortiz reader and workspace. No business write.",
+    "destination": "http://release-cd4dd6d48e72.localhost:18730/odoo/documents?workspace=943892c1-f556-4771-aa8d-51410c1124a7",
+    "sourceTab": "http://release-cd4dd6d48e72.localhost:18730/odoo/action-84/4?workspace=943892c1-f556-4771-aa8d-51410c1124a7",
+    "cleanup": "Only agent-created tab28 closed after observation."
+  },
+  "retention_inventory": {
+    "populated": {
+      "containers_retained": 156,
+      "networks": 2,
+      "volumes": 6,
+      "current_worker_running": true
+    },
+    "core": {
+      "containers_retained": 83,
+      "networks": 2,
+      "volumes": 6,
+      "current_worker_running": true
+    },
+    "protected_target_hashes_exact": 11
+  }
+}

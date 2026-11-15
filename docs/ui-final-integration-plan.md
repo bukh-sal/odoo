@@ -1,5 +1,11 @@
 # Current UI integration and acceptance pass
 
+> Current acceptance reconciliation15November: installed core0.2.40 closes
+> D03/D04/D05 (3/4). D06 is pending only the single final-source canonical and
+> terminal release audit. See [acceptance matrix](ui-delivery-acceptance.md) and
+> [current supported combinations](ui-qualified-combinations.md). Entry-state
+> blockers below are historical plan context, not current tool/UI status.
+
 Activated 15 November 2026 after installed record34 and commit1849df3fa66.
 This executes the remaining original UI-D03–D06 cards, not a replacement goal.
 The previous turn made progress: two immutable normal upgrades, useful reader/
