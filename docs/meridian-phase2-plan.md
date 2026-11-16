@@ -597,6 +597,42 @@ Next finish current empty-core counterpart, remaining RTL/motion/theme/zoom and
 navigation/provider-availability comparisons; settle material fidelity findings
 before phase3's fresh Pages implementation plan. Do not rerun terminal scripts.
 
+### Current empty-core counterpart execution plan
+
+Previous turn is progress: core54 source/install plus real create/conflict/viewer
+evidence changed authoritative state. Current root16a2e644370 is clean; no build
+or native operation is live. Populated18740/config15 remains protected throughout
+this empty-only sequence. Empty18741 is the existing owned release5895c8c78f02,
+site80faf340-a9bf-44f1-9c80-6e51e12b4494/config1/core45, never rebootstrap it.
+
+Build one clean eight-addon54 image with deploy/distribution-r1-clean-probe.json
+from the current committed source. New absent evidence/output roots; normal
+build_candidate G7 route, no dependency-base/reproduction or app admission. Bind
+all curated source hashes, Python/Node/RTL locks, exact eight manifests and zero
+artifacts. Audit every final layer/rootfs against the inventory; keep protected
+target/private-head hashes unchanged. Compare every common runtime file to the
+populated54 candidate: only the absent Partners addon/archive/inventory differ.
+
+Use the actual empty target, trust, catalog and OperatorStore. Read observer and
+nine fixed tables: installation, feature, grant, binding, jobs, outbox, principal,
+membership and workspace. Assert zero applications/features/grants/bindings/jobs/
+events; preserve all authority/workspace rows exactly. Existing core-upgrade
+producer and test_core_upgrade prove empty targets=[] is supported with real
+site scope, backup/destructive/trust/restart semantics; it is not a no-op or a
+relaxation when apps are present. New nomination is only core_upgrade/targets[].
+Stage, prepare, inspect exact hash/native version deltas/site scope/plugins[],
+then normal register/exact-hash approve with trust+destructive only/apply once.
+Keep all old images/checkpoints/workers and source DB; no blind retry/recovery.
+
+Postconditions: config2/core54/eight installed modules/zero apps with exact nine
+captured tables and current published lock; catalog/trust unchanged. Populated15
+and all other protected targets/private heads/source hashes remain exact. Reload
+only owned empty tab40, verify no-app guidance, app/account/jobs navigation,
+light/dark/narrow and no stale app context. Then finish populated RTL/motion/theme/
+native zoom/availability comparisons and critique the remaining navigation/
+conflict UX boundaries. Native200 manual setting is pending, not assumed from
+viewport emulation; independent work continues. Phase2 exit still unproven.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
