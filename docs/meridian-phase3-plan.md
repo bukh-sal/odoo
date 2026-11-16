@@ -326,3 +326,52 @@ recovery proof integration are implemented in the local core57 candidate.
 See meridian-phase3-progress.md for affected tests, actual readonly core56 schema
 compatibility and the installed proofs still required. No P3.0/phase3 acceptance
 or Pages existence is inferred from these source checks.
+
+
+### Successor014: real hierarchy, template reuse and workspace composition
+
+Activated after013's actual child workflow exposed ContextNav's documented
+onToggle(id, expanded) versus the app's mistaken item.id callback. The failure
+is before the tree request/pref write; saved child content remains exact. Fix
+the app caller and exercise the ACTUAL shared ContextNav producer in a regression,
+then actual installed expansion/keyboard/persisted disclosure. Treat this as an
+app integration defect, not a reason to change the shared callback contract.
+
+Invalidate observed navigation counts after create/move/trash/template/preference
+changes; show no stale badge while its count is unknown. Reload visible expanded
+branches through existing authorized tree calls, bounded by existing200 expansion
+preferences/20-row pages. Never fabricate completeness or fetch inaccessible
+ancestor titles. Add a paginated/searchable move destination dialog using current
+list DTO can_edit; root is an explicit destination, self is disabled, cycles and
+changed authority remain server refusals. Retain normal CAS/frozen command receipt
+flow; no permission inheritance when moving. Reorder remains a separate explicit
+UI action until it is actually implemented/qualified.
+
+Make template use/duplication useful through ONE app-owned atomic duplicate
+command: current readable source + namespace create permission + current writable
+destination parent; expected source revision; validated metadata; deterministic
+actor/workspace/key-derived destination; input digest and own receipt. Copy only
+the current canonical body into one new revision, with new resource identity and
+default workspace-reader policy. Never copy comments, history, ownership or grants.
+Replay still checks current source and destination access before cached results.
+Quota/retained-byte accounting runs under the existing workspace fence before
+creation. Missing/stale/trashed source, bad parent/cycle, wrong key/body or lost
+access must refuse without partial creation. No new core seam/table/migration.
+Add exact app schema/registration/client declarations and real-method bounded
+counterexamples. Use the identity dialog for title/icon/cover and explicit copy
+semantics; keep frozen same-key input on uncertainty. Add actual template toggle
+and use actions; no button without a real server operation.
+
+Restructure this app's writer column so its header belongs to the writer and the
+inspector starts below the global bar, matching Meridian. Keep independent scroll
+and reachable composer; collapse into inline flow on narrow/short viewports.
+Resolve at most the current readable parent for a real breadcrumb; hidden parent
+gets no guessed label. Reuse existing shared components/tokens, no Pages core CSS.
+
+Gate: affected real-Owl/shared-callback and actual-model source tests, deterministic
+archive, one clean immutable app successor with core3747 files exact, normal
+reviewed upgrade on owned18742 preserving2pages/56revisions/66receipts/2comments/
+policy8/current grants. Then actual tree expansion/move/template-copy/conflict,
+source/body/policy preservation, reload/new actor, keyboard and matched original
+captures. All013 traces and old images/records remain. Integration/import/export,
+system restore/lifecycle, phase2 native200 and phases4/5 remain required.

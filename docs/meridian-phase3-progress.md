@@ -441,3 +441,41 @@ literal script, no runtime failure. This is source evidence, not installed proof
 NEXT normal immutable013 package/build/upgrade then actual denied draft recovery,
 filter/keyboard/composer/visual comparison. Phase3 remains unaccepted, milestones
 1/5. Native200 M2-V200-01 and phases4/5 remain required.
+
+
+### Installed013 and useful handbook child; hierarchy defect retained
+
+ONE39.266s build b1966461/14layers/3769files/core3747 exact from root62bc037c6e0,
+private631256d; archive7f2d0e56/211722B/27files. Exact99226624/plan4c0c7f8a normal
+upgrade completed177.860s/config6/target0f8c1915. Original53revisions60receipts/
+2comments/policy5/current actors preserved; no core or other target change.
+
+Actual Robin known comment refusal now exposes exact own recovery text in a
+readonly dialog. Full read revoke clears page/tree/outline/all badges and pager
+labels; one Leave confirmation, no double prompt. Normal owner Share restores
+commenter monotonically as policy8/63receipts; no new comment/outcome. Fresh
+readonly revoked/restored proof in pages013-visual-01; no SQL authority mutation.
+Unknown network submissions remain source-tested only. Shared actors unchanged.
+
+Matched original CDP PNG1280x720/dark/zoom1 shows continuous cover/title close to
+Meridian. Actual PageDown in discussion and Control+End in editor independently
+scroll, outer body0/send composer bottom704 of720; no horizontal overflow.
+760px reflow uses inline block/auto scroll with0 horizontal overflow. Temporary
+metrics cleared, original light appearance restored; user18740 native200 remains.
+Open discrepancy: our inspector starts below the app header, unlike reference.
+
+Real owner created child8bbc6446 Your first week:3heading sections,3task checkboxes,
+4row owner/outcome table, useful buddy/first-task/review/demo prose. Rich normal
+clipboard paste and one checked task persist after reload as childrevision3.
+Fresh readonly handbook-check proves2pages56revisions66receipts2comments; original
+handbook53/history/current authority exact. Clipboard initially empty restored
+through writeText after empty-item list refused; no content/source injection.
+
+First actual Expand parent revealed TypeError reading slice: ContextNav passes
+id string; app read item.id. Failed before tree I/O; error/screenshot retained in
+pages013-handbook-01. No repeat/waiver. Collection badges also retained prior1
+until reload after create; invalidate on relevant mutations in014. Source audit
+confirms caller fix, no core contract change. Detailed014 plan is now in phase3
+plan BEFORE implementation. Full goal active1/5; phase3 unaccepted.
+Fresh after-pages013-01 proves protected main18partners/21events/empty0app all
+baseline tables/14targets/5older private heads exact.
