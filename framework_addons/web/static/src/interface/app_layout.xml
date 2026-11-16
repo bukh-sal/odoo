@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
   <t t-name="web.interface.AppLayout">
-    <div class="mp-page mp-app-layout mp-interface-layout" t-att-class="props.className + (props.showContext and state.contextOpen ? ' is-context-open' : '') + (!props.showContext ? ' is-context-free' : '') + (contextCollapsed ? ' is-context-collapsed' : '') + (!toolbarTarget and props.showContext ? ' has-local-context-toolbar' : '')">
-      <t t-if="props.showContext"><t t-if="toolbarTarget" t-portal="toolbarTarget"><t t-call="web.interface.AppContextToggle"/></t><t t-else=""><t t-call="web.interface.AppContextToggle"/></t></t>
+    <div class="mp-page mp-app-layout mp-interface-layout" t-att-class="props.className + (props.showContext and state.contextOpen ? ' is-context-open' : '') + (!props.showContext ? ' is-context-free' : '') + (contextCollapsed ? ' is-context-collapsed' : '') + (!toolbarTarget and props.showContext and (contextCollapsed or ui.isSmall) ? ' has-local-context-toolbar' : '')">
+      <t t-if="props.showContext and (contextCollapsed or ui.isSmall)">
+        <t t-if="toolbarTarget" t-portal="toolbarTarget"><t t-call="web.interface.AppContextToggle"/></t>
+        <t t-else=""><t t-call="web.interface.AppContextToggle"/></t>
+      </t>
       <aside t-if="props.showContext" t-att-id="contextId" class="mp-app-sidebar" t-ref="context" tabindex="-1"
              t-att-aria-labelledby="contextId + '-heading'" t-att-inert="contextCollapsed ? '' : undefined" t-on-keydown="onContextKeydown" t-on-click="onContextSelection">
-        <h2 class="mp-app-context-title" t-att-id="contextId + '-heading'" t-esc="props.contextTitle"/>
+        <header class="mp-context-header">
+          <h2 class="mp-app-context-title" t-att-id="contextId + '-heading'" t-esc="props.contextTitle"/>
+          <t t-if="!contextCollapsed and !ui.isSmall"><t t-call="web.interface.AppContextToggle"/></t>
+        </header>
         <t t-slot="context"/>
       </aside>
       <main class="mp-app-content" t-ref="content" tabindex="-1" t-att-aria-label="contentLabel"><t t-slot="default"/></main>

@@ -72,6 +72,13 @@ def native_asset_paths(bundle, web_manifest=None):
 
 
 class SharedIconAssetClosure(unittest.TestCase):
+    def test_native_identity_field_has_its_actual_editing_and_template_dependencies(self):
+        paths = native_asset_paths('web.assets_backend')
+        for path in ['web/static/src/views/fields/identity/identity_field.' + suffix
+                for suffix in ['js', 'xml', 'scss']]:
+            self.assertEqual(paths.count(path), 1)
+        self.assertIn('web/static/src/views/fields/char/char_field.js', paths)
+
     def test_current_frontend_and_backend_supply_the_actual_palette_dependency_once(self):
         for bundle in ['web.assets_frontend_lazy', 'web.assets_backend']:
             with self.subTest(bundle=bundle):

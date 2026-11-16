@@ -5,7 +5,7 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current work, 16 November: **Meridian fidelity audit and plan prepared for review.** The [implementation roadmap](meridian-fidelity-plan.md) compares the actual reference with installed core 0.2.41 and proposes five implementation milestones including a real optional page-authoring app. Fidelity milestones accepted: 0/5. The next implementation item is a fresh phase-1 plan and installed native Partners comparison. See the private screenshot packet at `.local/ui-meridian-fidelity-audit-01/comparison.html`.
+Current goal, 16 November: **active - implement the Meridian roadmap in full.** The [implementation roadmap](meridian-fidelity-plan.md) defines five milestones, including a useful private Pages app. Completion requires installed evidence of comfortable workflows, reusable shared patterns and visual coherence. Milestones accepted: 0/5. One active item: [phase1](meridian-phase1-plan.md), source42 and private Partners11 implemented with targeted checks passing; installed native Partners comparison pending. See the private screenshot packet at `.local/ui-meridian-fidelity-audit-01/comparison.html`.
 
 Previous goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
 
@@ -16,9 +16,9 @@ The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: UI-D03/D04/D05/D06 accepted4/4; no active implementation item. Populated18730/config18 and empty18731/config8 retained; human18610 protected.
+- Current phase/gate: Meridian phase1 in progress, roughly20% based on source and targeted checks, accepted0/5. Historical UI-D03/D04/D05/D06 accepted4/4. Populated18730/config18 and empty18731/config8 retained; human18610 protected.
 - Latest work item: [Final041 canonical](evidence/G7/20261116-ui-final041-canonical/qualification.json) 980passes/2existing skips/zero failures, frozen-source/data/authority/evidence audit passed. [Installed41](evidence/G7/20261116-ui-contrast041-installed/qualification.json) closes measured contrast findings.
-- Current next action: User review of the retained local UI and documented intentional bounds. No automatic new feature, test rerun, native-operation replay, build, publication or cleanup. Create the next phase plan only when that phase is activated.
+- Current next action: Commit core42 and private Partners11, build the nine-addon clean Partners candidate, then bootstrap a fresh owned review site and perform the normal exact-archive installation. Compare actual native directory with Meridian before phase1 acceptance. No previous operation replay.
 - Browser: In-app Browser2 own16 current Partners list/22 current empty workspace retained. Temporary31/32 closed; light restored, device overrides cleared. Actual40 native200% retained with unchanged-layout boundary; latest user confirmation not mislabelled fresh41 proof when tab measured100%.
 - Acceptance/checklist: UI4/4 complete within documented scope. Historical PP100/100 and original R1 99/99/100weighted unchanged; no extra progress for documentation/builds.
 - Blocker register: None for this bounded UI delivery. Partial Arabic, inherited utility glyphs, trusted-app model and absence of formal accessibility/broad support guarantees remain explicit product boundaries; earlier failures are not waived.

@@ -35,6 +35,33 @@ test('native context opening moves focus into its mounted navigation', async () 
     assert.deepEqual(f.focused, ['context']);
 });
 
+test('workspace presentation region partitions currently displayed utilities without caching them', async () => {
+    const f = await shellFixture();
+    const workspace = {key: 'workspace', region: 'workspace'};
+    const ordinary = {key: 'available-tool'};
+    let entries = [ordinary, workspace];
+    Object.defineProperty(f.shell, 'utilities', {get: () => entries});
+    assert.deepEqual(f.shell.workspaceUtilities, [workspace]);
+    assert.deepEqual(f.shell.trailingUtilities, [ordinary]);
+    entries = [];
+    assert.deepEqual(f.shell.workspaceUtilities, []);
+    assert.deepEqual(f.shell.trailingUtilities, []);
+});
+
+test('desktop context toggle restores focus to the newly mounted reopen or header control', async () => {
+    const f = await shellFixture();
+    f.ui.isSmall = false;
+    const preference = f.shell.contextPreference;
+    preference.toggle = () => { preference.collapsed = !preference.collapsed; };
+    for (const expected of [true, false]) {
+        f.shell.toggleContext();
+        f.refs.contextTrigger.el = {focus: () => f.focused.push('new-trigger-' + expected)};
+        f.effects.forEach(effect => effect());
+        assert.equal(f.shell.contextCollapsed, expected);
+    }
+    assert.deepEqual(f.focused, ['new-trigger-true', 'new-trigger-false']);
+});
+
 test('Escape closes an open native context and returns focus to the opener', async () => {
     const f = await shellFixture(); f.shell.state.contextOpen = true;
     const calls = [];

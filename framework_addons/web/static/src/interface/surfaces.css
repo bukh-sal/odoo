@@ -46,7 +46,8 @@
 .mp-message--success { color: var(--mp-ui-success-ink); background: var(--mp-ui-success-surface); border-color: var(--mp-ui-success-line); }
 .mp-page.mp-app-layout.mp-interface-layout { display: grid; grid-template-columns: var(--mp-ui-sidebar) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); height: 100%; min-height: 0; flex: 1; overflow: hidden; background: var(--mp-ui-canvas); }
 .mp-page.mp-app-layout.mp-interface-layout.is-context-free { grid-template-columns: minmax(0, 1fr); }
-.mp-interface-layout > .mp-app-sidebar { min-height: 0; min-width: 0; overflow: auto; }
+.mp-interface-layout > .mp-app-sidebar { min-height: 0; min-width: 0; overflow: auto; padding-block-start: 0; }
+.mp-app-sidebar > .mp-context-header { margin-inline: -12px; margin-block-end: 8px; }
 .mp-interface-layout > .mp-app-content { min-height: 0; min-width: 0; overflow: auto; padding: 24px; }
 .mp-app-context-title { margin: 0 12px 20px; color: var(--mp-ui-ink); font: 600 14px/22px var(--mp-ui-font); overflow-wrap: anywhere; }
 .mp-app-context-toggle { display: inline-flex; }
@@ -107,12 +108,12 @@
     .mp-shell-action > .o_action_manager > .o_form_view .o_form_readonly .o_form_sheet:has(> .mp-record-surface) {
         border: 0; box-shadow: none; background: transparent;
     }
-    .o_web_client .mp-native-table-controls { padding: 24px 24px 16px !important; gap: 20px !important; }
+    .o_web_client .mp-native-table-controls { padding: var(--mp-ui-space-page) var(--mp-ui-space-page) 0 !important; gap: 20px !important; }
     .mp-native-table-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px 24px; }
     .mp-native-table-heading { flex: 1; min-width: 0; }
     .mp-native-table-heading .o_breadcrumb { font-family: var(--mp-ui-font); min-width: 0; }
     .mp-native-table-header .mp-page-actions { justify-content: flex-end; flex: 0 0 auto; }
-    .mp-native-table-query { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+    .mp-native-table-query { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; padding: 12px; border: 1px solid var(--mp-ui-divider); border-block-end: 0; border-radius: var(--mp-ui-radius-card) var(--mp-ui-radius-card) 0 0; background: var(--mp-ui-surface); }
     .mp-native-table-query > .o_control_panel_actions { flex: 1; min-width: 0; }
     .mp-native-table-tools { display: flex; gap: 8px; align-items: center; }
     .mp-native-table-tools .o_control_panel_navigation { flex-grow: 0 !important; }
@@ -126,7 +127,7 @@
     .o_web_client .mp-native-table-query .o_searchview_dropdown_toggler { min-height: 36px; }
     .o_web_client .mp-native-table-query .o_searchview .btn { min-height: 24px; }
     .o_list_view > .o_content, .o_list_view .o_content:has(> .o_list_renderer) { padding: 0 24px 24px; }
-    .o_list_view .o_list_renderer { --ListRenderer-table-padding-x: 16px; }
+    .o_list_view .o_list_renderer { --ListRenderer-table-padding-x: 16px; height: auto; max-height: 100%; }
     .o_list_renderer { container-type: inline-size; }
     .o_list_view .o_list_table { border: 1px solid var(--mp-ui-line); }
     .mp-pagination { position: sticky; inset-inline-start: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 12px; width: 100%; padding: 16px 0; color: var(--mp-ui-ink); background: var(--mp-ui-canvas); }
@@ -145,7 +146,7 @@
 }
 @media screen and (max-width: 767px) {
     .mp-record-section-header > .btn, .mp-related-record-title { min-height: 44px; }
-    .o_web_client .mp-native-table-controls { padding: 20px 16px 12px !important; }
+    .o_web_client .mp-native-table-controls { padding: 20px 16px 0 !important; }
     .mp-native-table-header { flex-wrap: wrap; gap: 12px; }
     .mp-native-table-heading { flex-basis: 55%; }
     .mp-native-table-query { flex-wrap: wrap; }

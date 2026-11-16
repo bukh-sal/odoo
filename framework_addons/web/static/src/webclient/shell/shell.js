@@ -34,7 +34,10 @@ export class Shell extends Component {
         }, () => [this.state.contextOpen]);
         useEffect(() => {
             if (!this.ui.isSmall) this.state.contextOpen = false;
-            if (this.contextCollapsed && this.context.el?.contains(document.activeElement)) this.contextTrigger.el?.focus();
+            if (this.focusContextTrigger || (this.contextCollapsed && this.context.el?.contains(document.activeElement))) {
+                this.contextTrigger.el?.focus();
+                this.focusContextTrigger = false;
+            }
         }, () => [this.ui.isSmall, this.contextCollapsed]);
         useBus(this.env.bus, "MENUS:APP-CHANGED", () => this.state.revision++);
         useBus(this.env.bus, "ACTION_MANAGER:UI-UPDATED", () => {
@@ -74,6 +77,8 @@ export class Shell extends Component {
             .filter(([, item]) => item.Component !== UserMenu && (!item.isDisplayed || item.isDisplayed(this.env)))
             .map(([key, item]) => ({ key, ...item })).reverse();
     }
+    get workspaceUtilities() { return this.utilities.filter(item => item.region === "workspace"); }
+    get trailingUtilities() { return this.utilities.filter(item => item.region !== "workspace"); }
     icon(app) {
         const icon = app.appIcon;
         return /^[a-z][a-z0-9-]*$/.test(icon || "") ? icon : "box";
@@ -103,7 +108,10 @@ export class Shell extends Component {
     }
     toggleContext() {
         if (this.ui.isSmall) this.state.contextOpen = !this.state.contextOpen;
-        else this.contextPreference.toggle();
+        else {
+            this.focusContextTrigger = true;
+            this.contextPreference.toggle();
+        }
     }
     closeContext(event) {
         if (event.key === "Escape" && !event.defaultPrevented && this.state.contextOpen) {

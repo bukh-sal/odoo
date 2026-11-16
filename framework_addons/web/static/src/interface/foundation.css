@@ -40,6 +40,13 @@
     --mp-ui-search: 36px;
     --mp-ui-radius: 7px;
     --mp-ui-title: 600 26px/34px var(--mp-ui-font);
+    --mp-ui-bar: 56px;
+    --mp-ui-command-width: 460px;
+    --mp-ui-table-heading: 36px;
+    --mp-ui-divider: rgb(41 47 60 / 13%);
+    --mp-ui-label: 600 11px/16px var(--mp-ui-font);
+    --mp-ui-space-page: 24px;
+    --mp-ui-radius-card: 8px;
 }
 
 @media screen {
@@ -151,6 +158,17 @@
     .o_web_client .o_list_view .o_list_renderer {
         --ListRenderer-thead-bg-color: var(--mp-ui-canvas);
         --ListRenderer-thead-border-end-color: transparent;
+        --ListRenderer-thead-padding-y: 6px;
+    }
+    .o_web_client .o_list_view .o_list_table thead th {
+        height: var(--mp-ui-table-heading);
+        padding-block: 6px;
+        font: var(--mp-ui-label);
+        letter-spacing: .04em;
+        text-transform: uppercase;
+    }
+    .o_web_client .o_list_view .o_list_table .mp-choose-columns {
+        min-height: 24px;
     }
     .o_web_client .o_list_view .o_list_table > tbody > .o_data_row { height: var(--mp-ui-row); }
     .o_web_client .o_list_view .o_list_table > tbody > .o_data_row > td {

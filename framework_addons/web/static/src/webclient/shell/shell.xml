@@ -2,6 +2,20 @@
 <templates xml:space="preserve">
   <t t-name="web.Shell">
     <div class="mp-shell-frame" t-att-data-navigation-revision="state.revision" t-on-keydown="closeContext">
+      <header class="mp-shell-topbar">
+        <div class="mp-shell-workspace" role="group" aria-label="Workspace">
+          <button class="mp-shell-home" t-on-click="reopenWorkspace" aria-label="Open workspace in a new tab" title="Open workspace in a new tab"><Icon name="'grid-2x2'" size="20"/></button>
+          <t t-foreach="workspaceUtilities" t-as="item" t-key="item.key">
+            <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
+          </t>
+        </div>
+        <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><Icon name="'search'"/> <span>Search apps and commands</span></button>
+        <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
+          <t t-foreach="trailingUtilities" t-as="item" t-key="item.key">
+            <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
+          </t>
+        </div>
+      </header>
       <nav class="mp-app-rail" aria-label="Applications">
         <Dropdown>
           <button class="mp-rail-button mp-all-apps" aria-label="All apps" title="All apps"><Icon name="'grid-2x2'" size="20"/></button>
@@ -24,23 +38,23 @@
         </div>
         <div class="mp-rail-account"><UserMenu/></div>
       </nav>
-      <header class="mp-shell-topbar">
-        <div class="mp-shell-context-controls">
-          <button t-if="nativeContext" class="mp-context-toggle btn" t-ref="contextTrigger"
+      <div class="mp-shell-context-controls">
+          <button t-if="nativeContext and (contextCollapsed or ui.isSmall)" class="mp-context-toggle btn" t-ref="contextTrigger"
               aria-controls="mp-native-context" t-att-aria-expanded="contextExpanded ? 'true' : 'false'"
               t-att-aria-label="contextToggleLabel" t-att-title="contextToggleLabel"
               t-on-click="toggleContext"><Icon name="contextExpanded ? 'panel-left-close' : 'panel-left-open'" directional="true"/><span t-esc="current.name"/></button>
-        </div>
-        <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><Icon name="'search'"/> <span>Search apps and commands</span></button>
-        <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
-          <t t-foreach="utilities" t-as="item" t-key="item.key">
-            <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
-          </t>
-        </div>
-      </header>
+      </div>
       <div class="mp-shell-body">
         <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-ref="context" tabindex="-1" aria-labelledby="mp-native-context-heading" t-att-class="{'is-open': state.contextOpen, 'is-collapsed': contextCollapsed}" t-att-inert="contextCollapsed ? '' : undefined">
-          <h2 id="mp-native-context-heading" t-esc="current.name"/>
+          <header class="mp-context-header">
+            <Icon name="icon(current)" size="16"/>
+            <h2 id="mp-native-context-heading" t-esc="current.name"/>
+            <button t-if="!ui.isSmall and !contextCollapsed" class="mp-context-toggle btn" t-ref="contextTrigger"
+                aria-controls="mp-native-context" aria-expanded="true"
+                t-att-aria-label="contextToggleLabel" t-att-title="contextToggleLabel" t-on-click="toggleContext">
+              <Icon name="'panel-left-close'" directional="true"/>
+            </button>
+          </header>
           <nav t-att-aria-label="current.name">
             <a t-att-href="href(current)" t-att-aria-current="active(current)" t-on-click="event => this.select(event, current)">Overview</a>
             <t t-foreach="sections" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>

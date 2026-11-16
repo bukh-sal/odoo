@@ -81,5 +81,5 @@ export class WorkspaceMenu extends Component {
 }
 
 if (session.mp_stock_profile && !odoo.__mp_client_release__) {
-    registry.category("systray").add("mp_stock_workspace", { Component: WorkspaceMenu }, { sequence: 5 });
+    registry.category("systray").add("mp_stock_workspace", { Component: WorkspaceMenu, region: "workspace" }, { sequence: 5 });
 }

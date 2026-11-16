@@ -38,7 +38,7 @@ export class AppLayout extends Component {
             else if (this.focusAfterClose === "trigger") this.trigger.el?.focus();
             else if (this.focusAfterClose === "content") this.content.el?.focus();
             this.focusAfterClose = null;
-        }, () => [this.state.contextOpen, this.props.showContext]);
+        }, () => [this.state.contextOpen, this.props.showContext, this.contextCollapsed]);
         useEffect(() => {
             if (!this.ui.isSmall) this.state.contextOpen = false;
             if (this.contextCollapsed && this.context.el?.contains(document.activeElement)) this.trigger.el?.focus();
@@ -54,7 +54,11 @@ export class AppLayout extends Component {
     }
     toggleContext() {
         if (!this.props.showContext) return;
-        if (!this.ui.isSmall) { this.contextPreference.toggle(); return; }
+        if (!this.ui.isSmall) {
+            this.focusAfterClose = "trigger";
+            this.contextPreference.toggle();
+            return;
+        }
         if (this.state.contextOpen) this.closeContext("trigger");
         else this.state.contextOpen = true;
     }

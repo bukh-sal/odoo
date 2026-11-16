@@ -1,0 +1,12 @@
+.mp-identity-cell {
+    display: flex; align-items: center; gap: 10px; min-width: 0;
+}
+.mp-identity-glyph {
+    display: grid; place-items: center; flex: 0 0 32px; height: 32px;
+    color: var(--mp-ui-ink); background: var(--mp-ui-hover);
+    border: 1px solid var(--mp-ui-divider); border-radius: 8px;
+    font: 500 11px/16px var(--mp-ui-font);
+}
+.mp-identity-text { display: flex; flex-direction: column; min-width: 0; gap: 1px; }
+.mp-identity-name { font: 500 13.5px/19px var(--mp-ui-font); overflow: hidden; text-overflow: ellipsis; }
+.mp-identity-secondary { color: var(--mp-ui-muted); font: 400 11px/16px var(--mp-ui-font); overflow: hidden; text-overflow: ellipsis; }

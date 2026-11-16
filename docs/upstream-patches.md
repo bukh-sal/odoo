@@ -211,3 +211,14 @@ Normal populated/empty maintenance and independent Taskfiles0.1.7 palette upgrad
 real two-theme link/select/metadata measurements and final041 canonical qualify
 the exact changes; see ui-final-link-select-contrast-plan and installed41/final041
 evidence. This supersedes earlier pending paint checks, not their failure traces.
+
+16 November2026 Meridian phase1 source42: owned shell now composes the top bar
+before the app rail, separates declared workspace systray contributions from
+trailing utilities and centers the command track. Native and custom context
+controls move into their pane headers with focus restored after remount.
+Shared tokens and native header padding align the directory; a generic identity
+field renders loaded escaped text and delegates editing to CharField.
+SDK/core/web identities advance to0.2.42/19.0.0.2.42/19.0.2.42.0. Existing action,
+workspace and permission services remain the behavior owners. Targeted source
+checks pass; installed asset/visual qualification remains pending in
+docs/meridian-phase1-plan.md. Existing attribution and licence files retained.
