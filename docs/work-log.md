@@ -1,3 +1,7 @@
+## Meridian fidelity audit and plan — 16 November 2026
+
+Compared the running Meridian v0.5 directory, reader, Tasks, Docs home and editor with the installed Partners, Workboard and file library, plus the retained current-cohort native reader. Near-matched directory captures exposed a 53 px live table heading against 36 px in the reference, a 380 px left-positioned command field against a centered 460 px field, and differences in shell and row composition. The [fidelity plan](meridian-fidelity-plan.md) assigns rendering ownership, selects a private page-authoring app, and defines screenshot and installed workflow gates. The private comparison board preserves the originals. The temporary reference server was stopped. This was an audit and planning round with no runtime changes or additional acceptance points.
+
 ## Expanded current UI audit and contrast41 source -16November2026
 
 Current read-only1280/390light/dark Customer work/reminders/board checks pass

@@ -5,7 +5,9 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
+Current work, 16 November: **Meridian fidelity audit and plan prepared for review.** The [implementation roadmap](meridian-fidelity-plan.md) compares the actual reference with installed core 0.2.41 and proposes five implementation milestones including a real optional page-authoring app. Fidelity milestones accepted: 0/5. The next implementation item is a fresh phase-1 plan and installed native Partners comparison. See the private screenshot packet at `.local/ui-meridian-fidelity-audit-01/comparison.html`.
+
+Previous goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
