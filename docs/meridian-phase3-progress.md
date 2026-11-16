@@ -575,3 +575,17 @@ image/audit and normal upgrade preserving3pages63heads73receipts/2comments/curre
 authority, then actual conflict recovery/current winner and deep1280 header.
 Current site remains014/config7; no live source injection or old operation replay.
 Full roadmap ACTIVE1/5; remaining integration/import/restore/lifecycle and2/4/5 intact.
+
+
+### Pages015 installed; recovery walkthrough next
+
+ONE41.610s build15adc7ed/14layers3769files/core3747 exact, archiveadc2afe2/214123B.
+Exact4be76428/plan8cd786e0 reviewed same2scopes/backup/trustackonly; normalapply
+completed197.312s/config8/targetd05dc377. Fresh proof all3pages63heads73receipts/
+2comments/current resource policies/grants/actors exact; no replay/waiver/corechange.
+Owner/Robin reloaded; actual header Saved/no redundant Save/iconpanel renders.
+Old first-installed screenshot retained. This is installation/basic rendering
+proof, not yet installed conflict-recovery or deep1280 acceptance. NEXT repeat
+owned two-writer pressure, use explicit JSON recovery/current-winner confirmation,
+verify no overwrite and original key behavior; then matched deep-header check.
+All remaining phase3/phase2/4/5 gates preserved. Full goal ACTIVE1/5.
