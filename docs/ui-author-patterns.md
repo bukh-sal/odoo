@@ -11,7 +11,9 @@ the Partners12 review site; the separate empty site remains45. Private12 now
 consumes these components in its installed native directory/organization/person
 workflow. The scoped counts, single proven record heading and304px contact
 aside passed bounded visual/workflow checks. Counts still need post-save
-refresh; nested field labels/focus and card metrics are open shared refinements.
+refresh. Installed core50 now supplies scoped native field DOM identities and
+required-error focus/invalid semantics; apps keep original architecture keys.
+Shared record-card surface/header metrics match the measured reference role.
 This is one independent consumer, not final phase2 or broad adoption proof.
 
 ```xml
@@ -600,3 +602,23 @@ Native `.form-select` retains its native geometry and validation-image layer.
 Apps should not replace the indicator with their own light-only background image.
 These are presentation fixes, not reasons to invent new backend compatibility
 restrictions. Declare minima from the components/behavior actually consumed.
+
+
+### Native table page size and form identity (core49; corrected50)
+
+TablePagination has optional withPageSize=true; absent/false retains the prior
+component contract. Top-level native lists enable it, ungrouped and nonempty;
+embedded/group views keep their existing owners. Options10/25/50/100 include a
+nonstandard current native limit. Selection calls existing onUpdate with offset0
+and chosen limit; the model owns results, dirty-save veto and error state. A
+rejected load retains current value and data. Do not implement a second paging
+store or client-only paging over a partial server result.
+
+FormRenderer and controller-owned button-box subviews supply instance-scoped
+DOM IDs. App architecture field IDs, label declarations and metadata keys stay
+unchanged; do not hardcode generated input IDs or strip IDs from background
+forms. Existing native save validation requests focus only in its originating
+current form; Field patch readiness updates aria-invalid and finishes the
+request after rendering. Dialog/sheet/full-page persistence and uncertainty
+handling remain with the native owner. Installed nested required refusal is
+proved; this is not a universal form-widget or formal accessibility claim.

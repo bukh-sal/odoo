@@ -261,6 +261,48 @@ remain required before phase2 exit. No additional full canonical run now;
 phase5 owns the final frozen-source canonical run. Rough phase2 progress45%
 is implementation/workflow progress only; milestones remain1/5.
 
+## Core49/50 installed refinement results
+
+Source49 e01dd3a5417 built64a2fc1e/14layers3765files with exact Partners12.
+Normal ebf8a610 maintenance completed/config10/all7tablesequal. Actual table
+size10 yields two disjoint server-backed pages10+5/15unique, working Next and
+Previous. First native form render FAILED: uniqueId was imported from strings,
+where it is not exported. Preserved original browser trace and screenshot;
+the earlier fake helper had hidden this import boundary, so49 forms were not
+accepted. Source50 changes only two real utils/functions imports plus three
+identities. Permanent test resolves both declared actual modules/exports, and
+the actual-helper compiler/form witness covers all label paths and validation.
+140Node/29Python,27Owl templates/seven composition/eight form checks and freeze
+122files/11rows pass. This correction does not erase the initial failed result.
+
+Normal new55d66fc4 operation completed147.187s/config11/imagebcfa3746/core50.
+App12 archive404f66d1 and all authority/business fields remain exact. Installed:
+
+- One real Name/Email/Phone label per nested control, no duplicate document IDs.
+  Required blank-name save refusal focuses Name with aria-invalid=true; Cancel
+  closes without creating data. Native ordinary Edit/Cancel retains fields.
+- Card surfaces actual250light/30dark and10x16header/13.5px titles match measured
+  reference roles. Main20px content remains deliberately roomier; real contact
+  aside304px remains useful and stacks on390 without document x-overflow.
+- Narrow390x844 palette is374x355 atx8/y80, footer ends435, no screen-height
+  blank panel; actual close works. Dark390 and1440 record layouts inspected.
+- Light restored, both temporary viewport overrides cleared; reference39/live36/
+  empty40/user38 retained. No actual200%/RTL/fullcontrast claim from these views.
+
+Read-only final seven-table snapshot equals after-maintenance baseline:15partner/
+15outbox/jobs0;14protected targets/fiveprivate heads/4049source inputs exact.
+Evidence `.local/meridian-phase2-browser050-01/`;49 failure/paging evidence in
+its separate049 directory. No successful business save, retry or cleanup here.
+
+New actual visual finding: the native control-panel divider remains literal
+rgb222/226/230 in dark, while shared record borders already use neutral alpha.
+Audit its source and map that native border to the shared line token in the
+next coherent shared refinement, retaining native geometry. Do not mark full
+dark coherence passed. Private13 post-save counts still pending; do not hide
+staleness with optimistic counts. Native save callback and advisory app-owned
+refresh must re-read current scoped counts, including cancellation/denial.
+Full phase2 matrix/current-empty and phases3-5 remain; rough50%, milestones1/5.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

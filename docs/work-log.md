@@ -3537,3 +3537,18 @@ Permanent real module/export check and actual-helper compiled-form witness
 prevent the previously mocked boundary gap.140Node/29Python/27Owl templates/
 seven composition/eightform checks pass. Normal corrected50 build/delivery next;
 no rollback/reapply/guard bypass. Private12 stays exact; reference kept open.
+
+
+16November corrected50 built/auditedbcfa3746/14layers3765files and normal
+55d66fc4 completed147.187s/config11/all7tablesexact. Installed actual forms open,
+Edit/Cancel, one associated Name/Email/Phone label/no duplicate IDs, blank-name
+required refusal focuses Name aria-invalid=true, Cancel creates nothing.
+Actual reference record surfaces250/30/header10x16/title13.5 match.390palette
+now374x355/y80/footerends435 rather than filling viewport, close works; dark
+record390/1440 inspected. Light restored, overrides cleared, reference39 and
+all review/user tabs retained. Read-only final15partners/15events/jobs0,7tables
+exact/14protectedtargets/fiveprivateheads/4049sourceinputs exact. New fidelity
+finding native header divider literal222/226/230 in dark needs shared-token
+mapping; no full dark/contrast/accessibility acceptance. Post-save app counts
+still pending13; full matrix/currentempty andphases3-5 intact. Roughphase2 50%,
+milestones1/5. All prior49 import failure/paging evidence retained, no replay.
