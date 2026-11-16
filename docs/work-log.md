@@ -3494,3 +3494,21 @@ retained; no fixture/nativeoperation/hosttest left running. Original R1 and PP
 counts unchanged; no formal accessibility/arbitrary app/production claim.
 Earlier failed040 and interrupted040clock results remain preserved. No replay,
 source injection, cleanup or publication. User review/next deliberate plan only.
+
+
+16November2026 Meridian phase2 installed Partners12: normal reviewed app-only
+7a58d87e completed once/config9/imagef6294067, exact core48/old archive retained.
+Actual directory14/1/13, native shared header/Layout/aside, Edit/Cancel/person
+reader and one journaled nested contact create passed bounded installed checks.
+Current15/2/13 after navigation; original14 partner/event rows and five other
+tables exact,14protected targets/fiveprivate heads/4049inputs exact. One minimal
+created event bound to current workspace/actor/release, no delivery claim.
+Light/dark1440 and390 no document-wide overflow; temporary metrics cleared.
+Meridian reference39/server94394 remains visibly open, current own36/empty40/
+user38 retained. Source-backed next batch records real stale-after-save counts,
+duplicate native field DOM IDs/labels, absent required-error focus, reference
+card role/metrics, narrow palette whitespace, manifest glyph normalization and
+page-size capability. No blind retry, source injection, cleanup or publication.
+Rough phase2 45%, milestone1/5; phases3-5 intact. Evidence under
+.local/meridian-phase2-partners012-browser-01; earlier private raw-FK/wireUUID
+verifier refusal retained and corrected through captured joins, no data replay.

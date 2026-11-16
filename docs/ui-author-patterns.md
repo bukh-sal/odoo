@@ -7,8 +7,12 @@ Import `ContextNav` from `@web/interface/context_nav`, `Badge` from
 `@web/interface/record_layout`. These are inventoried backend components;
 they do not import a private application or fetch its data. The native Shell
 now uses ContextNav's default menu presentation. The corrected core48 is on
-the Partners11 review site; the separate empty site remains45. New app-owned
-context/header adoption is pending private12; source tests are not that proof.
+the Partners12 review site; the separate empty site remains45. Private12 now
+consumes these components in its installed native directory/organization/person
+workflow. The scoped counts, single proven record heading and304px contact
+aside passed bounded visual/workflow checks. Counts still need post-save
+refresh; nested field labels/focus and card metrics are open shared refinements.
+This is one independent consumer, not final phase2 or broad adoption proof.
 
 ```xml
 <ContextNav label="navigationLabel" groups="navigationGroups" onNavigate.bind="navigate">

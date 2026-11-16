@@ -193,6 +193,74 @@ qualification uses the current eight-addon candidate through the ordinary
 maintenance path; no live source/assets injection, reader guard relaxation or
 old operation replay. Keep all checkpoints, failed diagnostics and prior images.
 
+## Installed Partners12 checkpoint and next coherent refinement
+
+16November: normal app-only operation7a58d87e completed/config9 on exact core48.
+Image f6294067 retains all eight framework manifests, core bytes and Python lock.
+Archive404f66d1 is Partners0.1.12/native19.0.0.1.12; curated admission retains the
+old archive. The metadata producer's scoped workspace policy-generation+1 is
+explicitly checked; six other captured tables were equal after upgrade.
+
+Installed checks cover actual14/1/13 scoped counts, declared groups/create labels,
+shared single record heading and304px aside, organization Edit/Cancel, a linked
+person reader, dark1440 and390 wrapping. One journaled native contact creation
+adds Meridian Review Contact/revision1 to Acme and one minimal created event.
+Original14 partner/event rows and five other captured tables remain exact;
+14protected target hashes, five private heads and4049source inputs remain exact.
+Fresh navigation shows15/2/13. No event delivery, final accessibility or full
+phase2 acceptance claim. Raw evidence is under
+`.local/meridian-phase2-partners012-browser-01/`; original refusal traces remain.
+
+The actual workflow found material gaps. Complete this batch before broader
+phase2 qualification; avoid an image cycle for each cosmetic property:
+
+1. Namespace native field DOM identities per FormRenderer instance, binding
+   both labels and inputs while retaining arch field IDs/record keys. Cover
+   explicit labels, generated group labels, settings and autofocus. Two nested
+   forms must have independent label targets and one accessible field name.
+   The current compiled field ID is reused globally and produces Name Name.
+2. On native required-field save refusal, move focus to the first invalid,
+   visible editable control inside the originating form after rendering. Set
+   meaningful invalid semantics from real validation; preserve entered input,
+   dirty state, refusal and uncertain-save/no-replay safeguards. Background or
+   destroyed forms must not steal focus. Test dialog, sheet and full-page paths.
+3. Resolve legal manifest icon atoms such as building_2 to existing pinned
+   building-2 glyphs generically. Preserve aliases, fallback, exact asset source
+   and malicious/unknown refusal; no protocol/schema relaxation or app IDs.
+4. Bound only command-palette narrow height to useful content and viewport,
+   retaining scroll/focus/close. Do not change creation dialog fullscreen rules.
+5. Use actual reference record-card role (popover surface250, not card241),
+   approximately10x16 header padding and13.5px title; retain justified roomier
+   content and shared theme roles. Compare actual light/dark/narrow cards and
+   header hierarchy before finalizing. No finance/owner/provider fiction.
+6. Restore the old native pager's useful page-size capability through the shared
+   footer and existing onUpdate({offset,limit}) owner. Audit the actual list
+   pager path first. Opt in top-level lists, keep embedded/group behavior,
+   current nonstandard limits, unknown totals, dirty-save veto and errors.
+   Bounded meaningful options can prove two real server pages using15records;
+   do not change limits merely to manufacture qualification.
+
+Add production/component/compiler regressions reproducing the observed failures
+and refusal/cleanup cases; use actual Owl for label/save integration. Run the
+smallest affected checks, native asset closure/identity/freeze and template
+compilation. This is source proof until normal installed qualification.
+
+Order: implement/build core49 against unchanged exact Partners12, normal reviewed
+core maintenance, then independent private Partners13 save-count correction.
+Its existing FormController.onRecordSaved(record,changes) callback runs after
+successful native saves, including compact RecordCreateDialog record.save;
+use an app-owned scoped refresh event and normal fresh count queries. Do not
+emit success on refusal/no-change or couple generic core to a Partners model.
+Exercise late response/workspace switch/disposal and all creation surfaces.
+
+Finally repeat the real invalid/create/contact/navigation counts, two-page
+sort/filter/selection/columns and visual comparison. Preserve the original15
+rows and event identities except specifically journaled workflow writes.
+Current empty-core, viewer/authority loss, RTL, true200%, motion and contrast
+remain required before phase2 exit. No additional full canonical run now;
+phase5 owns the final frozen-source canonical run. Rough phase2 progress45%
+is implementation/workflow progress only; milestones remain1/5.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
@@ -221,9 +289,9 @@ Freeze remains122files/11rows. Evidence is
 uniqueId and assigned a cross-realm object, corrected in its fake boundary.
 This is source proof, not installed contrast, geometry or authority acceptance.
 
-Phase2 is roughly30% from shared implementation and bounded installed checks;
-milestones remain1/5. Core48 is installed with Partners11 unchanged. Next private12
-adoption and separate app upgrade. Full two-page collection/record/create/error/
+At that earlier checkpoint phase2 was roughly30%; milestones remained1/5.
+Core48 was installed with Partners11 unchanged. The installed Partners12
+checkpoint above supersedes that next action. Full two-page collection/record/create/error/
 RTL/zoom/motion/contrast checks and the current empty-core counterpart remain.
 No phase2 exit or wider app adoption is claimed.
 
