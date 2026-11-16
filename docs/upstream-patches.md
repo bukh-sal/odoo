@@ -244,3 +244,11 @@ with bdi. The shared screen foundation inherits the reference's cv11/ss01 font
 features via a token. SDK/core/web45 record the shipped bytes.6 Node/21 Python
 checks pass, along with the unchanged contract freeze. Installed45 remains
 pending; this does not claim a new data or permission behavior.
+
+16November2026 Meridian phase1 successor46 corrects the owned list renderer's
+width budget: computed outer table borders are included before column widths
+freeze, with half-width collapsed edges. Actual production-hook counterexamples
+fail on45 for the observed863px parent and pass after correction, including
+fractional borders, borderless/separate edges and genuine narrow overflow.
+No overflow-hiding CSS, app branch or authority behavior changed. SDK/core/web46
+record shipped bytes; installed visual verification remains required.

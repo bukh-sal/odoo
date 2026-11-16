@@ -132,6 +132,16 @@ requested. User38 People remains untouched.
 
 ## Acceptance checklist
 
+Before the next source edit, bound successor46 to the measured table box:
+forceColumnWidths subtracts parent/cell padding but not the collapsed outer
+table border. Reserve that border space using its actual computed style before
+allocating columns. Exercise the production hook against the observed863px
+parent/five-column geometry, fractional-scale borders, borderless tables and
+genuine narrow overflow; retain chooser minimums. Keep exact Partners11 and
+all business behavior. Commit/package46 normally, qualify desktop at natural
+and matched widths plus narrow, and preserve original45 evidence. No overflow
+clipping rule or app-specific CSS exception is an acceptable correction.
+
 | Requirement | Proof and current state |
 | --- | --- |
 | Shared frame and reusable tokens | Installed45 dimensions verified; remaining1px scrollbar and review pending |

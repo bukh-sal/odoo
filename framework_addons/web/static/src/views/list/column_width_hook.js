@@ -407,7 +407,13 @@ export function useMagicColumnWidths(tableRef, getState) {
         const parentPadding = getHorizontalPadding(table.parentNode);
         const cellPaddings = headers.map((th) => getHorizontalPadding(th));
         const totalCellPadding = cellPaddings.reduce((total, padding) => padding + total, 0);
-        const nextAllowedWidth = table.parentNode.clientWidth - parentPadding - totalCellPadding;
+        const tableStyle = getComputedStyle(table);
+        const outerBorders = (parseFloat(tableStyle.borderLeftWidth) || 0)
+            + (parseFloat(tableStyle.borderRightWidth) || 0);
+        // Collapsed outer edges consume half their border widths. Budget that
+        // space before freezing cells, including at fractional browser scale.
+        const borderWidth = outerBorders / (tableStyle.borderCollapse === "collapse" ? 2 : 1);
+        const nextAllowedWidth = table.parentNode.clientWidth - parentPadding - totalCellPadding - borderWidth;
         const allowedWidthDiff = Math.abs(allowedWidth - nextAllowedWidth);
         allowedWidth = nextAllowedWidth;
 

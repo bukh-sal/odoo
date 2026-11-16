@@ -1,3 +1,14 @@
+## Meridian table-border correction46 - 16 November2026
+
+Installed45 natural-width inspection traced the1px scrollbar to outer borders
+missing from the production forceColumnWidths budget. Source46 reserves actual
+computed table edges (half-width when collapsed), without clipping overflow or
+changing column minimums. The real hook's two full-box counterexamples fail on
+old45 and pass after correction; borderless/fractional/separate edge and narrow
+minimum cases are retained.9Node and21Python source checks plus122/11freeze
+pass, private evidence .local/meridian-phase1-source046-01. Installed46 remains
+pending. Exact Partners11 and all business/authority code stay unchanged.
+
 ## Meridian installed45 and retained live reference - 16 November 2026
 
 Core45 clean eight/nine-addon builds passed runtime and14-layer audits. Empty
