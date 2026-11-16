@@ -30,3 +30,9 @@
 
 # Independent app repositories supply code, not their Git metadata.
 **/.git
+
+# Host authoring dependencies/state are not runtime application inputs.
+# Native addon trees and explicitly packaged vendor assets remain available.
+applications/external/*/editor/node_modules
+applications/external/*/editor/.cache
+applications/external/*/.local

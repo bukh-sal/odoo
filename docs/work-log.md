@@ -3907,3 +3907,47 @@ fresh owned cohort via normal install/review after actual absent/free/name check
 Do not rerun terminal57/56 operations. Real populated query/relation/cache,
 concurrent revoke/write, useful handbook and current-policy restore still gate
 acceptance. Keep phase2 defect/visual breadth, phase4 adoption and phase5 final.
+
+
+### Candidate58 image and fresh Pages cohort
+
+Root source4658d2202a4 produced ONE image
+sha256:15c720bfe35b2858eda3a1400b162544387f90c338f246095fcdfbaaa7ce7ea1.
+Original builder exit1/188.687s was a post-build rtlcss version-check timeout.
+Original failure/log/private record remain unchanged. The exact prior inspector
+container disappeared through its own auto-removal; no forced cleanup/rebuild.
+ONE verification-only continuation reused the unchanged standard30s checks and
+passed pinned Node24.22.2/rtlcss4.3.0/seven notice packages, runtime source and
+all-layer audit14layers3750files4031inputs/exact8runtime deltas/noartifacts.
+Verified record is .local/meridian-phase3-verify-core058-01/candidate-build.json
+(db1ce2134b4a...). It explicitly binds the failed original/provenance, not an
+invented original exit0. No original record was relabeled or overwritten.
+
+Fresh site attempt01 refused subnet overlap before creating ANY Docker asset.
+Exact readonly reconciliation proves its two networks/six volumes/six possible
+containers absent, no password file, inspect-only logs. Old host state/intent is
+retained. A new independent02 attempt used observed-free10.218.160.16/28 and
+.32/28/port18742; normal plan/prepare/initialize/publish completed once each.
+Project mp-r0-r1releaseb3146f786aff, DB
+mp_disposable_r0_r1_release_b3146f786aff, URL
+http://release-b3146f786aff.localhost:18742. Target config1/image15c720bf,
+SHA457c127ac7e0648eee04b42d8fa25dc787a42f93931f1ee991fd26ea701ae86f.
+Fresh readonly baseline058 proves exact8 installed modules (core/web58),
+zero apps/features/grants/bindings/jobs/events/resource policies/grants,
+4principals/2workspaces/6memberships. It is not installed Pages qualification.
+
+Before the first retained app archive, private source21da9a9 tightens metadata
+Unicode-scalar schemas/guards before canonical outcome hashing and validates
+search input;13 Python checks pass,15 unchanged Node proofs retained. Both root
+and private authoring recipes produce the same archive0.1.0/27files201551bytes,
+digest sha256:68dd99acadc33f9771229a1c377beb81c839f3088f9e83dcd3057d415cd6a07a.
+The archive is retained privately, NOT admitted/installed. Only a TEST Pages
+composition/portable recipe is added to deploy; the separate app-free policy is
+unchanged. Docker context excludes host editor node_modules/cache and private
+per-app .local, while native addon trees/explicit vendor assets remain available.
+These are build-context hygiene, not new app runtime restrictions.
+
+NEXT ONE coherent Pages58 image/build audit then normal admission/stage/plan/
+review/register/approval/apply on this fresh cohort. Never replay terminal core
+bootstrap or old failed-host attempt. Protected demonstrations remain intact.
+Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
