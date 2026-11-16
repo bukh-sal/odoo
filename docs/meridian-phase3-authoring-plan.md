@@ -87,3 +87,31 @@ complete-tokenizer scaling and unsupported-node/HTML/escaping tests on the lock.
 NEXT pin/inspect package source, bounded loss-aware Markdown conversion with
 worker timeout where appropriate; remaining controls/reorder/typed links/providers
 and all installed/recovery/lifecycle gates retained. Full goal ACTIVE1/5.
+
+
+### Exact Markdown pin and complete-tokenizer source proof
+
+Private0bf64603bcd510c6e588fd5ab869a6b1c711bad6/unpublished016 now pins @tiptap/markdown3.31.3 and
+marked17.0.6 locally, MIT. Only2new dependency entries; all previous lock entries
+exact. Install ignored scripts/no global install/npm upgrade. Registry/lock/license
+hash proof pages016-source-01/markdown-lock-check.json. Existing shipped editor
+bundle/notices remain unchanged until worker integration/build refreshes closure.
+
+Actual MarkdownManager with existing extensions handles headings1–3/tasklists/
+rectangular tables/safe links and normal roundtrip. Pure helper rejects raw HTML,
+images/unsafeURLs/undeclared token types/invalid Unicode/oversize; export rejects
+unsupported record nodes, underline, alignment and merged/width-specific tables
+with explicit JSON fallback. Loss metadata explains IDs/history/sharing are not
+Markdown. Initial positive test exposed actual marked checkbox token, added only
+that known supported token after inspecting lexer output; no broad HTML allowance.
+
+Actual core default COMPLETE block/inline tokenizer advisory families now assert
+probe token returned (not a no-op call),3-run median/8x input/isolated5s worker.
+Final source run48Node pass, including these cases. Bound evidence reports block
+~0.65ms->3.03ms, inline~0.09ms->0.80ms in dedicated run; no general complexity or
+security-clean claim. Results in markdown-attribute-scaling.json; full run receipt
+node-markdown.txt may carry later measured values. No browser conversion worker/UI
+MD controls or installed qualification yet. NEXT integrate dedicated browser worker
+with hard timeout/termination, actual loss-aware import/export confirmation, exact
+licensed vendored worker closure, then remaining editor/reorder/links/providers.
+All phase3 lifecycle/visual and fullphase2/4/5 remain. Live015 data unchanged.
