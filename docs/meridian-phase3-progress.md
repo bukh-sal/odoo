@@ -366,3 +366,47 @@ preserves all50 revisions/current policy2/grants. Then real comment/reply/resolv
 history restore-as-new, idle stability/access refresh and two-session current
 revoke tests. Loop and native200/carryover gaps remain unaccepted until installed
 proof. No further current011 editor mutation. Goal ACTIVE1/5/all phases intact.
+
+
+### Installed Pages012: real commenter workflow and revision recovery
+
+Rootdf556573/private62b3808 produced ONE image
+b6c4140426cd293e6b823f79a58db5c7db7cabce1d17b3d9a521ac06f88fffc1,
+32.204s,14layers3769files/3747core59 files exact/19appfiles. Normal upgrade
+f98ac67f-4eb9-4cf2-b9f7-c9d6c8e4254d/plan
+a89f141f3d335a002eb72dde58fae4090e9182ef8101d25cfd2169fba21f2a30
+completed once161.828s,config5/targetf5b5058d. All50 prior revisions/receipts/
+policy2/two current grants/original actors preserved. No build/apply retry.
+
+Actual GUI Robin session50 (separate hostname/cookies) keeps body readonly/no
+Save but can post a page comment. Owner49 reads it, replies, resolves the root.
+Those actions leave body revision50 unchanged. A genuine sentence edit reached
+52: one typing tool timed out after a visible partial sentence; only the remaining
+suffix was entered, yielding two normal autosave checkpoints51/52. No whole-input
+replay. Actual readonly preview50 then explicit Restore-as-new produces53. All
+old bodies remain;53 exactly equals50 and original useful2. Current comments
+remain, marked earlier saved revision. No phantom body updates across subsequent
+panels/theme reload/matched capture. Fresh readonly workflow-check-01 proves
+53revisions/57receipts/2comments/root resolved revision2/current policy2 and grants
+unchanged; no jobs/events. The48 redundant011 revisions remain honest history.
+
+The new continuous cover/icon/title and quiet header/inspector navigation were
+visually compared with Meridian. Raw equal1280x720/DPR1/dark PNGs and protocol
+layout metrics in pages012-visual-01. Agent JPEG screenshot applied an unexpected
+surface scale; those originals are retained as INVALID fidelity comparisons.
+Actual CDP captureScreenshot/fromSurface/explicit1280x720clip/scale1 matches CSS
+viewport and visual zoom1. No independent image resize. This is a controlled CSS
+comparison, not native200 proof. Temporary metric override cleared and original
+light appearance restored; natural1543x883/DPR1. Original reference39/48 kept,
+comparison copy51 retained. Operator49 and Robin50 owned handoffs, main36 user200
+and empty40 untouched. Main/empty fresh after-pages012-01 proves all10/9 baseline
+tables and protected targets/older private heads exact.
+
+Fidelity critique OPEN: discussion needs stronger comment cards/avatar/time
+hierarchy and a reachable composer; writer/inspector need independent scrolling;
+filter/search-tree, real child pages, templates and linked records still required.
+Shared rail icon normalization/M2-V200-01 native footer remain. No blanket visual,
+accessibility or phase3 acceptance. Phase3 roughly45% implementation/zero exit
+acceptance, milestone1/5/all five phases intact. NEXT current downgrade/revoke/
+two-writer/native query/cache pressure, retain drafts and inspect failures, then
+coherent remaining authoring/integration slice and current-authority restore.

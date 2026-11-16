@@ -3957,3 +3957,5 @@ Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
 - 16November Meridian-P3: Pages011 normal upgrade preserved handbook2; single sidebar/favorite/revision preview verified. Real Share failed core SQL42702; exact no-effect proof and receipt check retained, no retry. Core59 rp.revision correction real-PG TEMP differential+43 source checks pass; maintenance build next.
 
 - 16November Meridian-P3: core59 normal rollout completed, exact baseline preservation reconciled; fresh Share succeeded. Actual Tiptap mode event loop stopped via normal Leave;50revisions retained/48redundant identical/body exact. Pages012 event/stale-callback/layout successor19Python26Node + archive validation pass; normal upgrade next. No phase acceptance.
+
+- 16November Meridian-P3: Pages012 build32.204s/normal upgrade161.828s preserves50 history rows; actual commenter/reply/resolve and restore50-as53 pass. Fresh53revisions57receipts2comments/current authority exact, no phantom autosave. Matched1280dark protocol PNG comparison recorded; app scrolling/composer/tree/integration gaps remain. Protected main/empty data exact.

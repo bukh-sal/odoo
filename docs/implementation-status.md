@@ -5,24 +5,24 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal, 16 November: **active - implement the Meridian roadmap in full.** All five milestones retained; milestones1/5. One active item: phase3 useful Pages authoring/collaboration. Pages0.1.0 is installed on fresh18742/config2; one real handbook revision2 survives reload. Live double-sidebar and Owl Proxy preference defects require successor0.1.1. Phase2 M2-V200-01 remains open. Meridian stays open.
+Current goal, 16 November: **active - implement the Meridian roadmap in full.** All five milestones retained; milestones1/5. One active item phase3 real Pages. Core59/Pages012 installed18742/config5; actual commenter/reply/resolve and restore-as-new workflow verified. Phase3 roughly45% implementation/zero exit acceptance. Phase2 native200/footer and phase4/5 remain. Meridian stays open.
 
 Previous goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-16T15:36:54.105063+00:00
+- Updated UTC: 2026-11-16T16:51:02.056386+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: Meridian phase3 roughly35% implementation work/0 exit acceptance; phase2 unaccepted; milestones1/5.
-- Latest work item: Core59 maintenance2287 completed161.672s/config4; read-only reconciliation proves all baseline tables exact. Fresh Share succeeds policy2/Robin commenter. Pages011 Tiptap mode-update loop stopped;50 revisions retained/48 redundant identical. Pages012 source fixes event/stale callback plus reference inspector/cover;19Python26Node pass.
-- Current source continuation: core59 root90d432ac, web58 unchanged; private Pages0.1.2 source successor pending commit/build, installed011/c538376.18742config4/image8b7ca04b. Operator49 is stable Home with editor unmounted; Robin50 read-only page, private credentials retained.
-- Current next action: Commit/build/audit Pages012/core59, normal exact upgrade preserving50 revisions/policy2/grants, then installed idle stability/comment/reply/resolve/history/current-revoke proof and matched visual comparison. Never replay terminal2287/7df/c2f or old failed Share. Phase2 footer/phase4/5 remain required.
+- Current phase/gate: Meridian phase3 roughly45% implementation work/0 exit acceptance; phase2 unaccepted; milestones1/5. No completed R1 gate restarted or extra points claimed.
+- Latest work item: Pages012 installedf98/config5/imageb6c41404. Real Robin commenter/owner reply+resolve, meaningful edit and restore50-as53; fresh53revisions57receipts2comments/policy2/grants2 proof. No phantom autosave during later interactions. Matched1280dark comparison plus preserved main/empty data proof retained.
+- Current source continuation: rootdf556573/core59/web58, privatePages62b3808/0.1.2; archivef3ac97d6. Current18742config5/targetf5b5058d; all operations terminal. Operator49/light/natural and Robin50/reader-body-commenter sessions active; temporary capture metrics cleared.
+- Current next action: Current page downgrade/revoke/two-writer/native query/cache pressure through real sessions; preserve local drafts and exact outcomes. Then remaining child/tree/template/integration and independent writer/inspector scrolling/composer refinement, followed by current-authority fault/restore/lifecycle. Phase2 native200 and phase4/5 still required.
 - Browser: reference39Acme/48handbook retained, live36Partners default80-row list/no draft at user200%, empty40core57/noapps. No metrics override. Natural200 protocol2.2/reference1.1 ratio2, CSS622x394; sticky-query/footer defect OPEN. Human38 unavailable/untouched. Fresh readonly after200-058-01 proves protected data/targets/private heads exact.
 - Acceptance/checklist: UI4/4 complete within documented scope. Historical PP100/100 and original R1 99/99/100weighted unchanged; no extra progress for documentation/builds.
-- Blocker register: core policy ambiguity corrected and installed; current Pages011 non-content Tiptap update loop is stopped, source012 correction passes but rollout required before further editor mutations. Native200 footer and shared rail normalization open; collaboration/recovery/visual acceptance pending.
+- Blocker register: no coordination blocker. Core policy SQL and app event-loop defects corrected/installed; retained failures and redundant history immutable. Current concurrent revoke/draft and full phase3 restore/lifecycle unqualified. Visual composer/scroll/tree gaps and shared rail/native200 footer open.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 
