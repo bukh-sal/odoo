@@ -114,7 +114,7 @@ class RestoreContinuation:
         return {k:v for k,v in observed.items() if k not in ignored}=={k:v for k,v in profile.items() if k not in ignored}
 
     def _source_hashes(self,profile):
-        sources=['restore_executor.py','restore_continuation.py','integration_grant_recovery.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
+        sources=['restore_executor.py','restore_continuation.py','integration_grant_recovery.py','resource_authority_recovery.py','native_auth_recovery.py','dispatch_operator.py','dispatch_lifecycle.py','dispatch_jobs_maintenance.py']
         return {name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in sources}
 
     def execute(self,decision,*,exact_hash,noninteractive=False):

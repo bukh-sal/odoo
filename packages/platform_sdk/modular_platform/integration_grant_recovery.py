@@ -9,6 +9,7 @@ from uuid import UUID
 
 from .operator_os import OperatorError
 from .plans import data_digest
+from .resource_authority_recovery import resource_proof, verify_resource_proof
 
 POLICY = 'r1-current-integration-grants-v1'
 PROOF_NAME = 'integration-grants.json'
@@ -54,25 +55,36 @@ def restored_grants(checkpoint, current):
     return result
 
 
-def grant_proof(decision, checkpoint):
+def grant_proof(decision, checkpoint, *, resource_checkpoint=None):
     checkpoint = canonical_grants(checkpoint)
     source = canonical_grants(decision['authority']['integration_grants'])
     expected = restored_grants(checkpoint, source)
-    return dict(schema_version=1, policy=POLICY, operation_id=decision['operation_id'],
+    value = dict(schema_version=1, policy=POLICY, operation_id=decision['operation_id'],
                 plan_hash=decision['plan_hash'], coordinated_checkpoint_digest=decision['checkpoint_digest'],
                 source_authority_digest=data_digest(decision['authority']), checkpoint_grants=checkpoint,
                 checkpoint_digest=data_digest(checkpoint), source_digest=data_digest(source),
                 expected_grants=expected, expected_digest=data_digest(expected))
+    if 'resource_access' in decision['authority']:
+        value['resource_access'] = resource_proof(decision, resource_checkpoint)
+    elif resource_checkpoint is not None:
+        raise OperatorError('Checkpoint resources require current resource authority')
+    return value
 
 
 def verify_proof(value, decision):
-    if not isinstance(value, dict) or set(value) != {
+    fields = {
             'schema_version', 'policy', 'operation_id', 'plan_hash', 'checkpoint_grants',
             'checkpoint_digest', 'source_digest', 'expected_grants', 'expected_digest',
-            'coordinated_checkpoint_digest', 'source_authority_digest'}:
+            'coordinated_checkpoint_digest', 'source_authority_digest'}
+    if 'resource_access' in decision['authority']:
+        fields.add('resource_access')
+    if not isinstance(value, dict) or set(value) != fields:
         raise OperatorError('Exact integration grant reconciliation proof required; keep traffic closed')
     canonical_grants(value['expected_grants'])
-    if type(value['schema_version']) is not int or value != grant_proof(decision, value['checkpoint_grants']):
+    resource_checkpoint = None
+    if 'resource_access' in fields:
+        resource_checkpoint = verify_resource_proof(value['resource_access'], decision)['checkpoint']
+    if type(value['schema_version']) is not int or value != grant_proof(decision, value['checkpoint_grants'], resource_checkpoint=resource_checkpoint):
         raise OperatorError('Integration grant reconciliation proof differs from reviewed authority')
     return value
 
@@ -80,9 +92,19 @@ def verify_proof(value, decision):
 def reconciled_authority(decision, proof):
     expected = copy.deepcopy(decision['authority'])
     expected['integration_grants'] = verify_proof(proof, decision)['expected_grants']
+    if 'resource_access' in proof:
+        resources = proof['resource_access']['expected']
+        if resources is None:
+            expected.pop('resource_access', None)
+        else:
+            expected['resource_access'] = copy.deepcopy(resources)
     return expected
 
 
 def proof_binding(proof):
-    return dict(integration_grants_policy=POLICY, integration_grants_proof_digest=data_digest(proof),
+    value = dict(integration_grants_policy=POLICY, integration_grants_proof_digest=data_digest(proof),
                 integration_grants_digest=proof['expected_digest'])
+    if 'resource_access' in proof:
+        value['resource_authority_policy'] = proof['resource_access']['policy']
+        value['resource_authority_digest'] = proof['resource_access']['expected_digest']
+    return value

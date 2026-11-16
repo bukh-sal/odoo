@@ -724,3 +724,40 @@ requested emulation size. Record CSS/DIP dimensions, native zoom and DPR. Curren
 reference90/live110 captures support structural measurements only, even with
 matched CSS viewport. Never resize originals independently to claim fidelity.
 See meridian-phase2-review.md; native100%/200% checks remain pending.
+
+### Private record capability enforcement (core57 candidate)
+
+For an independently shared native record, inherit `mp.resource.scoped` instead
+of only `mp.workspace.scoped`. Declare `_mp_plugin_id`, a stored unique public
+UUID field and `_mp_resource_actions` with exactly read/create/write/unlink/manage,
+mapped to permission IDs in that installation's manifest. The owning model must
+also be in its declared data.models. Roles/labels and capability sets belong to
+the application, not to core.
+
+In a private create handler, generate a UUID and call
+`resource_access.register(model, uuid, member_capabilities=[...])` before ORM
+creation, in the same transaction. Pass that UUID into the model's create call.
+The owner/workspace are derived from current authoritative scope; no browser
+marker can register a resource. Preserve the app's own field allowlist, mutation
+markers, CAS and stable-submission receipt protocol. Rollback removes a failed
+registration along with the failed creation.
+
+Use `require(records, capability, action='read'|'write'|'unlink')` for additional
+app capabilities. Normal inherited search/direct read/write paths apply the
+declared action automatically. Sharing UI obtains management-only `policy()`
+and submits `change_policy(expected_revision=..., member_capabilities=...,
+grants=[{principal_id:...,capabilities:[...]}])`. The grant list is the complete
+requested active assignment set, not native relation commands. Omitted previous
+grants become revoked tombstones. A stale revision returns CONFLICT. Keep the
+app's user-facing policy-change history/receipt and explain the workspace ceiling.
+
+Owner/human workspace-admin management does not bypass base action/capability
+checks. Viewer membership stays read-only. A service principal needs a valid
+current scoped credential at use time; a record grant creates none. No helper
+allows arbitrary models, browser SQL, sudo fallback or scope fabrication. Native
+Python/SQL remains trusted, so app authors must not bypass their supported ORM
+or service boundaries. This is not a sandbox.
+
+The source checks and readonly pre-feature observation are recorded in
+`meridian-phase3-progress.md`. Real native query/relation/cached read, concurrent
+revoke/write and recovery qualification with the Pages consumer remain pending.

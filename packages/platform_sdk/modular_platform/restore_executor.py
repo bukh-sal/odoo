@@ -30,6 +30,9 @@ from .projection import runtime_inputs
 from .native_auth_recovery import POLICY as NATIVE_AUTH_POLICY,read_query,canonical_native_auth,public_binding,overlay_sql
 from .integration_grant_recovery import (POLICY as GRANT_POLICY, PROOF_NAME, canonical_grants,
     grant_proof, verify_proof, reconciled_authority, proof_binding)
+from .resource_authority_recovery import (authority_select as resource_authority_select,
+    canonical_observation as canonical_resource_observation, canonical_snapshot as canonical_resources,
+    overlay_sql as resource_overlay_sql)
 
 
 def restored_fence_correlation(review_id, database):
@@ -71,6 +74,7 @@ def authority_sql(snapshot):
     snapshot = canonical_authority(snapshot)
     payload = json.dumps(snapshot).replace("'", "''")
     secret = secrets.token_hex(32)
+    resources = resource_overlay_sql(snapshot['resource_access']) if 'resource_access' in snapshot else ''
     return ("CREATE TEMP TABLE restore_authority(payload jsonb); INSERT INTO restore_authority VALUES ('"+payload+"'::jsonb);\n"+"""
 UPDATE mp_principal SET state='suspended';
 UPDATE mp_principal p SET state=a.state FROM restore_authority r,
@@ -93,7 +97,7 @@ UPDATE mp_plugin_grant g SET state=a.state,policy_version=a.policy_version
  AND i.plugin_id=a.plugin_id AND w.public_id=a.workspace_id AND g.capability=a.capability;
 UPDATE mp_service_credential SET state='revoked';
 UPDATE mp_workspace SET policy_generation=policy_generation+1;
-"""+"UPDATE ir_config_parameter SET value='"+secret+"' WHERE key='database.secret';\n")
+"""+resources+"UPDATE ir_config_parameter SET value='"+secret+"' WHERE key='database.secret';\n")
 
 
 def canonical_authority(value):
@@ -104,6 +108,8 @@ def canonical_authority(value):
         raise OperatorError('Unsupported integration grant reconciliation policy')
     value['integration_grants']=canonical_grants(value['integration_grants'])
     value['integration_grants_policy']=GRANT_POLICY
+    if 'resource_access' in value:
+        value['resource_access']=canonical_resources(value['resource_access'])
     for key in ('principals','memberships','operators'):
         value[key].sort(key=lambda item: (item['principal_id'], item.get('workspace_id','')))
     return value
@@ -234,10 +240,17 @@ class RestoreExecutor:
     def _authority(self, database):
         container=self.observer._container('db')
         value=load_json(_run(['docker','exec','-i',container,'psql','-X','-qAt','-U','postgres',
-            '-d',database,'-v','ON_ERROR_STOP=1'],input=read_query(AUTHORITY_SELECT).encode()))
+            '-d',database,'-v','ON_ERROR_STOP=1'],input=read_query(
+                resource_authority_select(AUTHORITY_SELECT,present=True),
+                authority_without_resources=resource_authority_select(AUTHORITY_SELECT,present=False)).encode()))
         if not isinstance(value,dict) or set(value)!={'authority','native_auth'}:
             raise OperatorError('Exact private native authentication observation required')
         private=canonical_native_auth(value['native_auth'])
+        if 'resource_access' not in value['authority']:
+            raise OperatorError('Explicit resource schema observation required')
+        resources=canonical_resource_observation(value['authority'].pop('resource_access'))
+        if resources is not None:
+            value['authority']['resource_access']=resources
         return canonical_authority(value['authority'])|public_binding(private),private
 
     def _grant_proof(self, directory, decision):
@@ -444,9 +457,11 @@ class RestoreExecutor:
             self.native._private_command(args+['-c',EXTRACT_FILESTORE,self.config['sites'][0]['database'],fresh],
                 directory/'filestore.log',input=(checkpoint/'filestore.tar.gz').read_bytes())
             checkpoint_authority,_=self._authority(fresh)
-            _write_new(directory/PROOF_NAME,grant_proof(decision,checkpoint_authority['integration_grants']))
+            proof=grant_proof(decision,checkpoint_authority['integration_grants'],
+                resource_checkpoint=checkpoint_authority.get('resource_access'))
+            _write_new(directory/PROOF_NAME,proof)
             _run(['docker','exec','-i',database,'psql','-X','-q','-U','postgres','-d',fresh,'-v','ON_ERROR_STOP=1','--single-transaction'],
-                input=(authority_sql(decision['authority'])+overlay_sql(private_native_auth)+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
+                input=(authority_sql(reconciled_authority(decision,proof))+overlay_sql(private_native_auth)+restored_release_sql(decision['restore_configuration'],decision['restored_release_lock'],operation)).encode())
             return self._complete_restore(decision,exact_hash=exact_hash,locks=locks,directory=directory,checkpoint=checkpoint,manifest=manifest,fresh=fresh,private_native_auth=private_native_auth)
 
     def _complete_restore(self,decision,*,exact_hash,locks,directory,checkpoint,manifest,fresh,private_native_auth,dispatch_directory=None):

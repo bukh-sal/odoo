@@ -410,3 +410,20 @@ Installed56 evidence:761ae526/config18 and b489ebfe/emptyconfig3 completed once.
 Current realArabic page/record ranges pass; all business/authority data retained.
 Final056 snapshot verifies both targets/protected sources. Source proof and real
 native ordering are distinct; full phase2/zoom acceptance remains open.
+
+
+## 16 November 2026 - P3.0 resource authority source
+
+Core57 candidate implements generic private resource policies/principal grants,
+native query/direct/cache guards, scoped registration and policy CAS with shared
+workspace/policy locking. No app domain IDs, content, roles or editor in core.
+Fixed resource schema observation/reconciliation extends the existing reviewed
+authority proof and continuation/resume bindings; legacy shape remains unchanged.
+145 affected tests pass (source/fake-native/SQL boundaries), clean materialization
+and build-route included; freeze122/11 passes. Setup-only harness/import errors
+retained/corrected. Actual readonly empty56 observation verifies old-schema
+absence and unchanged target; no Docker/DB mutation or image build. Both review
+sites remain56, private apps unchanged, Pages not created. Source is not installed
+security/concurrency/recovery acceptance. Next one app-free57 build/audit and
+normal empty-cohort transition, then real Pages populated-policy consumer.
+Full five-phase goal remains active, milestones1/5; phase2 zoom/breadth pending.

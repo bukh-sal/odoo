@@ -3806,3 +3806,20 @@ records generic prerequisite, private rich authoring/collaboration/history/link/
 lifecycle work, intentional boundaries and actual visual/user-workflow gates.
 No Pages repo/dependency download/core57/source implementation yet. Next P3.0
 exact closure/ADR then implementation; no need to wait idle for manual zoom.
+
+
+## 16 November 2026 - P3.0 resource authority source
+
+Core57 candidate implements generic private resource policies/principal grants,
+native query/direct/cache guards, scoped registration and policy CAS with shared
+workspace/policy locking. No app domain IDs, content, roles or editor in core.
+Fixed resource schema observation/reconciliation extends the existing reviewed
+authority proof and continuation/resume bindings; legacy shape remains unchanged.
+145 affected tests pass (source/fake-native/SQL boundaries), clean materialization
+and build-route included; freeze122/11 passes. Setup-only harness/import errors
+retained/corrected. Actual readonly empty56 observation verifies old-schema
+absence and unchanged target; no Docker/DB mutation or image build. Both review
+sites remain56, private apps unchanged, Pages not created. Source is not installed
+security/concurrency/recovery acceptance. Next one app-free57 build/audit and
+normal empty-cohort transition, then real Pages populated-policy consumer.
+Full five-phase goal remains active, milestones1/5; phase2 zoom/breadth pending.

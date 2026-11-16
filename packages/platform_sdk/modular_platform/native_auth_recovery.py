@@ -37,14 +37,24 @@ def _select(with_passkeys):
 SELECT = _select(True)
 
 
-def read_query(authority_select):
+def read_query(authority_select, *, authority_without_resources=None):
     # Both metadata and credentials come from one authoritative DB snapshot.
     def combined(native):
-        return "SELECT jsonb_build_object('authority',(" + authority_select.strip().removesuffix(';') + "),'native_auth',(" + native + "));\n"
+        def select(authority):
+            return "SELECT jsonb_build_object('authority',(" + authority.strip().removesuffix(';') + "),'native_auth',(" + native + "));\n"
+        if authority_without_resources is None:
+            return select(authority_select)
+        # Both tables must exist before the complete-schema query is parsed.
+        # Partial/old-schema alternatives still carry explicit schema metadata
+        # for the host's fail-closed version/presence check.
+        return ("\\if :mp_restore_has_resources\n" + select(authority_select)
+                + "\\else\n" + select(authority_without_resources) + "\\endif\n")
     # psql chooses fixed SQL before PostgreSQL parses the optional relation.
     # Schema presence and credentials stay in one readonly database snapshot.
     return ("BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY; SET LOCAL statement_timeout='5s';\n"
             "SELECT (to_regclass('public.auth_passkey_key') IS NOT NULL) AS mp_restore_has_passkeys\n\\gset\n"
+            + ("SELECT (to_regclass('public.mp_resource_policy') IS NOT NULL AND to_regclass('public.mp_resource_grant') IS NOT NULL) AS mp_restore_has_resources\n\\gset\n" if authority_without_resources is not None else "")
+            +
             "\\if :mp_restore_has_passkeys\n" + combined(SELECT) + "\\else\n" + combined(_select(False))
             + "\\endif\nROLLBACK;")
 

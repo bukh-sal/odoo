@@ -15,6 +15,7 @@ from modular_platform.dispatch_lifecycle import EVENT_HISTORY, JOB_IDENTITY, PHY
 from modular_platform.native_auth_recovery import read_query,public_binding
 from modular_platform.restore_executor import RestoreExecutor,EFFECTS_SELECT,AUTHORITY_SELECT,canonical_authority
 from modular_platform.integration_grant_recovery import grant_proof,proof_binding,PROOF_NAME
+from modular_platform.resource_authority_recovery import authority_select as resource_authority_select
 from reference_operator.executor import ReferenceRestoreExecutor
 
 CLEAR=dict(job_table=False,outbox_table=False,api_key_count=0,active_technical_credentials=0,external_installations=0)
@@ -50,7 +51,10 @@ class RestoreDispatchTests(unittest.TestCase):
 
     def execute_command(self,args,*,input=None):
         if input==EFFECTS_SELECT.encode():return json.dumps(self.effects).encode()
-        if input==read_query(AUTHORITY_SELECT).encode():return json.dumps(dict(authority=self.authority,native_auth=self.native_auth)).encode()
+        if input==read_query(resource_authority_select(AUTHORITY_SELECT,present=True),
+                authority_without_resources=resource_authority_select(AUTHORITY_SELECT,present=False)).encode():
+            resources=dict(schema=dict(policy=False,grant=False,core_version='19.0.0.2.56'),policies=[],grants=[])
+            return json.dumps(dict(authority=self.authority|dict(resource_access=resources),native_auth=self.native_auth)).encode()
         if args[:3]==['docker','exec','app']:
             if self.readiness_error:raise OperatorError('Readiness failed')
             self.readiness_change();return b''

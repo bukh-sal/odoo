@@ -1,4 +1,6 @@
 from . import models
+from . import resource_models
+from . import resource_access
 from . import async_models
 from . import job_history
 from . import event_models

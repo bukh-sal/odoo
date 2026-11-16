@@ -271,3 +271,9 @@ independent app packaging/lifecycle and installed visual review. Update the
 carryover register, author guide, acceptance/blocker ledger and screenshot index.
 Phase2's pending visual work still must close; phase4 adoption and phase5 final
 canonical qualification remain required. Nothing here claims Pages exists yet.
+
+Implementation checkpoint16November: P3.0 generic source/models/helpers and
+recovery proof integration are implemented in the local core57 candidate.
+See meridian-phase3-progress.md for affected tests, actual readonly core56 schema
+compatibility and the installed proofs still required. No P3.0/phase3 acceptance
+or Pages existence is inferred from these source checks.
