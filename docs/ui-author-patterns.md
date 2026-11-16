@@ -689,3 +689,18 @@ gap is pending correction, not a passed RTL example. Keep human prose/names auto
 directional and do not force all fields LTR. Shared count/fallback-text isolation
 also remains under review. Test actual native locale, input/caret and mixed text;
 viewport mirroring or injected dir alone is insufficient evidence.
+
+ContextNav already isolates item labels; its footer is an author-owned slot, so
+isolate plain footer strings without imposing direction on arbitrary slot DOM:
+
+```xml
+<ContextNav groups="groups" label="title" onNavigate="onNavigate">
+  <t t-set-slot="footer"><p><bdi t-esc="summary"/></p></t>
+</ContextNav>
+```
+
+Core55 applies this same existing bdi pattern to strings owned by PageHeader
+and native collection description/meta. Block alignment stays with the surrounding
+layout; string direction follows its first strong character. Slots retain their
+owner's semantics and escaped strings never become markup. Installed successor
+proof is pending; source tests do not establish visual bidi ordering.

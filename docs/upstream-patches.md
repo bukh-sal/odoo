@@ -375,3 +375,16 @@ Actual Discard retains its local snapshot until explicit reopen, not latest-read
 semantics. Bare model deep link has no context sidebar, a retained composition
 finding. Current native200%/empty-core/remaining phase2 gates are not accepted.
 Evidence .local/meridian-phase2-browser054-01 and creation054-01.
+
+## Meridian core55: isolate owned plain header/collection text
+
+PageHeader's title/eyebrow/subtitle and native ControlPanel's description/meta
+remain escaped plain strings, now inside bdi following ContextNav.Label's
+existing pattern. Blocks keep their alignment, classes, count and slots. Do not
+force direction on arbitrary author slots: Partners owns its footer string and
+must isolate it there. No CSS direction injection, API/schema/model/permission
+change. Three shipped identities55.171Node/29Python cases,30Owl templates/ten
+mounted composition scenarios/eight compiled forms/CogMenu and freeze122/11 pass.
+Actual PageHeader and native control-panel consumer witnesses preserve escaped
+text/count/query/selection callbacks. Installed Arabic ordering remains required;
+compact Partners13 phone defect is a separate pending author-view correction.

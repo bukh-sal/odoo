@@ -25,8 +25,8 @@
                         <Breadcrumbs breadcrumbs="breadcrumbs" headingLevel="1">
                             <t t-set-slot="breadcrumb-status-indicator"><t t-slot="control-panel-status-indicator"/></t>
                         </Breadcrumbs>
-                        <p t-if="display.description" class="mp-page-description" t-esc="display.description"/>
-                        <p t-if="display.collectionMeta" class="mp-page-meta" t-esc="display.collectionMeta"/>
+                        <p t-if="display.description" class="mp-page-description"><bdi t-esc="display.description"/></p>
+                        <p t-if="display.collectionMeta" class="mp-page-meta"><bdi t-esc="display.collectionMeta"/></p>
                     </div>
                     <div class="o_control_panel_main_buttons mp-page-actions d-empty-none d-print-none" t-on-keydown="onMainButtonsKeydown">
                         <t t-slot="control-panel-create-button"/>

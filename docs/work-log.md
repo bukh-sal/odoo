@@ -3718,3 +3718,19 @@ Arabic remains test locale. No new business rows/events (18/21/jobs0), no native
 claim; manual setting pending. Source/runtime stays54. Next coherent shared bidi/
 private compact-role correction with normal successor identities/operations, then
 remaining phase2 gates and Pages. Fullgoalactive,roughphase2 85%,milestones1/5.
+
+## Meridian phase2 core55 isolated text source - 16 November2026
+
+Fresh audit finds ContextNav.Label already bdi and footer arbitrary author slot.
+Keep its API/slot unchanged. Core55 isolates only owned PageHeader title/eyebrow/
+subtitle and native collection description/meta, preserving block/classes/counts/
+escaping. Three identities55. Private13 stays unchanged for the core build;
+author footer and compact identifier correction follow separately in14.
+
+171Node29Python/30Owl templates/ten mounted composition/eight compiled forms/
+actual CogMenu/freeze122files11rows pass. Actual shared and native consumers prove
+plain unsafe-looking strings remain text, bdi nodes/counts/query/selection intact.
+No installed55 or complete RTL claim. Next one normal core55 build/maintenance
+with exact13, then separate private14/archive/admission/app operation. Current
+18/21 data, existing Arabic fixture and en_US/Asia-Riyadh/light preserved. Full
+goal active, phase2still85%/unaccepted, milestone1/5; no old native/fixture replay.

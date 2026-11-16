@@ -729,6 +729,44 @@ Fresh source audit and exact implementation/test plan precede those changes.
 Rough phase2 implementation/workflow85%, milestone1/5; phase2 remains unaccepted.
 Native200 manual setting still pending; other corrections proceed independently.
 
+### Bidi correction implementation plan after source audit
+
+Current root2ec9a78a619 and private Partners13 are clean; no operation is live.
+The previous turn is progress: both sites upgraded54 and real Arabic layout
+revealed specific consumer defects, with English/profile/data restored.
+
+Actual ContextNav.Label already uses bdi. Its footer is an arbitrary author slot,
+not a text prop: do not force direction on that whole slot. Partners owns its
+loading/error/summary strings there and must isolate each string with bdi. Its
+compact native form must give email/phone the same existing mp-identifier class
+as the full form. Keep arbitrary Char semantics generic; no field-name heuristic.
+
+Core owns the plain description/meta strings in native ControlPanel and the
+title/eyebrow/subtitle strings in shared PageHeader. Wrap those escaped strings
+with bdi while keeping their block alignment/layout/count and slots unchanged.
+This follows the existing ContextNav.Label pattern, works for either first-strong
+direction and prevents English fallback numbers/punctuation from reordering in
+Arabic UI. No CSS direction forcing, new component API, policy/model/schema/
+permission/transport changes or typography redesign in this batch.
+
+Prove actual templates with pinned Owl: shared PageHeader and native Layout/
+ControlPanel render escaped isolated strings, counts and callbacks unchanged;
+keep native form/compiler/creation/selection/navigation witnesses and freeze.
+Core/web identities55, normal core build/maintenance with exact Partners13 first.
+Only after that build boundary, change/commit private Partners14 view/footer and
+identities, assemble/verify exact new archive, normal admission/app upgrade.
+Source/profile/old archives/business tables remain bound. Refresh app-free core
+to55 separately with zero plugin targets. Do not batch changed app bytes into
+core maintenance or relabel an existing immutable candidate/archive.
+
+Installed proof: already-enabled real Arabic (no old wizard replay), both themes,
+compact dialog/sheet email/phone LTR-isolated with unchanged values, footer/meta
+English and Arabic strings retain natural order, no native creation/save retry.
+Use unsaved drafts then explicit discard; compare all original18contacts21events/
+authority, account language/timezone, private heads, target hashes and source
+inputs. Restore English/light/natural viewport; native200 manual gate remains
+pending. Phase2 remains open until material findings and its full checklist pass.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

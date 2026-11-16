@@ -4,12 +4,12 @@
     <header class="mp-page-header">
       <div class="mp-page-heading">
         <div t-if="props.breadcrumbs?.length or props.slots.breadcrumbs" class="mp-page-breadcrumbs"><BreadcrumbTrail t-if="props.breadcrumbs?.length" items="props.breadcrumbs"/><t t-else="" t-slot="breadcrumbs"/></div>
-        <p t-if="props.eyebrow" class="mp-page-eyebrow" t-esc="props.eyebrow"/>
+        <p t-if="props.eyebrow" class="mp-page-eyebrow"><bdi t-esc="props.eyebrow"/></p>
         <h1 class="mp-page-title">
-          <t t-esc="props.title"/>
+          <bdi t-esc="props.title"/>
           <span t-if="props.count !== undefined" class="mp-page-count" t-att-aria-label="props.countLabel" t-esc="props.count"/>
         </h1>
-        <p t-if="props.subtitle" class="mp-page-description" t-esc="props.subtitle"/>
+        <p t-if="props.subtitle" class="mp-page-description"><bdi t-esc="props.subtitle"/></p>
       </div>
       <div t-if="props.slots.actions" class="mp-page-actions"><t t-slot="actions"/></div>
     </header>
