@@ -1,13 +1,14 @@
 # Shared application interface patterns
 
-## Phase2 shared surfaces (source47, installed proof pending)
+## Phase2 shared surfaces (introduced47; corrected core48 installed)
 
 Import `ContextNav` from `@web/interface/context_nav`, `Badge` from
 `@web/interface/badge`, and `RecordHeader`/`RecordLayout` from
 `@web/interface/record_layout`. These are inventoried backend components;
 they do not import a private application or fetch its data. The native Shell
-now uses ContextNav's default menu presentation. Source47 is still under
-implementation; current review sites remain46/Partners11 and empty45.
+now uses ContextNav's default menu presentation. The corrected core48 is on
+the Partners11 review site; the separate empty site remains45. New app-owned
+context/header adoption is pending private12; source tests are not that proof.
 
 ```xml
 <ContextNav label="navigationLabel" groups="navigationGroups" onNavigate.bind="navigate">
@@ -90,8 +91,9 @@ differ; All apps remains reachable. Revoked/unavailable app IDs are filtered
 through the current menu. Failed browser storage retains the editor's choices
 and reports failure; it cannot grant access. Help contains the keyboard hints
 and links to real command/sidebar actions. New neutral card, overlay/elevation
-and bounded tone tokens have both theme values; installed contrast/geometry
-and independent-app adoption are still pending for47.
+and bounded tone tokens have both theme values. Basic installed48light/dark/
+narrow checks pass; complete contrast/geometry and independent-app adoption
+remain phase2 obligations.
 
 Source41 also bridges Bootstrap's link RGB consumers and themed native-select
 indicator. Taskfiles0.1.7 demonstrates adopting shared semantic colours without
@@ -103,7 +105,7 @@ apps. Apps own data, services, authority, routes and drafts. The earlier five-ap
 cohort is core0.2.41; [qualified combinations](ui-qualified-combinations.md) and the
 [acceptance matrix](ui-delivery-acceptance.md) separate actual interaction proof,
 unchanged-source applicability and the completed final041 canonical run.
-The current Meridian work has a separate core46/Partners11 review site.
+The current Meridian work has a separate core48/Partners11 review site.
 Its installed and pending refinements are tracked in the
 [phase1 plan](meridian-phase1-plan.md).
 

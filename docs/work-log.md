@@ -1,3 +1,21 @@
+## Meridian phase2 corrected core48 installed comparison - 16 November2026
+
+Correction48/source3bc49adff46 built/audited once14layers3763files as e52c13c6.
+Normal reviewed maintenance410b7b60/hash1591c717 completed once/config8. Only
+the close/border fixes and three identities differ from47; Partners11 unchanged.
+Actual light/dark separators use alpha theme roles;14rows45px, no document-wide
+x-overflow at1440/390. Palette close works and restores focus, no new errors.
+At390 the table's x-scroll is local and one outer action scroll reaches footer
+top783/bottom828 inside844viewport. Actual profile/customizer verified. Reference
+remains open; light restored and temporary device overrides cleared.
+
+Post-browser seven full-field tables/14protected target hashes/five private heads/
+4047source inputs exact. Evidence browser048; original47failures remain. Narrow
+palette reserves unnecessary fullscreen space, so visual critique is not closed.
+Phase2rough30%, milestone1/5; private Partners12 consumption/upgrade next, then
+full collection/create/record/RTL/zoom/empty-current proof. No native replay,
+cleanup, user-data change, publication or full-goal completion.
+
 ## Meridian phase2 first installed core review and narrow48 correction - 16 November2026
 
 Core47/b8820e7fb7d built/audited once as3083940e/14layers/3763project files.

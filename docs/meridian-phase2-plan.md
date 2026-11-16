@@ -20,6 +20,21 @@ contract. Evidence `.local/meridian-phase2-browser047-01/`; preserve original
 error/screenshot. Build/normal successor maintenance and installed recheck are
 required before private12 adoption. No47phase2 acceptance or native replay.
 
+Correction48/source3bc49adff46 is now built/audited14layers/3763project files
+and installed once by410b7b60/hash1591c717 on18740/config8. Source delta versus47
+is exactly two fixes plus three identities, with unchanged Partners11 archive.
+Actual light separators are rgba204/204/204/.5, dark102/102/102/.2; rows45px.
+The required close callback closes the palette and restores its opener's focus
+without new errors.1440light/dark and390 have no document-wide x-overflow;
+narrow renderer owns only genuine horizontal overflow, outer action scroll
+reaches the footer (top783/bottom828 in844viewport). Profile/customizer works;
+47's explicit-empty/reload/default proof retains its unchanged source boundary.
+After48browser all seven captured tables,14protected targets, five private heads
+and4047source inputs remain exact. Light restored/device overrides cleared;
+reference39 remains open. Evidence `.local/meridian-phase2-browser048-01/`.
+The narrow palette is functional but reserves excessive fullscreen blank space;
+retain this critique for a coherent shared refinement. No full phase2 exit.
+
 ## Outcome and reference
 
 Make native and custom views speak the same visual language: grouped context,
@@ -141,12 +156,11 @@ invalid control. Keep current RecordTabs keyboard/leave behavior.
 
 ### 5. Real consumer and packaging order
 
-Implement/test core47 first with exact Partners11 unchanged, commit locally,
-build the normal clean nine-addon maintenance candidate and review/apply only
-its exact core change. Then implement private Partners12: registered shared
+Core47 and its bounded installed correction48 followed the exact Partners11
+maintenance route. Implement private Partners12 next: registered shared
 context, declared native menu groups/icons, useful directory columns and count,
 precise create labels and RecordHeader/Layout adoption. Minimum supported core
-is47; native/plugin identity and deterministic archive advance legitimately.
+is48 for the corrected supported cohort; native/plugin identity and deterministic archive advance legitimately.
 App data/service/security/schema remain unchanged unless an observed workflow
 requires a separately recorded correction.
 
@@ -185,12 +199,11 @@ Freeze remains122files/11rows. Evidence is
 uniqueId and assigned a cross-realm object, corrected in its fake boundary.
 This is source proof, not installed contrast, geometry or authority acceptance.
 
-Phase2 is roughly25% from the shared source implementation and focused checks;
-milestones remain1/5. Core47 is unbuilt; Partners11 stays exact until its core47
-maintenance image is built. Next freeze/commit/build core47, normal maintenance,
-then private12 adoption and separate app upgrade. Full installed collection/
-record/create/RTL/zoom/motion checks and the current empty-core counterpart
-remain. No phase2 exit or wider app adoption is claimed.
+Phase2 is roughly30% from shared implementation and bounded installed checks;
+milestones remain1/5. Core48 is installed with Partners11 unchanged. Next private12
+adoption and separate app upgrade. Full two-page collection/record/create/error/
+RTL/zoom/motion/contrast checks and the current empty-core counterpart remain.
+No phase2 exit or wider app adoption is claimed.
 
 1. Production-component/hook tests cover key validation, pin isolation/empty
    state/order/revocation/storage failure, native menu pruning, canceled/failed
