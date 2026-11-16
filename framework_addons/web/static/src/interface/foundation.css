@@ -150,6 +150,7 @@
         color: var(--mp-ui-ink);
         border-bottom: 1px solid var(--mp-ui-line);
     }
+    .o_web_client .o_control_panel { --ControlPanel-border-bottom: 1px solid var(--mp-ui-line); }
     .o_web_client .o_control_panel,
     .o_web_client .o_form_view .o_form_sheet_bg { background-color: var(--mp-ui-canvas); }
     .o_web_client .o_control_panel .btn { min-height: var(--mp-ui-control); }

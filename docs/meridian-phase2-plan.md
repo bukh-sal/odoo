@@ -303,6 +303,41 @@ staleness with optimistic counts. Native save callback and advisory app-owned
 refresh must re-read current scoped counts, including cancellation/denial.
 Full phase2 matrix/current-empty and phases3-5 remain; rough50%, milestones1/5.
 
+## Next source checkpoint: shared divider and app-owned refresh
+
+The observed dark header defect comes from ControlPanel's existing
+--ControlPanel-border-bottom hook falling back to a literal compiled Bootstrap
+border. Core51 binds that existing hook to 1px solid var(--mp-ui-line) in the
+shared native bridge; only that CSS declaration and three identities change.
+Ten affected identity/compatibility checks and unchanged freeze pass. Verify
+actual dark/light native borders after ordinary exact-Partners12 maintenance;
+no new theme mechanism or geometry change.
+
+Only after that core-only candidate is built/installed, private Partners13 will
+add a small app-owned advisory change event, consumed with existing useBus.
+Native onRecordSaved(record,changes) runs only after a successful changed save;
+preserve super's arguments/result/error. Native archive/unarchive bypasses that
+hook, so wrap the existing app Record subclass public methods, await super and
+preserve result/refusal/error. No replacement writes, private core hooks or new
+server events. Publisher validates the current workspace, sends no record or
+count data, and cannot turn a committed native save into a failure if a hint
+listener fails. Disposed/foreign workspace events do not refresh another scope.
+Consumer uses its existing fresh context/ORM counts, cancellation/timeout/
+late-denial logic, never optimistic arithmetic. Other-tab activity remains
+fresh on normal focus/navigation; this is not a real-time subscription promise.
+
+Tests execute actual app wrappers and context consumer with fake external
+boundaries: successful save/create/archive/unarchive hints; native refusal/
+throw/changed root/workspace no hint; hint failure preserves native outcome;
+foreign event ignored; matching event invokes context+counts; late success after
+newer denial/disposal cannot revive counts. Assemble/validate deterministic
+successor archive with unchanged model/service/schema/security, then normal
+app-only build/admission/review/upgrade. Real UI proof should save one explicitly
+journaled owned contact and confirm counts refresh without navigation; archive/
+unarchive that owned contact through ordinary revision-checked actions if
+available, preserving original14 fixtures and unrelated authority. Keep native
+error/dirty/uncertainty handling. Follow with remaining full phase2 exit matrix.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

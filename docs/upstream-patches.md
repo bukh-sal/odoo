@@ -296,3 +296,13 @@ compiled-form witness.140Node/29Python/27Owl templates/seven composition/eight
 form scenarios pass. Original49 error/screenshot retained under
 .local/meridian-phase2-browser049-01. Installed49 real native 10+5 paging passes,
 but form fidelity is invalidated until corrected50 is installed and checked.
+
+
+## Meridian core51: native control-panel theme bridge
+
+Installed dark record header used literal Bootstrap rgb222/226/230 while other
+shared borders used alpha neutral. Bind the existing --ControlPanel-border-bottom
+hook to the shared --mp-ui-line token, screen-only in foundation.css. No native
+DOM/JS/paging/forms/behavior changes. Three identities advance51. Ten affected
+identity/compatibility checks and freeze122/11 pass; actual dark/light installed
+border measurement remains required. Partners12 archive/data unchanged.

@@ -3552,3 +3552,11 @@ finding native header divider literal222/226/230 in dark needs shared-token
 mapping; no full dark/contrast/accessibility acceptance. Post-save app counts
 still pending13; full matrix/currentempty andphases3-5 intact. Roughphase2 50%,
 milestones1/5. All prior49 import failure/paging evidence retained, no replay.
+
+
+16November next phase2 source: core51 binds existing native ControlPanel border
+hook to shared theme line token, one CSS declaration/three identities.10identity/
+compatibility cases and freeze122/11 pass. Fresh app13 plan records native saved
+hook plus public archive/unarchive wrappers (the latter bypass saved hook),
+advisory current-workspace event and normal fresh context/count reads. No count
+arithmetic/server/core app dependency. Exact12 coreonly delivery precedes13source.
