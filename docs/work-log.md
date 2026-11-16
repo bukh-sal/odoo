@@ -3967,3 +3967,5 @@ Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
 2026-11-16T17:50:03.971115+00:00 Pages014 coherent source: hierarchy callback/expanded tree, current breadcrumbs/count invalidation, paginated move, atomic current-head template copy and full-height inspector.25Python38Node pass; real validator archive dcd09758. Installed proof next; no core change/acceptance claim.
 
 2026-11-16T18:10:02.503731+00:00 Meridian Pages014 normal upgrade completed196.218s/config7/core59; actual tree/moves/template use by readonly-source Robin passes,3pages62heads72receipts. Fresh SQL and protected main/empty/targets/heads exact. Matched inspector top fixed; header85px with deep breadcrumb remains M3-H014, rail fallback M3-I014. Review/checklist recorded; full goal1/5 active, no phase3 acceptance.
+
+2026-11-16T18:14:14.381102+00:00 Meridian pressure: actual two human writers, stale owner2 conflicts after Robin3; fresh3pages63heads73receipts/source/authority exact. Own losing text retained normally. M3-C014 explicit conflict recovery/reload and misleading Leave wording identified; next source correction activated, goal1/5 active.

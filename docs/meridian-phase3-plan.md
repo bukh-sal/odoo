@@ -375,3 +375,16 @@ policy8/current grants. Then actual tree expansion/move/template-copy/conflict,
 source/body/policy preservation, reload/new actor, keyboard and matched original
 captures. All013 traces and old images/records remain. Integration/import/export,
 system restore/lifecycle, phase2 native200 and phases4/5 remain required.
+
+
+### Current conflict-recovery correction activated
+
+ conflict alert has no explicit Recover local draft/Reload current
+path although SaveFlow retains content. Leave also calls the known failed save
+unresolved. Correct before acceptance: distinguish known conflict from unknown
+submission; expose actor-owned JSON recovery separately, require explicit discard
+or recovery before loading the current winner, never rebase/resend automatically.
+Source plan is activated by this installed finding; keep current CAS/receipt/
+permission guards. Combine with M3-H014 action-density correction in the next
+coherent authoring source slice, then actual conflict recovery/new save proof.
+Current counts supersede earlier62/72 checkpoint; full goal remains ACTIVE1/5.

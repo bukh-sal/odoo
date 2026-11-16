@@ -63,3 +63,24 @@ Protected after-pages014-01: main18partners21events and empty0apps all baseline
 10/9 tables exact,14protected target files/five older app heads exact. No cleanup,
 prune, unknown resources, publication, DSH or subagents. Reference39/48 remain open;
 main36 stays native200; ordinary Pages49/light/child and Robin50/copy left usable.
+
+
+### Actual concurrent writers —014 pressure
+
+Owner opened Robin copy2; Robin checked second task and saved3. Owner then
+submitted stale2 with own suffix Draft.; actual409/CONFLICT retained the losing
+editor and did not overwrite the winner. Fresh readonly concurrency-01 proves
+3pages63heads73receipts, only one new winning head/receipt, original source7/
+handbook53/current authority exact, rejected suffix absent from storage. Losing
+own text copied normally to private evidence before explicit Leave; clipboard
+restored, winner reload tasks true/true/false, no replay/remaining draft.
+
+M3-C014 OPEN: conflict alert has no explicit Recover local draft/Reload current
+path although SaveFlow retains content. Leave also calls the known failed save
+unresolved. Correct before acceptance: distinguish known conflict from unknown
+submission; expose actor-owned JSON recovery separately, require explicit discard
+or recovery before loading the current winner, never rebase/resend automatically.
+Source plan is activated by this installed finding; keep current CAS/receipt/
+permission guards. Combine with M3-H014 action-density correction in the next
+coherent authoring source slice, then actual conflict recovery/new save proof.
+Current counts supersede earlier62/72 checkpoint; full goal remains ACTIVE1/5.

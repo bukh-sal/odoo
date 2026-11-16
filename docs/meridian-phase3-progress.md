@@ -535,3 +535,24 @@ See meridian-phase3-review.md for actual proof classes/checklist/open boundaries
 Phase3 roughly55% implementation work, zero exit; full goal ACTIVE1/5. NEXT real
 concurrency/current authority/uncertainty pressure then remaining authoring and
 integration; system recovery/lifecycle, phase2 native200 and phase4/5 required.
+
+
+### Actual concurrent writers —014 pressure
+
+Owner opened Robin copy2; Robin checked second task and saved3. Owner then
+submitted stale2 with own suffix Draft.; actual409/CONFLICT retained the losing
+editor and did not overwrite the winner. Fresh readonly concurrency-01 proves
+3pages63heads73receipts, only one new winning head/receipt, original source7/
+handbook53/current authority exact, rejected suffix absent from storage. Losing
+own text copied normally to private evidence before explicit Leave; clipboard
+restored, winner reload tasks true/true/false, no replay/remaining draft.
+
+M3-C014 OPEN: conflict alert has no explicit Recover local draft/Reload current
+path although SaveFlow retains content. Leave also calls the known failed save
+unresolved. Correct before acceptance: distinguish known conflict from unknown
+submission; expose actor-owned JSON recovery separately, require explicit discard
+or recovery before loading the current winner, never rebase/resend automatically.
+Source plan is activated by this installed finding; keep current CAS/receipt/
+permission guards. Combine with M3-H014 action-density correction in the next
+coherent authoring source slice, then actual conflict recovery/new save proof.
+Current counts supersede earlier62/72 checkpoint; full goal remains ACTIVE1/5.
