@@ -141,3 +141,31 @@ archive/image/installed acceptance yet. Live015/config8/3pages64heads74receipts/
 reviewed upgrade and real transfer/controls visual workflow, then remaining
 reorder/current-readable links/providers/system recovery/lifecycle. Full goal
 all5phases ACTIVE1/5; phase3 zero exit acceptance; phase2native200/4/5 retained.
+
+
+## Installed016 transfer refusal and017 editor-schema correction
+
+ONE016 build57.578s/image23b5b871/14layers3771files/core3747exact; archive
+d7125ecc/373608B/29files. Normal6e464591/plan7bb8625d completed/config9/target
+bb5dfd83. Original3pages64heads74receipts/comments/policies exact across upgrade.
+Actual installed Markdown worker imported useful heading/tasks/table/link once
+as fd77c30c/First-week check-in revision1. Explicit loss acknowledgement required.
+Its first task edit was refused VALIDATION_FAILED; one local heading edit followed
+before the badge was inspected. Both local changes preserved as rendered text and
+rich clipboardHTML in pages016-transfer-01; copied draft then explicitly left.
+Readonly proof4pages65heads75receipts/newpage1, original rows/authority exact;
+no refused-save receipt/head. No positive editable-transfer claim.
+
+Actual pinned Link always emits title:null, absent from the app-owned server
+schema. Source real imported editor/task-click producer reproduces the refusal.
+Unpublished017 a436f4a047ec9571d0c31eef1d0ff548be7ea82d owns an extended Link schema without that unsupported
+attribute. Server validation is UNCHANGED, including refusal of title:null. Actual
+producer/consumer fixture succeeds; forged old null-title witness still refuses.
+Link is now direct exact3.31.3 already in old lock, every transitive entry exact.
+Import copy distinguishes original validation from normalization; known400 save
+leave warning no longer calls it unresolved.59Node/31Python pass. New editor
+440114B/91e0cd00; worker482599B; same43licensed packages. No017 image/install yet.
+Full goal all5 ACTIVE1/5; phase3 no exit acceptance. NEXT normal017 package/ONE
+clean same-core build/independent upgrade, then continue the retained useful
+transfer/edit/export workflow. Organization/links/providers/recovery/lifecycle,
+phase2native200/4/5 remain. No retry of old operations/source injection/cleanup.
