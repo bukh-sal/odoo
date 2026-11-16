@@ -346,3 +346,22 @@ Existing modified-anchor href omits workspace and safely opens Choose workspace;
 this remains a phase2 UX gap. Fast empty-draft leave observation is unproven,
 not a passed installed guard check; no business save/data change. Evidence is
 .local/meridian-phase2-browser053-01. Full phase2 acceptance remains open.
+
+## Meridian core54: scoped native links and pending-input leave
+
+Router stateToUrl gains optional inheritLockedKeys; default behavior is exact.
+Opted many2one/breadcrumb/new-window URL producers carry only existing router
+locked keys. Existing native anchor modifier/copy/context-menu handling stays;
+no generic view parses workspace or inherits unrelated route/action parameters.
+FormController.beforeLeave now flushes the existing root.isDirty/NEED_LOCAL_CHANGES
+seam before testing dirtiness; invalid parsed input also enters the normal save/
+validation refusal path. Explicit forceLeave preserves discard behavior; create
+preventAutoSave ownership remains. Creation close uses the existing discard
+decision for invalid parsed input even with unchanged model data. No server,
+grant, CAS, transaction or transport-uncertainty changes. Three identities54.
+
+171Node/29Python cases,28Owl templates/nine composition/eight actual compiled
+forms/actual CogMenu branches and freeze122/11 pass. Actual input hook, useBus,
+record isDirty and model _askChanges execute together with explicit update/save
+boundaries. This source proof is distinct from installed form/modified-link
+qualification; current populated image remains53 until normal maintenance.

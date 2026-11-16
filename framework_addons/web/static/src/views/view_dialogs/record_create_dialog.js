@@ -116,7 +116,7 @@ export class RecordCreateDialog extends FormViewDialog {
     }
 
     async decideClose(record) {
-        if (this.state.saved || (!this.state.uncertain && !(await record?.isDirty()))) {
+        if (this.state.saved || (!this.state.uncertain && !(await record?.isDirty()) && record?.isValid !== false)) {
             this.props.close();
             return true;
         }

@@ -95,3 +95,47 @@ test('refused internal links keep the committed address and cannot load a differ
     await new Promise(resolve=>setTimeout(resolve,0));await f.handler.call(f.client,{detail:f.last().detail});
     assert.equal(prevented,true);assert.equal(f.client.loads,0);assert.match(f.browser.location.href,/workboard.*workspace=A/);assert.deepEqual(f.entries,before);
 });
+
+test('opted link serialization inherits only router-owned locked keys without changing default/state',async()=>{
+    const f=await fixture('http://review.invalid/odoo/partners?workspace=A&debug=1&lang=en_US&foreign_route=omit');
+    const destination={model:'sample.record',resId:7},before=structuredClone(f.router.current);
+    assert.equal(new URL(f.router.stateToUrl(destination),'http://review.invalid').searchParams.get('workspace'),null);
+    f.router.addLockedKey('workspace');
+    const url=new URL(f.router.stateToUrl(destination,{inheritLockedKeys:true}),'http://review.invalid');
+    assert.equal(url.pathname,'/odoo/sample.record/7');assert.equal(url.searchParams.get('workspace'),'A');
+    assert.equal(url.searchParams.get('debug'),'1');assert.equal(url.searchParams.get('lang'),'en_US');
+    assert.equal(url.searchParams.get('foreign_route'),null);assert.equal(url.searchParams.get('action'),null);
+    assert.deepEqual(f.router.current,before);assert.deepEqual(destination,{model:'sample.record',resId:7});
+    const explicit=new URL(f.router.stateToUrl({...destination,workspace:'B & encoded'},{inheritLockedKeys:true}),'http://review.invalid');
+    assert.equal(explicit.searchParams.get('workspace'),'B & encoded');assert.equal(f.router.current.workspace,'A');
+});
+
+test('actual related-record and breadcrumb href producers retain locked scope and native restore callbacks',async()=>{
+    const f=await fixture();f.router.addLockedKey('workspace');
+    const source=await read('views/fields/many2one/many2one.js');
+    const getter=source.match(/^    get linkHref\([^]*?^    }/m)[0];
+    const Many=new Function('router','return class {'+getter+'}')(f.router),m=new Many();
+    m.props={relation:'sample.record',value:{id:16}};
+    assert.equal(m.linkHref,'/odoo/sample.record/16?workspace=A');
+    m.props.relation='dotless';assert.equal(m.linkHref,'/odoo/m-dotless/16?workspace=A');
+    m.props.value=false;assert.equal(m.linkHref,'/');
+    const producer=actionSource.match(/^    function _getBreadcrumbs\([^]*?^    }/m)[0];
+    let restored;const crumbs=new Function('router','restore',producer+';return _getBreadcrumbs;')(f.router,id=>restored=id);
+    const state={model:'sample.record',resId:2};const [crumb]=crumbs([{action:{},jsId:'parent',props:{type:'form'},state,displayName:'Parent'}]);
+    assert.equal(crumb.url,'/odoo/sample.record/2?workspace=A');crumb.onSelected();assert.equal(restored,'parent');
+    assert.deepEqual(state,{model:'sample.record',resId:2});
+    // Keep native modifier/copy/context-menu anchor behavior. Only href changes.
+    const template=await read('views/fields/many2one/many2one.xml');
+    assert.match(template,/t-att-href="linkHref" t-on-click.prevent.stop="\(\) => this.openRecord\('action'\)"/);
+});
+
+test('actual action-service new-window producer carries locks and restores original session state',async()=>{
+    const f=await fixture();f.router.addLockedKey('workspace');
+    const storage=new Map([['current_action','old-action'],['current_state','old-state']]);
+    f.browser.sessionStorage={getItem:k=>storage.get(k),setItem:(k,v)=>storage.set(k,v)};
+    let opened;const method=actionSource.match(/^    function _openActionInNewWindow\([^]*?^    }/m)[0];
+    const open=new Function('browser','router','_openURL',method+';return _openActionInNewWindow;')(f.browser,f.router,url=>opened=url);
+    open({_originalAction:'exact-new-action'},{model:'sample.record',resId:2});
+    assert.equal(opened,'/odoo/sample.record/2?workspace=A');
+    assert.deepEqual([...storage],[['current_action','old-action'],['current_state','old-state']]);
+});

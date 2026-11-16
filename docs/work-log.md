@@ -3633,3 +3633,22 @@ navigation/creation batch must address scoped links and inspect settled native
 pending-input/leave. No blind replay of native operations or fixture writes.
 Full goal active, phase2 roughly70%/not accepted, milestones1/5; Pages/adoption/
 final qualification remain. Evidence .local/meridian-phase2-browser053-01.
+
+## Meridian phase2 core54 scoped-link/pending-draft source - 16 November2026
+
+Previous goal turn was progress with core53 install and concrete browser findings.
+Fresh source plan before implementation binds optional router locked-key href
+serialization to existing many2one/breadcrumb/new-window producers and pending
+input flush to existing native record/save/creation close owners. No app IDs,
+workspace parsing in fields, arbitrary route-key copy or leave/authority waiver.
+Three identities advance54; Partners13/private source/archive unchanged.
+
+171Node/29Python/28Owl templates/nine composition/eight compiled-form scenarios,
+actual CogMenu branches and freeze122/11 pass. New tests execute actual input
+hook/useBus/record/model flush with explicit external update/save boundaries,
+cover invalid required and parsed fields, normal autosave, explicit discard,
+creation no-autosave, failures, native URL producers and default isolation.
+No new fullhost/installed54 claim. Next one build with exact13 archive then
+normal config14 maintenance and real scoped modified-link/settled invalid-leave
+verification. Full goal active; remaining phase2 creation/security/zoom/current-
+empty gates still required; no prior native op or business fixture replay.

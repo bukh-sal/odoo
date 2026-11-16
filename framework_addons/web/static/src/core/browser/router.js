@@ -121,9 +121,13 @@ export function startUrl() {
 
 /**
  * @param {{ [key: string]: any }} state
+ * @param {{ inheritLockedKeys?: boolean }} [options] carry only page routing context into a link
  * @returns
  */
-function stateToUrl(state) {
+function stateToUrl(state, { inheritLockedKeys = false } = {}) {
+    if (inheritLockedKeys) {
+        state = { ...pick(router.current, ..._lockedKeys), ...state };
+    }
     let path = "";
     const pathKeysToOmit = [..._hiddenKeysFromUrl];
     const actionStack = (state.actionStack || [state]).map((a) => ({ ...a }));

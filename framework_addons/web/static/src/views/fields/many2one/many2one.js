@@ -2,6 +2,7 @@ import { Component, toRaw, useRef, useState } from "@odoo/owl";
 import * as BarcodeScanner from "@web/core/barcode/barcode_dialog";
 import { isBarcodeScannerSupported } from "@web/core/barcode/barcode_video_scanner";
 import { isMobileOS } from "@web/core/browser/feature_detection";
+import { router } from "@web/core/browser/router";
 import { makeContext } from "@web/core/context";
 import { _t } from "@web/core/l10n/translation";
 import { usePopover } from "@web/core/popover/popover_hook";
@@ -228,10 +229,10 @@ export class Many2One extends Component {
         if (!this.props.value) {
             return "/";
         }
-        const relation = this.props.relation.includes(".")
-            ? this.props.relation
-            : `m-${this.props.relation}`;
-        return `/odoo/${relation}/${this.props.value.id}`;
+        return router.stateToUrl(
+            { model: this.props.relation, resId: this.props.value.id },
+            { inheritLockedKeys: true }
+        );
     }
 
     async openBarcodeScanner() {

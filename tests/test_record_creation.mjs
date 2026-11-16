@@ -155,6 +155,14 @@ test('creation-only lifecycle suppresses auto saves while ordinary native lifecy
     assert.deepEqual(calls,['visibility-save','leave-save','unload-save']);
 });
 
+test('parser-invalid creation with unchanged model data requires the existing discard decision',async()=>{
+    const f=fixture();f.record.isValid=false;
+    const close=f.c.requestClose();await turn();assert.equal(f.prompts.length,1);assert.equal(f.closed(),0);
+    f.prompts[0].props.cancel();assert.equal(await close,false);assert.equal(f.closed(),0);
+    const discard=f.c.requestClose();await turn();f.prompts[1].props.confirm();assert.equal(await discard,true);assert.equal(f.closed(),1);
+    assert.ok(!f.calls.some(x=>Array.isArray(x)));
+});
+
 const listSource=await read('views/list/list_controller.js');
 test('explicit native list creation overrides inline only by author choice; save callback reloads',async()=>{
     const method=listSource.match(/^    async createRecord\([^]*?^    }/m)[0];class DynamicRecordList {}

@@ -653,3 +653,16 @@ parse routes to infer record identity; navigation reuse grants no authority and
 does not replace current server reads. A trusted custom action caller can opt
 in with preferExistingRecord:true under the same conservative rules. Callers
 requiring a new action should leave the preference absent.
+
+Native related-record, breadcrumb and action new-window hrefs use the existing
+router serializer with inheritLockedKeys:true. It carries only router-registered
+page context; do not copy all current route parameters or parse workspace in
+individual fields. Default serializer behavior stays unchanged; explicit
+destination values remain explicit. Server authorization still owns access.
+
+Native leave decisions flush pending input via root.isDirty before saving;
+invalid parsed input can exist with unchanged model data and must not be treated
+as a pristine draft. Creation surfaces keep preventAutoSave and their own
+discard decision, save uncertainty and single-submit semantics. Do not add
+arbitrary UI delays or save-on-navigation code in each app to compensate for
+pending input; use the native owner and its validation/error handling.

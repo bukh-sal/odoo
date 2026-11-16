@@ -501,6 +501,47 @@ workspace strings, new scope authority, arbitrary browser delays or leave-guard
 waivers. Complete sheet/page/conflict/viewer/RTL/actual200%/motion/current-empty
 gates afterwards. Phase2 rough70% remains unaccepted; milestones1/5, Pages next.
 
+### Core54 scoped-link and pending-draft plan
+
+Previous turn is progress: core53 changed installed authoritative state and
+proved plain parent reuse/menu/Back while exposing two next-action findings.
+Current root5f52619beab is clean, populatedconfig14/core53/Partners13, no live op.
+
+Use the existing router serializer with an optional inheritLockedKeys flag.
+Default serialization stays pure/unchanged; opted link generation merges only
+the current router's locked keys before supplied destination state. The router
+already owns debug/lang and the scoped WebClient registers workspace; generic
+views must not parse workspace or copy arbitrary current action/query keys.
+Many2One.linkHref uses this serializer for its model/record. Native breadcrumb
+href and action-service new-window serialization opt in as well. Preserve the
+anchor's native modifier/copy/context-menu behavior and ordinary fresh form
+action/ancestor path; no custom browser opener, new route store or authority.
+Test dotless model paths, URL encoding, zero/unknown locks, explicit destination
+values, default serialization, no input mutation and no unrelated route leakage.
+Execute actual many2one/action-service URL producer paths against the real router.
+
+FormController.beforeLeave must ask the existing root.isDirty() to flush field
+NEED_LOCAL_CHANGES before deciding whether to save. Invalid parsed fields also
+block leaving via the same native save/validation path. Preserve forceLeave's
+explicit discard behavior, preventAutoSave creation ownership, normal save error
+handling and result. Creation dialog close must not silently discard an invalid
+parsed field whose model data/dirty flag did not change; use existing isValid and
+the existing discard-confirmation flow. No DB writes from validation/no bypass.
+Prove actual input hook + EventBus + record isDirty + model _askChanges -> native
+leave together, including a pending required-empty value and parser refusal.
+Keep blank untouched creation dismissible, normal autosave/error semantics and
+explicit forceLeave behavior; retain uncertainty/exclusive-close guarantees.
+
+Advance core/web identities54 after these coherent shipped changes. Affected
+native/router/form/create/composition tests and freeze must pass, then one fresh
+build with exact Partners13 and normal config14->15 maintenance, no replay.
+Installed checks: Ctrl/middle/copyable record and breadcrumb href retain workspace
+and render the exact authorized destination; original tab stays unchanged. A
+fresh observed empty-required draft refuses parent navigation, retains focus/
+draft, then explicit Cancel restores without data/event mutation. Complete
+remaining sheet/page/conflict/viewer/responsive/current-empty gates afterwards;
+phase2 remains open until the full exit checklist is proved.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

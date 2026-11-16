@@ -542,8 +542,12 @@ export class FormController extends Component {
     }
 
     async beforeLeave({ forceLeave } = {}) {
-        if (this.props.preventAutoSave) return !(await this.model.root.isDirty());
-        if (this.model.root.dirty && !forceLeave) {
+        if (this.props.preventAutoSave) {
+            return !(await this.model.root.isDirty()) && this.model.root.isValid !== false;
+        }
+        // Flush pending field input through the model's existing hook before
+        // deciding to leave. Invalid parsed input can have no model changes.
+        if (!forceLeave && (await this.model.root.isDirty() || this.model.root.isValid === false)) {
             return this.save({
                 reload: false,
                 onError: (error, options) => this.onSaveError(error, options, true),

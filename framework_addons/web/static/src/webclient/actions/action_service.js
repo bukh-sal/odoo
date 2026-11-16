@@ -492,7 +492,7 @@ export function makeActionManager(env, router = _router) {
                     return controller.props?.type === "form";
                 },
                 get url() {
-                    return router.stateToUrl(controller.state);
+                    return router.stateToUrl(controller.state, { inheritLockedKeys: true });
                 },
                 onSelected() {
                     restore(controller.jsId);
@@ -862,7 +862,7 @@ export function makeActionManager(env, router = _router) {
         // Store on the session the action for the new window
         browser.sessionStorage.setItem("current_action", action._originalAction || "{}");
         browser.sessionStorage.setItem("current_state", JSON.stringify(state));
-        _openURL(router.stateToUrl(state));
+        _openURL(router.stateToUrl(state, { inheritLockedKeys: true }));
         // restore the current action from the current window
         browser.sessionStorage.setItem("current_action", currentAction);
         browser.sessionStorage.setItem("current_state", currentState);
