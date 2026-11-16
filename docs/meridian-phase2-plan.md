@@ -35,6 +35,28 @@ reference39 remains open. Evidence `.local/meridian-phase2-browser048-01/`.
 The narrow palette is functional but reserves excessive fullscreen blank space;
 retain this critique for a coherent shared refinement. No full phase2 exit.
 
+Private Partners12 source is implemented: registered shared context and ordinary
+scoped active counts, declared native pages/group/icons, honest list result meta,
+precise create labels, shared RecordHeader/Layout and no duplicated app grid CSS.
+The existing reader publishes identity only after mount/current access, bound to
+workspace/record/revision; known denial and owner-aware disposal clear it. Native
+revision/persistence/sections/provider/leave guards remain.28Node/8Python cases
+and17actual Owl templates plus seven mounted composition scenarios pass. Exact
+archive404f66d1/40176bytes is deterministic across author/operator recipes,
+validated locally but unadmitted/uninstalled; no model/service/security changes.
+Evidence `.local/meridian-phase2-partners012-source-01/`.
+
+Packaging refused the initial Lucide `building-2` manifest token before any
+archive was written. Frozen manifest/manager icon IDs are identifier atoms
+(letters/digits/underscores), while current Icon geometry names use hyphens.
+The app now declares `building_2`, and its trusted context selects existing
+building-2 geometry. Generic metadata-to-glyph normalization is required in
+the next coherent core refinement, with no wire-schema expansion or app name
+in core. Until then a failed optional context may show the neutral fallback
+glyph for that page; its label/action remain available. This is a presentation
+mapping limitation, not authority or a new prohibition on app-owned visuals.
+Batch it with narrow palette geometry after the installed consumer review.
+
 ## Outcome and reference
 
 Make native and custom views speak the same visual language: grouped context,

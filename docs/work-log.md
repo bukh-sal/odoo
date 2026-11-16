@@ -1,3 +1,21 @@
+## Meridian phase2 independent Partners12 source adoption - 16 November2026
+
+Private app12 consumes ContextNav and RecordHeader/Layout; counts are ordinary
+current-scoped reads with cancellation/timeout/denial/late-reply handling. Actual
+reader proof gates the native heading after mount and clears it on denial or
+owner-aware disposal. Precise create labels and exact/limited list metadata,
+native Directory group/page declarations and optional empty Organization column
+replace sparse presentation without fake data. No backend/schema/security/event
+change or native CAS/leave/provider relaxation; duplicated app grid removed.
+
+28Node/8Python and17actual Owl templates/seven mounted composition scenarios
+pass. Deterministic40176byte archive404f66d1 matches author/operator assembly
+and exact validator; not admitted/installed. Initial metadata icon with a hyphen
+was correctly refused before archive; frozen semantic atom now building_2,
+actual private context uses existing building-2 geometry. Record generic mapping
+normalization with narrow palette blank-space critique for coherent core follow-up.
+Source proof remains distinct from installed workflow/visual acceptance.
+
 ## Meridian phase2 corrected core48 installed comparison - 16 November2026
 
 Correction48/source3bc49adff46 built/audited once14layers3763files as e52c13c6.
