@@ -20,3 +20,13 @@ test('actual native sort presentation uses pinned semantic SVG states and keeps 
 test('selected native action/account icons use existing reviewed geometry without a new icon source',()=>{
  for(const name of ['ellipsis','printer','server','chevrons-up-down']) assert.ok(geometry[name]?.length,name);
 });
+
+
+test('legal manifest underscore atoms resolve pinned glyphs without accepting paths or markup',async()=>{
+ const raw=await readFile(new URL('../framework_addons/web/static/src/interface/icon.js',import.meta.url),'utf8');
+ const cleaned=raw.replace(/^import .*;\r?\n/gm,'').replace(/^export /gm,'');
+ const resolve=new Function('Component','ICON_NODES',cleaned+';return iconName;')(class{},geometry);
+ assert.equal(resolve('building_2'),'building-2');assert.equal(resolve('grid_2x2'),'grid-2x2');
+ assert.equal(resolve('fa fa-users fa-fw'),'users');assert.equal(resolve('columns'),'columns-3');
+ for(const value of ['https://x/box','<svg/>','../users','__proto__','constructor','made_up_glyph',null,{}])assert.equal(resolve(value),'box');
+});

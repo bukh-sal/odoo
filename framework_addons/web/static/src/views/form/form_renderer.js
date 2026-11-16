@@ -13,6 +13,7 @@ import { useViewCompiler } from "@web/views/view_compiler";
 import { Widget } from "@web/views/widgets/widget";
 import { FormCompiler } from "./form_compiler";
 import { FormLabel } from "./form_label";
+import { uniqueId } from "@web/core/utils/strings";
 import { StatusBarButtons } from "./status_bar_buttons/status_bar_buttons";
 
 import {
@@ -60,6 +61,7 @@ export class FormRenderer extends Component {
     };
 
     setup() {
+        this.fieldIdPrefix = uniqueId("form_field_");
         this.evaluateBooleanExpr = evaluateBooleanExpr;
         const { archInfo, Compiler, record } = this.props;
         const templates = { FormRenderer: archInfo.xmlDoc };
@@ -88,7 +90,7 @@ export class FormRenderer extends Component {
                             "[contenteditable]",
                         ];
                         for (const id of autofocusFieldIds) {
-                            elementToFocus = rootEl.querySelector(`#${id}`);
+                            elementToFocus = rootEl.querySelector(`#${this.fieldId(id)}`);
                             if (elementToFocus) {
                                 break;
                             }
@@ -109,33 +111,12 @@ export class FormRenderer extends Component {
             );
         }
 
-        if (this.env.inDialog) {
-            // try to ensure ids unicity by temporarily removing similar ids that could already
-            // exist in the DOM (e.g. in a form view displayed below this dialog which contains
-            // same field names as this form view)
-            const fieldNodeIds = Object.keys(this.props.archInfo.fieldNodes);
-            const elementsByNodeIds = {};
-            onMounted(() => {
-                if (!rootRef.el) {
-                    // t-ref is sometimes set on a <t> node, resulting in a null ref (e.g. footer case)
-                    return;
-                }
-                for (const id of fieldNodeIds) {
-                    const els = [...document.querySelectorAll(`[id=${id}]`)].filter(
-                        (el) => !rootRef.el.contains(el)
-                    );
-                    if (els.length) {
-                        els[0].removeAttribute("id");
-                        elementsByNodeIds[id] = els[0];
-                    }
-                }
-            });
-            onWillUnmount(() => {
-                for (const [id, el] of Object.entries(elementsByNodeIds)) {
-                    el.setAttribute("id", id);
-                }
-            });
-        }
+    }
+
+    // DOM identity belongs to this form, not to its reusable architecture.
+    // Never remove IDs from a background form when a nested dialog mounts.
+    fieldId(archFieldId) {
+        return `${this.fieldIdPrefix}-${archFieldId}`;
     }
 
     get shouldAutoFocus() {

@@ -3512,3 +3512,17 @@ page-size capability. No blind retry, source injection, cleanup or publication.
 Rough phase2 45%, milestone1/5; phases3-5 intact. Evidence under
 .local/meridian-phase2-partners012-browser-01; earlier private raw-FK/wireUUID
 verifier refusal retained and corrected through captured joins, no data replay.
+
+
+16November2026 core49 coherent shared refinement implemented from installed12
+findings. Per-renderer DOM identity fixes duplicated nested accessible labels;
+controller button-box compilation also has a scoped provider. Required-save
+refusal focuses the real invalid control after actual Field patch readiness,
+without changing drafts/save/CAS/security. Native top-level rows-per-page uses
+existing model owner/veto, generic legal underscore icon atoms map pinned glyphs,
+reference record-card surface/header metrics and narrow palette refined.
+139Node/29Python/27Owl templates+seven composition/eight actual compiler/form/
+Field/save-focus fake-DOM checks pass; freeze122/11 unchanged. Initial private
+registry stub omitted addValidation, failed before mount; harness corrected,
+not a product failure. No installed49/full phase2 claim; core49 build against
+unchanged Partners12 next, then separate13 count refresh. Meridian stays open.

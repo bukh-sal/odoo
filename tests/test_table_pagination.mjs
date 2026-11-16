@@ -149,3 +149,42 @@ test('other native views retain their existing narrow search disclosure behavior
     const f=await toggler(false);assert.equal(f.result.state.showSearchBar,false);assert.equal(f.result.props.isSmall,true);
     f.result.props.toggleSearchBar();assert.equal(f.result.state.showSearchBar,true);
 });
+
+
+test('optional native page size delegates to the real model and preserves a nonstandard current limit',async()=>{
+    const {page,calls}=await fixture({offset:80,limit:80,total:151,withPageSize:true});
+    assert.equal(page.showPageSize,true);assert.deepEqual(page.pageSizes,[10,25,50,80,100]);
+    const event={target:{value:'10'}};await page.changePageSize(event);
+    assert.deepEqual(calls,[[{offset:0,limit:10},true]]);assert.equal(page.props.limit,80);assert.equal(event.target.value,'80');
+    page.props.limit=10;await page.go(2);assert.deepEqual(calls.at(-1),[{offset:10,limit:10},true]);
+});
+
+test('size changes keep selection/focus and current value through save veto, error and busy state',async()=>{
+    for(const outcome of [false,Error('kept current rows')]){
+        const {page,calls}=await fixture({withPageSize:true,onUpdate:async()=>{if(outcome instanceof Error)throw outcome;return outcome;}});
+        const event={target:{value:'50'}};await page.changePageSize(event);
+        assert.equal(page.props.limit,25);assert.equal(event.target.value,'25');assert.equal(page.state.busy,false);
+        assert.equal(page.state.error,outcome instanceof Error?outcome.message:'');
+    }
+    const {page,calls}=await fixture({withPageSize:true});page.state.busy=true;
+    await page.changePageSize({target:{value:'50'}});assert.equal(calls.length,0);
+});
+
+test('size controls are opt-in, unavailable to grouped/empty/invalid/readonly roots, and reject unreviewed values',async()=>{
+    for(const props of [{},{withPageSize:true,isGrouped:true},{withPageSize:true,total:0},{withPageSize:true,isEditable:false},{withPageSize:true,limit:0}]){
+        const {page,calls}=await fixture(props);assert.ok(!page.showPageSize);await page.changePageSize({target:{value:'10'}});assert.equal(calls.length,0);
+    }
+    const {page,calls}=await fixture({withPageSize:true});
+    for(const value of ['0','-5','1000000','2.5','NaN','25'])await page.changePageSize({target:{value}});
+    assert.equal(calls.length,0);
+});
+
+test('real native size update preserves domain/order and refuses dirty-row discard',async()=>{
+    const calls=[];const root={count:15,hasLimitedCount:false,isGrouped:false,limit:80,offset:0,domain:['scope=A'],orderBy:['name','id'],
+        load:async values=>{calls.push(values);Object.assign(root,values);}};
+    const controller={model:{root},editedRecord:{save:async()=>false},onPageChangeScroll:()=>{}};
+    const {page}=await fixture({...nativeProducer.call(controller),withPageSize:true});
+    await page.changePageSize({target:{value:'10'}});assert.equal(root.limit,80);assert.equal(calls.length,0);
+    controller.editedRecord.save=async()=>true;await page.changePageSize({target:{value:'10'}});
+    assert.deepEqual(calls,[{offset:0,limit:10}]);assert.deepEqual(root.domain,['scope=A']);assert.deepEqual(root.orderBy,['name','id']);
+});

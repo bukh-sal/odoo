@@ -98,7 +98,7 @@
                     optionalActiveFields="optionalActiveFields"
                     readonly="props.readonly"
                 />
-                <TablePagination t-if="model.isReady and env.config.pagerProps and !model.useSampleModel" t-props="env.config.pagerProps"/>
+                <TablePagination t-if="model.isReady and env.config.pagerProps and !model.useSampleModel" t-props="env.config.pagerProps" withPageSize="!model.root.isGrouped"/>
             </Layout>
         </div>
     </t>

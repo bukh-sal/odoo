@@ -29,6 +29,7 @@ export class TablePagination extends Component {
         isGrouped: { type: Boolean, optional: true },
         withAccessKey: { type: Boolean, optional: true },
         isEditable: { type: Boolean, optional: true },
+        withPageSize: { type: Boolean, optional: true },
     };
     static defaultProps = { withAccessKey: true };
     setup() {
@@ -44,6 +45,19 @@ export class TablePagination extends Component {
     get limited() { return !!this.props.updateTotal; }
     get pages() { return this.limited ? [this.current] : pageWindow(this.current, this.pageCount); }
     get showControls() { return this.valid && (this.limited || this.pageCount > 1 || this.props.offset > 0); }
+    get showPageSize() {
+        return this.props.withPageSize && this.props.isEditable !== false && !this.props.isGrouped
+            && this.valid && this.props.total > 0;
+    }
+    get pageSizes() { return [...new Set([10, 25, 50, 100, this.props.limit])].sort((a, b) => a - b); }
+    async changePageSize(event) {
+        const limit = Number(event.target.value);
+        // Keep the select controlled by the native owner, including veto/failure.
+        event.target.value = String(this.props.limit);
+        if (!this.showPageSize || !this.pageSizes.includes(limit) || limit === this.props.limit) return;
+        await this.perform(() => this.props.onUpdate({ offset: 0, limit }, true), ".mp-pagination-size select");
+        event.target.value = String(this.props.limit);
+    }
     get label() { return this.props.label || _t("Table pages"); }
     get canPrevious() { return this.valid && this.props.offset > 0; }
     get previousPage() { return this.limited ? this.current - 1 : Math.min(this.current - 1, this.pageCount); }
@@ -62,7 +76,7 @@ export class TablePagination extends Component {
             : _t("%s–%s of %s records", this.props.offset + 1, end, this.props.total);
     }
     pageLabel(page) { return _t("Page %s", page); }
-    async perform(callback) {
+    async perform(callback, focusSelector) {
         if (this.state.busy || !this.valid) return;
         const focused = this.root.el?.contains(document.activeElement);
         this.state.busy = true; this.state.error = "";
@@ -71,7 +85,7 @@ export class TablePagination extends Component {
         finally {
             this.state.busy = false;
             if (focused && (document.activeElement === document.body || this.root.el?.contains(document.activeElement))) {
-                this.root.el?.querySelector('[aria-current="page"], .mp-pagination-range')?.focus({ preventScroll: true });
+                this.root.el?.querySelector(focusSelector || '[aria-current="page"], .mp-pagination-range')?.focus({ preventScroll: true });
             }
         }
     }

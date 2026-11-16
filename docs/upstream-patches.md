@@ -263,3 +263,23 @@ or model query enters base UI. Source component/hook, actual asset consumer and
 pinned Owl checks pass. This is an unfinished source checkpoint, not an image
 or installed47qualification. Core/web/SDK47 are reserved for the upcoming
 coherent phase2 candidate; retain attribution and current immutable46image.
+
+
+## Meridian core49: scoped native form identity and validated focus
+
+The owned web FormCompiler/Renderer now names DOM field IDs per renderer,
+including explicit/group/setting labels and autofocus. Controller-owned
+button-box subviews have their own identity provider. Architecture metadata
+keys remain unchanged. Removed the old nested-dialog workaround which removed
+background field IDs but left their labels attached to another form's input.
+Native failed-save paths request scoped invalid-field focus; actual Field
+patch readiness supplies input aria-invalid state and completes focus after
+validation. Drafts, save/retry/uncertainty/CAS and authorization remain native.
+Top-level list footer restores optional rows-per-page through existing model
+onUpdate; embedded/group paging unchanged. Icon metadata underscores resolve
+existing pinned geometry; shared reference card metrics/narrow palette refined.
+Identities advance platform0.2.49/core19.0.0.2.49/web19.0.2.49.0. Partners12
+archive/backend/schema/security unchanged.139Node/29Python cases,27actual Owl
+templates/seven composition cases and eight actual compiler/form/label/Field/
+Setting/save-focus fake-DOM scenarios pass. Freeze122files/11rows unchanged.
+Source evidence .local/meridian-phase2-source049-01; installed proof pending.

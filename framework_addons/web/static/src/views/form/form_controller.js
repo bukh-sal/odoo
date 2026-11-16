@@ -11,6 +11,7 @@ import { SIZES } from "@web/core/ui/ui_service";
 import { user } from "@web/core/user";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { omit } from "@web/core/utils/objects";
+import { uniqueId } from "@web/core/utils/strings";
 import { createElement, parseXML } from "@web/core/utils/xml";
 import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { useSetupAction } from "@web/search/action_hook";
@@ -162,6 +163,7 @@ export class FormController extends Component {
     };
 
     setup() {
+        this.fieldIdPrefix = uniqueId("form_field_");
         this.evaluateBooleanExpr = evaluateBooleanExpr;
         this.actionService = useService("action");
         this.dialogService = useService("dialog");
@@ -224,7 +226,7 @@ export class FormController extends Component {
         }, () => [this.model.root]);
         useSubEnv({
             model: this.model,
-            onNativeRecordFieldReady: this.readFirst ? () => this.focusRequestedRecordMode() : undefined,
+            onNativeRecordFieldReady: () => this.focusRequestedRecordMode(),
         });
         onMounted(() => {
             effect(
@@ -441,6 +443,11 @@ export class FormController extends Component {
      * @param {Record} record
      */
     async onWillSaveRecord() {}
+
+    // FormCompiler also renders controller-owned button-box subviews.
+    fieldId(archFieldId) {
+        return `${this.fieldIdPrefix}-${archFieldId}`;
+    }
 
     async onSaveError(error, { discard, retry }, leaving) {
         const suggestedCompany = error.data?.context?.suggested_company;
@@ -670,6 +677,7 @@ export class FormController extends Component {
 
     async beforeExecuteActionButton(clickParams) {
         const record = this.model.root;
+        const origin = document.activeElement;
         if (clickParams.special !== "cancel") {
             let saved = false;
             if (clickParams.special === "save" && this.props.saveRecord) {
@@ -681,6 +689,7 @@ export class FormController extends Component {
             if (saved !== false && this.props.onSave) {
                 this.props.onSave(record, clickParams);
             }
+            if (saved === false) this.focusInvalidRecord(record, origin);
             return saved;
         } else if (this.props.onDiscard) {
             this.props.onDiscard(record);
@@ -703,6 +712,7 @@ export class FormController extends Component {
 
     async save(params) {
         const record = this.model.root;
+        const origin = document.activeElement;
         let saved = false;
         if (this.props.saveRecord) {
             saved = await this.props.saveRecord(record, params);
@@ -715,7 +725,14 @@ export class FormController extends Component {
         if (saved && this.props.onSave) {
             this.props.onSave(record, params);
         }
+        if (saved === false) this.focusInvalidRecord(record, origin);
         return saved;
+    }
+
+    focusInvalidRecord(record, origin) {
+        if (record.isValid !== false || record !== this.model.root || status(this) === "destroyed") return;
+        this.requestedRecordFocus = { kind: "invalid", record, origin };
+        this.focusRequestedRecordMode();
     }
 
     async editRecord() {
@@ -744,6 +761,26 @@ export class FormController extends Component {
         const record = this.model.root;
         if (record !== requested.record || status(this) === "destroyed") {
             this.requestedRecordFocus = null;
+            return;
+        }
+        if (requested.kind === "invalid") {
+            const root = this.rootRef.el;
+            if (record.isValid !== false || !root ||
+                (document.activeElement !== document.body &&
+                 document.activeElement !== requested.origin && !root.contains(document.activeElement))) {
+                this.requestedRecordFocus = null;
+                return;
+            }
+            const target = [...root.querySelectorAll(
+                '.o_field_invalid input:not([disabled]):not([readonly]):not([type="hidden"]), ' +
+                '.o_field_invalid textarea:not([disabled]):not([readonly]), ' +
+                '.o_field_invalid select:not([disabled]), ' +
+                '.o_field_invalid [contenteditable="true"]'
+            )].find(element => element.getClientRects().length && !element.closest('[inert], [aria-hidden="true"]'));
+            if (target) {
+                this.requestedRecordFocus = null;
+                target.focus();
+            }
             return;
         }
         if ((requested.kind === "field") !== record.isInEdition) return;

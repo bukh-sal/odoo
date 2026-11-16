@@ -81,7 +81,7 @@ export class FormCompiler extends ViewCompiler {
                 : `__comp__.props.record.fields['${fieldName}'].string`;
         }
         const formLabel = createElement("FormLabel", {
-            id: `'${fieldId}'`,
+            id: `__comp__.fieldId('${fieldId}')`,
             fieldName: `'${fieldName}'`,
             record: `__comp__.props.record`,
             fieldInfo: `__comp__.props.archInfo.fieldNodes['${fieldId}']`,
@@ -181,6 +181,7 @@ export class FormCompiler extends ViewCompiler {
      */
     compileField(el, params) {
         const field = super.compileField(el, params);
+        field.setAttribute("id", `__comp__.fieldId(${field.getAttribute("id")})`);
 
         const fieldName = el.getAttribute("name");
         params.notebookPageFields?.push(fieldName);
@@ -347,7 +348,8 @@ export class FormCompiler extends ViewCompiler {
                 if (slotContent && addLabel && !isOuterGroup && !isTextNode(slotContent)) {
                     itemSpan = itemSpan === 1 ? itemSpan + 1 : itemSpan;
                     const fieldName = child.getAttribute("name");
-                    const fieldId = slotContent.getAttribute("id") || fieldName;
+                    const fieldId = slotContent.getAttribute("id");
+                    const archFieldId = toStringExpression(child.getAttribute("field_id"));
                     const props = {
                         id: `${fieldId}`,
                         fieldName: `'${fieldName}'`,
@@ -355,7 +357,7 @@ export class FormCompiler extends ViewCompiler {
                         string: child.hasAttribute("string")
                             ? toStringExpression(child.getAttribute("string"))
                             : `__comp__.props.record.fields.${fieldName}.string`,
-                        fieldInfo: `__comp__.props.archInfo.fieldNodes[${fieldId}]`,
+                        fieldInfo: `__comp__.props.archInfo.fieldNodes[${archFieldId}]`,
                     };
                     mainSlot.setAttribute("props", objectToString(props));
                     mainSlot.setAttribute("Component", "__comp__.constructor.components.FormLabel");
@@ -624,7 +626,7 @@ export class FormCompiler extends ViewCompiler {
                     setting.setAttribute("fieldName", toStringExpression(fieldName));
                     setting.setAttribute(
                         "fieldId",
-                        toStringExpression(child.getAttribute("field_id"))
+                        field.getAttribute("id")
                     );
                 }
                 append(setting, fieldSlot);

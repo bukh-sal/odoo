@@ -3,7 +3,7 @@ import {readFile} from 'node:fs/promises';
 import test from 'node:test';
 const root=new URL('../',import.meta.url);
 const source=await readFile(new URL('framework_addons/web/static/src/views/form/form_controller.js',root),'utf8');
-const names=['readFirst','modelParams','editRecord','finishRecordEdit','focusRequestedRecordMode','save','saveButtonClicked','discard','create','onPagerUpdate'];
+const names=['readFirst','modelParams','editRecord','finishRecordEdit','focusRequestedRecordMode','focusInvalidRecord','save','saveButtonClicked','discard','create','onPagerUpdate'];
 const methods=names.map(name=>{
     const match=source.match(new RegExp('^    (?:async |get )?'+name+'\\([^]*?^    }','m'));
     assert.ok(match,'actual method '+name);return match[0];
@@ -134,15 +134,46 @@ test('native input readiness completes the pending request after separately reac
     f.c.focusRequestedRecordMode();assert.equal(f.calls.filter(c=>c[0]==='focus').length,1);
 });
 
-test('actual Field readiness is scoped to the root record, optional and mode-dependent',async()=>{
+test('actual Field validation semantics and readiness stay scoped across reactive patches',async()=>{
     const fieldSource=await readFile(new URL('framework_addons/web/static/src/views/fields/field.js',root),'utf8');
     const setup=fieldSource.match(/^    setup\([^]*?^    }/m)[0];
     for(const [callback,id,expected] of [[true,'root',1],[true,'nested',0],[false,'root',0]]){
-        const effects=[];let ready=0;
-        const Field=new Function('useEffect','getFieldFromRegistry','return class {'+setup+'}')((fn,deps)=>effects.push({fn,deps}),()=>({}));
+        const effects=[],attributes=[];let ready=0;
+        const el={};const own={closest:()=>el,setAttribute:(...args)=>attributes.push(args)};
+        const nested={closest:()=>({}),setAttribute:()=>assert.fail('Do not change nested fields')};
+        el.querySelectorAll=()=>[own,nested];
+        const Field=new Function('useEffect','useRef','getFieldFromRegistry','return class {'+setup+'}')(
+            (fn,deps)=>effects.push({fn,deps}),()=>({el}),()=>({}));
         const field=new Field();field.env={model:{root:{id:'root'}},onNativeRecordFieldReady:callback?()=>ready++:undefined};
-        field.props={fieldInfo:{field:{}},record:{id,isInEdition:false}};field.setup();assert.equal(effects.length,expected);
-        if(expected){assert.deepEqual(effects[0].deps(),[false]);field.props.record.isInEdition=true;assert.deepEqual(effects[0].deps(),[true]);effects[0].fn();assert.equal(ready,1);}
+        field.props={fieldInfo:{field:{}},record:{id,isInEdition:false,resId:20}};
+        field.visualFeedback={invalid:false,readonly:false};field.setup();assert.equal(effects.length,1);
+        assert.deepEqual(effects[0].deps(),[false,false,false,20]);effects[0].fn();assert.equal(ready,expected);
+        assert.deepEqual(attributes.at(-1),['aria-invalid','false']);
+        field.props.record.isInEdition=true;field.visualFeedback.invalid=true;
+        assert.deepEqual(effects[0].deps(),[true,true,false,20]);effects[0].fn();assert.equal(ready,expected*2);
+        assert.deepEqual(attributes.at(-1),['aria-invalid','true']);
+        field.visualFeedback.readonly=true;effects[0].fn();assert.deepEqual(attributes.at(-1),['aria-invalid','false']);
+    }
+});
+
+test('invalid native save requests focus after readiness, retains draft, and ignores hidden controls',async()=>{
+    const f=fixture({editing:true,saveResult:false});const record=f.c.model.root;record.isValid=false;
+    const origin={};f.doc.activeElement=origin;let ready=false;
+    const hidden={getClientRects:()=>[],closest:()=>null};
+    const invalid={getClientRects:()=>[{}],closest:()=>null,focus:()=>{f.doc.activeElement=invalid;}};
+    f.c.rootRef.el.querySelectorAll=()=>ready?[hidden,invalid]:[];
+    assert.equal(await f.c.save(),false);assert.ok(f.c.requestedRecordFocus);
+    assert.equal(f.doc.activeElement,origin);ready=true;f.c.focusRequestedRecordMode();
+    assert.equal(f.doc.activeElement,invalid);assert.equal(f.c.requestedRecordFocus,null);
+    assert.equal(record.data.name,'original');assert.equal(record.data.revision,2);
+});
+
+test('invalid focus never steals a different dialog, record, destroyed view or a recovered field',()=>{
+    for(const change of [f=>f.doc.activeElement={},f=>f.c.model.root={},f=>f.c.destroyed=true,f=>f.c.model.root.isValid=true]){
+        const f=fixture({editing:true});const record=f.c.model.root;record.isValid=false;
+        const origin={};f.doc.activeElement=origin;f.c.rootRef.el.querySelectorAll=()=>[];
+        f.c.focusInvalidRecord(record,origin);change(f);f.c.focusRequestedRecordMode();
+        assert.equal(f.c.requestedRecordFocus,null);assert.equal(f.calls.filter(x=>x[0]==='focus').length,0);
     }
 });
 

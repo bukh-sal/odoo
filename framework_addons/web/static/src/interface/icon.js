@@ -22,7 +22,8 @@ export function iconName(value) {
     if (typeof value !== "string") return "box";
     const name = value.trim().split(/\s+/).find(part => /^(?:fa|oi)-/.test(part) && !/^(?:fa|oi)-(?:fw|lg|[1-5]x|spin|pulse)$/.test(part))
         ?.replace(/^(?:fa|oi)-/, "") || value.trim();
-    const mapped = Object.hasOwn(aliases, name) ? aliases[name] : name;
+    const semantic = /^[a-z][a-z0-9_]{0,63}$/.test(name) ? name.replaceAll("_", "-") : name;
+    const mapped = Object.hasOwn(aliases, semantic) ? aliases[semantic] : semantic;
     return Object.hasOwn(ICON_NODES, mapped) ? mapped : "box";
 }
 

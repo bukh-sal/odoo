@@ -7,7 +7,7 @@ import { getFieldContext } from "@web/model/relational_model/utils";
 import { X2M_TYPES, getClassNameFromDecoration } from "@web/views/utils";
 import { getTooltipInfo } from "./field_tooltip";
 
-import { Component, useEffect, xml } from "@odoo/owl";
+import { Component, useEffect, useRef, xml } from "@odoo/owl";
 
 const isSmall = utils.isSmall;
 
@@ -361,9 +361,24 @@ export class Field extends Component {
             const fieldType = this.props.record.fields[this.props.name].type;
             this.field = getFieldFromRegistry(fieldType, this.props.type);
         }
-        if (this.env.onNativeRecordFieldReady && this.props.record.id === this.env.model?.root.id) {
-            useEffect(() => this.env.onNativeRecordFieldReady(), () => [this.props.record.isInEdition]);
-        }
+        const fieldRef = useRef("field");
+        useEffect(() => {
+            const { invalid, readonly } = this.visualFeedback;
+            for (const input of fieldRef.el?.querySelectorAll("input, textarea, select, [contenteditable]") || []) {
+                // Relational widgets can contain independent nested fields.
+                if (input.closest(".o_field_widget") === fieldRef.el) {
+                    input.setAttribute("aria-invalid", invalid && !readonly ? "true" : "false");
+                }
+            }
+            if (this.env.onNativeRecordFieldReady && this.props.record.id === this.env.model?.root.id) {
+                this.env.onNativeRecordFieldReady();
+            }
+        }, () => [this.props.record.isInEdition, this.visualFeedback.invalid,
+            this.visualFeedback.readonly, this.props.record.resId]);
+    }
+
+    get visualFeedback() {
+        return fieldVisualFeedback(this.field, this.props.record, this.props.name, this.props.fieldInfo || {});
     }
 
     get classNames() {
