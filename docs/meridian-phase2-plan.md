@@ -633,6 +633,56 @@ native zoom/availability comparisons and critique the remaining navigation/
 conflict UX boundaries. Native200 manual setting is pending, not assumed from
 viewport emulation; independent work continues. Phase2 exit still unproven.
 
+### Current empty54 result and native RTL fixture plan
+
+The one eight-addon build succeeded30.906s/image607bcf0b. Its private wrapper
+stopped afterwards because empty inventories intentionally omit artifacts; actual
+producer condition at build_distribution.py:118 proves that shape. Original
+failure retained. Verification-only continuation freshly matches the image to
+the saved observation/source map and populated54:3744 common core files exact,
+only19 Partners files plus its archive absent.14layers/3747project files/4028
+inputs, eight exact native manifests, zero artifacts. No rebuild or record rewrite.
+
+Normal zero-plugin/site-scoped b8a4cb4b/hash75049158 completed153.672s/config2.
+Supplemental private path review initially omitted the accepted47 icon-metadata
+change in mp_core/navigation.py. A multi-statement PowerShell command continued
+to the authorized normal maintenance wrapper despite Python exit1. Preserve the
+failure; do not call it a passed check. Subsequent exact source review confirms
+only icon metadata after unchanged permission filtering, bytes identical to
+b8820e7fb7d; all53 observed image deltas equal the plan. Independent executor/
+source/image/hash/approval guards remained active, no replay or bypass. Future
+dependent mutation commands must run under explicit subprocess check=True or
+an equivalent enforced exit check, not an unchecked shell statement sequence.
+
+Actual app-free54 home/chooser have no application entries; core jobs opens its
+intended scoped new tab with an empty list. The first source-tab-only observation
+missed the new tab; retained finding plus verified46 destination, no second click.
+Dark empty text contrast is13.98/15.71 on measured flat backgrounds; actual390x844
+has zero horizontal overflow; reduced-motion media gives zero-duration rail
+controls with working menu. Temporary metrics/media cleared, light restored,
+46 closed. Fresh nine-table snapshot exact, zero app state/eight modules; protected
+populated18/21 and14target/fivehead/4028source hashes exact. Evidence build-empty054,
+rollout-empty054 and browser-empty054 directories under .local/. Current both
+review sites use54, populatedconfig15/Partners13 and emptyconfig2/no apps.
+
+Populated Preferences currently offers only English. For the real RTL gate, use
+the already-qualified normal native API route from ui-final-language.py, adapted
+to current18740/config15/current release and current protected hashes. Authenticate
+the existing native admin into an isolated cookie jar (no browser-session change),
+obtain normal client-release token, read actual ar_001 ID/active/direction and
+operator5 language/timezone. Require exactly one inactive RTL locale; write a
+durable intent before creating base.language.install with overwrite=False, call
+its normal lang_install once, verify active and original operator profile exact.
+No module install/update, direct SQL/native shell, permission/grant/role change,
+new credentials, translation overwrite or alternative refused route. Any error
+stops/reconciles original receipts; no blind wizard/activation retry. Keep the
+enabled Arabic locale as a test fixture, restore operator English/timezone after
+normal UI preference checks, and recheck all application/authority tables/pins.
+Use actual Arabic preference to test RTL directory/reader/create draft/narrow,
+both themes and mixed identifiers; no DOM/style direction injection. Native200
+manual check remains pending while this independent work proceeds. Phase2 exit
+and later Pages/adoption/final qualification remain unproven.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
