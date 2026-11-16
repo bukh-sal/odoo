@@ -279,3 +279,46 @@ coherent core batch, along with M2-V200-01; not an app-specific workaround.
 NEXT normal successor build/audit, exact admission/stage/review/approval/upgrade
 on the same18742 cohort, preserving handbook2 and current authority. Then real
 handbook/share/comment/history/revoke comparisons. Goal1/5, all five phases remain.
+
+
+### Installed0.1.1 and actual policy SQL counterexample
+
+Pages0.1.1 privatec538376/root658c74d7 was built once34.781s, image
+01e427564cc88255eb4c9c6ed2a1d98cffa2970b4af63b2d5871198c51ab1e30,
+14layers3769files/3747corefiles exact/19appfiles. Normal upgrade7df47735-e101-4993-9f97-ac3f98d759ac,
+plan6bd22b2baab96b27d50ad2fd5b022c6f3d029dc85d6229bbb7c25c164564e69a,
+completed once165.532s; targetconfig3, SHAd15b8a4f. Handbook2/two revisions/two
+receipts/resource policy/grants/original actors preserved exactly; new comment
+table empty. This operation and build wrappers are TERMINAL, never replay.
+
+Installed GUI: single Pages sidebar/no alert, favorite persists full reload;
+history lists versions1/2 and actual preview contenteditable=false. A synthetic
+Robin Test human/A-editor-only fixture was provisioned once through normal ORM,
+private credential/no output; original actors unchanged, no admin/operator/B
+access. Separate hostname session proves current page reader/no Save/readonly
+editor before page sharing. Installed controls work through current API, not
+injected state. Raw evidence pages011-visual-01; viewport/theme differ from the
+reference, so this is workflow/defect evidence, not fidelity acceptance.
+
+First actual Share (restricted+Robin commenter) failed500/uncertain. STOPPED,
+no retry. App log shows PostgreSQL42702: generic resource_access.change_policy
+used SET revision=revision+1 with a joined resource also carrying revision.
+Readonly no-effect.json proves policy still1, zero grants/share receipts/share
+gateway outcomes, handbook unchanged. Normal UI receipt check found none; old
+dialog then closed only after durable rollback proof. No sharing success claim.
+
+Core59 correction qualifies RHS rp.revision; no authorization/CAS/locking or wire
+change. SDK/mp_core59, web58 unchanged. Actual helper-produced SQL ran against
+session-local TEMP tables in the real owned PostgreSQL: old form reproduces42702,
+new policy1->2/resource100 unchanged, staleCAS returns no row, public policy exact,
+transaction rolled back. Source tests43 pass (resource/access/replay/recovery/
+compatibility/native versions). Evidence policy059-sql-01. Mocked SQL boundaries
+had missed the real joined-column ambiguity; this installed finding is retained.
+
+NEXT commit/build one compatible Pages/core59 maintenance image, normal staged
+core upgrade of both current native scopes, preserve all data/authority, then
+fresh sharing/comment/history/revocation proof. Do not replay failed Share or any
+old apply. Main18740/empty18741 remain protected; phase2/phase4/phase5 intact.
+Open visual findings: Comments text squeezed in32px icon button; cover/icon lack
+reference continuity; rail underscore normalization and native200 footer remain.
+No gate acceptance; goal ACTIVE1/5.

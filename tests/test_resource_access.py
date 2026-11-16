@@ -257,6 +257,10 @@ class ResourceAccessTests(unittest.TestCase):
             self.assertEqual(value['revision'],2)
             writes=[(q,p) for q,p in calls if q.startswith(('UPDATE ','INSERT '))]
             self.assertIn('rp.revision=%s RETURNING rp.id',writes[0][0])
+            # Resource tables commonly have their own revision column. UPDATE
+            # FROM must increment the policy's revision, never the resource's.
+            self.assertIn('SET revision=rp.revision+1',writes[0][0])
+            self.assertNotIn('SET revision=revision+1',writes[0][0])
             self.assertIn("SET state='revoked'",writes[1][0])
             self.assertEqual(writes[2][1][:3],[20,9,'record.read'])
             self.assertFalse(any('DELETE ' in q for q,p in calls))

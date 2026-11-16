@@ -3953,3 +3953,5 @@ bootstrap or old failed-host attempt. Protected demonstrations remain intact.
 Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
 
 - 16November2026 Meridian-P3: Pages0.1.0 installed, real GUI handbook2 persists; two live defects found. Coherent private0.1.1 collaboration/draft successor source19Python22Node passed; normal upgrade next, no phase acceptance. See meridian-phase3-progress.md.
+
+- 16November Meridian-P3: Pages011 normal upgrade preserved handbook2; single sidebar/favorite/revision preview verified. Real Share failed core SQL42702; exact no-effect proof and receipt check retained, no retry. Core59 rp.revision correction real-PG TEMP differential+43 source checks pass; maintenance build next.

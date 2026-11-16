@@ -731,3 +731,14 @@ fresh owned cohort via normal install/review after actual absent/free/name check
 Do not rerun terminal57/56 operations. Real populated query/relation/cache,
 concurrent revoke/write, useful handbook and current-policy restore still gate
 acceptance. Keep phase2 defect/visual breadth, phase4 adoption and phase5 final.
+
+
+## Core59: resource-policy CAS joined-column qualification
+
+Actual Pages sharing exposed PostgreSQL42702 when an owning resource has its
+own revision column. resource_access.change_policy now increments rp.revision
+explicitly. All policy identity/current scope/subject/CAS/tombstone rules remain.
+SDK/mp_core successor59; web58 untouched. Generic helper-produced SQL differential
+on real PostgreSQL TEMP tables proves old ambiguity, new policy-only increment,
+stale CAS/no public mutation;43 source checks pass. Installed maintenance proof
+pending. This is a correctness repair, not broader page/workspace authority.

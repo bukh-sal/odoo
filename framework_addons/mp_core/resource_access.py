@@ -178,7 +178,7 @@ def change_policy(records, *, expected_revision, member_capabilities, grants, st
         if not subject:
             raise AccessError('Resource subject unavailable in current workspace')
         assignments.extend((subject[0], cap) for cap in caps)
-    records.env.cr.execute(SQL("""UPDATE mp_resource_policy rp SET revision=revision+1,state=%s,
+    records.env.cr.execute(SQL("""UPDATE mp_resource_policy rp SET revision=rp.revision+1,state=%s,
         member_capabilities=%s::jsonb,write_uid=%s,write_date=timezone('UTC',now())
         FROM %s resource WHERE rp.resource_id=resource.public_id AND resource.id=%s
         AND rp.workspace_id=%s AND rp.installation_id=%s AND rp.model_name=%s
