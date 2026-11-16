@@ -3526,3 +3526,14 @@ Field/save-focus fake-DOM checks pass; freeze122/11 unchanged. Initial private
 registry stub omitted addValidation, failed before mount; harness corrected,
 not a product failure. No installed49/full phase2 claim; core49 build against
 unchanged Partners12 next, then separate13 count refresh. Meridian stays open.
+
+
+16November installed49 ebf8a610 completed146.265s/config10/all7tablesexact.
+Actual native page-size change produces10+5 disjoint rows/15unique, ordinary
+server-backed Next/Previous, no data writes. Form open failed: uniqueId wrong
+module import. Preserved original browser trace/screenshot, not accepted forms.
+Source50 imports real utils/functions in both owners; only2imports+3identities.
+Permanent real module/export check and actual-helper compiled-form witness
+prevent the previously mocked boundary gap.140Node/29Python/27Owl templates/
+seven composition/eightform checks pass. Normal corrected50 build/delivery next;
+no rollback/reapply/guard bypass. Private12 stays exact; reference kept open.

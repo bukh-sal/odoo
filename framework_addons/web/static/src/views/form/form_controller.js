@@ -11,7 +11,7 @@ import { SIZES } from "@web/core/ui/ui_service";
 import { user } from "@web/core/user";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { omit } from "@web/core/utils/objects";
-import { uniqueId } from "@web/core/utils/strings";
+import { uniqueId } from "@web/core/utils/functions";
 import { createElement, parseXML } from "@web/core/utils/xml";
 import { evaluateBooleanExpr } from "@web/core/py_js/py";
 import { useSetupAction } from "@web/search/action_hook";

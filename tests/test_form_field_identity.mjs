@@ -46,3 +46,16 @@ test('controller-owned button-box compilation has its own scoped identity provid
     const owner=new Controller();owner.fieldIdPrefix='form_field_4';
     assert.equal(new Function('__comp__','return '+field.getAttribute('id'))(owner),'form_field_4-count_0');
 });
+
+
+test('both actual form ID imports resolve the real helper from its declared shipped module',async()=>{
+    const owners=[renderer,await read('views/form/form_controller.js')];
+    const ids=[];
+    for(const source of owners){
+        const modulePath=source.match(/import \{ uniqueId \} from "(@web\/[^"\n]+)"/)[1];
+        const actual=await import(new URL(modulePath.replace('@web/','')+'.js',root));
+        assert.equal(typeof actual.uniqueId,'function',modulePath);
+        ids.push(actual.uniqueId('form_field_'));
+    }
+    assert.notEqual(ids[0],ids[1]);
+});

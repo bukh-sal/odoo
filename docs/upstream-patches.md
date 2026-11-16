@@ -283,3 +283,16 @@ archive/backend/schema/security unchanged.139Node/29Python cases,27actual Owl
 templates/seven composition cases and eight actual compiler/form/label/Field/
 Setting/save-focus fake-DOM scenarios pass. Freeze122files/11rows unchanged.
 Source evidence .local/meridian-phase2-source049-01; installed proof pending.
+
+
+## Meridian core50: real helper import correction
+
+Installed49 revealed uniqueId was incorrectly imported from utils/strings in
+FormController and FormRenderer. Use the actual existing utils/functions export,
+matching shared ContextNav. No further behavior/geometry change from49; three
+identities advance50. Added a permanent check resolving both real declared
+imports and using the actual exported helper, plus actual helper loading in the
+compiled-form witness.140Node/29Python/27Owl templates/seven composition/eight
+form scenarios pass. Original49 error/screenshot retained under
+.local/meridian-phase2-browser049-01. Installed49 real native 10+5 paging passes,
+but form fidelity is invalidated until corrected50 is installed and checked.
