@@ -237,3 +237,10 @@ header minimum after subtracting padding, preserving the legacy deletion floor.
 Read-only list cells use6px block padding under the existing44px row token.
 SDK/core/web44 version the shipped change. Three real algorithm regressions
 and21 affected source checks pass; installed44 remains pending.
+
+16November2026 Meridian phase1 successor45 refines shared identity typography
+from19/16px to18/13px line heights and isolates displayed name/secondary values
+with bdi. The shared screen foundation inherits the reference's cv11/ss01 font
+features via a token. SDK/core/web45 record the shipped bytes.6 Node/21 Python
+checks pass, along with the unchanged contract freeze. Installed45 remains
+pending; this does not claim a new data or permission behavior.

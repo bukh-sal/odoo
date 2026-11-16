@@ -12,6 +12,7 @@
     --mp-ui-check-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m4 8 3 3 5-6'/%3e%3c/svg%3e");
     --mp-ui-mixed-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M4 8h8'/%3e%3c/svg%3e");
     --mp-ui-font: "MP Geist", "Segoe UI", system-ui, sans-serif;
+    --mp-ui-font-features: "cv11", "ss01";
     --mp-ui-canvas: #f7f7f8;
     --mp-ui-surface: #fff;
     --mp-ui-ink: #202127;
@@ -57,6 +58,7 @@
     .o_web_client .text-bg-primary { color: var(--mp-ui-on-action) !important; background-color: var(--mp-ui-action) !important; }
     .o_web_client {
         font-family: var(--mp-ui-font);
+        font-feature-settings: var(--mp-ui-font-features);
         color: var(--mp-ui-ink); background-color: var(--mp-ui-canvas);
         --body-color: var(--mp-ui-ink); --body-bg: var(--mp-ui-canvas);
         --emphasis-color: var(--mp-ui-ink); --secondary-color: var(--mp-ui-muted);

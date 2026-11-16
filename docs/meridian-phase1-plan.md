@@ -86,6 +86,22 @@ so the existing44px row token governs ordinary identity rows. Preserve inline
 editing and print behavior. Recheck actual43-to44 data, then browser geometry
 and behavior, before accepting the visual correction.
 
+Installed44 completed operationf201d1f7/config4. Browser confirms the56px chooser
+column now fits, with no unnecessary desktop scroll (877px client/scroll).
+Collapse/reopen, optional-column change/restoration, keyboard-open and Back with
+the Name filter pass. Dark and light390px layouts keep document width390 with
+table-local scrolling; narrow navigation takes focus and Escape returns it.
+All seven captured tables remain exact after browser interaction. Reference39
+remains open; temporary device overrides are cleared and light mode restored.
+
+The two identity text lines still occupy36px, producing49px rows. Successor45
+sets their line heights to18px and13px with the existing1px gap, fitting the32px
+tile and the shared row rhythm. Apply Meridian's cv11/ss01 font features through
+a shared token and isolate displayed identity values with bdi for mixed-direction
+text. Qualify those source changes on the installed image, then build the
+representative directory fixture and the final empty-core counterpart. Phase1
+remains unaccepted until those captures and the remaining review items pass.
+
 ## Acceptance checklist
 
 | Requirement | Proof and current state |

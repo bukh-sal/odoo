@@ -4,8 +4,8 @@
         <div t-if="props.readonly" class="mp-identity-cell">
             <span class="mp-identity-glyph" aria-hidden="true" t-esc="initials"/>
             <span class="mp-identity-text">
-                <span class="mp-identity-name" t-esc="value"/>
-                <span t-if="secondary" class="mp-identity-secondary" t-esc="secondary"/>
+                <bdi class="mp-identity-name" t-esc="value"/>
+                <bdi t-if="secondary" class="mp-identity-secondary" t-esc="secondary"/>
             </span>
         </div>
         <CharField t-else="" t-props="charProps"/>

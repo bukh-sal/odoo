@@ -1,3 +1,9 @@
+## Meridian installed44 interactions and typography refinement - 16 November 2026
+
+Normal core44 maintenancef201d1f7 completed/config4 on fresh18740. Chooser now measures56px and desktop renderer has equal877px client/scroll widths. Actual identity grid/flex remains correct. Real collapse/reopen restores focus, optional Phone column toggles/restores, keyboard-open and Back retain Name filter. Light/dark390px document width remains390 with intentional table-local scrolling; narrow context focuses correctly and Escape returns to opener. All seven business/authority tables remain exact afterward. Original raw screenshots and actual CSS/DIP metrics retained; high-level narrow screenshot clipping is distinguished from the correct raw capture.
+
+Identity line heights still sum36px and produce49px rows, so source45 sets18/13px lines with1px gap, carries Meridian cv11/ss01 via shared font token and uses bdi for names/contact text.6 Node and21 Python checks plus unchanged122/11 freeze pass. Documented the reusable native field recipe. Installed45 and representative fixture remain pending, phase1rough55%, milestones0/5. Device overrides cleared, light restored, reference39 and fresh review36/user38 retained.
+
 ## Meridian core43 installed findings and width-producer correction - 16 November 2026
 
 Built and audited core43 nine-addon imagec9939128. Normal exact core-maintenance237239c8 completed/config3 with all seven business/authority tables field-exact. The post-check's expected policy-generation increment was wrong for this unchanged core deployment; retained failure and verification-only continuation prove actual complete equality. No apply replay. Browser43 confirms actual grid/flex identity and separate text lines. It also exposes a28px inline actions column despite56px CSS minimum: the native width calculator forces12px content width and ignores the minimum. Rows measure53px.

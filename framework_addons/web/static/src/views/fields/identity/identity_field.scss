@@ -8,5 +8,5 @@
     font: 500 11px/16px var(--mp-ui-font);
 }
 .mp-identity-text { display: flex; flex-direction: column; min-width: 0; gap: 1px; }
-.mp-identity-name { font: 500 13.5px/19px var(--mp-ui-font); overflow: hidden; text-overflow: ellipsis; }
-.mp-identity-secondary { color: var(--mp-ui-muted); font: 400 11px/16px var(--mp-ui-font); overflow: hidden; text-overflow: ellipsis; }
+.mp-identity-name { font: 500 13.5px/18px var(--mp-ui-font); overflow: hidden; text-overflow: ellipsis; }
+.mp-identity-secondary { color: var(--mp-ui-muted); font: 400 11px/13px var(--mp-ui-font); overflow: hidden; text-overflow: ellipsis; }

@@ -6,10 +6,13 @@ changing layout, JavaScript, services or its justified component minimum.
 
 
 The owned interface supplies shared presentation for native views and independent
-apps. Apps own data, services, authority, routes and drafts. The current installed
+apps. Apps own data, services, authority, routes and drafts. The earlier five-app
 cohort is core0.2.41; [qualified combinations](ui-qualified-combinations.md) and the
 [acceptance matrix](ui-delivery-acceptance.md) separate actual interaction proof,
 unchanged-source applicability and the completed final041 canonical run.
+The current Meridian work has a separate core44/Partners11 review site.
+Its installed and pending refinements are tracked in the
+[phase1 plan](meridian-phase1-plan.md).
 
 | Pattern | First supported source | Author fallback |
 | --- | --- | --- |
@@ -28,6 +31,27 @@ and reduced-motion evidence. That does not automatically qualify another app's
 layout, data transitions or browser combination.
 
 ## Header and actions
+
+### Native identity cells
+
+The native field registry supplies `mp_identity` from core0.2.42. It presents
+an already-loaded char value with decorative initials and optional secondary
+char text. Partners0.1.11 is its first consumer. Installed44 verifies the
+structured layout, keyboard opening and filter/Back behavior. Source45 refines
+the text rhythm and direction isolation; its installed qualification is pending.
+
+```xml
+<field name="name" widget="mp_identity"
+       options="{'secondary_field': 'email'}" width="300px"/>
+```
+
+The ordinary field-dependency mechanism loads the selected secondary char field.
+Choose a field the current user may read. Hidden columns provide presentation
+choices and do not grant field access. The widget makes no request, escapes both
+values and delegates editing to the native CharField with the same record.
+The app retains validation, revision checks and authority. Shared typography,
+identity tile, muted text and direction isolation belong to web; app authors
+should reuse those styles. Set domain-specific columns and actions in the view.
 
 For balanced native record sections, use an outer `<group col="2">` containing
 two ordinary inner `<group>` declarations. The native OuterGroup producer gives
