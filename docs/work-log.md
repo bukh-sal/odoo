@@ -3582,3 +3582,17 @@ source now actual native-save/archive/unarchive advisory scoped refresh;38Node/
 unadmitted. Old hidden-query test expectation and processUnicodefailure retained,
 corrected only fake/test/evidence boundaries. Build/admit/normalappupgrade and
 real counter workflow next. Full objective unchanged, phase2rough60%/milestone1.
+
+
+16November app13 normal b096f593 completed/config13/image7739288a, exactcore52/
+framework/Pythonlock; scoped normal workspacepolicy+1 bound. Native onejournaled
+Meridian Refresh Contact create (raw16/public65b5f5f3) counts16/3/13 immediately;
+exact owned Archive rev2/count15/2/13 andUnarchive rev3/count16/3/13 pass without
+navigation. Original15 contacts/events plusfiveother tables exact.16contacts/
+18events/jobs0, three minimal current actor/workspace/site/install/release events,
+no delivery claim.14protected/fiveprivateheads/4050inputs exact. Private archive
+kind guess failed, rawsnapshot/failure/originalverifier preserved; actualproducer
+archived branch +fresh unchangedread => verification-only continuation, no replay.
+Found remainingCogMenu dynamicfontglyphs and redundant parent-returnbreadcrumbs;
+audit/reuse native stack/restore before nextbatch. Fullphase2matrix/currentempty/
+phases3-5 intact, rough70%/milestone1of5. Reference39 staysopen;light/natural restored.

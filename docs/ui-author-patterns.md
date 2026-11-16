@@ -10,8 +10,8 @@ now uses ContextNav's default menu presentation. The corrected core48 is on
 the Partners12 review site; the separate empty site remains45. Private12 now
 consumes these components in its installed native directory/organization/person
 workflow. The scoped counts, single proven record heading and304px contact
-aside passed bounded visual/workflow checks. Counts still need post-save
-refresh. Installed core50 now supplies scoped native field DOM identities and
+aside passed bounded visual/workflow checks. Private13 now refreshes counts after confirmed native save/archive/unarchive
+through fresh scoped reads. Installed core50+ supplies scoped native field DOM identities and
 required-error focus/invalid semantics; apps keep original architecture keys.
 Shared record-card surface/header metrics match the measured reference role.
 This is one independent consumer, not final phase2 or broad adoption proof.
@@ -622,3 +622,22 @@ current form; Field patch readiness updates aria-invalid and finishes the
 request after rendering. Dialog/sheet/full-page persistence and uncertainty
 handling remain with the native owner. Installed nested required refusal is
 proved; this is not a universal form-widget or formal accessibility claim.
+
+
+### App-owned navigation freshness
+
+The installed Partners13 consumer uses existing native onRecordSaved(record,
+changes) and its own Record subclass public archive/unarchive wrappers. Await
+and preserve native results/errors; only a confirmed change emits an app-owned
+workspace freshness hint. This is a local UI event, not an event-transport topic
+or an authorization decision. No record data or calculated counts travel in
+it. A hint failure must not turn a committed save into an apparent failure.
+
+A context component listens with the existing useBus hook, checks current scope
+and disposal, and reuses its normal fresh authorization/context and ORM reads.
+Clear/ignore stale counts during denial, cancellation and workspace changes;
+do not optimistically add/subtract. Native archive bypasses the saved callback,
+so test all supported mutation paths. Keep outside-tab freshness on ordinary
+focus/navigation unless the app deliberately implements an actual subscription.
+The real installed example proves create/archive/unarchive without navigation;
+this does not claim arbitrary-app mutation coverage or live cross-tab updates.

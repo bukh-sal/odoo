@@ -389,6 +389,46 @@ f4169a9a/41308B author/operator recipes equal, ArtifactValidator accepted only i
 memory; admission/installed proof still pending. Rough phase2 implementation/
 workflow60%, milestones1/5. All later phase2 matrix and phases3-5 remain.
 
+## Installed13 count-freshness result and remaining navigation audit
+
+Normal b096f593 app-only upgrade completed/config13/image7739288a on exact
+core52/8framework manifests/Python lock. Curated admission3->4 adds onlyf4169a9a,
+retains old11/12; catalog2->3, OS policy unchanged. Metadata producer's two target
+workspace policy_generation+1 explicitly checked; all other captured data exact.
+
+One journaled native nested contact create (Meridian Refresh Contact, synthetic
+example.invalid email, parentAcme/workspaceA) produces raw16/public65b5f5f3...
+revision1 and one minimal created event. Counts become16/3/13 while remaining
+on Acme. Native confirmed Archive of this exact owned record produces revision2/
+activefalse/count15/2/13; native Unarchive produces revision3/activetrue/count16/
+3/13, both without navigation. Original15 partners/events and five other tables
+remain exact. Current16partners/18pending events/jobs0; new event sequence1/2/3
+kinds created/archived/updated, exact actor/workspace/site/installation/current
+release, no payload contact data and no delivery claim.14protected targets/five
+private heads/4050source inputs exact. The first private archive verifier guessed
+updated; raw data retained, actual unchanged producer verified, fresh read equals
+retained snapshot and verification-only continuation passes before Unarchive.
+No archive retry, metadata normalization or source/runtime fix was needed.
+
+Actual return through the organization Field link appends Acme after the contact
+instead of reusing the parent, giving redundant history-like breadcrumbs. Keep
+native leave/scope/runtime guards and ordinary history, but audit existing
+restore and stackPosition APIs for a reusable related-record return pattern.
+Do not deduplicate by text or parse/guess app-specific URLs in generic core.
+Current public action service already supports replaceCurrentAction and
+replacePreviousAction; establish exact parent identity/scope before selecting
+one, or use existing restore with a verified ancestor. Fresh detailed plan at
+next implementation will bind its producer/consumer behavior and denial tests.
+
+Native CogMenu still renders dynamic item.icon and single print using font i;
+ActionMenus already uses shared Icon and CogMenu inherits its components. Carry
+fitting pinned geometry/accessible labels into this renderer rather than a new
+icon system. Unknown names retain safe fallback. Include actual native Archive/
+Unarchive/Duplicate menu and nested/optional print states in the next batch.
+These are material remaining fidelity findings, not accepted intentional gaps.
+Full creation-sheet/page/conflict/viewer/provider/RTL/actual200%/motion/current-
+empty and phases3-5 remain. Rough phase2 implementation/workflow70%, milestone1/5.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
