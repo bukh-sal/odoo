@@ -14,7 +14,7 @@ const aliases = {
     "view-cohort": "columns-3", "view-activity": "clock", "view-form": "file-text",
     "sort": "chevrons-up-down", "sort-asc": "arrow-up", "sort-desc": "arrow-down",
     "caret-down": "chevron-down", "caret-right": "chevron-right", "group": "layers",
-    print: "printer", "files-o": "copy", "clone": "copy", "circle-o-notch": "loader-circle",
+    print: "printer", "files-o": "copy", "clone": "copy", "unarchive": "archive", "circle-o-notch": "loader-circle",
 };
 
 /** Only declared semantic names and neutral legacy glyph aliases, never markup or URLs. */

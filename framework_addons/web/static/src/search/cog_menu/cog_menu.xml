@@ -31,7 +31,7 @@
                             </Dropdown>
 
                             <DropdownItem t-else="" class="'o_menu_item'" attrs="{ 'aria-label': this.getPrintItemAriaLabel(state.printItems[0]) }" onSelected="() => this.onItemSelected(state.printItems[0])">
-                                <i class="fa fa-print me-1"/> <t t-out="state.printItems[0].description"/>
+                                <Icon name="'printer'" className="'me-1'"/> <t t-out="state.printItems[0].description"/>
                             </DropdownItem>
                         </t>
 
@@ -43,7 +43,7 @@
                             <t t-if="item.Component" t-component="item.Component" t-props="item.props"/>
 
                             <DropdownItem t-else="" class="item.class ? item.class + ' o_menu_item' : 'o_menu_item'" onSelected="() => this.onItemSelected(item)">
-                                <i t-if="item.icon" t-att-class="item.icon" class="fa-fw oi-fw me-1"/>
+                                <Icon t-if="item.icon" name="item.icon" className="'me-1'"/>
                                 <t t-esc="item.description"/>
                             </DropdownItem>
 

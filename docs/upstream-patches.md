@@ -323,3 +323,18 @@ identities advance52, direct current50->52 maintenance planned.144Node29Python/
 First private mount cleared raw fixture objects without proxy notification;
 corrected fake method to mutate its receiver, original trace retained. No real
 installed52 claim yet; Partners12 backend/schema/archive/security unchanged.
+## Meridian core53: native related-record return and action glyphs
+
+Plain many2one current-page links keep the fresh get_formview_action call and
+may prefer an exact real inactive form ancestor. The action service matches
+model, exported-ID precedence, selected form and complete effective context,
+then calls its existing restore/leave/reconstruction path. Unknown properties,
+nonempty domains, explicit stack/props/leave options and dialogs/new tabs fall
+back normally. No app-specific keys, guessed URLs or label deduplication.
+CogMenu's single-print and dynamic-icon paths now use the existing pinned Icon;
+unarchive maps to existing archive geometry with its distinct action label.
+Three shipped identities advance53.153Node/29Python cases, unchanged28-template
+composition/eight actual compiled-form scenarios and actual CogMenu/Icon mounted
+branches pass; freeze122files/11rows. The first helper test caught preprocessing's
+normal empty domain and was corrected before packaging. Source proof only until
+the successor is built, installed normally and reviewed against Meridian.

@@ -3596,3 +3596,19 @@ archived branch +fresh unchangedread => verification-only continuation, no repla
 Found remainingCogMenu dynamicfontglyphs and redundant parent-returnbreadcrumbs;
 audit/reuse native stack/restore before nextbatch. Fullphase2matrix/currentempty/
 phases3-5 intact, rough70%/milestone1of5. Reference39 staysopen;light/natural restored.
+## Meridian phase2 core53 source navigation refinement - 16 November2026
+
+Reference39 remains open continuously next to live18740. Converted both remaining
+CogMenu font paths to pinned Icon; actual classes/templates preserve labels,
+callbacks and print branches. Related many2one opens still fetch fresh server
+actions and can reuse an exact real form ancestor via existing native restore,
+with full context/view/exported-ID matching and conservative fallback. Native
+draft refusal/errors remain; no app/backend/schema/security changes.
+
+153Node/29Python cases,28actual Owl templates/nine composition/eight compiled-form
+scenarios, actual CogMenu/Icon mounted branches and freeze122/11 pass. First
+navigation test exposed preprocessing's always-present empty domain; matcher now
+accepts that standard shape while nonempty domains/custom semantics refuse
+reuse. No installed53 claim. Next: exact Partners13 core build/audit, fresh normal
+config13 maintenance and installed menu/parent/history/leave comparison. Full
+five-phase goal active, phase2 not accepted; no native operation replay.

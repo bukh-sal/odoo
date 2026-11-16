@@ -429,6 +429,44 @@ These are material remaining fidelity findings, not accepted intentional gaps.
 Full creation-sheet/page/conflict/viewer/provider/RTL/actual200%/motion/current-
 empty and phases3-5 remain. Rough phase2 implementation/workflow70%, milestone1/5.
 
+## Current core53 navigation batch - implementation plan
+
+Keep reference39 open next to installed18740/config13. Use the existing pinned
+Icon in both remaining CogMenu paths (single print and ordinary dynamic items).
+Map legacy unarchive to the existing archive geometry; labels continue to carry
+the distinct action meaning. No callbacks, eligibility or confirmation changes.
+
+Related many2one links already obtain a fresh server get_formview_action. For
+ordinary same-page opens only, let that producer request an existing-record
+preference from the native action service. Match a real inactive form ancestor
+by exact model, effective exported record ID, form view selection and complete
+effective context (including user context). Only a plain single-form/current
+action qualifies; unusual action properties, explicit stack/props/leave options,
+dialogs/new windows, missing IDs, virtual controllers and mismatches use the
+ordinary action path. No label/URL matching, private app keys or context-key
+exceptions. Restore through the existing native restore API, which performs
+the normal leave guard and reconstructs the form; current server reads still
+authorize the destination. This preference is navigation presentation, never
+authorization or a cross-page/workspace operation.
+
+Prove the actual helper, many2one producer and action-service doAction/restore
+flow: parent reuse, nearest ancestor, exported-ID precedence, missing/false IDs,
+different model/context/view, custom actions/options, new-tab/dialog behavior,
+declined/failed leave and fresh action-load failure. Compile/mount actual CogMenu
+with pinned Icon for dynamic, absent-icon and single/multiple print paths.
+Run affected shared/native/creation/identity tests, form/composition witnesses
+and unchanged freeze. Advance core/web identities together to53, record source
+provenance, commit, then build with exact Partners13 and perform one normal
+core-maintenance operation from config13. Never replay any previous wrapper.
+Installed exit for this batch: glyph-free Archive/Duplicate labels, related
+organization return reuses the parent, Back and modified links remain native,
+dirty cancellation preserves the current draft, data/authority/protected-target
+snapshots remain exact. If context/view differs, an ordinary new action is an
+intentional fallback rather than silently reusing an incompatible reader.
+
+The remaining phase2 creation/security/RTL/zoom/motion/current-empty checklist
+and phases3-5 remain required. Source tests alone do not accept this batch.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

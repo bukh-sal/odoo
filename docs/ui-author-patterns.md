@@ -641,3 +641,15 @@ so test all supported mutation paths. Keep outside-tab freshness on ordinary
 focus/navigation unless the app deliberately implements an actual subscription.
 The real installed example proves create/archive/unarchive without navigation;
 this does not claim arbitrary-app mutation coverage or live cross-tab updates.
+### Related-record return
+
+Ordinary native many2one links request a fresh server form action. On the same
+page, a plain form action may reuse an existing real form ancestor through the
+native restore/leave path when model, effective exported record, selected form
+and complete context match. This avoids repeated parent breadcrumbs. New tabs,
+dialogs, explicit stack/props/leave options, custom action semantics and context
+or view differences retain ordinary new-action behavior. Do not match labels or
+parse routes to infer record identity; navigation reuse grants no authority and
+does not replace current server reads. A trusted custom action caller can opt
+in with preferExistingRecord:true under the same conservative rules. Callers
+requiring a new action should leave the preference absent.

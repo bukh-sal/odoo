@@ -34,6 +34,7 @@ import { omit, pick, shallowEqual } from "@web/core/utils/objects";
 import { session } from "@web/session";
 import { exprToBoolean } from "@web/core/utils/strings";
 import { openRecordCreation } from "@web/views/view_dialogs/record_creation";
+import { findRecordAncestor } from "./record_navigation";
 
 class BlankComponent extends Component {
     static props = ["onMounted", "withControlPanel", "*"];
@@ -71,6 +72,7 @@ const actionRegistry = registry.category("actions");
  * @property {number} [index]
  * @property {boolean} [newWindow]
  * @property {boolean} [forceLeave]
+ * @property {boolean} [preferExistingRecord] reuse an exact real form ancestor for a related link
  */
 
 export async function clearUncommittedChanges(env, { forceLeave } = {}) {
@@ -1460,6 +1462,12 @@ export function makeActionManager(env, router = _router) {
         const actionProm = _loadAction(actionRequest, options.additionalContext);
         let action = await keepLast.add(actionProm);
         action = _preprocessAction(action, options.additionalContext);
+        if (!dialog) {
+            const ancestor = findRecordAncestor(controllerStack, action, options, user.context);
+            if (ancestor) {
+                return restore(ancestor.jsId);
+            }
+        }
         options.clearBreadcrumbs = action.target === "main" || options.clearBreadcrumbs;
         switch (action.type) {
             case "ir.actions.act_url":

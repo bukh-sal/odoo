@@ -28,5 +28,7 @@ test('legal manifest underscore atoms resolve pinned glyphs without accepting pa
  const resolve=new Function('Component','ICON_NODES',cleaned+';return iconName;')(class{},geometry);
  assert.equal(resolve('building_2'),'building-2');assert.equal(resolve('grid_2x2'),'grid-2x2');
  assert.equal(resolve('fa fa-users fa-fw'),'users');assert.equal(resolve('columns'),'columns-3');
+ assert.equal(resolve('oi oi-archive'),'archive');assert.equal(resolve('oi oi-unarchive'),'archive');
+ assert.equal(resolve('fa fa-clone'),'copy');assert.equal(resolve('fa fa-print'),'printer');
  for(const value of ['https://x/box','<svg/>','../users','__proto__','constructor','made_up_glyph',null,{}])assert.equal(resolve(value),'box');
 });

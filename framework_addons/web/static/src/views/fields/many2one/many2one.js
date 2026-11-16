@@ -273,7 +273,10 @@ export class Many2One extends Component {
             [[this.props.value?.id]],
             { context: this.props.openActionContext() }
         );
-        await this.action.doAction(action, { newWindow });
+        await this.action.doAction(action, {
+            newWindow,
+            preferExistingRecord: !newWindow && !this.env.inDialog,
+        });
     }
 
     async openRecordInDialog() {
