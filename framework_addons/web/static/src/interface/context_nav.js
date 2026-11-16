@@ -6,6 +6,10 @@ import { Icon } from "@web/interface/icon";
 const key = value => typeof value === "string" && /^[A-Za-z0-9][A-Za-z0-9_.:-]{0,199}$/.test(value);
 const label = value => typeof value === "string" && value.trim().length > 0;
 
+export function contextTone(value) {
+    return ["neutral", "amber", "green", "blue", "violet", "slate"].includes(value) ? value : "neutral";
+}
+
 /** Sidebar destinations are internal links. External links belong in explicit content/actions. */
 export function contextHref(value) {
     return typeof value === "string" && /^(?:\/(?!\/)|#)/.test(value) && !/[\\\x00-\x1f\x7f]/.test(value);

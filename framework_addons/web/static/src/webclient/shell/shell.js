@@ -1,4 +1,4 @@
-import { Component, useEffect, useExternalListener, useRef, useState, useSubEnv } from "@odoo/owl";
+import { Component, onError, useEffect, useExternalListener, useRef, useState, useSubEnv } from "@odoo/owl";
 import { browser } from "@web/core/browser/browser";
 import { useBus, useService } from "@web/core/utils/hooks";
 import { registry } from "@web/core/registry";
@@ -12,12 +12,26 @@ import { PageHeader } from "@web/interface/page_header";
 import { StatusMessage } from "@web/interface/status_message";
 import { Icon } from "@web/interface/icon";
 import { useContextPreference } from "@web/interface/context_preference";
-import { ContextNav } from "@web/interface/context_nav";
+import { ContextNav, contextTone } from "@web/interface/context_nav";
+import { useRailPreferences, railAppId } from "@web/interface/rail_preferences";
+import { RailCustomization } from "@web/interface/rail_customization";
+import { WorkspaceHelp } from "@web/interface/workspace_help";
+
+/** A failed optional app context leaves its normal authorized pages reachable. */
+export class ContextContributionBoundary extends Component {
+    static template = "web.Shell.ContextContribution";
+    static components = { ContextNav };
+    static props = { Component: Function, componentProps: Object };
+    setup() {
+        this.state = useState({failed:false});
+        onError(() => { this.state.failed = true; });
+    }
+}
 
 /** Presentation over the existing menu/action services and their leave lifecycle. */
 export class Shell extends Component {
     static template = "web.Shell";
-    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage, Icon, ContextNav };
+    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage, Icon, ContextNav, ContextContributionBoundary };
     static props = { slots: Object };
 
     setup() {
@@ -25,8 +39,10 @@ export class Shell extends Component {
         this.action = useService("action");
         this.command = useService("command");
         this.ui = useService("ui");
+        this.dialog = useService("dialog");
         this.state = useState({ revision: 0, contextOpen: false });
-        useSubEnv({ interfaceContextTarget: ".mp-shell-context-controls" });
+        useSubEnv({ interfaceContextTarget: ".mp-shell-context-controls", customizeAppRail: () => this.openRailSettings() });
+        this.railPreference = useRailPreferences(() => this.apps);
         this.contextPreference = useContextPreference(() => this.current?.pluginID);
         this.contextTrigger = useRef("contextTrigger");
         this.context = useRef("context");
@@ -50,6 +66,23 @@ export class Shell extends Component {
     }
 
     get apps() { return this.menu.getApps(); }
+    get pinnedApps() { return this.railPreference.apps; }
+    openHelp() {
+        this.dialog.add(WorkspaceHelp, {onCommands: () => this.openCommands(),
+            onCustomize: this.blocked ? undefined : () => this.openRailSettings()});
+    }
+    openRailSettings() {
+        if (this.blocked) return false;
+        this.dialog.add(RailCustomization, {
+            apps: this.apps, pins: this.railPreference.pins,
+            onSave: value => {
+                if (this.blocked) return false;
+                const available = new Set(this.apps.map(railAppId));
+                return this.railPreference.save(value === null ? null : value.filter(id => available.has(id)));
+            },
+        });
+        return true;
+    }
     get workspaceTitle() { return _t("Your workspace"); }
     get noAppsTitle() {
         return this.apps.length ? _t("Choose a page to continue") : _t("No applications available in this workspace");
@@ -71,6 +104,18 @@ export class Shell extends Component {
     get blocked() { return this.menu.unavailable || this.menu.currentAppUnavailable; }
     get emptyCanvas() { return !this.current && !this.action.currentController; }
     get sections() { return this.current ? this.menu.getMenuAsTree(this.current.id).childrenTree : []; }
+    contextPresentation(app) {
+        const providers = registry.category("context_navigation");
+        const entry = app?.pluginID && providers.contains(app.pluginID) ? providers.get(app.pluginID) : null;
+        return { Component: entry?.Component?.prototype instanceof Component ? entry.Component : null,
+            tone: contextTone(entry?.tone) };
+    }
+    get contextProvider() { return this.contextPresentation(this.current); }
+    get contextProviderProps() {
+        return {groups:this.contextGroups, contextTitle:this.current.name,
+            onNavigate:(item,event) => this.selectContext(item,event), revision:this.state.revision,
+            workspaceId:new URLSearchParams(browser.location.search).get("workspace") || ""};
+    }
     get contextGroups() {
         if (!this.current) return [];
         const item = menu => {
@@ -102,6 +147,7 @@ export class Shell extends Component {
         const icon = app.appIcon;
         return /^[a-z][a-z0-9-]*$/.test(icon || "") ? icon : "box";
     }
+    appTone(app) { return this.contextPresentation(app).tone; }
     href(menu) {
         const path = menu.actionPath || "action-" + menu.actionID;
         const workspace = new URLSearchParams(browser.location.search).get("workspace");

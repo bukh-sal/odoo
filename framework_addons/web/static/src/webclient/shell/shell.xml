@@ -11,6 +11,7 @@
         </div>
         <button class="mp-command-trigger" aria-label="Search apps and commands" t-on-click="openCommands"><Icon name="'search'"/> <span>Search apps and commands</span></button>
         <div class="mp-shell-utilities" role="group" aria-label="Workspace and account">
+          <button type="button" class="mp-shell-help" aria-label="Help and shortcuts" title="Help and shortcuts" t-on-click="openHelp"><Icon name="'circle-help'" size="18"/></button>
           <t t-foreach="trailingUtilities" t-as="item" t-key="item.key">
             <ErrorHandler onError="error => this.handleItemError(error)"><t t-component="item.Component"/></ErrorHandler>
           </t>
@@ -26,11 +27,14 @@
                 <Icon name="icon(app)" size="20"/><span t-esc="app.name"/>
               </DropdownItem>
               <span t-if="!apps.length" class="dropdown-item-text" t-esc="emptyChooserLabel"/>
+              <div role="separator" class="dropdown-divider"/>
+              <DropdownItem onSelected="() => this.openRailSettings()"><Icon name="'settings-2'" size="16"/><span>Customize sidebar</span></DropdownItem>
             </div>
           </t>
         </Dropdown>
         <div class="mp-rail-apps">
-          <a t-foreach="apps" t-as="app" t-key="app.id" class="mp-rail-button" t-att-href="href(app)"
+          <a t-foreach="pinnedApps" t-as="app" t-key="app.id" class="mp-rail-button" t-att-href="href(app)"
+             t-att-data-tone="appTone(app)"
              t-att-aria-label="app.name" t-att-title="app.name" t-att-aria-current="current?.id === app.id ? 'page' : undefined"
              t-on-click="event => this.select(event, app)">
             <Icon name="icon(app)" size="20"/>
@@ -45,7 +49,7 @@
               t-on-click="toggleContext"><Icon name="contextExpanded ? 'panel-left-close' : 'panel-left-open'" directional="true"/><span t-esc="current.name"/></button>
       </div>
       <div class="mp-shell-body">
-        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-ref="context" tabindex="-1" aria-labelledby="mp-native-context-heading" t-att-class="{'is-open': state.contextOpen, 'is-collapsed': contextCollapsed}" t-att-inert="contextCollapsed ? '' : undefined">
+        <aside t-if="nativeContext" id="mp-native-context" class="mp-native-context" t-ref="context" tabindex="-1" aria-labelledby="mp-native-context-heading" t-att-class="{'is-open': state.contextOpen, 'is-collapsed': contextCollapsed}" t-att-inert="contextCollapsed ? '' : undefined" t-att-data-tone="contextProvider.tone">
           <header class="mp-context-header">
             <Icon name="icon(current)" size="16"/>
             <h2 id="mp-native-context-heading" t-esc="current.name"/>
@@ -55,7 +59,8 @@
               <Icon name="'panel-left-close'" directional="true"/>
             </button>
           </header>
-          <ContextNav groups="contextGroups" label="current.name" onNavigate.bind="selectContext" t-key="current.pluginID || current.id"/>
+          <ContextContributionBoundary t-if="contextProvider.Component" Component="contextProvider.Component" componentProps="contextProviderProps" t-key="current.pluginID || current.id"/>
+          <ContextNav t-else="" groups="contextGroups" label="current.name" onNavigate.bind="selectContext" t-key="current.pluginID || current.id"/>
         </aside>
         <div class="mp-shell-canvas">
           <div class="mp-shell-action" t-att-hidden="blocked" t-att-class="{'is-empty': emptyCanvas}"><t t-slot="default"/></div>
@@ -71,5 +76,9 @@
         </div>
       </div>
     </div>
+  </t>
+  <t t-name="web.Shell.ContextContribution">
+    <t t-if="state.failed"><p class="mp-context-unavailable" role="status">Additional navigation is unavailable. Standard pages remain available.</p><ContextNav groups="props.componentProps.groups" label="props.componentProps.contextTitle" onNavigate="props.componentProps.onNavigate"/></t>
+    <t t-else="" t-component="props.Component" t-props="props.componentProps"/>
   </t>
 </templates>

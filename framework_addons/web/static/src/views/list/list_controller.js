@@ -1,4 +1,5 @@
 import { Icon } from "@web/interface/icon";
+import { TablePagination } from "@web/interface/table_pagination";
 import { _t } from "@web/core/l10n/translation";
 import { evaluateExpr, evaluateBooleanExpr } from "@web/core/py_js/py";
 import { user } from "@web/core/user";
@@ -40,7 +41,7 @@ import {
 
 export class ListController extends Component {
     static template = `web.ListView`;
-    static components = { Icon,
+    static components = { Icon, TablePagination,
         ActionMenus,
         Layout,
         ViewButton,
@@ -523,9 +524,13 @@ export class ListController extends Component {
                 ...controlPanel,
                 table: true,
                 layoutActions: !this.hasSelectedRecords,
+                collectionMeta: this.collectionMeta,
             },
         };
     }
+
+    get createLabel() { return _t("New"); }
+    get collectionMeta() { return ""; }
 
     discardSelection() {
         this.model.root.records.forEach((record) => {

@@ -6,6 +6,7 @@ import { registry } from "@web/core/registry";
 import { user } from "@web/core/user";
 import { session } from "@web/session";
 import { Icon } from "@web/interface/icon";
+import { _t } from "@web/core/l10n/translation";
 
 import { Component } from "@odoo/owl";
 import { imageUrl } from "@web/core/utils/urls";
@@ -19,10 +20,13 @@ export class UserMenu extends Component {
 
     setup() {
         this.userName = user.name;
+        this.userLogin = user.login;
         this.dbName = session.db;
         const { partnerId, writeDate } = user;
         this.source = imageUrl("res.partner", partnerId, "avatar_128", { unique: writeDate });
     }
+
+    get accountLabel() { return this.userName ? _t("Account menu for %s", this.userName) : _t("Account menu"); }
 
     getElements() {
         const sortedItems = userMenuRegistry

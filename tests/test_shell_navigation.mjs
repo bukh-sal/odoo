@@ -11,21 +11,43 @@ async function load(relative, fixture) {
 }
 
 async function shellFixture() {
-    const focused = [], effects = [], refs = {}, ui = {isSmall:true};
+    const focused = [], effects = [], refs = {}, ui = {isSmall:true}, providers=new Map(),dialogs=[];
     const blank = class {};
     const module = await load('../framework_addons/web/static/src/webclient/shell/shell.js', {
         Icon: blank, useSubEnv: () => {}, useContextPreference: () => ({collapsed:false,toggle(){}}),
+        useRailPreferences: apps => ({get apps(){return apps();},pins:null,save:()=>true}),
+        railAppId: app => 'menu:'+app.id, contextTone: tone => ['amber','green','blue','violet','slate'].includes(tone)?tone:'neutral',
+        RailCustomization: blank, WorkspaceHelp: blank,
         Component: blank, Dialog: class {static props = {};}, Dropdown: blank, DropdownItem: blank,
         xml: strings => strings.join(''), window: {}, document: {activeElement:null},
         ErrorHandler: blank, UserMenu: blank, PageHeader: blank, StatusMessage: blank, ContextNav: blank,
         useEffect: fn => effects.push(fn), useExternalListener: () => {}, useBus: () => {},
         useState: value => value, useRef: name => refs[name] = {el: {focus: () => focused.push(name), contains:()=>false}},
-        useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:()=>{}},ui})[name],
-        registry:{category:()=>({contains:()=>false})}, browser:{location:{search:'?workspace=scoped-workspace'}}, user:{}, _t:value=>value,
+        useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:(...args)=>dialogs.push(args)},ui})[name],
+        registry:{category:name=>name==='context_navigation'?{contains:key=>providers.has(key),get:key=>providers.get(key)}:{contains:()=>false}}, browser:{location:{search:'?workspace=scoped-workspace'}}, user:{}, _t:value=>value,
     });
     const shell = new module.Shell(); shell.env = {bus:{},isSmall:true}; shell.setup();
-    return {shell, ui, focused, effects, refs};
+    return {shell, ui, focused, effects, refs,providers,dialogs,Component:blank};
 }
+
+test('optional context selects only current accessible app, supplies normal menu context and bounds its tone',async()=>{
+    const f=await shellFixture();const app={id:1,pluginID:'example.owner',name:'Directory',actionID:10};
+    class OwnerContext extends f.Component {}
+    f.providers.set(app.pluginID,{Component:OwnerContext,tone:'amber'});
+    let available=[app];f.shell.menu={getApps:()=>available,getCurrentApp:()=>app,getMenuAsTree:()=>({childrenTree:[]})};
+    f.shell.action={};assert.equal(f.shell.contextProvider.Component,OwnerContext);assert.equal(f.shell.contextProvider.tone,'amber');
+    const props=f.shell.contextProviderProps;assert.equal(props.contextTitle,'Directory');assert.equal(props.groups[0].items[0].menu,app);assert.equal(props.workspaceId,'scoped-workspace');
+    f.providers.set(app.pluginID,{Component:()=>{},tone:'url(evil)'});assert.deepEqual(f.shell.contextProvider,{Component:null,tone:'neutral'});
+    available=[];assert.equal(f.shell.current,undefined);assert.deepEqual(f.shell.contextProvider,{Component:null,tone:'neutral'});
+});
+
+test('sidebar customization uses fresh available IDs and cannot save after access becomes unavailable',async()=>{
+    const f=await shellFixture();let available=[{id:1},{id:2}],saved=[];
+    f.shell.menu={getApps:()=>available,unavailable:false};f.shell.railPreference={pins:null,save:pins=>{saved.push(pins);return true;}};
+    assert.equal(f.shell.openRailSettings(),true);const props=f.dialogs[0][1];
+    available=[{id:2}];assert.equal(props.onSave(['menu:1','menu:2']),true);assert.deepEqual(saved,[['menu:2']]);
+    f.shell.menu.unavailable=true;assert.equal(props.onSave([]),false);assert.equal(f.shell.openRailSettings(),false);assert.equal(saved.length,1);assert.equal(f.dialogs.length,1);
+});
 
 test('native context opening moves focus into its mounted navigation', async () => {
     const f = await shellFixture();

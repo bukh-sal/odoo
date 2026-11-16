@@ -19,6 +19,7 @@
               <span t-if="state.isLoading" role="status" aria-label="Loading..."><Icon name="'loader-circle'" className="'mp-icon-loading'"/></span>
               <Icon t-else="" name="'search'"/>
           </div>
+          <button type="button" class="mp-palette-close" aria-label="Close command palette" t-on-click="props.closeMe"><Icon name="'x'" size="16"/></button>
         </div>
 
         <div t-ref="listbox" t-att-id="listboxId" role="listbox" class="o_command_palette_listbox position-relative overflow-auto">

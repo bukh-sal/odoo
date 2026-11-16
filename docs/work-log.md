@@ -1,3 +1,23 @@
+## Meridian phase2 core surface composition - 16 November2026
+
+Completed the source47 core slice: scoped local rail preferences and accessible
+editor, account identity/help, optional trusted context provider with normal-menu
+fallback, declared native page icons/tones, native create/meta/header slots and
+top-level collection footer outside its renderer. Neutral/card/overlay roles
+and palette/menu/dialog/toast presentation use the measured Meridian vocabulary.
+128affected Node cases/29Python cases pass,26pinned Owl templates compile, and
+seven mounted fake-DOM scenarios prove preferences/help/fallback/native slot
+forwarding. Freeze122/11 and diff check pass. Two private witness dependencies
+(uniqueId/realm) corrected; no production guard relaxation. No Docker operation,
+business mutation, build or installed47acceptance in this slice.
+
+Source47 remains unbuilt; Partners11 stays exact for the first maintenance image.
+Phase2rough25%, milestones1/5; installed46/empty45/protected demos unchanged.
+Meridian remains open/deliverable per user for continuous comparison. Next build
+the frozen core47, then qualify normal maintenance and separately adopt private12.
+Evidence `.local/meridian-phase2-composition047-01/`; no source proof is substituted
+for final installed visuals/workflows, contrast, scrolling or lifecycle evidence.
+
 ## Meridian phase2 first shared-source checkpoint - 16 November2026
 
 Implemented shared ContextNav groups/icons/current/count/disclosure/footer with

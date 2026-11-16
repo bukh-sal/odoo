@@ -6,9 +6,10 @@
         <t t-if="toolbarTarget" t-portal="toolbarTarget"><t t-call="web.interface.AppContextToggle"/></t>
         <t t-else=""><t t-call="web.interface.AppContextToggle"/></t>
       </t>
-      <aside t-if="props.showContext" t-att-id="contextId" class="mp-app-sidebar" t-ref="context" tabindex="-1"
+      <aside t-if="props.showContext" t-att-id="contextId" class="mp-app-sidebar" t-ref="context" tabindex="-1" t-att-data-tone="tone"
              t-att-aria-labelledby="contextId + '-heading'" t-att-inert="contextCollapsed ? '' : undefined" t-on-keydown="onContextKeydown" t-on-click="onContextSelection">
         <header class="mp-context-header">
+          <Icon t-if="props.contextIcon" name="props.contextIcon" size="16"/>
           <h2 class="mp-app-context-title" t-att-id="contextId + '-heading'" t-esc="props.contextTitle"/>
           <t t-if="!contextCollapsed and !ui.isSmall"><t t-call="web.interface.AppContextToggle"/></t>
         </header>

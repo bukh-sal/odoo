@@ -76,7 +76,9 @@ class SharedIconAssetClosure(unittest.TestCase):
         backend = native_asset_paths('web.assets_backend')
         frontend = native_asset_paths('web.assets_frontend_lazy')
         for name in ['badge.js', 'badge.xml', 'context_nav.js', 'context_nav.xml',
-                     'record_layout.js', 'record_layout.xml', 'patterns.css']:
+                     'record_layout.js', 'record_layout.xml', 'patterns.css',
+                     'rail_preferences.js', 'rail_customization.js', 'rail_customization.xml',
+                     'workspace_help.js', 'workspace_help.xml']:
             path = 'web/static/src/interface/' + name
             self.assertEqual(backend.count(path), 1)
             self.assertNotIn(path, frontend)

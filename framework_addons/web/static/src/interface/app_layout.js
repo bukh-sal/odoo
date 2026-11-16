@@ -4,6 +4,7 @@ import { uniqueId } from "@web/core/utils/functions";
 import { useService } from "@web/core/utils/hooks";
 import { Icon } from "@web/interface/icon";
 import { useContextPreference } from "@web/interface/context_preference";
+import { contextTone } from "@web/interface/context_nav";
 
 /** Context presentation only. Slots keep the owning app's state and components mounted. */
 export class AppLayout extends Component {
@@ -12,6 +13,8 @@ export class AppLayout extends Component {
     static props = {
         contextTitle: String,
         contextKey: { type: String, optional: true },
+        contextIcon: { type: String, optional: true },
+        tone: { type: String, optional: true },
         contentLabel: { type: String, optional: true },
         showContext: { type: Boolean, optional: true },
         className: { type: String, optional: true },
@@ -46,6 +49,7 @@ export class AppLayout extends Component {
     }
 
     get contentLabel() { return this.props.contentLabel || _t("Work area"); }
+    get tone() { return contextTone(this.props.tone); }
     get toolbarTarget() { return this.env.inDialog ? null : this.env.interfaceContextTarget; }
     get contextCollapsed() { return !this.ui.isSmall && this.contextPreference.collapsed; }
     get contextExpanded() { return this.ui.isSmall ? this.state.contextOpen : !this.contextPreference.collapsed; }

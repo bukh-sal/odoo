@@ -57,6 +57,23 @@ class NavigationProjection(unittest.TestCase):
         self.menus = {str(key): value for key, value in self.menus.items()}
         self.assertEqual(self.project()[2]["children"], [])
 
+    def test_context_icons_come_from_allowed_declared_pages_without_mutating_source(self):
+        self.manifest['ui']['pages'].append(dict(id='people', kind='native_view', permission='work.read', action_ref='owned.people'))
+        self.manifest['ui']['navigation'] = [dict(page='home', icon='building-2'), dict(page='people', icon='users')]
+        before = copy.deepcopy((self.menus, self.manifest))
+        projected = self.project()
+        self.assertEqual(projected[1]['contextIcon'], 'building-2')
+        self.assertEqual(projected[2]['contextIcon'], 'users')
+        self.assertEqual((self.menus, self.manifest), before)
+
+    def test_unknown_and_unpermitted_page_icons_cannot_expand_native_scope(self):
+        self.manifest['ui']['pages'].append(dict(id='people', kind='native_view', permission='work.admin', action_ref='owned.people'))
+        self.manifest['ui']['navigation'] = [dict(page='people', icon='users'), dict(page='missing', icon='shield')]
+        projected = self.project()
+        self.assertNotIn('contextIcon', projected[1])
+        self.assertEqual(projected[1]['children'], [])
+        self.assertNotIn(3, projected)
+
 
 if __name__ == "__main__":
     unittest.main()

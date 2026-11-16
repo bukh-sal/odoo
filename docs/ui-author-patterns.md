@@ -50,6 +50,49 @@ when a slot exists and `showAside` is true, then stacks it at smaller widths.
 Keep Edit/Save/validation in the ordinary native controller or the app's real
 revision-checked owner; these components never persist data or infer authority.
 
+Source47 also exposes an optional native context composition in the existing
+trusted UI registry:
+
+```js
+registry.category("context_navigation").add("my.plugin", {
+    Component: MyContext,
+    tone: "blue",
+});
+```
+
+The component receives `groups`, `contextTitle`, `onNavigate`, `revision` and
+`workspaceId`. Reuse ContextNav and delegate menu selection to `onNavigate`;
+query domain counts through ordinary scoped services, cancel/ignore stale
+responses and clear denied data. Selection follows the current accessible app,
+not an arbitrary browser key. A rendering/lifecycle failure falls back to the
+normal authorized menu groups. The tone is optional presentation metadata from
+`neutral`, `amber`, `green`, `blue`, `violet`, `slate`; unknown values fall back
+to neutral. AppLayout accepts the same `tone` and an optional `contextIcon`.
+Neither registry registration nor a tone confers server access.
+
+Native list/form controllers have an overridable `createLabel` getter (default
+New). List controllers may supply `collectionMeta` from truthful current data;
+an unknown or limited count must not become an exact total. Existing query,
+selection, grouping and paging remain native. The top-level list footer sits
+outside the scrolling renderer; embedded/group pagination retains its own
+native owner.
+
+An existing readonly native record can opt into the shared header by returning
+`{title, initials?, subtitle?, state?: {label, variant?}, meta?}` from its
+FormController `recordHeading` getter. FormView forwards that content through
+the existing Layout/ControlPanel slot beside the ordinary native controls.
+Edit, New and dialogs retain their normal form layout. A title descriptor is a
+convenience, not a restriction on author-owned templates or a second save path.
+
+The shared rail editor stores only local presentation IDs/order per origin,
+account, database and workspace. Default order and an explicitly empty rail
+differ; All apps remains reachable. Revoked/unavailable app IDs are filtered
+through the current menu. Failed browser storage retains the editor's choices
+and reports failure; it cannot grant access. Help contains the keyboard hints
+and links to real command/sidebar actions. New neutral card, overlay/elevation
+and bounded tone tokens have both theme values; installed contrast/geometry
+and independent-app adoption are still pending for47.
+
 Source41 also bridges Bootstrap's link RGB consumers and themed native-select
 indicator. Taskfiles0.1.7 demonstrates adopting shared semantic colours without
 changing layout, JavaScript, services or its justified component minimum.
@@ -60,7 +103,7 @@ apps. Apps own data, services, authority, routes and drafts. The earlier five-ap
 cohort is core0.2.41; [qualified combinations](ui-qualified-combinations.md) and the
 [acceptance matrix](ui-delivery-acceptance.md) separate actual interaction proof,
 unchanged-source applicability and the completed final041 canonical run.
-The current Meridian work has a separate core44/Partners11 review site.
+The current Meridian work has a separate core46/Partners11 review site.
 Its installed and pending refinements are tracked in the
 [phase1 plan](meridian-phase1-plan.md).
 

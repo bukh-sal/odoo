@@ -13,6 +13,14 @@ def native_menus(menus, installations, capabilities, resolve_action):
                  and (page["permission"] in allowed or plugin + ":" + page["permission"] in allowed)]
         actions = {resolve_action(page["action_ref"]) for page in pages}
         actions.discard(None)
+        native_pages = {page['id']: page for page in pages}
+        action_icons = {}
+        for entry in ui['navigation']:
+            page = native_pages.get(entry.get('page'))
+            if page and isinstance(entry.get('icon'), str):
+                action = resolve_action(page['action_ref'])
+                if action in actions:
+                    action_icons.setdefault(action, entry['icon'])
         addon = manifest["runtime"].get("addon_name")
         if not addon or not actions:
             continue
@@ -31,6 +39,8 @@ def native_menus(menus, installations, capabilities, resolve_action):
                 seen.add(ident)
                 result[ident] = deepcopy(row)
                 result[ident]["children"] = []
+                if row['actionID'] in action_icons:
+                    result[ident]['contextIcon'] = action_icons[row['actionID']]
                 for child in row["children"]:
                     if child in seen:
                         continue

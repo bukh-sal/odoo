@@ -157,6 +157,11 @@ This module provides the core of the Odoo Web Client.
             'web/static/src/interface/record_layout.js',
             'web/static/src/interface/record_layout.xml',
             'web/static/src/interface/patterns.css',
+            'web/static/src/interface/rail_preferences.js',
+            'web/static/src/interface/rail_customization.js',
+            'web/static/src/interface/rail_customization.xml',
+            'web/static/src/interface/workspace_help.js',
+            'web/static/src/interface/workspace_help.xml',
         ],
         'web.assets_backend_lazy': [
             ('include', 'web._assets_helpers'),

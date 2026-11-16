@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
   <t t-name="web.DefaultFooter" owl="1">
-    <span>
-      <span class="fw-bolder text-primary">TIP</span> — search for
-      <t t-foreach="elements" t-as="element" t-key="element.namespace">
-          <t t-if="!(element_first || element_last)">, </t>
-          <t t-if="element_last and !element_first"> and </t>
-          <span class="o_namespace btn-link text-primary cursor-pointer" t-on-click="() => this.onClick(element.namespace)">
-              <span t-out="element.namespace" class="fw-bolder text-primary"/><t t-out="element.name"/>
-          </span>
-      </t>
-    </span>
+    <div class="mp-command-guidance">
+      <span><kbd>↑</kbd><kbd>↓</kbd> choose <kbd>Enter</kbd> open <kbd>Esc</kbd> close</span>
+      <span t-if="elements.length">Search in <button t-foreach="elements" t-as="element" t-key="element.namespace" type="button" class="o_namespace btn btn-link" t-on-click="() => this.onClick(element.namespace)"><bdi t-out="element.name"/></button></span>
+    </div>
   </t>
 
   <t t-name="web.DefaultCommandItem">

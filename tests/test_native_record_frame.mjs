@@ -58,6 +58,22 @@ test('actual form presentation selection preserves caller data and disabled/dial
     }
 });
 
+test('author record heading is readonly-only while ordinary persistence and fallback display stay owned by native form',()=>{
+    const method=formSource.match(/^    get layoutDisplay\(\) \{[^]*?^    }/m)[0];
+    const Controller=new Function('return class {'+method+'}')(),c=new Controller();
+    const heading={title:'A real company',initials:'AC'};
+    c.recordHeading=heading;c.display={controlPanel:{record:true,searchBar:false},searchPanel:false};
+    c.env={inDialog:false};c.model={root:{isNew:false,isInEdition:false}};
+    const before=structuredClone(c.display),display=c.layoutDisplay;
+    assert.equal(display.controlPanel.recordHeading,true);assert.equal(display.controlPanel.recordBodyTitle,true);
+    assert.equal(display.searchPanel,false);assert.deepEqual(c.display,before);assert.equal(c.recordHeading,heading);
+    for(const mode of ['edit','new','dialog','unloaded']) {
+        c.env.inDialog=mode==='dialog';c.model.root=mode==='unloaded'?undefined:{isNew:mode==='new',isInEdition:mode==='edit'};
+        assert.equal(Boolean(c.layoutDisplay.controlPanel.recordHeading),false);assert.deepEqual(c.display,before);
+    }
+    c.display.controlPanel=false;assert.equal(c.layoutDisplay,c.display);
+});
+
 function recordFixture({dirty=false,save=async()=>false}={}) {
     const calls=[],controller=new FormPager();
     controller.model={root:{isNew:false,resId:20,resIds:[10,20,30],isDirty:async()=>dirty,

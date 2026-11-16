@@ -66,6 +66,14 @@ function appearanceItem(env) {
     };
 }
 
+function sidebarItem(env) {
+    return {
+        type: "item", id: "sidebar", description: _t("Customize sidebar"),
+        show: () => typeof env.customizeAppRail === "function",
+        callback: () => env.customizeAppRail?.(), sequence: 46,
+    };
+}
+
 function separator() {
     return {
         type: "separator",
@@ -157,6 +165,7 @@ registry
     .add("shortcuts", shortCutsItem)
     .add("separator", separator)
     .add("appearance", appearanceItem)
+    .add("sidebar", sidebarItem)
     .add("preferences", preferencesItem)
     .add("install_pwa", installPWAItem)
     .add("log_out", logOutItem);

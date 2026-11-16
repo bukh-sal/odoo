@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.WorkspaceHelp">
+    <Dialog title="title" size="'md'">
+      <div class="mp-workspace-help">
+        <section><h2>Find your way</h2><p>Open an app from the sidebar, All apps or the command palette. Use the workspace name in the top bar to switch workspaces or open background jobs.</p></section>
+        <section><h2>Keyboard</h2><dl>
+          <div><dt>Search apps and commands</dt><dd><kbd t-esc="commandKey"/></dd></div>
+          <div><dt>Move between controls</dt><dd><kbd>Tab</kbd> <kbd>Shift Tab</kbd></dd></div>
+          <div><dt>Follow a link or activate a button</dt><dd><kbd>Enter</kbd></dd></div>
+          <div><dt>Close a menu or dialog</dt><dd><kbd>Esc</kbd></dd></div>
+          <div><dt>Move through sidebar items</dt><dd><kbd>↑</kbd> <kbd>↓</kbd> <kbd>Home</kbd> <kbd>End</kbd></dd></div>
+        </dl><p>The command palette shows the actions and shortcuts available in the current view.</p></section>
+        <section><h2>Make room for your work</h2><p>Collapse an app's navigation from its header. Your account menu has appearance and sidebar preferences.</p><button t-if="props.onCustomize" type="button" class="btn btn-secondary" t-on-click="customize">Customize sidebar</button></section>
+      </div>
+      <t t-set-slot="footer"><button type="button" class="btn btn-primary" t-on-click="commands">Open command palette</button><button type="button" class="btn btn-secondary" t-on-click="props.close">Close</button></t>
+    </Dialog>
+  </t>
+</templates>

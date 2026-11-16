@@ -156,11 +156,27 @@ unchanged production guard correctly refused them, and the fixture now tests
 all actual appends plus each missing hash. Two private jsdom realm/layout
 fixture corrections are recorded, not presented as installed behavior.
 
-Phase2 is roughly10% from the first reusable source components and native
-composition. Pins/profile/help, full collection/header/scroll integration,
-native record slots and the private consumer remain. Partners11 stays exact
-until the core47 maintenance image is built. Continue core implementation
-before creating a47candidate; no phase2 exit or wider app adoption is claimed.
+Second coherent source checkpoint adds isolated rail pin/order preferences and
+editor, profile identity/help, trusted optional context composition with normal
+menu fallback, native declared page icons and bounded tone roles. Native list/
+form create labels, collection metadata, readonly record-header slot forwarding
+and a renderer-independent top-level footer share the ordinary controllers.
+Measured neutral surfaces, card roles, dialog/popover/palette/toast presentation
+and a reachable palette close/namespace controls complete the core source slice.
+128affected Node cases and29Python cases pass;26actual Owl templates compile,
+and seven mounted fake-DOM scenarios cover editor/default/empty/refusal/help,
+failed optional context and actual FormView/Layout/ControlPanel slot forwarding.
+Freeze remains122files/11rows. Evidence is
+`.local/meridian-phase2-composition047-01/`; the private witness initially lacked
+uniqueId and assigned a cross-realm object, corrected in its fake boundary.
+This is source proof, not installed contrast, geometry or authority acceptance.
+
+Phase2 is roughly25% from the shared source implementation and focused checks;
+milestones remain1/5. Core47 is unbuilt; Partners11 stays exact until its core47
+maintenance image is built. Next freeze/commit/build core47, normal maintenance,
+then private12 adoption and separate app upgrade. Full installed collection/
+record/create/RTL/zoom/motion checks and the current empty-core counterpart
+remain. No phase2 exit or wider app adoption is claimed.
 
 1. Production-component/hook tests cover key validation, pin isolation/empty
    state/order/revocation/storage failure, native menu pruning, canceled/failed

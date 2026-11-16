@@ -1,4 +1,6 @@
 import { Icon } from "@web/interface/icon";
+import { RecordHeader } from "@web/interface/record_layout";
+import { Badge } from "@web/interface/badge";
 import { _t } from "@web/core/l10n/translation";
 import { hasTouch } from "@web/core/browser/feature_detection";
 import { ConfirmationDialog } from "@web/core/confirmation_dialog/confirmation_dialog";
@@ -125,7 +127,7 @@ export function useFormViewInDialog() {
 
 export class FormController extends Component {
     static template = `web.FormView`;
-    static components = { Icon,
+    static components = { Icon, RecordHeader, Badge,
         FormStatusIndicator,
         Layout,
         ButtonBox,
@@ -795,11 +797,20 @@ export class FormController extends Component {
         }
     }
 
+    /** Optional author-owned presentation; native persistence and leave remain here. */
+    get recordHeading() { return null; }
+    get createLabel() { return _t("New"); }
+
     get layoutDisplay() {
         const panel = this.display.controlPanel;
-        if (!panel?.recordBodyTitle || (!this.env.inDialog && this.model?.root &&
-            !this.model.root.isNew && !this.model.root.isInEdition)) return this.display;
-        return { ...this.display, controlPanel: { ...panel, recordBodyTitle: false } };
+        if (!panel) return this.display;
+        const reading = !this.env.inDialog && this.model?.root &&
+            !this.model.root.isNew && !this.model.root.isInEdition;
+        if (reading && this.recordHeading) {
+            return { ...this.display, controlPanel: { ...panel, recordBodyTitle: true, recordHeading: true } };
+        }
+        if (!panel.recordBodyTitle || reading) return this.display;
+        return { ...this.display, controlPanel: { ...panel, recordBodyTitle: false, recordHeading: false } };
     }
 
     get className() {
@@ -814,7 +825,7 @@ export class FormController extends Component {
             result[this.props.className] = true;
         }
         result["o_field_highlight"] = size < SIZES.SM || hasTouch();
-        if (this.display?.controlPanel?.recordBodyTitle && !this.env.inDialog &&
+        if ((this.display?.controlPanel?.recordBodyTitle || this.recordHeading) && !this.env.inDialog &&
             this.model?.root && !this.model.root.isNew && !this.model.root.isInEdition) {
             result["mp-informational-record"] = true;
         }

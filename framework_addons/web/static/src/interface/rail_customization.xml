@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.RailCustomization">
+    <Dialog title="title" size="'md'">
+      <p class="mp-page-description">Choose which available apps appear in your sidebar and their order. All apps remains available even when nothing is pinned.</p>
+      <ul class="mp-rail-customization" aria-label="Available apps">
+        <li t-foreach="rows" t-as="app" t-key="id(app)">
+          <label><input type="checkbox" t-att-checked="selected(app)" t-att-disabled="state.busy" t-on-change="() => this.toggle(app)"/><Icon name="app.appIcon || 'box'"/><bdi t-esc="app.name"/></label>
+          <div class="mp-rail-order"><button type="button" class="btn btn-light" t-att-disabled="state.busy or !canMove(app, -1)" t-att-aria-label="moveLabel(app, true)" t-on-click="() => this.move(app, -1)"><Icon name="'arrow-up'" size="16"/></button><button type="button" class="btn btn-light" t-att-disabled="state.busy or !canMove(app, 1)" t-att-aria-label="moveLabel(app, false)" t-on-click="() => this.move(app, 1)"><Icon name="'arrow-down'" size="16"/></button></div>
+        </li>
+      </ul>
+      <p t-if="!rows.length" class="mp-page-description">There are no applications available in this workspace.</p>
+      <p t-if="state.error" class="mp-message mp-message--error" role="alert" t-esc="state.error"/>
+      <t t-set-slot="footer">
+        <button type="button" class="btn btn-primary" t-att-disabled="state.busy" t-on-click="save">Save preferences</button>
+        <button type="button" class="btn btn-secondary" t-att-disabled="state.busy" t-on-click="props.close">Cancel</button>
+        <button type="button" class="btn btn-link ms-auto" t-att-disabled="state.busy" t-on-click="reset">Use default order</button>
+      </t>
+    </Dialog>
+  </t>
+</templates>

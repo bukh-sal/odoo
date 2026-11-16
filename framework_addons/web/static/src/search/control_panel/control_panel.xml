@@ -26,6 +26,7 @@
                             <t t-set-slot="breadcrumb-status-indicator"><t t-slot="control-panel-status-indicator"/></t>
                         </Breadcrumbs>
                         <p t-if="display.description" class="mp-page-description" t-esc="display.description"/>
+                        <p t-if="display.collectionMeta" class="mp-page-meta" t-esc="display.collectionMeta"/>
                     </div>
                     <div class="o_control_panel_main_buttons mp-page-actions d-empty-none d-print-none" t-on-keydown="onMainButtonsKeydown">
                         <t t-slot="control-panel-create-button"/>
@@ -45,8 +46,9 @@
                 </div>
             </t>
             <t t-elif="display.record">
-                <header class="mp-native-record-header">
-                    <div t-if="!env.config.noBreadcrumbs" class="mp-native-record-heading"><Breadcrumbs breadcrumbs="breadcrumbs" inline="display.recordBodyTitle and !env.inDialog"/></div>
+                <div t-if="display.recordHeading and !env.config.noBreadcrumbs" class="mp-native-record-crumbs"><Breadcrumbs breadcrumbs="breadcrumbs" inline="true"/></div>
+                <div class="mp-native-record-header" t-att-class="{'has-record-heading': display.recordHeading}">
+                    <div class="mp-native-record-heading"><t t-if="display.recordHeading" t-slot="control-panel-record-heading"/><Breadcrumbs t-elif="!env.config.noBreadcrumbs" breadcrumbs="breadcrumbs" inline="display.recordBodyTitle and !env.inDialog"/></div>
                     <div class="o_control_panel_main_buttons mp-record-actions d-print-none" t-on-keydown="onMainButtonsKeydown">
                         <t t-slot="control-panel-create-button"/>
                         <t t-slot="layout-buttons"/>
@@ -55,7 +57,7 @@
                         <t t-slot="control-panel-status-indicator"/>
                         <t t-if="display.recordBodyTitle and !env.inDialog" t-call="web.ControlPanel.Navigation"/>
                     </div>
-                </header>
+                </div>
                 <div t-if="!display.recordBodyTitle or env.inDialog" class="mp-native-record-toolbar">
                     <div class="o_control_panel_actions d-empty-none"><t t-if="display.layoutActions" t-slot="layout-actions"/><t t-slot="control-panel-selection-actions"/></div>
                     <t t-call="web.ControlPanel.Navigation"/>
