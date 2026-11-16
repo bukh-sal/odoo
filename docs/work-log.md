@@ -3847,3 +3847,63 @@ pending. Metrics cleared, reference39/48 retained, human38 untouched. New
 readonly final057-02 confirms main10/empty9tables and target/source/private
 pins exact. Documentation updater first failed BEFOREwrite on implicitWindows
 encoding, corrected to explicitUTF8; no operation retry. Pages next; goal1/5.
+
+
+## 16November2026: first Pages source and candidate58
+
+Full five-phase Meridian goal remains ACTIVE, milestones1/5. Phase3 is roughly
+a quarter through implementation work; its installed exit acceptance is0.
+Private applications/external/pages now exists, branch codex/pages, local commit
+ac9df6f2e0a758a524d897117b596ddb10ac3118. Initial0.1.0 source owns Page/immutable
+Revision/actor Receipt/Preference/workspace Fence, typed services and bounded
+binary content, independent hierarchy/access and shared-shell Home/library/tree/
+editor/outline/info. It is NOT installed/admitted/accepted. Built-in templates,
+complete tree continuation, collaboration/history UI and related-provider
+integration remain actual implementation work, not delivered claims.
+
+The actual Tiptap3.31.3 plain-JS extensions are locally locked. The439980-byte
+IIFE includes41 selected dependency notices/integrities; ProseMirrorView1.42.9.
+Actual editor commands/roundtrip/security probes, serialized-save/reconciliation,
+actual Owl compilation and fake-native command/storage proofs pass. The actual
+editor JSON producer passes the positive server validator. Useful content above
+64KiB uses the existing binary seam, capped at1MiB per revision. App budgets/
+reasons are explicit; no production capacity or installed-security claim.
+
+This consumer exposed a real core saved-result gap: HTTP could return an old
+service outcome before the record-specific handler check. ADR0096/candidate58
+adds optional private Method.authorize_resource before outcome access/new calls;
+bound native calls use the same hook. Actual Gateway.call source tests prove
+positive replay then current revoke denial before outcome SQL, uncached ordering,
+invalid/missing/false hook refusal, input validation and legacyNone behavior.
+No Pages name/table/role enters this generic API. Compatible core58 is required.
+
+The shared existing Lucide0.468.0 palette gains19 generic writing/library glyphs,
+85total, with original66 geometries/license bytes exact. No React dependency or
+editor in core. SDK/mp_core/web identities0.2.58/19.0.0.2.58/19.0.2.58.0 are source
+candidates, not installed. Source058-02 has42 affected core checks; source058-05
+has11 PagesPython+15Node+12nativeAssetPython+4sharedIconNode passes, freeze122/11
+green. The earlier42 include six unchanged-policy materialization cases before
+palette extension; complete new image audit is still required. No fullhost run.
+Deterministic in-memory archive/real ArtifactValidator preflight is201412bytes,
+sha256:a573d72d2f5f1b2876c56e822fbaba1de7c6d4b68aef659032001680c4afec95.
+It was NOT retained/admitted/deployed. Source058-01 wrong test-module import and
+02 invalid manifest icon atom are preserved, not green runs. Editor development
+found/fixed shared toJSON attribute mutation during duplication. Unsupported
+HTML correctly refuses; inline template handlers were corrected against Owl.
+No image/live operation failed or retried during this source work.
+
+The user-confirmed native200% check is recorded in native200-057-01. CSS622x394,
+protocol live2.2/reference1.1 reflects common hostfactor1.1/exact2x ratio, not a
+false raw2.0 assertion. Record/drawer and both list pages have no document
+horizontal overflow. BUT sticky search covers pager summary/page-size near
+maximum scroll: M2-V200-01 OPEN, no200% acceptance. Deep creation-field keyboard
+probe inconclusive. Empty creation was discarded and default80-row list restored.
+Fresh readonly after200-058-01 confirms main10/empty9 baseline tables/protected
+targets/five older private heads exact. Human38 was unavailable to this browser
+session and untouched. Reference39/48 and owned36/40 retained; user zoom unchanged.
+
+NEXT: commit/build/audit ONE compatible app-free58, then coherent Pages image and
+fresh owned cohort via normal install/review after actual absent/free/name checks.
+Do not rerun terminal57/56 operations. Real populated query/relation/cache,
+concurrent revoke/write, useful handbook and current-policy restore still gate
+acceptance. Keep phase2 defect/visual breadth, phase4 adoption and phase5 final.

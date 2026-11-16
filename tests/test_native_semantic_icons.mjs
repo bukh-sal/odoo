@@ -21,6 +21,18 @@ test('selected native action/account icons use existing reviewed geometry withou
  for(const name of ['ellipsis','printer','server','chevrons-up-down']) assert.ok(geometry[name]?.length,name);
 });
 
+test('shared writing and library controls have declared pinned geometry instead of fallback boxes',async()=>{
+ const provenance=JSON.parse(await read('framework_addons/web/static/lib/lucide/provenance.json'));
+ const {createHash}=await import('node:crypto');
+ assert.equal(createHash('sha256').update(await read('framework_addons/web/static/src/interface/icons/lucide.js')).digest('hex'),provenance.generated_data_sha256);
+ for(const name of ['house','files','layout-template','bold','italic','underline','strikethrough','code','list-ordered',
+  'quote','undo-2','redo-2','grip-vertical','list-tree','type','heading-1','heading-2','heading-3','table']) {
+  assert.ok(geometry[name]?.length,name);assert.match(provenance.selected_module_sha256[name],/^[0-9a-f]{64}$/);
+  for(const node of geometry[name]) {assert.ok(['path','rect','circle','line','polyline','polygon','ellipse'].includes(node.tag));assert.equal(Object.hasOwn(node.attrs,'key'),false);}
+ }
+ assert.equal(provenance.version,'0.468.0');assert.deepEqual(provenance.runtime_dependencies_added,[]);
+});
+
 
 test('legal manifest underscore atoms resolve pinned glyphs without accepting paths or markup',async()=>{
  const raw=await readFile(new URL('../framework_addons/web/static/src/interface/icon.js',import.meta.url),'utf8');

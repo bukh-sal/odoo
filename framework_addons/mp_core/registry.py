@@ -17,6 +17,7 @@ class Method:
     mutation: bool
     action: str
     output_schema: dict
+    authorize_resource: str | None = None
 
 
 SERVICES = {}
@@ -47,6 +48,9 @@ def register(service, version, plugin, methods):
     if key in SERVICES: raise ValueError('Duplicate registered service')
     if any(not method.handler.startswith('_mp_service_') for method in methods.values()):
         raise ValueError('Only private explicitly registered handlers are supported')
+    if any(method.authorize_resource is not None and (not isinstance(method.authorize_resource, str)
+            or not method.authorize_resource.startswith('_mp_authorize_')) for method in methods.values()):
+        raise ValueError('Resource authorizers must be private explicitly registered methods')
     for method in methods.values():
         if isinstance(method.input_schema, dict):
             input_schema_for(method)

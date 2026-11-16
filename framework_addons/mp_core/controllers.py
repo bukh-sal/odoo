@@ -251,6 +251,12 @@ class CoreGateway(http.Controller):
             request.env.cr.execute("SELECT availability FROM mp_workspace_plugin WHERE workspace_id=%s AND plugin_id=%s",[scope.workspace_id,consumer['plugin']['id']])
             available=request.env.cr.fetchone()
             if not available or available[0]!='enabled':raise PublicError('PLUGIN_SUSPENDED')
+            from .dispatch import CallFrame,authorize_resource
+            frame=CallFrame(scope.principal_public_id,scope.workspace_public_id,site_id(),binding['provider_installation_id'],provider['plugin']['id'],((provider['plugin']['id'],service,method),))
+            model=model.with_context(_mp_call_frame=frame)
+            # A model-level guard cannot decide which record the input targets.
+            # Do not disclose a cached response before the app's fresh check.
+            authorize_resource(model,spec,body['input'])
             outcome_id=None
             if spec.mutation and body.get('idempotency_key'):
                 digest=hashlib.sha256(rfc8785.dumps(body['input'])).hexdigest()
@@ -268,13 +274,11 @@ class CoreGateway(http.Controller):
                     old=request.env.cr.fetchone()
                     if not old or tuple(old[:4])!=(digest,binding_id,binding['generation'],body['api_version']) or old[6]<=datetime.utcnow():raise PublicError('CONFLICT',{'outcome':'unknown'})
                     if old[4]!='completed':raise PublicError('CONFLICT',{'outcome':'unknown'})
-                    # Guard re-executed above; no saved result without current auth.
+                    # Model and declared resource guards ran before the lookup.
                     return old[5]
                 outcome_id=inserted[0]
             if (time.monotonic()-started)*1000>=budget:raise PublicError('DEADLINE_EXCEEDED',{'outcome':'not_started'})
-            from .dispatch import CallFrame
-            frame=CallFrame(scope.principal_public_id,scope.workspace_public_id,site_id(),binding['provider_installation_id'],provider['plugin']['id'],((provider['plugin']['id'],service,method),))
-            value=getattr(model.with_context(_mp_call_frame=frame),spec.handler)(body['input'])
+            value=getattr(model,spec.handler)(body['input'])
             if not Draft202012Validator(spec.output_schema,format_checker=FORMAT_CHECKER).is_valid(value):raise PublicError('INTERNAL_ERROR')
             if outcome_id:
                 request.env.cr.execute("UPDATE mp_service_outcome SET state='completed',result=%s::jsonb WHERE id=%s",[json.dumps(value),outcome_id])

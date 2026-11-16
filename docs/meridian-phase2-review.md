@@ -92,3 +92,23 @@ manual visual and remaining consumer-breadth work is pending. This is a scheduli
 phase2 or removal of any final gate. Close matched light/dark/menu/selection/
 error comparisons, current native200% and the final visual critique before
 counting milestone2 or completing the full roadmap.
+
+
+## Native200 observation: M2-V200-01 remains OPEN
+
+The user confirmed live200% with reference100%. Natural CSS622x394 and protocol
+zoom2.2/reference1.1 have a common host factor/exact2x ratio, not raw2.0. No
+emulation. Record/context drawer/focus return and10-row first/second page work
+without document horizontal overflow. Empty creation opened/discarded. Deep
+creation-field keyboard reachability was inconclusive, not passed.
+
+At maximum list scroll, sticky search can cover the pagination summary/page-size
+row. Page buttons remain reachable but the complete footer is not comfortably
+exposed. M2-V200-01 is a real defect, not accepted200% behavior. Original screenshot
+.local/meridian-phase2-native200-057-01/pager-keyboard.jpg and raw metrics/review
+are retained. Correct/recheck in the coherent shared UI batch. Normal reload
+restored default80-row list/no draft/dialog, user native zoom unchanged.
+Fresh after200-058-01 readonly proof confirms18partners21events/all main10 and
+empty9 baseline tables, protected targets/five old private heads exact. Human38
+was outside the current browser session/unavailable and untouched. Reference39/
+48 retained. Phase2 remains unaccepted; this supersedes the pending-zoom notes.

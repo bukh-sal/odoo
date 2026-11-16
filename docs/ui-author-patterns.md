@@ -761,3 +761,13 @@ or service boundaries. This is not a sandbox.
 The source checks and readonly pre-feature observation are recorded in
 `meridian-phase3-progress.md`. Real native query/relation/cached read, concurrent
 revoke/write and recovery qualification with the Pages consumer remain pending.
+
+
+### Shared writing symbols (candidate58)
+
+The existing Lucide0.468.0 palette includes generic writing/library glyphs:
+bold/italic/underline/strike/code, headings1-3, list order, quote/table, undo/redo,
+block grip, outline and library/template/home. Use Icon and declared semantic
+names; manifest atoms use underscores (file_text), mapped to the same geometry.
+85 selected glyphs; original66 remain exact. Provenance hashes and unchanged
+ISC/Feather notices retained; no React/runtime package/app ID/editor in core.

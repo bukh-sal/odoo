@@ -158,3 +158,24 @@ and are not a current public qualification; broader native job features remain
 conditional. Own migration scripts and data changes need declared transitions,
 exact digest review, populated data/permission tests and independently recoverable
 checkpoints.
+
+
+## Current resource authorization before saved-result replay (candidate58)
+
+A model/workspace guard cannot identify the record inside service input. For
+per-record services, register optional Method.authorize_resource as a trusted
+private _mp_authorize_* method name. The guard receives validated input/current
+provider frame before ANY HTTP outcome lookup/insertion and before uncached
+handlers. Bound native calls use the same seam. It raises on denial and returns
+None on success; returning False/other values refuses. Neither browser nor DB
+selects the hook. DefaultNone retains existing workspace-only methods.
+
+The authorizer may take current authorization locks/fences, but must not perform
+business/external effects or commit. Handlers still authorize/lock/CAS the actual
+effect. A create input needs a stable identity from which the app can authorize
+the created resource on replay. Do not compare old expected content revisions
+to decide whether a completed result is replayable. Return small mutation
+receipts and fetch fresh authorized detail instead of caching labels/permission
+controls. Expiring core outcomes do not replace durable app reconciliation.
+Changing transports or pretending a mutation is a read is not this protection.
+ADR0096/source tests describe the correction; installed Pages proof is pending.

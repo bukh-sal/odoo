@@ -10,6 +10,23 @@ from modular_platform.contracts import CONTRACTS, ContractError, FORMAT_CHECKER,
 from .registry import SERVICES, input_schema_for
 
 
+def authorize_resource(model, spec, values):
+    """Current per-record authority, including a completed HTTP outcome replay.
+
+    Trusted source chooses the private hook. Returning a false/other value is a
+    refusal, not an accidentally ignored permission result. Guards raise on
+    denial and return None; they never perform the business effect or commit.
+    """
+    name = getattr(spec, 'authorize_resource', None)
+    if name is None:
+        return
+    if not isinstance(name, str) or not name.startswith('_mp_authorize_'):
+        raise AccessError('Invalid resource authorizer')
+    guard = getattr(model, name, None)
+    if not callable(guard) or guard(values) is not None:
+        raise AccessError('Current resource authority required')
+
+
 @dataclass(frozen=True)
 class CallFrame:
     principal_id: str
@@ -34,6 +51,7 @@ class BoundCall:
         if not Draft202012Validator(schema,format_checker=FORMAT_CHECKER).is_valid(values):
             raise ContractError('Invalid provider input')
         self.model._mp_guard(self.spec.action)
+        authorize_resource(self.model,self.spec,values)
         value=getattr(self.model,self.spec.handler)(values)
         if not Draft202012Validator(self.spec.output_schema,format_checker=FORMAT_CHECKER).is_valid(value):
             raise PublicError('INTERNAL_ERROR')

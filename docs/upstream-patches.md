@@ -439,3 +439,15 @@ private-head/source pins unchanged; empty original9tables exact. Browser40
 reload shows honest no-app home, reference39/48 retained. Populated57/access/
 concurrency/current-revoke restore acceptance requires real Pages next. No
 business write/app admission/restore/cleanup; all old operations remain terminal.
+
+
+## 16November2026 candidate58: resource replay and writing symbols
+
+Owned mp_core registry/dispatch/controllers add opt-in private resource checks
+before saved HTTP outcomes/new handlers and bound calls. Validated input/current
+provider frame, raise-or-None contract, defaultNone for workspace-only services.
+SDK/mp_core identity58. Web58 extends existing pinned Lucide geometry by19 generic
+writing/library symbols/provenance, original66/license bytes exact; no React or
+app/editor domain in core. No global wire/body boundary changed. Source tests
+pass; compatible image/populated installed proof remain required. ADR0096 and
+meridian-phase3-progress.md record exact source/installed evidence boundaries.
