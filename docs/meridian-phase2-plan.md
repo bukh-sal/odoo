@@ -816,6 +816,33 @@ pager recheck. Do not mark full RTL passed or build an intermediate empty55.
 Native200 manual check remains pending; phase2/full goal stays active. Evidence
 .local/meridian-phase2-rtl055-partners014-01 includes originals and finding JSON.
 
+### Range isolation implementation plan (current55/14)
+
+Source76995860c64 is clean, both prior core55/app14 operations terminal. Actual
+Arabic capture shows English fallback collection range reversed because outer
+status inherits RTL. TablePagination.range is already a translated plain string
+for record/group/limited/empty/invalid cases. RecordNavigation.range is likewise
+plain translated prose; compactRange returns either current/total numeric pair
+or the ordinary fallback. Do not change producers, translations or paging math.
+
+Keep both existing outer status spans (classes/role/live/tabindex and compact
+aria-label) and insert escaped bdi children. Collection/record prose uses auto
+first-strong direction. Only a valid, nonempty, in-bounds compact numeric pair
+uses explicit LTR so current/total cannot exchange visual positions; compact
+empty/invalid fallback stays auto. Error paragraphs isolate their owned text
+inside existing alert blocks. No global CSS direction, new API, arrows reversal,
+callback/count/filter/model/grant or native save/leave changes.
+
+Three identities56; exact Partners14 remains unchanged through build/normal
+core maintenance. Existing pager/native callbacks and actual pinned Owl
+consumers prove nonempty/empty/group/limited/invalid/failure text, escaped error,
+compact numeric/fallback direction, live region/focus and update callback. No
+extra full host suite during this bounded change. Installed real Arabic checks
+both page and record counters and current/total meaning; preserve all ten tables,
+locale/profile/theme and protected targets. Build final empty56 only after the
+core correction succeeds, then its normal zero-app upgrade/current shell check.
+No intermediate empty55, no old operation/wizard replay, no app14 rebuild.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

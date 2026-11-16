@@ -388,3 +388,19 @@ mounted composition scenarios/eight compiled forms/CogMenu and freeze122/11 pass
 Actual PageHeader and native control-panel consumer witnesses preserve escaped
 text/count/query/selection callbacks. Installed Arabic ordering remains required;
 compact Partners13 phone defect is a separate pending author-view correction.
+
+
+## Meridian core56: isolate pagination range and failure text
+
+TablePagination and RecordNavigation retain their status live region, tabindex,
+compact aria-label and existing callbacks; owned escaped text is inside bdi.
+Translated prose/fallback uses automatic first-strong direction; a valid compact
+current/total numeric position uses LTR so RTL does not exchange its meaning.
+Error text is isolated within existing alert blocks. No JS producer/count/page/
+request/save/permission change. Three identities56, exact private Partners14.
+Affected44Node/22Python pass;31actual Owl templates compile and mounted actual
+pager consumers cover range/group/limited/empty/invalid/escaped error, compact
+numeric/fallback/live label/focus and callback. Existing native Layout witnesses
+retained.122-file/11-row freeze unchanged. Private expected separator em-dash was
+corrected to producer middle-dot; original harness failure retained, production
+unchanged by that correction. Installed Arabic proof still required.

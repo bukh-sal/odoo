@@ -3768,3 +3768,15 @@ new finding: shared pagination English range visually reorders under RTL; source
 status spans in TablePagination/RecordNavigation need narrow isolation audit.
 No full RTL/phase2 acceptance. Next coherent core correction, then final empty
 counterpart/native200/final critique; full five-phase goal active, milestones1/5.
+
+
+### 16November - shared pagination text correction source56
+
+Fresh plan audits both producers before edits. Existing status and alert blocks
+retain semantics; bdi children isolate range/error prose, valid compact numeric
+pair explicitly LTR. No paging/count/authority/data behavior changed. Identities
+56, private14 unchanged.44Node/22Python/31actual Owl templates and mounted native/
+pager consumers pass, freeze122/11. Private separator expectation failure kept,
+then corrected to source U+00B7 without production change. Source not yet built/
+installed; next normal immutable core56 maintenance then final empty counterpart.
+Full goal active, phase2 still open with native200/final comparison remaining.

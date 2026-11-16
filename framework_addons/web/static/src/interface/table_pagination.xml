@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
   <t t-name="web.interface.TablePagination">
     <nav class="mp-pagination d-print-none" t-ref="pagination" t-att-aria-label="label" t-att-aria-busy="state.busy ? 'true' : 'false'">
-      <span class="mp-pagination-range" role="status" aria-live="polite" tabindex="-1" t-esc="range"/>
+      <span class="mp-pagination-range" role="status" aria-live="polite" tabindex="-1"><bdi t-esc="range"/></span>
       <label t-if="showPageSize" class="mp-pagination-size">Rows per page
         <select class="form-select form-select-sm" aria-label="Rows per page" t-att-disabled="state.busy" t-on-change="changePageSize">
           <option t-foreach="pageSizes" t-as="size" t-key="size" t-att-value="size" t-att-selected="size === props.limit" t-esc="size"/>
@@ -17,7 +17,7 @@
         <button type="button" class="mp-page-button mp-page-next" t-att-disabled="state.busy or !canNext" t-att-data-hotkey="props.withAccessKey ? 'n' : undefined" t-on-click="() => this.go(current + 1)"><span>Next</span><Icon name="'chevron-right'" directional="true"/></button>
       </div>
       <button t-if="limited" type="button" class="mp-page-button" t-att-disabled="state.busy" t-on-click="count">Count results</button>
-      <p t-if="state.error" class="mp-pagination-error" role="alert" t-esc="state.error"/>
+      <p t-if="state.error" class="mp-pagination-error" role="alert"><bdi t-esc="state.error"/></p>
     </nav>
   </t>
 </templates>

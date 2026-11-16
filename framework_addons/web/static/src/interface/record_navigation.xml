@@ -2,12 +2,12 @@
 <templates xml:space="preserve">
   <t t-name="web.interface.RecordNavigation">
     <nav class="mp-record-navigation d-print-none" t-ref="pagination" t-att-aria-label="label" t-att-aria-busy="state.busy ? 'true' : 'false'">
-      <span class="mp-record-position mp-pagination-range" role="status" aria-live="polite" tabindex="-1" t-att-aria-label="props.compact ? range : undefined" t-esc="props.compact ? compactRange : range"/>
+      <span class="mp-record-position mp-pagination-range" role="status" aria-live="polite" tabindex="-1" t-att-aria-label="props.compact ? range : undefined"><bdi t-att-dir="props.compact and valid and props.total and props.offset &lt; props.total ? 'ltr' : 'auto'" t-esc="props.compact ? compactRange : range"/></span>
       <div t-if="showControls" class="mp-record-step-buttons">
         <button type="button" class="mp-page-button" aria-label="Previous record" title="Previous record" t-att-disabled="state.busy or !canPrevious" t-att-data-hotkey="props.withAccessKey ? 'p' : undefined" t-on-click="() => this.go(previousPage)"><Icon name="'chevron-left'" directional="true"/></button>
         <button type="button" class="mp-page-button" aria-label="Next record" title="Next record" t-att-disabled="state.busy or !canNext" t-att-data-hotkey="props.withAccessKey ? 'n' : undefined" t-on-click="() => this.go(current + 1)"><Icon name="'chevron-right'" directional="true"/></button>
       </div>
-      <p t-if="state.error" class="mp-pagination-error" role="alert" t-esc="state.error"/>
+      <p t-if="state.error" class="mp-pagination-error" role="alert"><bdi t-esc="state.error"/></p>
     </nav>
   </t>
 </templates>
