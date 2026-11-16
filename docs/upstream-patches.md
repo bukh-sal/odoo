@@ -338,3 +338,11 @@ composition/eight actual compiled-form scenarios and actual CogMenu/Icon mounted
 branches pass; freeze122files/11rows. The first helper test caught preprocessing's
 normal empty domain and was corrected before packaging. Source proof only until
 the successor is built, installed normally and reviewed against Meridian.
+
+Installed53/config14 through normal85328ff0/hash1c7083fd; actual plain related
+link restores Acme and its1/16 pager, Back returns the contact, menu labels have
+decorative SVG/zero font nodes. Seven tables/protected14/private5/source4051 exact.
+Existing modified-anchor href omits workspace and safely opens Choose workspace;
+this remains a phase2 UX gap. Fast empty-draft leave observation is unproven,
+not a passed installed guard check; no business save/data change. Evidence is
+.local/meridian-phase2-browser053-01. Full phase2 acceptance remains open.

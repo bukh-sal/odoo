@@ -467,6 +467,40 @@ intentional fallback rather than silently reusing an incompatible reader.
 The remaining phase2 creation/security/RTL/zoom/motion/current-empty checklist
 and phases3-5 remain required. Source tests alone do not accept this batch.
 
+### Core53 installed result and next findings
+
+Source9e0048a4c39 built once in28.860s as7a3310a3,14layers/3767project files,
+4051source inputs; exact Partners13/f416 archive unchanged. The eight expected
+curated source deltas match the reviewed batch. Normal reviewed core maintenance
+85328ff0/hash1c7083fd completed once in179.000s/config14; actual native changes
+are core52->53 and web52->53, no migrations/declaration/permission/trust changes.
+All seven captured tables remain exact after rollout and browser section:
+16partners/18pending events/jobs0;14protected targets/five private heads exact.
+Evidence: `.local/meridian-phase2-source053-01/`, build053-01, rollout053-01 and
+browser053-01. Previous operations and their receipts remain terminal/retained.
+
+Actual fresh Directory->Acme->contact16->Organization returns to the existing
+Acme with one breadcrumb level and original1/16 pager. Native browser Back
+returns to contact16. Actual CogMenu has exact Duplicate/Archive accessible
+labels, one decorative pinned SVG each and zero font i nodes. No new console
+errors. Reference/live1440x900 light pairs retained; temporary metrics cleared
+and reference39 remains open continuously. This accepts the bounded plain-link/
+menu result, not the complete phase or every action/context/view combination.
+
+Two observations remain explicitly open. Ctrl-click of the readonly many2one
+anchor leaves the original contact open but its hardcoded /odoo/model/id href
+omits the pinned workspace; the new tab safely shows Choose workspace instead
+of the organization. Existing behavior is preserved, not desirable final UX.
+The immediate fill-empty-Name->breadcrumb attempt lacked an intervening settled
+draft observation and opened the parent; do not claim installed leave refusal.
+No successful save occurred and all data is exact. Preserve its draft intent/
+unproven receipt. Next one coherent navigation/creation batch must inspect the
+existing router locked-key/URL and custom-click seams and then test settled
+pending-input/invalid-leave behavior through the real form owner. No guessed
+workspace strings, new scope authority, arbitrary browser delays or leave-guard
+waivers. Complete sheet/page/conflict/viewer/RTL/actual200%/motion/current-empty
+gates afterwards. Phase2 rough70% remains unaccepted; milestones1/5, Pages next.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

@@ -3612,3 +3612,24 @@ accepts that standard shape while nonempty domains/custom semantics refuse
 reuse. No installed53 claim. Next: exact Partners13 core build/audit, fresh normal
 config13 maintenance and installed menu/parent/history/leave comparison. Full
 five-phase goal active, phase2 not accepted; no native operation replay.
+
+## Meridian phase2 core53 installed comparison - 16 November2026
+
+ONE28.860s clean build7a3310a3/14layers3767files/4051inputs, exact Partners13.
+Normal reviewed85328ff0/hash1c7083fd completed179.000s/config14. Real fresh
+organization/contact/organization returns to the parent with its1/16 pager;
+Back returns the contact. Duplicate/Archive labels contain no font glyphs,
+both have decorative pinned SVG. No new console errors. All7tables remain exact
+16partners/18outbox/jobs0;14protected targets/fiveprivate heads/source4051 exact.
+No successful business write or menu mutation. Reference39 kept open/visible,
+1440x900 pairs retained, temporary metrics cleared, human38/empty40 preserved.
+
+Actual Ctrl-click exposes pre-existing readonly href without workspace: new
+owned42 safely shows Choose workspace, original contact stays;42 closed exactly.
+Keep this UX finding open. An immediate empty Name->breadcrumb test lacked a
+settled observation and navigated; invalid-draft refusal remains unproven, not
+passed. Its intent/finding retained and all data exact. Next source-backed
+navigation/creation batch must address scoped links and inspect settled native
+pending-input/leave. No blind replay of native operations or fixture writes.
+Full goal active, phase2 roughly70%/not accepted, milestones1/5; Pages/adoption/
+final qualification remain. Evidence .local/meridian-phase2-browser053-01.
