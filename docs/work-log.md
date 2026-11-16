@@ -3652,3 +3652,35 @@ No new fullhost/installed54 claim. Next one build with exact13 archive then
 normal config14 maintenance and real scoped modified-link/settled invalid-leave
 verification. Full goal active; remaining phase2 creation/security/zoom/current-
 empty gates still required; no prior native op or business fixture replay.
+
+## Meridian phase2 core54 installed creation/conflict/viewer - 16 November2026
+
+ONE38.796s clean buildc3c09486/14layers3767files4051inputs/exact Partners13;
+normal06522669/hash3d2dd1b3 completed179.313s/config15, all7tables exact across
+maintenance. Native Ctrl-click preserves workspace and opens Acme; observed
+required-empty Name blocks parent leave/focus/aria-invalid, then Discard restores
+saved reader with no data change. Standalone model URL still omits app context
+sidebar; retained as a composition finding, not reference-equivalent UX.
+
+Exclusive creation054 intent: sheet creates organization17 (9f25d3a3...) after
+Close->Keep editing retains inputs; full-page creates linked person18 (3d2b321a...).
+ONE normal person notes update reaches revision2. Pristine second editor loaded
+before winner then attempts one stale save: native changed-state message, draft
+retained, no extra event/write. Discard is local-snapshot revert; explicit reopen
+shows winner. Selector Done became Save changes; zero-match attempt had no click,
+observed current Save invoked once, one update independently verified. No retry.
+
+Current18partners/21events/jobs0. Original16rows/18events and other5tables exact;
+three added minimal events bind actor/workspace/current release and sequences.
+Final read-only check after normal Alice/B viewer and restored operator/A equals
+post-conflict snapshot;14protected targets/fiveheads/source4051 exact. Viewer
+has zero records/no create and known A link in B shows Page unavailable without
+foreign name. Protected human38 not reloaded; owned43/44/45 closed. Reference39
+open continuously; prototype create inspected without saving. No viewport override,
+no native200 claim; manual setting requested, independent work remains available.
+
+Full goal active, roughphase2 80%, milestone1/5. Next current empty-core counterpart
+and remaining RTL/theme/motion/zoom/availability/fidelity decisions, then fresh
+Pages plan at phase3 activation. Native operation06522669 and creation054 phases
+are terminal/exclusive. Never replay, no cleanup/prune/publication. Evidence
+.local/meridian-phase2-browser054-01 and creation054-01; runtime0db4b7dcc58.

@@ -666,3 +666,14 @@ as a pristine draft. Creation surfaces keep preventAutoSave and their own
 discard decision, save uncertainty and single-submit semantics. Do not add
 arbitrary UI delays or save-on-navigation code in each app to compensate for
 pending input; use the native owner and its validation/error handling.
+
+The installed54 example proves an organization sheet, full-page person creation,
+required-field leave refusal and a two-editor CAS conflict. Keep refused edits
+inspectable. Native Discard returns to the last loaded local snapshot; an explicit
+reopen reads the latest saved version. Do not label Discard as Reload latest or
+automatically retry stale writes. A richer app editor can offer explicit latest-
+revision review through its own durable revision workflow, retaining the same
+save/authorization/conflict rules. Creation presentation does not change these
+transaction semantics. A bare model deep link currently renders a standalone
+native form without an application context sidebar; it still has the app rail
+and scoped normal reads. Do not claim it preserves an originating app layout.

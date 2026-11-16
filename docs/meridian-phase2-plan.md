@@ -542,6 +542,61 @@ draft, then explicit Cancel restores without data/event mutation. Complete
 remaining sheet/page/conflict/viewer/responsive/current-empty gates afterwards;
 phase2 remains open until the full exit checklist is proved.
 
+### Core54 installed creation, conflict and viewer results
+
+Source0db4b7dcc58 built once38.796s/imagec3c09486,14layers/3767files,4051inputs;
+only the eight reviewed source paths differ from53, exact Partners13/f416.
+Normal reviewed06522669/hash3d2dd1b3 completed179.313s/config15. Seven captured
+tables match before/after maintenance. Real Ctrl-click now opens Acme in A and
+leaves the original contact unchanged. The bare standalone model route has no
+application context sidebar; retain this navigation-composition finding rather
+than claiming every deep link is reference-equivalent. Breadcrumb hrefs retain
+the same locked scope. New temporary43 was closed exactly.
+
+Observed required-empty contact16 draft blocks parent navigation, shows Check
+fields, aria-invalid=true and focuses Name. Explicit Discard restores its saved
+reader; no data/event effect. This is the installed successor proof for the
+earlier unproven53 attempt. No settled parse-invalid installed test is claimed;
+the actual input-hook/model/source refusal tests retain their narrower scope.
+Read-only after-browser54 confirms all7tables/16contacts18events/jobs0 exact.
+
+The exclusive creation054 workflow intent then authorizes exactly two native
+creates and one update on only the new person. Organization sheet creates
+Meridian Workshop/raw17/public9f25d3a3... revision1, after Close->Keep editing
+retains all three inputs. Full-page create makes Meridian Page Contact/raw18/
+public3d2b321a... revision1 with real organization selection/email/phone/notes.
+Normal single notes edit saves revision2. A second native editor loaded before
+the winner remains pristine until that commit, then its one stale save is
+refused with the native changed-state message and preserves its unsaved text.
+No stale write/event occurs. Discard restores the last loaded local snapshot;
+the message directs discard/reopen, and an explicit clean reopen shows the
+winning notes. Keep this distinction clear: Discard is not a latest-state read.
+No automatic merge/refresh or universal live-record freshness is claimed.
+
+Current18partners/21pending events/jobs0. Original16 rows/original18 events are
+exact; new events are created(org17/seq1), created(person18/seq1), updated(person18/
+seq2), exact operator/workspace/current release. Current org17 rev1 and person18
+rev2; all five other captured tables exact. Final read-only check after viewer
+roundtrip matches the complete post-conflict snapshot.14protected targets/five
+private heads/4051inputs exact. No prior native or fixture phase replay.
+
+Existing Alice/B viewer has zero records/counts and no create action. Opening
+the known A contact through B gives Page unavailable, with no foreign name or
+organization shown. Normal operator/A sign-in restored; user38 was not reloaded.
+Temporary concurrent/viewer tabs44/45 closed, reference39 continuously open.
+Normal login chooser/session bookkeeping is outside the seven-table equality
+claim. Prototype create was inspected without saving or changing its fixtures.
+
+Evidence: `.local/meridian-phase2-source054-01/`, build054-01, rollout054-01,
+browser054-01 and creation054-01. First attempted pristine-label Done lookup
+found no node after the form became dirty; observed Save changes was invoked
+once, with one verified winning update. No save retry. Natural viewports kept;
+the current-origin native200% check is pending the requested manual setting.
+Rough phase2 implementation/workflow80%; milestone1/5, phase2 still unaccepted.
+Next finish current empty-core counterpart, remaining RTL/motion/theme/zoom and
+navigation/provider-availability comparisons; settle material fidelity findings
+before phase3's fresh Pages implementation plan. Do not rerun terminal scripts.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

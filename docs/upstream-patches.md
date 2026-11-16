@@ -365,3 +365,13 @@ forms/actual CogMenu branches and freeze122/11 pass. Actual input hook, useBus,
 record isDirty and model _askChanges execute together with explicit update/save
 boundaries. This source proof is distinct from installed form/modified-link
 qualification; current populated image remains53 until normal maintenance.
+
+Installed54 via06522669/hash3d2dd1b3/config15. Actual required-empty input refuses
+parent leave with focus/aria-invalid, and scoped Ctrl-click opens the destination.
+Native sheet/full-page creates, one CAS-winning edit and one stale refusal are
+verified with original16 rows/18events and authority unchanged; current18/21.
+Alice/B viewer has no create and foreign A read is denied, operator/A restored.
+Actual Discard retains its local snapshot until explicit reopen, not latest-read
+semantics. Bare model deep link has no context sidebar, a retained composition
+finding. Current native200%/empty-core/remaining phase2 gates are not accepted.
+Evidence .local/meridian-phase2-browser054-01 and creation054-01.
