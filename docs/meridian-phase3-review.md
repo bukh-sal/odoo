@@ -84,3 +84,22 @@ Source plan is activated by this installed finding; keep current CAS/receipt/
 permission guards. Combine with M3-H014 action-density correction in the next
 coherent authoring source slice, then actual conflict recovery/new save proof.
 Current counts supersede earlier62/72 checkpoint; full goal remains ACTIVE1/5.
+
+
+### Pages015 conflict correction source ready
+
+Private56bf0e0121403c3f4dec4f08776fd1e8e39a01fe/0.1.5 preserves own canonical JSON on every known conflict
+change notification. Recovery is separate from current server content. Explicit
+Load current saved version requires confirmation, retains the latest local copy,
+and only fetches the winner; no save/rebase/new key is issued. Unknown outcomes
+and release-token conflicts do not offer that route. Known failed CAS Leave
+wording is accurate. Busy command/reconciliation prevents new metadata actions.
+Saved header now shows quiet Saved status, omits redundant disabled Save, and uses
+an accessible icon panel control. No core/model/schema/dependency/editor change.
+41Node pass including actual controller confirmation/no-resend/unknown refusal
+and installed Owl templates;25Python prior model evidence carried unchanged, not
+rerun. Logs pages015-source-01/node.txt. NEXT deterministic archive, one immutable
+image/audit and normal upgrade preserving3pages63heads73receipts/2comments/current
+authority, then actual conflict recovery/current winner and deep1280 header.
+Current site remains014/config7; no live source injection or old operation replay.
+Full roadmap ACTIVE1/5; remaining integration/import/restore/lifecycle and2/4/5 intact.
