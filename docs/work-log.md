@@ -3571,3 +3571,14 @@ Selected state stillblue/unlabeled/hidesquery/mobilefloatshell, so hold built-on
 withdivider.144Node29Python/28Owl+ninecomposition/eightforms/freeze122/11 pass.
 Private fixture raw mutation correction trace retained. Direct50->52 normal
 build/maintenance next, exact12; advisory app13 refresh remains next source.
+
+
+16November installed52/config12 normal0fa663fb completed; all7tablesexact.
+Live neutral237/46selection, query retained, labeledSVGclear,390staticselectedbar/
+shellopacity1/nooverflow, darklinealpha102/.2 proved.51built-only retained. After
+read-only browser7tables/14protected/fiveprivateheads/4049inputs exact. Private13
+source now actual native-save/archive/unarchive advisory scoped refresh;38Node/
+8Python/17Owl/tenmounted cases pass, source archivef4169a9a41308B deterministic,
+unadmitted. Old hidden-query test expectation and processUnicodefailure retained,
+corrected only fake/test/evidence boundaries. Build/admit/normalappupgrade and
+real counter workflow next. Full objective unchanged, phase2rough60%/milestone1.

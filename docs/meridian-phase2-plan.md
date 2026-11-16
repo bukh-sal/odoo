@@ -362,6 +362,33 @@ prove the new composition and clear/domain callbacks. Deliver one normal52
 maintenance from current50, exact Partners12; no51apply or old operation replay.
 Then continue app13 and the remaining installed phase2 checks.
 
+## Installed52 and private13 source checkpoint
+
+Normal0fa663fb core50->52 maintenance completed/config12/imagec30e9e63; seven
+captured tables unchanged. No51operation was proposed/run. Actual selected rows
+are237light/46dark with no table-info class; query stays mounted above a neutral
+selection row. Clear selection invokes ordinary native state, pinned SVG and
+useful label. At390selection position isstatic, shellopacity1, search available
+and no document overflow. Dark native header border now rgba102/102/102/.2.
+All7tables/14protectedtargets/fiveprivateheads/4049inputs exact afterward.
+
+Private13 source follows the fresh plan: tiny app-owned event helper, real
+useBus listener, actual native saved hook and public archive/unarchive wrappers.
+Current-workspace hint has no record/count data; consumer performs original
+fresh authorization/context and bounded native counts. Super results/refusals/
+errors preserved; listener failure cannot convert committed persistence into a
+failure. All model/service/schema/security/backend bytes unchanged. Existing
+minimum API core>=0.2.48 unchanged; no broad combination/support claim.
+38Node8Python cases,17actual Owl templates/ten mounted scenarios pass, including
+actual app saved/archive/unarchive -> real EventBus/useBus -> context/counts
+and unmount detachment. First private test still expected old hidden-query
+behavior; corrected to deliberate52 contract with explicit author-hidden case,
+original failure retained. Python evidence process Unicode printing corrected
+locally, no global interpreter change. Deterministic archive0.1.13/native13
+f4169a9a/41308B author/operator recipes equal, ArtifactValidator accepted only in
+memory; admission/installed proof still pending. Rough phase2 implementation/
+workflow60%, milestones1/5. All later phase2 matrix and phases3-5 remain.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
