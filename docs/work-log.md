@@ -3951,3 +3951,5 @@ NEXT ONE coherent Pages58 image/build audit then normal admission/stage/plan/
 review/register/approval/apply on this fresh cohort. Never replay terminal core
 bootstrap or old failed-host attempt. Protected demonstrations remain intact.
 Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
+
+- 16November2026 Meridian-P3: Pages0.1.0 installed, real GUI handbook2 persists; two live defects found. Coherent private0.1.1 collaboration/draft successor source19Python22Node passed; normal upgrade next, no phase acceptance. See meridian-phase3-progress.md.

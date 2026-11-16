@@ -5,24 +5,24 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal, 16 November: **active - implement the Meridian roadmap in full.** All five milestones retained; milestones1/5. One active item: phase3 real Pages initial authoring source/candidate58 before its fresh installed cohort. Phase2 is unaccepted with M2-V200-01 native200 sticky-query/pager overlap. Populated18740/config18/core56/Partners14 and empty18741/config4/core57 remain unchanged; Meridian39/48 stays open.
+Current goal, 16 November: **active - implement the Meridian roadmap in full.** All five milestones retained; milestones1/5. One active item: phase3 useful Pages authoring/collaboration. Pages0.1.0 is installed on fresh18742/config2; one real handbook revision2 survives reload. Live double-sidebar and Owl Proxy preference defects require successor0.1.1. Phase2 M2-V200-01 remains open. Meridian stays open.
 
 Previous goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-16T15:05:30.235474+00:00
+- Updated UTC: 2026-11-16T15:36:54.105063+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: Meridian phase3 first private Pages authoring source implemented, roughly25% implementation work/0 exit acceptance. Phase2 roughly90% work/unaccepted with native200 footer defect. Milestones1/5; no completed gate restarted.
-- Latest work item: ONE core58 image built, original postbuild RTL timeout retained; unchanged standard verification-only continuation passed14layers3750files4031inputs/exact8deltas. Fresh separate18742 core58 cohort published/config1 after previous subnet preflight correctly refused before assets. Baseline8modules/zeroapps/resourcepolicies,4actors2spaces6members. Pages source21da9a9/13Python/15Node, archive68dd99ac retained privately/unadmitted.
-- Current source continuation: root4658d220 core58 runtime with app-free verified record explicitly binding original builder exit1; private Pages21da9a9. New TEST Pages distribution/recipe and host editor-cache exclusions are build-only inputs; core shipped bytes remain exact58. Main18740core56 and empty18741core57 retained. Pages cohort18742 config1/eightaddons/zeroappdata.
-- Current next action: ONE Pages58 composition build/audit; normal exact admission/stage/install on fresh18742. Useful real handbook/native access/query/cache/concurrency/current-revoke restore before phase3 acceptance. Do not replay any bootstrap/build or old refused attempt. M2-V200-01 and phase4/5 remain required.
+- Current phase/gate: Meridian phase3 roughly35% implementation work/0 exit acceptance; phase2 unaccepted; milestones1/5.
+- Latest work item: Pages58 image/install completed once (c2f41c3a); actual GUI handbook saved and reloaded. Readonly handbook058-check-01 proves1page/2revisions/2receipts/1policy/zerojobs/events. Open live app defects and draft-denial source findings recorded in meridian-phase3-progress.md.
+- Current source continuation: root b2934dabbc87; private Pages21da9a9/0.1.0 immutable installed. Target18742config2/imagee0a8c85f. Next coherent private successor0.1.1; existing core58 seams suffice for sidebar and preference corrections.
+- Current next action: Private Pages0.1.1 collaboration/draft successor source19Python22Node/archiveaf90 passes; commit/build/audit then normal exact upgrade on18742 preserving handbook2. Installed sharing/comments/history/concurrency/visual proof next. Phase2 footer and phase4/5 remain required.
 - Browser: reference39Acme/48handbook retained, live36Partners default80-row list/no draft at user200%, empty40core57/noapps. No metrics override. Natural200 protocol2.2/reference1.1 ratio2, CSS622x394; sticky-query/footer defect OPEN. Human38 unavailable/untouched. Fresh readonly after200-058-01 proves protected data/targets/private heads exact.
 - Acceptance/checklist: UI4/4 complete within documented scope. Historical PP100/100 and original R1 99/99/100weighted unchanged; no extra progress for documentation/builds.
-- Blocker register: no overall coordination blocker. M2-V200-01 real200 footer overlap/deep creation-field reachability unaccepted. Core58 replay guard source-proven; Pages installation/native/query/cache/concurrency/current-revoke restore still required. Explicit app budgets are lab bounds, not production capacity claims; JSON/binary boundaries unchanged.
+- Blocker register: no overall coordination blocker. Pages double-sidebar/Owl Proxy preference/native icon and draft-denial findings OPEN; sharing/comments/history/recovery not accepted. M2-V200-01 native200 pager overlap remains OPEN.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

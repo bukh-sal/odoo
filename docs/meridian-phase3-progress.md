@@ -217,3 +217,65 @@ NEXT ONE coherent Pages58 image/build audit then normal admission/stage/plan/
 review/register/approval/apply on this fresh cohort. Never replay terminal core
 bootstrap or old failed-host attempt. Protected demonstrations remain intact.
 Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
+
+
+### Pages58 installed: first useful handbook and live defects
+
+The nine-addon Pages composition was built once and normally admitted, staged,
+reviewed, approved and installed on the fresh18742 cohort. Root b2934dabbc87,
+private Pages21da9a9461ff, image e0a8c85febe82dd16d8664dc3f047ac971650dc75bd855512aed014b49e564e6,
+archive68dd99ac/0.1.0. Terminal operation c2f41c3a-0fa3-44e3-be7f-6195f90c7460,
+plan f32a6602fecc6e2185ede42ee21e2d13ca03a7cf1092ade2ac24d01d43540464,
+completed once154.984s; targetconfig2. Never replay it or bootstrap/build wrappers.
+
+Actual GUI created one Team handbook0c0c9fcf-e7e5-55d8-b6bb-28c4d08fc75f,
+then saved three useful onboarding paragraphs. Reload retains exact content.
+Fresh readonly handbook058-check-01 proves revision2/two immutable revisions,
+two receipts/one resource policy/zero preferences/grants/jobs/outbox. The prior
+zero-app-data snapshot is historical. Raw browser captures are in
+.local/meridian-phase3-pages-visual058-01, including reload-persisted-handbook.png.
+
+Installed defects OPEN: missing existing shell_context registration yields a
+double sidebar; structuredClone on Owl Proxy fails recent/favorite preferences;
+native rail icon falls back to cube. Source review also finds write-denial draft
+loss risk and own-receipt reconciliation requiring write permission. These must
+close in a coherent Pages0.1.1 successor before sharing acceptance. No live
+source injection, no relabeling0.1.0, no read-access bypass. Comments/history,
+sharing/concurrent revoke and current-policy recovery remain unqualified.
+
+Goal stays ACTIVE/all five phases/milestones1/5. Phase3 roughly35% implementation
+work, zero exit acceptance. Phase2 native200 M2-V200-01 remains OPEN; phase4/5
+unchanged. Continue Pages0.1.1 source, focused real-Owl regression, normal build/
+upgrade, useful comparison with the still-open Meridian reference.
+
+
+### Pages0.1.1 collaboration successor source, not installed acceptance
+
+The private successor fixes the installed duplicate context and Owl Proxy clone
+failure through existing core seams. It adds real eligible-member policy-CAS
+sharing, escaped immutable comment text/replies with author/manager resolve-CAS,
+saved revision anchoring, and paginated history with readonly preview/restore as
+a new current-CAS head. New pages.comment storage is private ordinary-RPC denied;
+4000 chars/comment,2000/page,20/metadata page, within512MiB retained workspace
+budget. No existing revision/comment body is rewritten or deleted. Historical
+body access requires current editing authority under the workspace ceiling.
+
+Known write denial disables the editor and keeps local unsaved writing separately;
+read denial clears current server page/list/tree/panels. Recovery copy is explicit,
+tab-only and never automatically resubmitted. Own minimal actor-scoped receipt
+reconciliation now requires current read rather than write; no body, other actor
+receipt or new write authority is returned. Full read loss still refuses.
+
+Source proofs:19 Python app tests and22 real editor/Owl tests, including actual
+reactive Proxy preference copy and mounted Share dialog with role selection.
+One first harness lacked requestAnimationFrame in jsdom; retained node.txt, fixed
+pretendToBeVisual and final node-v3.txt green. These are source/fake storage proofs,
+not installed concurrency/access/visual evidence. Archive0.1.1 af90ebbada8ffbcefc6c3e0f4d3bbe513dc27c52e6e9b5b0910d457d6adce784,
+208964bytes/27files, deterministic root/private recipes and ArtifactValidator pass.
+Original0.1.0/archive68dd immutable. No core shipped bytes changed. Native rail
+icon underscore/hyphen normalization remains a shared-shell finding for the next
+coherent core batch, along with M2-V200-01; not an app-specific workaround.
+
+NEXT normal successor build/audit, exact admission/stage/review/approval/upgrade
+on the same18742 cohort, preserving handbook2 and current authority. Then real
+handbook/share/comment/history/revoke comparisons. Goal1/5, all five phases remain.

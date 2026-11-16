@@ -189,6 +189,26 @@ does not replace installed selection, clipboard, caret and narrow checks.
 
 ## P3.3: collaboration and durable revision recovery
 
+Successor0.1.1 execution slice (16November, after the first installed handbook):
+keep0.1.0/archive68dd/imagee0a immutable. Reuse the existing shell_context seam;
+copy preference DTOs through canonical JSON rather than cloning Owl Proxies.
+Keep unsaved local drafts separately when current server access is lost, disable
+the editor on a known write denial, and offer explicit recovery without silently
+resubmitting or displaying denied server content. Own minimal receipt status may
+be reconciled under current page-read authority; it cannot authorize another
+write or return another actor's receipt. Full read loss still refuses.
+
+In that same successor, expose current eligible-member sharing with policy CAS,
+durable escaped page comments/replies/resolve and paginated revision history.
+History preview is read-only; restore uses the existing binary save with current
+page revision, producing a new immutable head. Comment anchors name an existing
+saved revision/block; detached anchors are labeled. Comments have a fixed text/
+count/retained-byte budget and ordinary native CRUD remains closed. Sharing and
+comments stay entirely in the private app. Test actual Owl reactivity and real
+method control flow before normal package/build/admission/upgrade. Installed
+two-session revocation, draft retention, comment/history and visual comparison
+remain required; source tests cannot accept this slice.
+
 Manage access with current eligible workspace members and explicit roles. Show
 effective access and base-ceiling explanations, not optimistic switches. Share
 updates use policy revision/CAS and an audit trail. A second authorized coworker
