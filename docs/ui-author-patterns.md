@@ -677,3 +677,15 @@ save/authorization/conflict rules. Creation presentation does not change these
 transaction semantics. A bare model deep link currently renders a standalone
 native form without an application context sidebar; it still has the app rail
 and scoped normal reads. Do not claim it preserves an originating app layout.
+
+### Identifier semantics and RTL
+
+Declare email/phone/URL semantics with the appropriate native widget or existing
+mp-identifier role in every supported form, including compact creation. A plain
+Char field deliberately does not infer business meaning from its name. The
+installed54 full reader isolates identifiers correctly; the compact Partners13
+form omitted the role and reverses phone groups under real Arabic. That consumer
+gap is pending correction, not a passed RTL example. Keep human prose/names auto-
+directional and do not force all fields LTR. Shared count/fallback-text isolation
+also remains under review. Test actual native locale, input/caret and mixed text;
+viewport mirroring or injected dir alone is insufficient evidence.

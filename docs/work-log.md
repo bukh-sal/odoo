@@ -3684,3 +3684,37 @@ and remaining RTL/theme/motion/zoom/availability/fidelity decisions, then fresh
 Pages plan at phase3 activation. Native operation06522669 and creation054 phases
 are terminal/exclusive. Never replay, no cleanup/prune/publication. Evidence
 .local/meridian-phase2-browser054-01 and creation054-01; runtime0db4b7dcc58.
+
+## Meridian phase2 current empty54 and native RTL - 16 November2026
+
+ONE empty clean54 build30.906s/607bcf0b/4028inputs. Wrapper stopped after successful
+build at missing inventory.artifacts key; actual producer omits empty artifacts.
+Failure/source/runtime retained, no rebuild. Verification-only fresh observation,
+exact8manifests3744common core files match populated54, only19Partners files/archive
+absent;14layers3747files audit passes. Normal b8a4cb4b/hash75049158 completed153.672s/
+config2. Nine captured tables exact,8modules/zero app state; protected main18/21
+and14targets/fiveheads/source4028 exact. Empty home/chooser/core jobs46 newtab/
+dark text contrast13.98-15.71/390nooverflow/reduced-motion menu pass;46closed,
+light/metrics/media restored. Source-tab-only jobs probe missed intended newtab;
+retained with actual destination verification, no repeat click.
+
+Supplementary review whitelist omitted accepted47 mp_core/navigation icon-only
+metadata; Python exit1 did not stop the subsequent PowerShell maintenance command.
+Preserved failure; reviewed actual45->54 diff and exact b8820e7 bytes, all53 image
+source deltas match plan. Normal independent source/image/hash/approval guards
+stayed active; no replay/interruption/bypass. Future dependent mutation commands
+must enforce exit success explicitly; do not relabel original failure green.
+
+Normal isolated admin API enables existing ar_001/id3 once via base.language.install
+(overwriteFalse), no shell/SQL/role/module mutation. Actual operator MyPreferences
+Arabic gives htmlRTL, mirrored56rail264aside/right title, LTR-isolated reader
+identifiers; RTL directory/dark and390fullscreen draft/footer fit. Compact form
+phone inheritsRTL/reverses groups; count/footer fallback text lacks isolation.
+These are unaccepted consumer/pattern findings. Draft nevercreated/discarded.
+Two private h1 paint probes failed because native list heading is div roleheading;
+correct semantic-role probe succeeds. No product fault from those read-only probes.
+English/Asia-Riyadh/light restored; ten original main tables/protected/source exact.
+Arabic remains test locale. No new business rows/events (18/21/jobs0), no native200
+claim; manual setting pending. Source/runtime stays54. Next coherent shared bidi/
+private compact-role correction with normal successor identities/operations, then
+remaining phase2 gates and Pages. Fullgoalactive,roughphase2 85%,milestones1/5.

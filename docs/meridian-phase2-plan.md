@@ -683,6 +683,52 @@ both themes and mixed identifiers; no DOM/style direction injection. Native200
 manual check remains pending while this independent work proceeds. Phase2 exit
 and later Pages/adoption/final qualification remain unproven.
 
+### Actual RTL54 findings and next correction scope
+
+Existing ar_001/id3 activated exactly once with overwrite=False through normal
+authenticated base.language.install in an isolated admin cookie jar. No browser
+session, roles, grants, native modules or business rows changed. Operator5 then
+selected Arabic through My Preferences, producing actual html lang=ar-001/dir=rtl.
+Rail56/context264 mirror correctly; record title aligns right with Latin auto
+direction, reader email/phone are LTR+isolate. Native RTL directory and dark
+directory render. Actual390x844 create is fullscreen with reachable footer786..844
+and no horizontal overflow. Arabic/mixed text existed only in an unsaved draft,
+closed through explicit Discard draft, never Create.
+
+Do not accept the complete RTL gate yet: compact-create plain email/phone Char
+fields inherit RTL, visibly reversing the phone groups (+1 555 0199). The full
+reader/form already has the existing shared mp-identifier role; compact form
+omitted it. English fallback count/description/footer text also needs shared
+isolation so RTL does not reverse numeric placement/punctuation. This is a
+presentation-consumer gap, not a model/capability/API limitation or a reason to
+infer domain semantics from field names in generic core. Apps declare semantic
+widgets/roles; arbitrary Char fields remain arbitrary. New app strings are not
+fully Arabic-translated; these checks prove direction/layout, not complete copy.
+
+Normal Preferences restored exact operator en_US/Asia-Riyadh and light; metrics
+cleared. verify-restored checks all ten original captured tables exactly, current
+18contacts/21events/jobs0, protected target/head/source hashes exact. Arabic remains
+an enabled test locale intentionally. RTL API script phases are terminal; no
+wizard/profile replay. Two private style probes assumed list heading was h1;
+native list uses div role=heading/level1. Correct semantic-role probe succeeds;
+neither failed read changed UI/data or indicates a product rendering error.
+Evidence `.local/meridian-phase2-rtl054-01/`; source/protected guards retained.
+
+Next one coherent bidi correction: inspect actual shared ContextNav/footer and
+native plain collection-description/meta templates, reuse semantic bdi/auto-dir
+isolation without per-app names/CSS direction injection. Private Partners compact
+form reuses mp-identifier for email/phone, like its full form. No model/schema/
+service/security or localization-policy expansion. Shipped core bytes require
+successor core/web identities55; private view bytes require Partners14/archive.
+First normal core55 operation keeps exact current Partners13; only then separate
+normal14 archive admission/app upgrade, with exact old archives retained and
+normal scoped metadata generations accounted for. Refresh empty core to the
+same final core afterwards. Use actual compiled consumers and installed Arabic
+dialog/sheet/reader/footer proof, restoring English/profile/appearance again.
+Fresh source audit and exact implementation/test plan precede those changes.
+Rough phase2 implementation/workflow85%, milestone1/5; phase2 remains unaccepted.
+Native200 manual setting still pending; other corrections proceed independently.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
