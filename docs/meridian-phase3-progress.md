@@ -410,3 +410,34 @@ accessibility or phase3 acceptance. Phase3 roughly45% implementation/zero exit
 acceptance, milestone1/5/all five phases intact. NEXT current downgrade/revoke/
 two-writer/native query/cache pressure, retain drafts and inspect failures, then
 coherent remaining authoring/integration slice and current-authority restore.
+
+
+### Current-authority pressure and Pages013 source
+
+Pages012 actual owner/Robin pressure produced correct server refusal with no
+extra comment/outcome: commenter to reader policy3, then fully revoked policy4.
+Known read loss cleared page content but left stale pager totals; denied unsent
+text lacked visible recovery; navigation prompted twice. Exact normal Share
+restored the original commenter assignment as monotonic policy5, with53 immutable
+revisions/2comments/60receipts and original bodies/actors/memberships preserved.
+Evidence: .local/meridian-phase3-pages012-revoke-01/{result,restored-result}.json.
+No hidden authority edit, old-policy rewind or command retry.
+
+Successor0.1.3 now explicitly retains only own tab-local comment text and frozen
+submission metadata, distinguishes known refusal from uncertain receipt checks,
+clears all inaccessible totals/outline/filter caches and rejects late reads.
+One navigation confirmation clears discarded composer state. Sidebar filtering
+uses the existing authorized list service; observed counts never invent data.
+Desktop writer/300px inspector scroll separately; comment composer stays in the
+inspector footer, narrow/short views revert to inline scrolling. Reference cards
+reuse shared avatar/tone tokens. No Pages-specific core selector or authority
+change. The editor library is unchanged.
+
+Focused source:19 Python/33 Node pass, including real Owl template compilation,
+escaped recovery rendering, same-key/no-new-submit reconciliation, late-response
+and one-leave regressions. Logs .local/meridian-phase3-pages013-source-01/. A
+private one-line shell edit failed from quoting before any write; corrected via
+literal script, no runtime failure. This is source evidence, not installed proof.
+NEXT normal immutable013 package/build/upgrade then actual denied draft recovery,
+filter/keyboard/composer/visual comparison. Phase3 remains unaccepted, milestones
+1/5. Native200 M2-V200-01 and phases4/5 remain required.

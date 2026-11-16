@@ -232,6 +232,24 @@ protected demos; generate fixture credentials privately without printing them.
 
 ## P3.4: fitting reference features and explicit dependencies
 
+Installed-pressure successor0.1.3 (activated after012 current revoke checks):
+preserve the strong server refusal and add tab-local, explicit recovery of an
+unsent comment after its composer becomes unavailable. Keep only the actor's own
+text/submission metadata, separate from denied page/comment server content; no
+automatic re-send, localStorage cache or authority inference. Clear list/pager/
+panel totals and labels on known read denial. One confirmed leave must suffice;
+discarded comment text cannot invisibly block subsequent navigation. Qualify
+unknown submissions separately from known refusal and preserve receipt identity.
+
+In the same app slice, give writer and inspector independent desktop scrolling,
+keep the comment composer reachable, use reference comment cards and the shared
+initials/avatar recipe, and restore inline scrolling on narrow layouts. Add the
+reference's useful sidebar filter using the existing authorized paginated list
+service: matching pages are a flat accessible result set, not fabricated ancestry;
+late responses after a known denial/unmount must be discarded. These features
+reuse AppLayout/ContextNav/shared tokens with no Pages-specific core code. Actual
+revoke/draft recovery, keyboard/focus and matched original captures gate acceptance.
+
 Before further features, successor0.1.2 closes the installed0.1.1 editor event
 loop: Tiptap setEditable emits update by default, which must not be treated as
 document authoring. Suppress that event and filter actual non-document update
