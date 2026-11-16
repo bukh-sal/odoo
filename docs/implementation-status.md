@@ -5,24 +5,24 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal, 16 November: **active - implement the Meridian roadmap in full.** All five milestones retained; milestones1/5. One active item phase3 real Pages. Core59/Pages012 installed18742/config5; actual commenter/reply/resolve and restore-as-new workflow verified. Phase3 roughly45% implementation/zero exit acceptance. Phase2 native200/footer and phase4/5 remain. Meridian stays open.
+Current goal, 16 November: **active - implement the Meridian roadmap in full.** All five milestones retained; milestones1/5. One active item phase3 real Pages. Core59/Pages014 installed18742/config7; real authoring/sharing/history and reader-to-own-template-copy workflow verified. Phase3 roughly55% implementation/zero exit acceptance. Phase2 native200/footer and phase4/5 remain. Meridian stays open.
 
 Previous goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-16T16:51:02.056386+00:00
+- Updated UTC: 2026-11-16T18:10:02.503731+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: Meridian phase3 roughly45% implementation work/0 exit acceptance; phase2 unaccepted; milestones1/5. No completed R1 gate restarted or extra points claimed.
-- Latest work item: Pages013 normal upgrade/config6; actual own-comment recovery/no stale denial totals/single Leave, current commenter restored policy8. Useful rich child persisted;2pages56revisions66receipts2comments. Actual tree callback defect retained;014 plan before implementation.
-- Current source continuation: core59/web58 unchanged; privatePages2763f8c4/014 source ready, current installed013/config6/imageb1966461/target0f8c1915. No live operation/uncertainty.
-- Current next action: ONE normal014 image/audit/upgrade preserving2pages56revisions66receipts/policy8, then actual hierarchy/move/template-copy/visual proof. Remaining integration/import/restore/lifecycle, phase2 native200 and phases4/5 required.
+- Current phase/gate: Meridian phase3 roughly55% implementation work/0 exit acceptance; phase2 unaccepted; milestones1/5. Original R1 gate/weight results unchanged.
+- Latest work item: Pages014 config7; real tree/move/template copy and independent task edit persist. Fresh3pages62heads72receipts2comments; original handbook53/current authority exact. Inspector aligned; deep header85px/rail icon fallback still open. See meridian-phase3-review.md.
+- Current source continuation: root90c5b87/core59/web58, private2763f8c/Pages014. Current18742config7/imagea41680fa/target17dab9d7; all operations terminal, no uncertain mutation/draft. User18740native200 preserved.
+- Current next action: Actual two-writer/current-authority/uncertain-result pressure on useful3pages; then fresh plan for remaining authoring/import/integration. System recovery/lifecycle, shared header/rail/native200 corrections and phase4/5 remain.
 - Browser: reference39Acme/48handbook retained, live36Partners default80-row list/no draft at user200%, empty40core57/noapps. No metrics override. Natural200 protocol2.2/reference1.1 ratio2, CSS622x394; sticky-query/footer defect OPEN. Human38 unavailable/untouched. Fresh readonly after200-058-01 proves protected data/targets/private heads exact.
 - Acceptance/checklist: UI4/4 complete within documented scope. Historical PP100/100 and original R1 99/99/100weighted unchanged; no extra progress for documentation/builds.
-- Blocker register: no coordination blocker. Core policy SQL and app event-loop defects corrected/installed; retained failures and redundant history immutable. Current concurrent revoke/draft and full phase3 restore/lifecycle unqualified. Visual composer/scroll/tree gaps and shared rail/native200 footer open.
+- Blocker register: no coordination blocker. Corrected core SQL/event loop/tree producer defects retain evidence. M3-H014 deep-header85px, M3-I014 generic rail fallback and M2-V200-01 footer remain open. Full phase3 conflict/integration/restore/lifecycle unqualified.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

@@ -2,7 +2,7 @@
 
 16 November 2026. Full Meridian goal remains active; milestones1/5. Phase2's
 visual gates remain open. Core57 is installed on empty18741/config4; the populated
-Partners review remains core56/config18. Pages now has private source, not installed/accepted. The latest checkpoint below supersedes earlier next-action notes.
+Partners review remains core56/config18. Pages014 is installed on owned18742; full phase3 remains unaccepted. The latest checkpoint below supersedes earlier next-action notes.
 
 ## P3.0 source implementation
 
@@ -509,3 +509,29 @@ locked dependencies unchanged. NEXT one image/audit and exact normal upgrade
 preserving all2pages56revisions66receipts2comments/policy8, then real tree/move/
 template-copy/authority/visual checks. Full phase3/lifecycle/import/integration,
 phase2 native200 and phases4/5 remain unaccepted. Goal ACTIVE1/5.
+
+
+### Installed014: real hierarchy/template adoption and fresh preservation
+
+ONE32.328s imagea41680fa/14layers3769files/core3747exact. Normal8bb6a083/plan
+c4ef0107 completed196.218s/config7/target17dab9d7; old2pages56heads66receipts/
+policies/grants/actors preserved. No source injection or apply/build retry.
+Actual ContextNav expand/load/preferences/reload passes; sidebar first filter
+returns2 authorized flat matches. Parent breadcrumb is current readable data.
+Useful child unchecks task4, template5, rootmove6, originalparentmove7; same current
+body throughout metadata moves, all older heads remain. Robin reads source
+readonly/no Save, uses template once, becomes owner of new independent page1,
+checks only own task as2 and reloads. Fresh proof3pages62heads72receipts2comments,
+1copy receipt/outcome; source7 body exact in copy1; source taskfalse/copy2 true.
+Original handbook53/current authority exact, no cloned grants/history/comments.
+
+Matched dark1280 originals now put inspector alongside header/globalbar56;
+cover128, rootheader55, composer704/720. Three-crumb header wraps85px at1280:
+M3-H014 open. Generic rail underscore normalizer fallback M3-I014 open for shared
+batch, not app-specific fix. Natural light structured-child screenshot retained;
+all temporary comparison metrics cleared and original appearance restored.
+Protected after-pages014-01 proves main/empty data/14targets/fiveoldheads exact.
+See meridian-phase3-review.md for actual proof classes/checklist/open boundaries.
+Phase3 roughly55% implementation work, zero exit; full goal ACTIVE1/5. NEXT real
+concurrency/current authority/uncertainty pressure then remaining authoring and
+integration; system recovery/lifecycle, phase2 native200 and phase4/5 required.
