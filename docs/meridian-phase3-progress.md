@@ -479,3 +479,33 @@ confirms caller fix, no core contract change. Detailed014 plan is now in phase3
 plan BEFORE implementation. Full goal active1/5; phase3 unaccepted.
 Fresh after-pages013-01 proves protected main18partners/21events/empty0app all
 baseline tables/14targets/5older private heads exact.
+
+
+### Pages014 coherent source checkpoint
+
+Private2763f8c41387ff5e1f31a3a7ff1be4ce1b00c147/0.1.4 implements the planned hierarchy/template slice. The
+actual shared ContextNav producer now calls the corrected string-id app callback;
+visible saved expansions reload through authorized20-row tree reads. Known counts
+invalidate after mutations rather than displaying the old1 after creation. A
+current readable parent supplies the breadcrumb, never an inaccessible title.
+Move selects among current writable destinations through paginated list UI; root
+is explicit, current/self/readonly options disabled, server CAS/cycle checks stay.
+Template toggle is a real metadata revision; Use/Duplicate calls one new app-owned
+atomic duplicate method. Current source read and destination create/write checks
+precede cached outcomes; workspace fence/quota precede new policy/page/head.
+Only the current canonical head copies; source history/comments/grants stay put.
+Deterministic actor/workspace/key destination and frozen same-key UI input remain.
+Inspector starts alongside the writer header, preserving independent scroll and
+inline narrow/short reflow. No core/framework/schema changes or migration.
+
+Source25Python38Node pass (actual models with bounded fake storage/authority;
+actual Owl and shared ContextNav/pager producer). Initial harness expected9 versus
+new10 templates, lacked real tree fixture, duplicated a ContextNav stub binding,
+and omitted DOM document for the actual shared pager; corrected without changing
+production guards. Logs pages014-source-01; no installed proof inferred.
+Deterministic archive dcd097587b0f230970c01010f0528690db8d8170e1e663a211296b07a3e76b3a,
+213836B/27files, root/private recipe equality/real validator. Editor bundle and
+locked dependencies unchanged. NEXT one image/audit and exact normal upgrade
+preserving all2pages56revisions66receipts2comments/policy8, then real tree/move/
+template-copy/authority/visual checks. Full phase3/lifecycle/import/integration,
+phase2 native200 and phases4/5 remain unaccepted. Goal ACTIVE1/5.
