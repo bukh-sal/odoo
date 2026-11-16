@@ -614,3 +614,25 @@ import/export, explicit reorder and typed current-authority links/backlinks with
 real providers. System current-authority recovery/lifecycle and phases2/4/5 still
 required. Full goal ACTIVE1/5, phase3 unaccepted. No source/image/authority change
 in this walkthrough; old failure traces and all releases retained.
+
+
+### Remaining authoring activated;016 transfer backend source
+
+Fresh meridian-phase3-authoring-plan.md precedes implementation, with exact current
+BinaryEndpoint/Pages/Taskfiles seams and remaining Markdown/provider uncertainties.
+Core binary gateway already bounds bytes/metadata, CSRF/current scoped actor and
+protected whole downloads. No core customization needed for JSON transfer.
+Private99869b13c7c314b70be3e8c14100181dbbea6aea/unpublished0.1.6 now registers json-transfer: original
+raw JSON validates before editor coercion/page creation, raw SHA binds frozen key,
+current destination authority and receipt replay recheck, quota before new policy/
+page/head; default reader policy and one immutable canonical revision. GET reuses
+existing authorized revision download/history editor guard. No privileged URL.
+Actual handler/fake persistence counters + prior models total28Python pass0fail
+0.199s. Invalid UTF8/duplicate keys/unsupported node/overlimit/wrong digest/changed
+raw samekey/current destination loss/parent/quota refuse with no extra creation.
+These are source proofs, not installed atomicity. UI/Markdown/reorder/typed links/
+real providers still IN PROGRESS; no016 package/build/install or core/source
+injection. Installed015 remains3pages64heads74receipts/config8 unchanged.
+NEXT finish transfer UI/original-byte confirmation/export, audit/pin Markdown
+parser before use, then organization/current-readable links/providers per plan.
+No half-working controls. Full goal ACTIVE1/5/all remaining gates retained.
