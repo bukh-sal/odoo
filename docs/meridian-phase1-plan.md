@@ -102,18 +102,46 @@ text. Qualify those source changes on the installed image, then build the
 representative directory fixture and the final empty-core counterpart. Phase1
 remains unaccepted until those captures and the remaining review items pass.
 
+## Installed45 comparison
+
+Normal maintenance893673cb completed once on18740/config5. All seven captured
+tables were exact before fixture creation. Thirteen synthetic organizations
+were then created through the ordinary Partners HTTP service, producing14total
+contacts and14created events. Original Leah and all authority/job rows remained
+exact. After browser interaction all seven tables equal the post-fixture
+baseline. No relationship, owner or finance fields were fabricated.
+
+The empty eight-addon45 counterpart completed prepare/initialize/publish once
+on18741/config1. Fresh login, workspace choice, empty launcher, account appearance
+and the separate empty background-jobs tab work; no installations/features/
+bindings/grants/jobs/outbox rows exist. Both45images passed runtime and14-layer
+audits. Original operations, checkpoints and images remain retained.
+
+Actual identity rows now measure45px including borders. Matched1440light/dark,
+1280dark and390light/dark captures are in `.local/meridian-phase1-browser045-01`.
+The directory preserves Name=Acme across Enter-open/Back, sorts both directions,
+returns focus on context collapse/reopen and narrow Escape, and reveals the
+footer with keyboard Control+End. Device overrides are cleared/light restored.
+
+The natural1246px view exposes a1px width discrepancy (renderer863/table864),
+enough to create a full horizontal scrollbar. Correct this actual producer
+boundary before phase1 acceptance; do not hide genuine narrow overflow. The
+[review](meridian-phase1-review.md) records the other visual differences and
+their phase ownership. Keep Meridian tab39/server94394 open continuously as
+requested. User38 People remains untouched.
+
 ## Acceptance checklist
 
 | Requirement | Proof and current state |
 | --- | --- |
-| Shared frame and reusable tokens | Source and targeted behavior checks; pending |
-| Native identity cell and Partners consumer | Actual field registry/asset closure, successor archive and installed directory; pending |
-| Light/dark hierarchy and aligned controls | Matched original screenshots and DOM measurements; pending |
-| Search/open/Back, collapse/focus, keyboard and narrow | Installed actions and current data retained; pending |
-| No-app core and independent app boundary | Installed eight-addon counterpart and packaged asset inventory; pending |
+| Shared frame and reusable tokens | Installed45 dimensions verified; remaining1px scrollbar and review pending |
+| Native identity cell and Partners consumer | Actual field registry/asset closure, exact Partners11 and14row directory verified; visual review pending |
+| Light/dark hierarchy and aligned controls | Matched1440originals/DOM and390fallback retained; badge/context findings remain |
+| Search/open/Back, collapse/focus, keyboard and narrow | Actual45 interactions pass within recorded scope; phase2 owns full selection/paging coverage |
+| No-app core and independent app boundary | Installed eight-addon45/account/launcher/jobs plus packaged inventory verified; final review pending |
 | Human visual review | Original reference/installed pairs with named remaining findings; pending |
 
-Rough progress is20% after initial source and targeted checks. Source changes
+Rough phase1 progress is65%; milestones remain0/5. Source changes
 include full-width shell/workspace regions, moving context focus, neutral
 identity cells and the private Partners11 consumer. The targeted run passed
 63 Node and29 Python checks plus the unchanged122-file/11-row freeze checker.

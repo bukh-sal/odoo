@@ -1,3 +1,27 @@
+## Meridian installed45 and retained live reference - 16 November 2026
+
+Core45 clean eight/nine-addon builds passed runtime and14-layer audits. Empty
+prepare was reconciled from its terminal receipt after truncated observation,
+never repeated; initialize/publish each completed once on18741/config1. Login,
+workspace/launcher/account and separate jobs view render with exactly8modules
+and0installations/features/bindings/grants/jobs/events. Normal maintenance
+893673cb completed once on18740/config5, preserving all seven captured tables.
+
+Created13synthetic organizations through ordinary app HTTP with exclusive
+intent and per-record idempotency receipts; original Leah exact, total14contacts
+and14events. All authority/job rows unchanged. Actual45rows measure45px with
+separate name/contact text. Matched1440light/dark,1280dark,390light/dark and
+natural-width frames retained; sort, filter/Enter-open/Back, context focus,
+Escape and keyboard footer reachability work. Seven tables exact after browser;
+13protected targets unchanged. No native200% or full-goal acceptance claim.
+
+Comparison exposed remaining1px desktop overflow (863client/864table) and
+phase2 context/badge/column/scroll findings. Phase1rough65%, milestones0/5.
+Reference39/server94394 intentionally remain open per user; own36/40 retained,
+human38 untouched, light restored/device overrides cleared. No active native
+operation, fixture or test remains. Next correct overflow, then phase1 review.
+See meridian-phase1-review.md and private browser045/fixture045/rollout045 roots.
+
 ## Meridian installed44 interactions and typography refinement - 16 November 2026
 
 Normal core44 maintenancef201d1f7 completed/config4 on fresh18740. Chooser now measures56px and desktop renderer has equal877px client/scroll widths. Actual identity grid/flex remains correct. Real collapse/reopen restores focus, optional Phone column toggles/restores, keyboard-open and Back retain Name filter. Light/dark390px document width remains390 with intentional table-local scrolling; narrow context focuses correctly and Escape returns to opener. All seven business/authority tables remain exact afterward. Original raw screenshots and actual CSS/DIP metrics retained; high-level narrow screenshot clipping is distinguished from the correct raw capture.
