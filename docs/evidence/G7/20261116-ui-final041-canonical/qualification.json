@@ -1,0 +1,68 @@
+{
+  "actual_intent_sha256": "3da866f63f0070e2dfe7c0cedbd08db177293e85fa57330ac1c6f715950c12d8",
+  "all_frozen_sources_exact_through_terminal": true,
+  "all_private_trees_clean": true,
+  "cohorts": {
+    "core": {
+      "all_fields_exact": true,
+      "generation": 8,
+      "image_id": "sha256:d077daad1b09814a7a8bd1bcc008f7cde078b5dff8436c31ca644f173ff189ba",
+      "tables": 6,
+      "target_sha256": "237c9d5c60f983ed410de63e264c2e8ca22e60c03e0429518835c90e73bd421a",
+      "worker_id": "6196418b6c62a2d1c1f37db78a3dfd19d87ba63a086f249ec407a8538dc6f85c"
+    },
+    "populated": {
+      "all_fields_exact": true,
+      "generation": 18,
+      "image_id": "sha256:4fbca618390e7f7a8b71392a637604c2bff224d6621d94a5098f201e565375d3",
+      "tables": 22,
+      "target_sha256": "f248ed8da6a4e2f99717a228acce2892725441ff19311965a059fdc2666844d1",
+      "worker_id": "f8dd83b1025e7636b96777ba9095b6022ad58fd906e319f86b35079ac9d8485a"
+    }
+  },
+  "command": [
+    "<project Python3.12.16>",
+    "-I",
+    "tests/run_host_regression.py"
+  ],
+  "curated_inputs_exact": {
+    "core": 4012,
+    "populated": 4106
+  },
+  "documentation_head": "6575dbe4d14500423ee5b02f9b4594642f52842c",
+  "earlier_results_preserved": {
+    "corrected040": "Deliberately interrupted411 observed completions after contrast findings; NOT green",
+    "first040": "FAILED; confirmed test timing race, not product waiver"
+  },
+  "errors": 0,
+  "failed": 0,
+  "frozen_non_documentation_files": 8199,
+  "passed": 980,
+  "private_heads": {
+    "delivery": "c5415ccf1203bbbf75d87250e80808dea68266a6",
+    "documents": "93c3ab081958fb90eb5d73159dd9ba8d6259d87a",
+    "partners": "15ade449d4c230d5d775b2bf74f8cee0b9dff55f",
+    "taskfiles": "9762acee1553d263cb6b45b58e3255fd4fe95fad",
+    "workboard": "34aae71b8d5090a370b030009963d5bedf6b6698"
+  },
+  "protected_target_hashes_exact": 11,
+  "runtime_source": "fce79cff1f99d0ce1e8117d6725d1f6d75407a03",
+  "scope": "Final041 canonical on frozen executable/app sources plus terminal read-only retention. Installed matrix has explicit direct/carried boundaries; local exact combinations only, no formal accessibility or universal migration claim.",
+  "skip_lines": [
+    "test_symlink_source_refused (test_application_package.ApplicationPackage.test_symlink_source_refused) ... skipped 'Windows symlink privilege unavailable'",
+    "test_source_and_data_symlinks_rejected (test_start_worker.AdditionalSourceTests.test_source_and_data_symlinks_rejected) ... skipped 'Real Linux symlink probes qualify runtime policy'"
+  ],
+  "skipped": 2,
+  "source": "fce79cff1f99d0ce1e8117d6725d1f6d75407a03",
+  "terminal": {
+    "exit": 0,
+    "finished_utc": "2026-11-16T00:22:08.978337+00:00",
+    "log_sha256": "5a7973de506b100b4b29b122eb923ec4f8114be8e1fb55abcfda464c8931628f",
+    "pid": 42696,
+    "seconds": 4161.188,
+    "windows_creation_filetime": 134392579677960221
+  },
+  "tests": 982,
+  "unittest_seconds": 4160.307,
+  "utc": "2026-11-16T00:22:49.060237+00:00"
+}

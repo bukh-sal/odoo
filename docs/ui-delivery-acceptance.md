@@ -1,20 +1,20 @@
 # UI delivery acceptance against the original plan
 
-> Current16November: core0.2.41 is installed on populated18730/config18 and
-> empty18731/config8. Taskfiles0.1.7 replaces only its app palette; the other four
-> archives and all core41 bytes stay exact. [Installed41 evidence](evidence/G7/20261116-ui-contrast041-installed/qualification.json)
-> closes the measured anchor, native-select and file-metadata contrast findings.
-> D03/D04/D05 remain accepted; D06 awaits the ONE frozen-source041 canonical
-> and final terminal audit. Historical40 failure/partial logs remain preserved.
+> Final review, 16 November: **UI-D03/D04/D05/D06 accepted (4/4)** for the recorded
+> local combinations. Core 0.2.41 and Taskfiles 0.1.7 are installed; the other
+> four app archives stay exact. [installed41 qualification](evidence/G7/20261116-ui-contrast041-installed/qualification.json) closes the measured
+> contrast findings. The [final041 canonical](evidence/G7/20261116-ui-final041-canonical/qualification.json) completed **980 passed,
+> 2 existing skips, zero failures/errors** on frozen executable/app source.
+> All 8,199 frozen files, candidate maps, current business/authority data and
+> eleven protected target hashes pass the terminal audit. Historical failures
+> remain preserved; formal accessibility/broad app support are not claimed.
 
 
-Reviewed15November2026 against frozen source
-`748c5e32b3b4480ac7471b7b7a8a06301a26544b`, core0.2.40. This closes findings
-against the original [delivery plan](ui-shell-delivery-plan.md), rather than
-replacing it with a smaller checklist. Implementation is substantially complete;
-**three of four phases pass. D06 remains open for the terminal source41 canonical
-regression and final release audit.** The original R1 result remains99/99 and100
-weighted points; PP01–05 remains100/100. Neither score is inflated by this record.
+Initial functional reconciliation was reviewed on core0.2.40. The original
+D03/D04/D05 rows below retain those actual sources and carried boundaries.
+The final41 additions and terminal D06 result complete the original delivery
+plan, without shrinking its cards. R1 remains99/99 and100weighted points;
+PP01-05 remains100/100. No documentation or extra build earns more points.
 
 “Direct” means an actual installed observation or operation at the named source.
 “Carried” means earlier installed evidence with an explicit unchanged-source or
@@ -71,30 +71,25 @@ history or pretend the entire SDK stayed unchanged.
 | Reuse and optional contribution | PageHeader, StatusMessage, AppLayout, native table/record frame, Icon, RecordSection and controlled RecordTabs have real native/Workboard/Documents/Delivery usage. The [author catalogue](ui-author-patterns.md) gives source minima, actual snippets, state ownership and fallbacks. Partners owns its explicit trusted section seam; core has no customer/finance special case. |
 | Loading, empty, filtered, denied, error and no-app | Current empty and available-workspace states are truthful. Expected missing/access pages show one friendly dialog, no server traceback/name leak or automatic replay. Source37/38/39 fixed the observed duplicate error, misleading copy and wasted empty flex region; current40 installed proof preserves those corrections. |
 
-## UI-D06 — integrated release qualification: pending terminal regression
+## UI-D06 - integrated release qualification: pass
 
-| Required result | Classification |
+| Required result | Actual evidence and boundary |
 | --- | --- |
-| Immutable build/source/identity/layer and current installed runtime | Direct40: populated14layers/3810project files; source-free14layers/3731project files,8addons/0archives. Exact Python/manifests/private archives and independently approved operations. |
-| Desktop/narrow/light/dark/locale/RTL/mixed identifiers | Direct installed36–40 with explicit unchanged-layout/locale/controller boundaries. First real Arabic/English reload uses matching assets; profile/authority restored. Partial application translation remains explicit. |
-| Keyboard, focus, actual200%, rendered contrast, motion | Direct40 shared focus2px; measured5.345:1light/9.04:1dark focus contrast; genuine browser reduced-motion media switch and zero representative transition duration; palette/focus/sidebar work. Human-confirmed200%,681CSSpx/DPR2.2/scale1, pointer and keyboard record opening. Overrides cleared. No formal accessibility certification. |
-| Optional-app/current authority/preservation | Direct36 lifecycle and authority fixtures, source40 post-browser equality of22populated and six empty-core tables, protected targets and unchanged private app repositories. All fixtures closed. |
-| Affected tests/freeze/templates/private app checks | Source40 identity7/freeze122files11rows; unchanged-source177Node and86planner checks, earlier actual app/archive/compiler records. Their exact scopes and prior harness failures remain recorded. |
-| Final canonical on frozen41 | **Pending.** One `tests/run_host_regression.py` process, PID/Windows creation time bound privately; process-local verified ripgrep. Observe to terminal; do not rerun on an observation timeout. Historical36:971cases/969pass/two existing skips. |
-| Final support/evidence/local commit and retained demo audit | Current support/author/acceptance records reconciled; final canonical receipt and final audit remain pending. Local-only, retained own sites/checkpoints/images, no publication or cleanup. |
+| Immutable current runtime, source, layers and maintenance | Direct41: populated13addons/five archives/3810project files; empty8addons/zero archives/3731files; fourteen final layers each. Core41 normal maintenance and separate Taskfiles17 app upgrade completed once with exact reviews/checkpoints/replacements. [installed41 qualification](evidence/G7/20261116-ui-contrast041-installed/qualification.json). |
+| Desktop/narrow/theme/locale | Direct41/Taskfiles17 desktop and actual390CSS light/dark; no page overflow. Source36-40 actual Arabic/RTL/mixed-name and draft/layout checks carry only over unchanged controller/JS/geometry. Partial app translations stay explicit. |
+| Focus, native zoom, contrast and motion | Direct41 anchor/hover6.922light/9.04dark, select/file metadata6.002light/7.875dark. Native End/Tab selection, keyboard linked-document opening and native informational reader pass. Actual40 manual200%681CSS/DPR2.2 and genuine CDP reduced-motion/zero-duration proof carry over unchanged layout/motion code. A later100%-measured tab is not called fresh41native200proof. No formal accessibility certification. |
+| Optional apps/current authority/data | Earlier real zero/one/many/suspend/enable/uninstall/subtraction, stale save and authority-loss/restoration remain scoped to unchanged relevant code. All22populated and sixempty table fields equal their post-maintenance baselines at the final terminal read; original pins, document versions, roles and app views retained. |
+| Affected checks and source binding | Core41 identity/compatibility/asset closure20checks, freeze122files/11rows; Taskfiles18Python/16Node and deterministic exact archive. Unchanged177Node and86planner evidence retained with hashes. All 8,199 frozen files, five private heads and4012/4106candidate inputs exact through final audit. |
+| Final canonical | **982 cases: 980 passed, 2existing platform skips, zero failures/errors.** [final041 canonical](evidence/G7/20261116-ui-final041-canonical/qualification.json); elapsed4161.188s including discovery, actual runner4160.307s. Earlier040failed and superseded partial runs remain distinctly recorded. |
+| Support, author guide and retained review | Current exact combinations, reusable author patterns, useful local walkthrough and terminal receipts resolve. Eleven protected target hashes unchanged;176populated/93empty containers, two networks/six volumes each retained. No broad cleanup, production or publication. |
 
-The [local review walkthrough](ui-local-review-walkthrough.md) identifies both
-retained sites, the useful existing journey, private credential/state locations,
-actual zoom versus responsive testing and exact retained-resource boundaries.
+## Delivery disposition
 
-## Remaining action
-
-Observe the one current canonical process to its real terminal result. Check the
-frozen executable/app input map, exact failures/skips, current evidence links and
-private/public boundaries; commit only the intended documentation/evidence. If a
-failure requires source changes, keep D06 open and record that concrete finding
-before deciding its correction. A running or earlier green result is not a pass.
-
+All four original phase cards pass within the explicit direct/carried evidence
+boundaries. Review the [retained local sites](ui-local-review-walkthrough.md) and
+[support/limitations](ui-qualified-combinations.md). There is no active test,
+native operation or authority fixture. Do not replay completed operations or
+start a replacement test run; no cleanup/new phase is implied by completion.
 
 ## Terminal regression finding and correction
 
@@ -104,5 +99,9 @@ read after synthetic now had been calculated from an older observation. The
 [reconciliation plan](ui-final-regression-reconciliation-plan.md) precedes the
 test-only fixed clock and explicit newer-heartbeat counterexample. Seven focused
 checks pass; production observer and all4106/4012candidate source inputs remain
-exact. The failed full run stays failed. A new full canonical on the corrected
-test source is required before D06 acceptance; no image rebuild/version change.
+exact. The failed full run stays failed. The later corrected040 run was
+deliberately interrupted after the expanded visual audit found paint defects.
+The required new full run is now fulfilled by final041: 980 passed, two existing
+platform skips, zero failures/errors. Core41 paint and Taskfiles17 palette changes
+have their separate normal build/installed proofs; the clock fix itself did not
+change production code.

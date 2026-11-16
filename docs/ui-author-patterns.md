@@ -9,7 +9,7 @@ The owned interface supplies shared presentation for native views and independen
 apps. Apps own data, services, authority, routes and drafts. The current installed
 cohort is core0.2.41; [qualified combinations](ui-qualified-combinations.md) and the
 [acceptance matrix](ui-delivery-acceptance.md) separate actual interaction proof,
-unchanged-source applicability and the remaining final canonical run.
+unchanged-source applicability and the completed final041 canonical run.
 
 | Pattern | First supported source | Author fallback |
 | --- | --- | --- |

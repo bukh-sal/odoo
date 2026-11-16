@@ -2,14 +2,15 @@
 
 The current local candidate is **core0.2.41 / mp_core19.0.0.2.41 /
 web19.0.2.41.0**, executable source
-`fce79cff1f99d0ce1e8117d6725d1f6d75407a03`. Taskfiles0.1.7 adopts the shared
+`fce79cff1f99d0ce1e8117d6725d1f6d75407a03`. Taskfiles 0.1.7 adopts the shared
 palette; the other four app archives are unchanged. The
 [installed41 record](evidence/G7/20261116-ui-contrast041-installed/qualification.json)
 binds immutable images, exact plans, independent approvals, checkpoints,
 rendered measurements and final read-only preservation checks.
 
-**D03, D04 and D05 pass within the recorded scope. D06 is pending the single
-final041 canonical regression and terminal audit.** See the
+**D03, D04, D05 and D06 pass within the recorded scope.** The
+[final041 canonical](evidence/G7/20261116-ui-final041-canonical/qualification.json) finished982 cases/980 passes/2 existing skips,
+zero failures/errors; the terminal frozen-source/data/evidence audit passes. See the
 [original-card matrix](ui-delivery-acceptance.md). A running test process is not
 a pass. The first040 full run failed on a confirmed test-clock race; its failed
 log remains retained. The corrected040 run was deliberately stopped when the
@@ -20,7 +21,7 @@ The test-only clock correction and new paint/app sources are frozen for041.
 
 | Combination | Actual installed result | Boundary |
 | --- | --- | --- |
-| Core41 with Partners0.1.10, Workboard0.2.19, Delivery0.1.10, Documents0.1.12 and Taskfiles0.1.7 | Owned18730/config18. Core maintenance and subsequent two-scope Taskfiles upgrade each completed once through normal approval/checkpoint/replacement. All22business/authority tables and app views are preserved; terminal job epochs bind to the actual dispatch-ready receipt. | Trusted native/same-origin private apps, exact archives and recorded useful workflows; no arbitrary third-party app claim. |
+| Core41 with Partners0.1.10, Workboard0.2.19, Delivery0.1.10, Documents0.1.12 and Taskfiles 0.1.7 | Owned18730/config18. Core maintenance and subsequent two-scope Taskfiles upgrade each completed once through normal approval/checkpoint/replacement. All22business/authority tables and app views are preserved; terminal job epochs bind to the actual dispatch-ready receipt. | Trusted native/same-origin private apps, exact archives and recorded useful workflows; no arbitrary third-party app claim. |
 | Core41 eight-addon runtime, no current applications | Owned18731/config8. Fourteen final layers/3731project files, eight addons, zero current archives/plugins/bindings. Real no-app guidance, account and own-jobs access; normal zero-app-target maintenance. | Retained catalogue, removed-installation history, old images and checkpoints are intentional. Current code absence does not erase recovery evidence. |
 | Historical36 Partners0.1.10 alone | [Zero/one/many matrix](evidence/G7/20261115-ui-final036-matrix/qualification.json): actual install, A populated/B empty, companion absence, suspension/enable, uninstall and separate source removal. | Exact Partners archive and lifecycle readers remain unchanged; no new one-app41 installation is claimed. |
 | Historical owned-web transition/recovery | [Real post-native fault, fresh restore, newer-authority overlay and separate resume](evidence/G7/20261114-legacy-web-recovery-01/qualification.json). Fifteen executor/dispatch/store/recovery files remain exact in41. | Scoped carry-forward, not a new41 fault or universal migration guarantee. Source38 planning of complete unbound removed history has separate86tests and actual zero-target operations. |
@@ -93,13 +94,13 @@ private independent application boundaries remain unchanged.
 
 ## Retained review and pending exit
 
-See the [local walkthrough](ui-local-review-walkthrough.md). Human18610 and the
-other eleven protected target hashes are unchanged. Own18730/18731 retain176/
+See the [local walkthrough](ui-local-review-walkthrough.md). Human18610 and all
+eleven protected target hashes are unchanged. Own18730/18731 retain176/
 93containers respectively, two networks and six volumes each, including unused
 bootstrap volumes and historical workers/helpers. All prior checkpoints/images,
 failed diagnostics and private screenshots remain. This inventory authorizes no
 cleanup, prune, prefix sweep, force-removal or user-data deletion.
 
-One final041 canonical is running on the frozen executable/app sources.
-After its real terminal result, recheck source hashes, actual failures/skips,
-evidence links and public/private boundaries, then record the D06 decision.
+The final041 canonical and terminal audit are complete. Both review sites and
+all recovery evidence remain retained for local review. No active test/native
+operation or authority fixture remains; no cleanup/new phase is implied.

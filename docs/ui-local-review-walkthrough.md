@@ -4,7 +4,8 @@ This is the retained disposable review combination, not a production deployment.
 Current executable source is `fce79cff1f99d0ce1e8117d6725d1f6d75407a03` /
 core0.2.41. The [support record](ui-qualified-combinations.md) and
 [acceptance matrix](ui-delivery-acceptance.md) state actual evidence and limits.
-The final canonical regression is still pending at this record's creation.
+The final041 canonical is complete: 980 passed/2 existing skips/zero failures.
+All four UI delivery phase cards pass within their recorded evidence bounds.
 
 ## Open the retained sites
 
@@ -15,7 +16,7 @@ because a stale tab needs a fresh authorized navigation.
 * [Populated review18730](http://release-cd4dd6d48e72.localhost:18730/odoo?workspace=943892c1-f556-4771-aa8d-51410c1124a7): configuration18,
   immutable image `sha256:4fbca618390e7f7a8b71392a637604c2bff224d6621d94a5098f201e565375d3`.
   Partners0.1.10, Workboard0.2.19, Delivery0.1.10, Documents0.1.12,
-  Taskfiles0.1.7. The existing owned review tab is a native Partners list.
+  Taskfiles 0.1.7. The existing owned review tab is a native Partners list.
   Preserve its actual route/zoom. Source40 has measured manual200% evidence;
   source41 changes paint only. Do not call a responsive viewport native zoom.
 * [Empty source-free review18731](http://release-50bcf6e7bffa.localhost:18731/odoo?workspace=f5916da5-de2a-4064-8530-26f2e4963c37): configuration8,
@@ -74,9 +75,10 @@ bytes cannot be erased by a later access change.
 
 The exact final canonical process is bound in
 `.local/ui-final-canonical041-01/{intent,source-freeze,process}.json`.
-Observe that process to terminal; do not launch a second run on a timeout.
-No source/test/app change is permitted while it runs. Documentation-only
-commits are recorded separately from the frozen executable source.
+It finished successfully; its exit/log hash and terminal source/data audit are
+recorded in the public final041 qualification. Do not restart it or replay any
+completed native operation. Documentation commits are separate from the frozen
+executable/app sources.
 
 Private current screenshots and measured receipts are under
 `.local/ui-final041-browser-01/`; the installed proof binds their observations.

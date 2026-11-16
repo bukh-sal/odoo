@@ -5,21 +5,21 @@
 > Historical references below may be stale. See the local archive note under
 > `.local/removed-from-public/`.
 
-Current goal: implement the [shared shell and application UI delivery plan](ui-shell-delivery-plan.md) through UI-D03 to UI-D06. **Work resumed after the restart exposed working in-app controls.** The full scope remains unchanged. The installed source40 matrix now closes the observed native/custom draft, layout, focus and missing-page findings. [Original-card reconciliation](ui-delivery-acceptance.md) accepts D03/D04/D05; D06 waits for the single frozen-source canonical run and terminal audit. Source/API success is distinct from the recorded installed browser evidence.
+Current goal: **complete** - the shared shell/application UI delivery plan UI-D03 through UI-D06 passes4/4 within the recorded direct/carried evidence boundaries. Core0.2.41 and Taskfiles0.1.7 are installed locally; see ui-delivery-acceptance.md and ui-qualified-combinations.md. Historical entry notes below remain historical.
 
 The earlier PP01 through PP05 goal is complete. Preserve its acceptance evidence, historical AP-01..04, AT/AR/CF/BG/BX, R1 99/99 and sealed49/47/46 records. Local commits and disposable qualification follow the existing authorization.
 
-- Updated UTC: 2026-11-15T23:33:27.470576+00:00
+- Updated UTC: 2026-11-16T00:23:46.005673+00:00
 - Specification SHA-256: `86e1a42f377415ab88854ceb61a6b5b14340cfe3186be54e0db424efd9ae2e93`
 - Repository: `C:\Users\mesh\Documents\modular_platform`
 - Branch: `platform/r1`; G0 checkpoint `3069e03f`; G1 checkpoint `73d8ebd2`; G2 initial `616b3e35`, revision2 `67cc4acf`; G2 revision3 `5ea5779c`; G3 checkpoint `e49d3a6b`. Read current Git HEAD/status on resumption.
 - Upstream target: `5c7defb49e020fec8b6bb82403a2f54eb79e92e1`; runtime/base-image/Python/build locks established in `deploy/`; G0 qualified; G1 candidate uses a separate distribution policy/image/site.
-- Current phase/gate: UI-D06 final qualification; D03/D04/D05 accepted3/4. Populated18730/core41/config18/Taskfiles0.1.7 and empty18731/core41/config8. Main human18610 preserved.
-- Latest work item: [Installed41](evidence/G7/20261116-ui-contrast041-installed/qualification.json) closes the three measured contrast findings; exact business/authority/source/layer/retention checks pass.
-- Current next action: Observe SAME canonical041 process to terminal, reconcile actual failures/skips and frozen files; final documentation/evidence audit and local commit. No executable/test/app changes or operation replay.
+- Current phase/gate: UI-D03/D04/D05/D06 accepted4/4; no active implementation item. Populated18730/config18 and empty18731/config8 retained; human18610 protected.
+- Latest work item: [Final041 canonical](evidence/G7/20261116-ui-final041-canonical/qualification.json) 980passes/2existing skips/zero failures, frozen-source/data/authority/evidence audit passed. [Installed41](evidence/G7/20261116-ui-contrast041-installed/qualification.json) closes measured contrast findings.
+- Current next action: User review of the retained local UI and documented intentional bounds. No automatic new feature, test rerun, native-operation replay, build, publication or cleanup. Create the next phase plan only when that phase is activated.
 - Browser: In-app Browser2 own16 current Partners list/22 current empty workspace retained. Temporary31/32 closed; light restored, device overrides cleared. Actual40 native200% retained with unchanged-layout boundary; latest user confirmation not mislabelled fresh41 proof when tab measured100%.
-- Acceptance/checklist: UI3/4 phases accepted; D06 pending final041 canonical/terminal audit. Historical PP100/100 and R1 99/99/100weighted unchanged.
-- Blocker register: No unresolved installed contrast defect or open authority/draft fixture. ONE healthy canonical041 running; previous040 failure and superseded partial preserved, not waived. Await terminal before D06 acceptance.
+- Acceptance/checklist: UI4/4 complete within documented scope. Historical PP100/100 and original R1 99/99/100weighted unchanged; no extra progress for documentation/builds.
+- Blocker register: None for this bounded UI delivery. Partial Arabic, inherited utility glyphs, trusted-app model and absence of formal accessibility/broad support guarantees remain explicit product boundaries; earlier failures are not waived.
 - Original R1 result: **99/99 required acceptance checks passed and 100 weighted points.** Five R2 checks remain excluded.
 - The resumed in-app walkthrough verified native Notes, the updated Labels action, scoped viewer behavior and one-card Canvas. [Browser evidence](evidence/G7/20261105-section28-audit-01/in-app-browser.json) and [G7 decision](evidence/G7/20261105-section28-audit-01/gate-G7.json)
 

@@ -1,11 +1,13 @@
 # UI-D06 integrated qualification implementation plan
 
-> Current16November: core0.2.41 is installed on populated18730/config18 and
-> empty18731/config8. Taskfiles0.1.7 replaces only its app palette; the other four
-> archives and all core41 bytes stay exact. [Installed41 evidence](evidence/G7/20261116-ui-contrast041-installed/qualification.json)
-> closes the measured anchor, native-select and file-metadata contrast findings.
-> D03/D04/D05 remain accepted; D06 awaits the ONE frozen-source041 canonical
-> and final terminal audit. Historical40 failure/partial logs remain preserved.
+> Final review, 16 November: **UI-D03/D04/D05/D06 accepted (4/4)** for the recorded
+> local combinations. Core 0.2.41 and Taskfiles 0.1.7 are installed; the other
+> four app archives stay exact. [installed41 qualification](evidence/G7/20261116-ui-contrast041-installed/qualification.json) closes the measured
+> contrast findings. The [final041 canonical](evidence/G7/20261116-ui-final041-canonical/qualification.json) completed **980 passed,
+> 2 existing skips, zero failures/errors** on frozen executable/app source.
+> All 8,199 frozen files, candidate maps, current business/authority data and
+> eleven protected target hashes pass the terminal audit. Historical failures
+> remain preserved; formal accessibility/broad app support are not claimed.
 
 
 

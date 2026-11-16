@@ -200,3 +200,14 @@ Bootstrap button/focus-ring variables to the shared2px theme focus token. This
 replaces the measured inherited lavender glow while retaining native focus and
 button callbacks, semantic backgrounds, geometry and print. No JavaScript,
 upstream Sass declaration, licence or notice change.
+
+16November2026 source41: screen-only owned foundation bridges existing light/dark
+link RGB tokens into Bootstrap's actual RGBA anchor consumers, and maps only the
+native select background-image variable to the same original geometry with
+shared muted strokes. Validation's second image layer, native selection/focus,
+layout, routing, print, backend/authority/recovery and all licences/notices remain
+unchanged. SDK/core/web identities advance to0.2.41/19.0.0.2.41/19.0.2.41.0.
+Normal populated/empty maintenance and independent Taskfiles0.1.7 palette upgrade,
+real two-theme link/select/metadata measurements and final041 canonical qualify
+the exact changes; see ui-final-link-select-contrast-plan and installed41/final041
+evidence. This supersedes earlier pending paint checks, not their failure traces.
