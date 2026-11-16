@@ -117,3 +117,28 @@ proof, not yet installed conflict-recovery or deep1280 acceptance. NEXT repeat
 owned two-writer pressure, use explicit JSON recovery/current-winner confirmation,
 verify no overwrite and original key behavior; then matched deep-header check.
 All remaining phase3/phase2/4/5 gates preserved. Full goal ACTIVE1/5.
+
+
+### Installed015 recovery and compact-header proof
+
+Actual owner3 vs Robin4: Robin checks third task/saves4; stale owner3 suffix
+Kept draft. refuses. Explicit Recover local draft opens readonly own canonical
+JSON6468chars; original retained in pages015-conflict-01/own-draft.json. Explicit
+Load current saved version confirmation fetches winner4 with all3tasks true/no
+losing suffix, while the own JSON copy remains separately available. Normal local
+Discard after copying clears only recovery state; no second Leave/no retry.
+Fresh readonly proof3pages64heads74receipts2comments shows exactly one new winning
+head/receipt, all prior history/source template7/handbook53/current authority exact.
+Recovery/reload makes no write. Unknown-network submissions remain source-only.
+M3-C014 closed within this actual two-writer boundary; no universal merge claim.
+
+Actual1280x720/DPR1 three-part Pages/Team handbook/Your first week header is55px
+(previous85), inspectorY56, document horizontal overflow0. Original PNG/metrics
+in pages015-conflict-01/deep-header-1280.png/header-1280.json. Temporary override
+cleared. M3-H014 closed for this deep-header case; remaining whole scene/RTL/
+native200 checks are not inferred. M3-I014 generic rail and M2-V200-01 stay open.
+NEXT activate remaining authoring/integration source audit and detailed plan:
+import/export, explicit reorder and typed current-authority links/backlinks with
+real providers. System current-authority recovery/lifecycle and phases2/4/5 still
+required. Full goal ACTIVE1/5, phase3 unaccepted. No source/image/authority change
+in this walkthrough; old failure traces and all releases retained.
