@@ -767,6 +767,24 @@ authority, account language/timezone, private heads, target hashes and source
 inputs. Restore English/light/natural viewport; native200 manual gate remains
 pending. Phase2 remains open until material findings and its full checklist pass.
 
+### Core55 installed; Partners14 packaging next
+
+ONE core55 build28.484s/4f2cd5f1 passed14-layer/3767-file/4051-input audit,
+with exact private13/f416 archive. Normal d1de1a53/hash3d927686 completed once
+on18740/config16; core/web55, all ten captured business/installation/feature/
+binding/authority tables byte-exact,18partners21events/jobs0. Source delta is
+exactly the two XML templates and three identities; services/Python/app pins
+unchanged. No installed bidi acceptance until the private compact consumer is
+updated and real Arabic is checked. Reference39 is open, visible and retained.
+
+Private Partners14 changes only compact email/phone to the existing identifier
+role, three owned footer strings to bdi, and two version identities. No backend,
+model/schema/service/permission changes. Existing28Node/8Python source cases and
+17actual Owl templates/ten mounted scenarios pass; deterministic author/operator
+archive41315bytes/f0d5b157 is locally validated, not admitted or installed yet.
+Keep the old f416 archive. Build/app-only normal upgrade after this checkpoint,
+then current Arabic/English/theme/data review and final app-free counterpart.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
