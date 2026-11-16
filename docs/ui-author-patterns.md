@@ -684,8 +684,10 @@ Declare email/phone/URL semantics with the appropriate native widget or existing
 mp-identifier role in every supported form, including compact creation. A plain
 Char field deliberately does not infer business meaning from its name. The
 installed54 full reader isolates identifiers correctly; the compact Partners13
-form omitted the role and reverses phone groups under real Arabic. That consumer
-gap is pending correction, not a passed RTL example. Keep human prose/names auto-
+form omitted the role and reversed phone groups under real Arabic. Partners14
+now declares the same role, and installed core55/app14 light dialog,390px form
+and dark sheet show correct phone ordering. This closes that consumer finding,
+not all RTL behavior: the shared pagination range still needs isolation. Keep human prose/names auto-
 directional and do not force all fields LTR. Shared count/fallback-text isolation
 also remains under review. Test actual native locale, input/caret and mixed text;
 viewport mirroring or injected dir alone is insufficient evidence.
@@ -702,5 +704,7 @@ isolate plain footer strings without imposing direction on arbitrary slot DOM:
 Core55 applies this same existing bdi pattern to strings owned by PageHeader
 and native collection description/meta. Block alignment stays with the surrounding
 layout; string direction follows its first strong character. Slots retain their
-owner's semantics and escaped strings never become markup. Installed successor
-proof is pending; source tests do not establish visual bidi ordering.
+owner's semantics and escaped strings never become markup. Installed55/14 Arabic checks confirm these text roles while preserving natural
+name direction and mirrored layout. Source tests alone do not establish visual
+bidi ordering. Keep pagination/record range live-region and focus semantics when
+isolating their owned strings; the current pager status is an open RTL finding.

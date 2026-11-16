@@ -779,11 +779,42 @@ updated and real Arabic is checked. Reference39 is open, visible and retained.
 
 Private Partners14 changes only compact email/phone to the existing identifier
 role, three owned footer strings to bdi, and two version identities. No backend,
-model/schema/service/permission changes. Existing28Node/8Python source cases and
+model/schema/service/permission changes. Existing38Node/8Python source cases and
 17actual Owl templates/ten mounted scenarios pass; deterministic author/operator
 archive41315bytes/f0d5b157 is locally validated, not admitted or installed yet.
 Keep the old f416 archive. Build/app-only normal upgrade after this checkpoint,
 then current Arabic/English/theme/data review and final app-free counterpart.
+
+### Installed55/14 bidi review and remaining shared range finding
+
+Private14/bea94df6/f0d5b157 is now admitted and installed once by63ce2e98/hash
+dc687ca1,154.468s/config17/image84233740. Core55 manifests/bytes/Python lock exact;
+normal metadata increments each target workspace policy generation once, with
+all other captured business/authority fields retained. Current18contacts21events,
+jobs0. Old13 archive/images and checkpoints retained. Supplemental read-only
+review initially asked for nonexistent release-lock core_inventory (producer has
+whole-image core_inventory_digest); retained failure, then verified actual build
+core-file/manifests and Python equality before separate apply. No failed mutation.
+
+Real already-enabled Arabic (no language wizard) now shows phone+1 5550199 in
+correct order, email LTR and Arabic/mixed name natural in light compact dialog,
+390x844 full-screen form and dark organization sheet. Shared description/meta
+and private footer text are LTR-isolated inside mirrored RTL layout. Narrow form
+has document width390 and reachable footer786..844. Both unsaved drafts were
+explicitly discarded; no create/save/business call. Operator en_US/Asia-Riyadh/
+light restored, metrics cleared, all ten tables exact after UI. Reference39 stays
+open/visible and retained alongside live36; empty40/human38 untouched.
+
+A remaining real finding is visible in the captures: English fallback pagination
+range still inherits RTL and reads visually as reordered words/range. Actual
+status span has unicode-bidi normal. Source audit identifies plain t-esc on both
+TablePagination and RecordNavigation status spans. NEXT: inspect their range
+producer/compact-label semantics, isolate owned status text while preserving
+outer live region/focus/aria, meaningful actual consumer proof, normal core
+successor with exact app14, then final empty-core counterpart and installed RTL
+pager recheck. Do not mark full RTL passed or build an intermediate empty55.
+Native200 manual check remains pending; phase2/full goal stays active. Evidence
+.local/meridian-phase2-rtl055-partners014-01 includes originals and finding JSON.
 
 ## Qualification and exit checklist
 
