@@ -163,3 +163,22 @@
     .mp-context-disclosure { inline-size: 44px; min-block-size: 44px; }
     .mp-rail-order button, .mp-profile-trigger { min-inline-size: 44px; min-block-size: 44px; }
 }
+
+/* Selection is a neutral collection state, distinct from native row editing. */
+@media screen {
+    .o_web_client .o_list_renderer .o_data_row_selected:not(.o_selected_row) {
+        --table-bg: var(--mp-ui-selection);
+        --table-bg-state: var(--mp-ui-selection);
+        --table-accent-bg: var(--mp-ui-selection);
+    }
+    .mp-native-table-collection-tools { min-inline-size: 0; }
+    .mp-native-table-selection { padding: 8px 12px; border: 1px solid var(--mp-ui-line); border-block-end: 0; background: var(--mp-ui-selection); }
+    .mp-selection-box { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; color: var(--mp-ui-ink); }
+    .mp-selection-summary { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; }
+    .mp-selection-clear { display: inline-grid; place-items: center; min-inline-size: 28px; min-block-size: 28px; padding: 4px; border: 0; border-radius: 4px; background: transparent; color: var(--mp-ui-muted); }
+    .mp-selection-clear:hover { background: var(--mp-ui-hover); color: var(--mp-ui-ink); }
+    .mp-selection-clear:focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: 1px; }
+}
+@media screen and (max-width: 767px), screen and (pointer: coarse) {
+    .mp-selection-clear, .mp-selection-box .o_select_domain { min-inline-size: 44px; min-block-size: 44px; }
+}

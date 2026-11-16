@@ -338,6 +338,30 @@ unarchive that owned contact through ordinary revision-checked actions if
 available, preserving original14 fixtures and unrelated authority. Keep native
 error/dirty/uncertainty handling. Follow with remaining full phase2 exit matrix.
 
+## Collection-state audit and batched delivery adjustment
+
+Installed50 read-only native sorting/search/People filtering/zero-result/optional
+Revision-column/one-row selection work. Actual selection still renders legacy
+blue/cyan Bootstrap state, hides the query controls, exposes an unlabeled Odoo
+clear glyph, and its legacy narrow Sass floats selection over the shell. The
+reference keeps query and selection as separate stacked rows, neutral selection
+and a clear labeled control. These details fit and must carry over.
+
+Core51 candidate9805226c was built/audited but never staged or deployed. Hold
+that rollout and batch these source-backed findings into52, preserving the51
+candidate/receipts. Use the existing SelectionBox/root model; give it pinned
+Icon geometry and Clear selection accessible label/status semantics, keep its
+native domain/count/clear callbacks. Keep search available while selected,
+respect explicit layoutActions=false, place the native selection slot below
+the query inside the same collection frame, and remove only the old mobile
+fixed/obscured-shell positioning. Remove bootstrap table-info from selected rows
+and bind existing o_data_row_selected to a shared neutral selection token;
+retain editing/decorations/keyboard/query/permission behavior. Actual component
+and native producer tests plus mounted ControlPanel/SelectionBox witnesses must
+prove the new composition and clear/domain callbacks. Deliver one normal52
+maintenance from current50, exact Partners12; no51apply or old operation replay.
+Then continue app13 and the remaining installed phase2 checks.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and

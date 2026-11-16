@@ -944,9 +944,6 @@ export class ListRenderer extends Component {
                 evaluateBooleanExpr(decoration.condition, record.evalContextWithVirtualIds)
             )
             .map((decoration) => decoration.class);
-        if (record.selected) {
-            classNames.push("table-info");
-        }
         // "o_selected_row" classname for the potential row in edition
         if (record.isInEdition) {
             classNames.push("o_selected_row");

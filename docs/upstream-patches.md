@@ -306,3 +306,20 @@ hook to the shared --mp-ui-line token, screen-only in foundation.css. No native
 DOM/JS/paging/forms/behavior changes. Three identities advance51. Ten affected
 identity/compatibility checks and freeze122/11 pass; actual dark/light installed
 border measurement remains required. Partners12 archive/data unchanged.
+
+
+## Meridian core52: native collection selection composition
+
+Actual selected-state audit found blue Bootstrap row/summary, hidden query,
+unlabeled legacy clear glyph and old mobile selection overlay. Keep native
+SelectionBox/root selection/count/domain callbacks; use pinned Icon/clear label
+and polite status, neutral shared --mp-ui-selection role, query retained with
+an adjacent stacked selection row. Honor explicit author layoutActions=false.
+Remove only old mobile fixed overlay/faded shell and Bootstrap table-info row
+class, retaining semantic selection/editing/decorations/keyboard model behavior.
+Core51 divider bridge retained;51 candidate built only, never deployed. Three
+identities advance52, direct current50->52 maintenance planned.144Node29Python/
+28Owl templates/nine mounted composition/eight form checks pass, freeze122/11.
+First private mount cleared raw fixture objects without proxy notification;
+corrected fake method to mutate its receiver, original trace retained. No real
+installed52 claim yet; Partners12 backend/schema/archive/security unchanged.

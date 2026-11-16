@@ -34,15 +34,17 @@
                         <t t-slot="control-panel-always-buttons"/>
                     </div>
                 </header>
-                <div class="mp-native-table-query">
-                    <div class="o_control_panel_actions">
-                        <t t-if="display.layoutActions" t-slot="layout-actions"/>
-                        <t t-slot="control-panel-selection-actions"/>
+                <div class="mp-native-table-collection-tools">
+                    <div class="mp-native-table-query">
+                        <div class="o_control_panel_actions">
+                            <t t-if="display.layoutActions" t-slot="layout-actions"/>
+                        </div>
+                        <div class="mp-native-table-tools">
+                            <t t-slot="control-panel-additional-actions"/>
+                            <t t-call="web.ControlPanel.Navigation"/>
+                        </div>
                     </div>
-                    <div class="mp-native-table-tools">
-                        <t t-slot="control-panel-additional-actions"/>
-                        <t t-call="web.ControlPanel.Navigation"/>
-                    </div>
+                    <div class="mp-native-table-selection d-empty-none"><t t-slot="control-panel-selection-actions"/></div>
                 </div>
             </t>
             <t t-elif="display.record">

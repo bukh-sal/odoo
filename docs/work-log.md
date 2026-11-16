@@ -3560,3 +3560,14 @@ compatibility cases and freeze122/11 pass. Fresh app13 plan records native saved
 hook plus public archive/unarchive wrappers (the latter bypass saved hook),
 advisory current-workspace event and normal fresh context/count reads. No count
 arithmetic/server/core app dependency. Exact12 coreonly delivery precedes13source.
+
+
+16November read-only native collection50: actual ascending/descending, select/
+unselect, Revision column show/hide, Acme search1, People2, zero results and
+clear all pass. All7tables/14protectedtargets/fiveprivateheads exact. Current
+source deliberately differs; expected11shipped52paths recorded, not sourceequal.
+Selected state stillblue/unlabeled/hidesquery/mobilefloatshell, so hold built-only
+51/image9805 (no stage/op) and batch52 selection component/template/neutral tokens
+withdivider.144Node29Python/28Owl+ninecomposition/eightforms/freeze122/11 pass.
+Private fixture raw mutation correction trace retained. Direct50->52 normal
+build/maintenance next, exact12; advisory app13 refresh remains next source.

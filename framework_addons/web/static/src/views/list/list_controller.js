@@ -523,7 +523,7 @@ export class ListController extends Component {
             controlPanel: {
                 ...controlPanel,
                 table: true,
-                layoutActions: !this.hasSelectedRecords,
+                layoutActions: controlPanel.layoutActions !== false,
                 collectionMeta: this.collectionMeta,
             },
         };

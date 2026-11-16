@@ -20,6 +20,7 @@
     --mp-ui-muted: #616161;
     --mp-ui-line: #cccccc80;
     --mp-ui-hover: #ededed;
+    --mp-ui-selection: var(--mp-ui-hover);
     --mp-ui-badge-surface: #ededed;
     --mp-ui-badge-ink: #333;
     --mp-ui-action: #171717;

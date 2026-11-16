@@ -1,7 +1,8 @@
+import { Icon } from "@web/interface/icon";
 import { Component } from "@odoo/owl";
 
 export class SelectionBox extends Component {
-    static components = {};
+    static components = { Icon };
     static template = "web.SelectionBox";
     static props = {
         root: { type: Object },
