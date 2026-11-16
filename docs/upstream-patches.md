@@ -404,3 +404,9 @@ numeric/fallback/live label/focus and callback. Existing native Layout witnesses
 retained.122-file/11-row freeze unchanged. Private expected separator em-dash was
 corrected to producer middle-dot; original harness failure retained, production
 unchanged by that correction. Installed Arabic proof still required.
+
+
+Installed56 evidence:761ae526/config18 and b489ebfe/emptyconfig3 completed once.
+Current realArabic page/record ranges pass; all business/authority data retained.
+Final056 snapshot verifies both targets/protected sources. Source proof and real
+native ordering are distinct; full phase2/zoom acceptance remains open.

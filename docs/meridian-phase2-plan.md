@@ -843,6 +843,29 @@ locale/profile/theme and protected targets. Build final empty56 only after the
 core correction succeeds, then its normal zero-app upgrade/current shell check.
 No intermediate empty55, no old operation/wizard replay, no app14 rebuild.
 
+### Core56 installed on both cohorts
+
+Normal761ae526/hash72fba5fa completed151.672s/config18 with exact app14 and all
+10tables unchanged. Matching app-free imagefb81dc1b built28.563s,14layers3747
+files, eight manifests/core files/Python exact versus populatedb7eb5967.
+Normal b489ebfe/hasha815259e completed151.406s/config3 with zero targets;
+all nine empty tables/trust/catalog retained. Final056 check confirms18contacts/
+21events/jobs0 on populated and eight modules/zero application data on empty,
+all protected targets/private heads/4051sourceinputs exact after browser work.
+
+Actual Arabic paging shows1–10 then11–18 of18, numeric record1/10->2/10,
+outer live labels and LTR-isolated content; dark/narrow record reachable. A full
+reload honestly narrows record navigation to its one loaded ID. Empty launcher
+and jobs are honest; job tab47 opened once/closed. Dark empty actual389x845 has
+no document overflow. English/light/profile restored, all metric overrides clear.
+
+New pair056 first captures failed CSS matching and are retained; corrected
+1440x900 CSS measurements match shell56/context264. Native reference90/live110
+remain different, so no pixel/nativezoom acceptance.26/34 title versus reference
+24/30 and24px versus32px inset follow the signed-off roomier study. Current100%
+onboth question pending; then actual200%. Phase2 remains unaccepted. The review
+packet records remaining consumer/template breadth and phase3 overlap explicitly.
+
 ## Qualification and exit checklist
 
 First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
@@ -904,4 +927,7 @@ No phase2 exit or wider app adoption is claimed.
 
 Exit requires installed proof and a visual critique closing material phase2
 findings, not merely green source tests. Phase3's detailed authoring/editor/
-access plan is written when this phase exits, using the resulting real APIs.
+access plan is now activated against current56 APIs while manual zoom and
+remaining consumer-breadth checks stay open. This scheduling overlap uses the
+real independent app to complete reuse evidence; it does not accept phase2 or
+remove any final gate. See meridian-phase2-review.md and meridian-phase3-plan.md.

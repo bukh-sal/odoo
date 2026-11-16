@@ -708,3 +708,19 @@ owner's semantics and escaped strings never become markup. Installed55/14 Arabic
 name direction and mirrored layout. Source tests alone do not establish visual
 bidi ordering. Keep pagination/record range live-region and focus semantics when
 isolating their owned strings; the current pager status is an open RTL finding.
+
+
+### Ranges and comparison scale
+
+Core56 keeps the outer pagination status/live/focus contract and isolates its
+owned range/error text inside bdi. Prose/translated fallback follows first-strong
+direction; valid compact current/total numeric position is explicitly LTR. Real
+Arabic installed checks cover page1/page2 and record navigation. Preserve the
+meaning of loaded records; a deep reload need not retain the original list IDs.
+
+For visual comparisons, assert actual DOM innerWidth/innerHeight after any
+viewport override. Do not infer CSS size from deprecated CDP DIP metrics or a
+requested emulation size. Record CSS/DIP dimensions, native zoom and DPR. Current
+reference90/live110 captures support structural measurements only, even with
+matched CSS viewport. Never resize originals independently to claim fidelity.
+See meridian-phase2-review.md; native100%/200% checks remain pending.
