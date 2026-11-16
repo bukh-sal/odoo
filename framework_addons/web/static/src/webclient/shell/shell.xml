@@ -55,10 +55,7 @@
               <Icon name="'panel-left-close'" directional="true"/>
             </button>
           </header>
-          <nav t-att-aria-label="current.name">
-            <a t-att-href="href(current)" t-att-aria-current="active(current)" t-on-click="event => this.select(event, current)">Overview</a>
-            <t t-foreach="sections" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>
-          </nav>
+          <ContextNav groups="contextGroups" label="current.name" onNavigate.bind="selectContext" t-key="current.pluginID || current.id"/>
         </aside>
         <div class="mp-shell-canvas">
           <div class="mp-shell-action" t-att-hidden="blocked" t-att-class="{'is-empty': emptyCanvas}"><t t-slot="default"/></div>
@@ -73,13 +70,6 @@
           </section>
         </div>
       </div>
-    </div>
-  </t>
-  <t t-name="web.Shell.Section">
-    <a t-if="section.actionID" t-att-href="href(section)" t-att-aria-current="active(section)" t-on-click="event => this.select(event, section)" t-esc="section.name"/>
-    <span t-else="" class="mp-context-section" t-esc="section.name"/>
-    <div t-if="section.childrenTree.length" class="mp-context-children">
-      <t t-foreach="section.childrenTree" t-as="section" t-key="section.id"><t t-call="web.Shell.Section"/></t>
     </div>
   </t>
 </templates>

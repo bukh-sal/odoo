@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.RecordHeader">
+    <header class="mp-record-header">
+      <span t-if="props.initials" class="mp-record-avatar" aria-hidden="true" t-esc="props.initials"/>
+      <div class="mp-record-heading">
+        <div class="mp-record-title-line"><h1 class="mp-page-title" dir="auto" t-esc="props.title"/><t t-slot="state"/></div>
+        <p t-if="props.subtitle" class="mp-page-description" dir="auto" t-esc="props.subtitle"/>
+        <div t-if="props.slots.metadata" class="mp-record-metadata"><t t-slot="metadata"/></div>
+      </div>
+      <div t-if="props.slots.actions" class="mp-record-actions"><t t-slot="actions"/></div>
+    </header>
+  </t>
+  <t t-name="web.interface.RecordLayout">
+    <div class="mp-record-layout" t-att-class="{'has-aside': props.showAside and !!props.slots.aside}">
+      <div class="mp-record-main"><t t-slot="default"/></div>
+      <aside t-if="props.showAside and props.slots.aside" class="mp-record-aside" t-att-aria-label="props.asideLabel"><t t-slot="aside"/></aside>
+    </div>
+  </t>
+</templates>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.Badge">
+    <span class="mp-badge" t-att-data-variant="props.variant"><Icon t-if="props.icon" name="props.icon" size="12"/><bdi t-esc="props.label"/></span>
+  </t>
+</templates>

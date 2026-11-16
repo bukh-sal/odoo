@@ -1,0 +1,60 @@
+/* Shared presentation recipes. Owners supply their data, actions and authority. */
+.mp-badge {
+    display: inline-flex; align-items: center; gap: 4px; vertical-align: middle;
+    padding: 1px 6px; border: 1px solid var(--mp-ui-divider); border-radius: 5px;
+    background: var(--mp-ui-badge-surface); color: var(--mp-ui-badge-ink);
+    font: 500 11px/16px var(--mp-ui-font); max-inline-size: 100%;
+}
+.mp-badge > bdi { overflow-wrap: anywhere; }
+.mp-badge[data-variant="info"] { color: var(--mp-ui-link); background: var(--mp-ui-hover); }
+.mp-badge[data-variant="success"] { color: var(--mp-ui-success-ink); background: var(--mp-ui-success-surface); border-color: var(--mp-ui-success-line); }
+.mp-badge[data-variant="warning"] { color: var(--mp-ui-warning-ink); background: var(--mp-ui-warning-surface); border-color: var(--mp-ui-warning-line); }
+.mp-badge[data-variant="danger"] { color: var(--mp-ui-danger-ink); background: var(--mp-ui-danger-surface); border-color: var(--mp-ui-danger-line); }
+/* Native formatting/decorations keep their semantics and share the same roles. */
+.o_web_client .o_field_badge .badge { padding: 1px 6px; border: 1px solid var(--mp-ui-divider); border-radius: 5px !important; font: 500 11px/16px var(--mp-ui-font); }
+.o_web_client .o_field_badge .badge.text-bg-300 { color: var(--mp-ui-badge-ink) !important; background-color: var(--mp-ui-badge-surface) !important; }
+.o_web_client .o_field_badge .badge.text-bg-success { color: var(--mp-ui-success-ink) !important; background-color: var(--mp-ui-success-surface) !important; border-color: var(--mp-ui-success-line); }
+.o_web_client .o_field_badge .badge.text-bg-warning { color: var(--mp-ui-warning-ink) !important; background-color: var(--mp-ui-warning-surface) !important; border-color: var(--mp-ui-warning-line); }
+.o_web_client .o_field_badge .badge.text-bg-danger { color: var(--mp-ui-danger-ink) !important; background-color: var(--mp-ui-danger-surface) !important; border-color: var(--mp-ui-danger-line); }
+.o_web_client .o_field_badge .badge.text-bg-info { color: var(--mp-ui-link) !important; background-color: var(--mp-ui-hover) !important; }
+.mp-context-nav { display: flex; flex: 1; flex-direction: column; gap: 20px; min-block-size: 0; overflow-y: auto; padding: 10px 8px; }
+.mp-context-group-label { margin: 0 8px 6px; color: var(--mp-ui-muted); font: var(--mp-ui-label); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.mp-context-items { list-style: none; padding: 0; margin: 0; }
+.mp-context-item + .mp-context-item { margin-block-start: 2px; }
+.mp-context-row { display: flex; align-items: center; min-inline-size: 0; }
+.mp-context-destination, .mp-context-parent-label {
+    display: flex; align-items: center; gap: 9px; flex: 1; min-inline-size: 0;
+    min-block-size: 36px; padding: 7px 8px; border: 0; border-radius: 6px;
+    background: transparent; color: var(--mp-ui-muted); text-align: start;
+    text-decoration: none; font: 400 13px/20px var(--mp-ui-font);
+}
+.mp-context-destination:hover, .mp-context-destination[aria-current="page"] { background: var(--mp-ui-hover); color: var(--mp-ui-ink); }
+.mp-context-destination[aria-current="page"] { font-weight: 500; }
+.mp-context-destination[aria-disabled="true"], .mp-context-destination:disabled { opacity: .55; cursor: default; }
+.mp-context-item-label { flex: 1; min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mp-context-count { flex: 0 0 auto; padding: 0 4px; border-radius: 4px; background: var(--mp-ui-surface); color: var(--mp-ui-muted); font: 500 10px/16px var(--mp-ui-font); font-variant-numeric: tabular-nums; }
+.mp-context-disclosure { display: grid; place-items: center; inline-size: 24px; min-block-size: 28px; flex: 0 0 auto; padding: 0; border: 0; border-radius: 4px; color: var(--mp-ui-muted); background: transparent; }
+.mp-context-disclosure:hover { background: var(--mp-ui-hover); color: var(--mp-ui-ink); }
+.mp-context-nested { margin-inline-start: 12px; padding-inline-start: 8px; border-inline-start: 1px solid var(--mp-ui-divider); }
+.mp-context-footer { margin-block-start: auto; padding: 12px 8px 4px; border-block-start: 1px solid var(--mp-ui-divider); font-size: 12px; color: var(--mp-ui-muted); }
+.mp-context-nav :is(a, button):focus-visible { outline: 2px solid var(--mp-ui-focus); outline-offset: -2px; }
+.mp-record-header { display: flex; align-items: flex-start; gap: 12px; min-inline-size: 0; }
+.mp-record-avatar { display: grid; place-items: center; inline-size: 44px; block-size: 44px; flex: 0 0 auto; border: 1px solid var(--mp-ui-divider); border-radius: 9px; background: var(--mp-ui-hover); color: var(--mp-ui-ink); font: 500 14px/20px var(--mp-ui-font); }
+.mp-record-heading { flex: 1; min-inline-size: 0; }
+.mp-record-title-line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.mp-record-title-line .mp-page-title { margin: 0; font: var(--mp-ui-title); letter-spacing: -.025em; overflow-wrap: anywhere; }
+.mp-record-metadata { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-block-start: 6px; color: var(--mp-ui-muted); font-size: 12px; }
+.mp-record-header > .mp-record-actions { margin-inline-start: auto; justify-content: flex-end; }
+.mp-record-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; align-items: start; }
+.mp-record-layout.has-aside { grid-template-columns: minmax(0, 1fr) 304px; }
+.mp-record-main, .mp-record-aside { min-inline-size: 0; display: grid; gap: 20px; }
+@media (max-width: 1100px) { .mp-record-layout.has-aside { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 767px) {
+    .mp-record-header { flex-wrap: wrap; }
+    .mp-record-header > .mp-record-actions { flex-basis: 100%; }
+    .mp-record-layout { gap: 16px; }
+}
+@media (pointer: coarse) {
+    .mp-context-destination { min-block-size: 44px; }
+    .mp-context-disclosure { inline-size: 44px; min-block-size: 44px; }
+}

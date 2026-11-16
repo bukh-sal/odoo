@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="web.interface.ContextNav">
+    <nav class="mp-context-nav" t-att-aria-label="label" t-ref="root" t-on-keydown="onKeydown">
+      <section t-foreach="groups" t-as="group" t-key="group.id" class="mp-context-group" t-att-aria-label="group.label">
+        <h3 t-if="group.label" class="mp-context-group-label" t-esc="group.label"/>
+        <ul class="mp-context-items"><t t-foreach="group.items" t-as="item" t-key="item.id"><t t-call="web.interface.ContextNav.Item"/></t></ul>
+      </section>
+      <div t-if="props.slots.footer" class="mp-context-footer"><t t-slot="footer"/></div>
+    </nav>
+  </t>
+  <t t-name="web.interface.ContextNav.Item">
+    <li class="mp-context-item">
+      <div class="mp-context-row">
+        <button t-if="item.children?.length" class="mp-context-disclosure" type="button" data-mp-context-focus=""
+          t-att-aria-label="toggleLabel(item)" t-att-aria-expanded="expanded(item) ? 'true' : 'false'"
+          t-att-aria-controls="childrenId(item)" t-att-aria-busy="state.pending[item.id] === true ? 'true' : undefined" t-on-click="() => this.toggle(item)">
+          <Icon name="expanded(item) ? 'chevron-down' : 'chevron-right'" directional="!expanded(item)" size="14"/>
+        </button>
+        <a t-if="item.href" class="mp-context-destination" data-mp-context-focus="" data-mp-context-destination=""
+          t-att-href="item.disabled ? undefined : item.href" t-att-aria-disabled="item.disabled ? 'true' : undefined"
+          t-att-tabindex="item.disabled ? -1 : undefined" t-att-aria-current="item.current ? 'page' : undefined"
+          t-att-title="item.label" t-on-click="event => this.navigate(item, event)"><t t-call="web.interface.ContextNav.Label"/></a>
+        <button t-elif="!item.children?.length" class="mp-context-destination" type="button" data-mp-context-focus="" data-mp-context-destination=""
+          t-att-disabled="item.disabled" t-att-aria-current="item.current ? 'page' : undefined" t-att-title="item.label"
+          t-on-click="event => this.navigate(item, event)"><t t-call="web.interface.ContextNav.Label"/></button>
+        <span t-else="" class="mp-context-parent-label"><t t-call="web.interface.ContextNav.Label"/></span>
+      </div>
+      <ul t-if="item.children?.length and expanded(item)" class="mp-context-items mp-context-nested" t-att-id="childrenId(item)">
+        <t t-foreach="item.children" t-as="item" t-key="item.id"><t t-call="web.interface.ContextNav.Item"/></t>
+      </ul>
+    </li>
+  </t>
+  <t t-name="web.interface.ContextNav.Label">
+    <Icon t-if="item.icon" name="item.icon" size="16"/>
+    <bdi class="mp-context-item-label" t-esc="item.label"/>
+    <span t-if="item.count !== undefined" class="mp-context-count" t-att-aria-label="item.countLabel" t-esc="item.count"/>
+  </t>
+</templates>

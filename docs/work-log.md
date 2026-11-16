@@ -1,3 +1,23 @@
+## Meridian phase2 first shared-source checkpoint - 16 November2026
+
+Implemented shared ContextNav groups/icons/current/count/disclosure/footer with
+normal modifier links, async owner cancellation, no late resurrection and
+visible-control keyboard traversal. Native Shell consumes the component from
+current filtered menu trees and retains its action/leave services. New Badge,
+RecordHeader and main/304px optional RecordLayout expose shared slots; neutral
+and semantic native badges consume theme roles. Assets are explicit/inventoried;
+no private app query, authority or data logic enters core. Author recipes added.
+
+45Node/22Python source cases,122-file/11-row freeze and7actual Owl templates/
+10mounted fake-DOM checks pass; the final handled-key guard's seven tests pass.
+One stale file-map fixture correctly hit the unchanged asset guard, then was
+fixed to supply every appended file and test each missing hash. Two private
+jsdom fixture failures (realm/visibility) are preserved in source047 notes.
+No installed47/image claim. Source identities47 are provisional/unbuilt,
+Partners11 unchanged. Next implement pins/profile and native record/collection
+integration under the committed phase2 plan before building the core candidate.
+Milestones1/5; phase2rough10%, no acceptance credited for planning alone.
+
 ## Meridian phase1 installed exit and phase2 activation - 16 November2026
 
 Operation60e113f2 completed once/config6/image1ad2671c; actual natural1246px

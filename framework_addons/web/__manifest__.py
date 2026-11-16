@@ -4,7 +4,7 @@
 {
     'name': 'Web',
     'category': 'Hidden',
-    'version': '19.0.2.46.0',
+    'version': '19.0.2.47.0',
     'description': """
 Odoo Web core module.
 ========================
@@ -150,6 +150,13 @@ This module provides the core of the Odoo Web Client.
             'web/static/src/interface/record_sections.js',
             'web/static/src/interface/record_sections.xml',
             'web/static/src/interface/record_sections.css',
+            'web/static/src/interface/badge.js',
+            'web/static/src/interface/badge.xml',
+            'web/static/src/interface/context_nav.js',
+            'web/static/src/interface/context_nav.xml',
+            'web/static/src/interface/record_layout.js',
+            'web/static/src/interface/record_layout.xml',
+            'web/static/src/interface/patterns.css',
         ],
         'web.assets_backend_lazy': [
             ('include', 'web._assets_helpers'),

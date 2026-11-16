@@ -59,19 +59,15 @@
 }
 .mp-shell-body { display: flex; flex: 1; min-height: 0; margin-inline-start: var(--mp-shell-rail); }
 .mp-native-context {
-    width: var(--mp-ui-sidebar); flex: 0 0 var(--mp-ui-sidebar); overflow-y: auto; padding: 0;
+    width: var(--mp-ui-sidebar); flex: 0 0 var(--mp-ui-sidebar); min-height: 0;
+    display: flex; flex-direction: column; padding: 0;
     background: var(--mp-ui-surface); border-inline-end: 1px solid var(--mp-ui-divider);
-    nav { display: flex; flex-direction: column; gap: 2px; padding: 8px; }
-    a { min-height: 34px; padding: 7px 8px; color: var(--mp-ui-muted); border-radius: var(--mp-ui-radius); text-decoration: none; overflow-wrap: anywhere; font-size: 13px; }
-    a:hover, a[aria-current="page"] { color: var(--mp-ui-ink); background: var(--mp-ui-hover); }
 }
 .mp-context-header {
     display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 6px 12px;
     border-block-end: 1px solid var(--mp-ui-divider);
     h2.mp-app-context-title, h2 { flex: 1; min-width: 0; margin: 0; padding: 0; font: var(--mp-ui-label); text-transform: uppercase; letter-spacing: .06em; overflow-wrap: anywhere; }
 }
-.mp-context-children { display: flex; flex-direction: column; padding-inline-start: 12px; }
-.mp-context-section { padding: 12px; font-size: 12px; font-weight: 600; }
 .mp-shell-canvas { flex: 1; min-width: 0; min-height: 0; display: flex; flex-direction: column; position: relative; }
 .mp-shell-action { display: flex; flex-direction: column; flex: 1; min-height: 0; }
 .mp-shell-action.is-empty { flex: 0 0 0; }
@@ -103,7 +99,7 @@
     .mp-command-trigger { width: 36px; justify-content: center; padding: 0; span { display: none; } }
     .mp-shell-utilities { gap: 4px; font-size: 12px; }
     .mp-context-toggle { display: flex; gap: 8px; align-items: center; max-width: 160px; min-height: 44px; overflow-wrap: anywhere; > span { display: inline; } }
-    .mp-native-context { display: none; &.is-open { display: block; width: 100%; flex-basis: auto; } }
+    .mp-native-context { display: none; &.is-open { display: flex; width: 100%; flex-basis: auto; } }
     .mp-shell-body:has(.mp-native-context.is-open) .mp-shell-canvas { display: none; }
 }
 @media print {

@@ -252,3 +252,12 @@ fail on45 for the observed863px parent and pass after correction, including
 fractional borders, borderless/separate edges and genuine narrow overflow.
 No overflow-hiding CSS, app branch or authority behavior changed. SDK/core/web46
 record shipped bytes; installed visual verification remains required.
+
+16November2026 phase2 source47 introduces app-independent ContextNav, Badge,
+RecordHeader/Layout exports and native Shell consumption. Native neutral badge
+roles now follow light/dark tokens; existing semantic/color-field meaning is
+retained. The ordinary menu/action/leave services remain owners; no private app
+or model query enters base UI. Source component/hook, actual asset consumer and
+pinned Owl checks pass. This is an unfinished source checkpoint, not an image
+or installed47qualification. Core/web/SDK47 are reserved for the upcoming
+coherent phase2 candidate; retain attribution and current immutable46image.

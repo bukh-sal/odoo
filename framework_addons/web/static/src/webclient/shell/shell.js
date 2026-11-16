@@ -12,11 +12,12 @@ import { PageHeader } from "@web/interface/page_header";
 import { StatusMessage } from "@web/interface/status_message";
 import { Icon } from "@web/interface/icon";
 import { useContextPreference } from "@web/interface/context_preference";
+import { ContextNav } from "@web/interface/context_nav";
 
 /** Presentation over the existing menu/action services and their leave lifecycle. */
 export class Shell extends Component {
     static template = "web.Shell";
-    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage, Icon };
+    static components = { Dropdown, DropdownItem, ErrorHandler, UserMenu, PageHeader, StatusMessage, Icon, ContextNav };
     static props = { slots: Object };
 
     setup() {
@@ -70,6 +71,24 @@ export class Shell extends Component {
     get blocked() { return this.menu.unavailable || this.menu.currentAppUnavailable; }
     get emptyCanvas() { return !this.current && !this.action.currentController; }
     get sections() { return this.current ? this.menu.getMenuAsTree(this.current.id).childrenTree : []; }
+    get contextGroups() {
+        if (!this.current) return [];
+        const item = menu => {
+            const children = (menu.childrenTree || []).map(item).filter(Boolean);
+            if (!menu.actionID && !children.length) return null;
+            return { id: "menu-" + menu.id, label: menu.name,
+                ...(menu.actionID ? {href: this.href(menu)} : {}),
+                icon: menu.contextIcon || (menu.actionID ? "file-text" : "folder"),
+                current: this.active(menu) === "page", children, menu };
+        };
+        return [{id: "native-navigation", items: [
+            {id: "root-" + this.current.id, label: _t("Overview"),
+                href: this.href(this.current), icon: this.icon(this.current),
+                current: this.active(this.current) === "page", menu: this.current},
+            ...this.sections.map(item).filter(Boolean),
+        ]}];
+    }
+    selectContext(item, event) { return this.select(event, item.menu); }
     get utilities() {
         return registry.category("systray").getEntries()
             .filter(([key]) => key !== "burger_menu" &&

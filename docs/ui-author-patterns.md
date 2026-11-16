@@ -1,5 +1,55 @@
 # Shared application interface patterns
 
+## Phase2 shared surfaces (source47, installed proof pending)
+
+Import `ContextNav` from `@web/interface/context_nav`, `Badge` from
+`@web/interface/badge`, and `RecordHeader`/`RecordLayout` from
+`@web/interface/record_layout`. These are inventoried backend components;
+they do not import a private application or fetch its data. The native Shell
+now uses ContextNav's default menu presentation. Source47 is still under
+implementation; current review sites remain46/Partners11 and empty45.
+
+```xml
+<ContextNav label="navigationLabel" groups="navigationGroups" onNavigate.bind="navigate">
+  <t t-set-slot="footer"><p t-esc="scopeDescription"/></t>
+</ContextNav>
+<RecordHeader title="recordTitle" initials="recordInitials">
+  <t t-set-slot="state"><Badge label="statusLabel" variant="'neutral'"/></t>
+  <t t-set-slot="metadata"><bdi t-esc="recordSubtitle"/></t>
+  <t t-set-slot="actions"><button class="btn btn-primary" t-on-click="edit">Edit</button></t>
+</RecordHeader>
+<RecordLayout showAside="hasRelatedContent" asideLabel="relatedLabel">
+  <RecordSection title="mainLabel"><t t-call="my.app.CurrentFacts"/></RecordSection>
+  <t t-set-slot="aside"><RecordSection title="relatedLabel"><t t-call="my.app.CurrentRelations"/></RecordSection></t>
+</RecordLayout>
+```
+
+Context groups have unique `id`, optional plain `label`, and `items`. An item
+has unique `id`, resolved plain `label`, optional semantic `icon`, internal
+`href`, boolean `current`/`disabled`, optional nonnegative exact `count` and
+accessible `countLabel`. Nested `children` make a disclosure; `expanded:false`
+starts it closed. IDs follow existing stable DOM-key bounds. A zero count
+renders; omit an unknown count rather than pretending it is zero. The app
+owns the scoped query, error handling and disposal. Do not retain a count
+across an access/workspace change without fresh validation.
+
+Ordinary activation awaits `onNavigate(item,event)`; return false to refuse.
+Modified-click links retain native new-tab behavior. Up/Down/Home/End move
+between visible enabled controls without activating a destination. Tab and
+Enter keep normal link/button behavior. An optional async `onToggle(id,next)`
+can refuse disclosure. Late results cannot reopen removed/unmounted items.
+This is hierarchical navigation, not a document permission model or a complete
+ARIA document-tree editor. Pages will compose its tree behavior over the same
+row/disclosure vocabulary under its own phase plan.
+
+Badge variants are `neutral`, `info`, `success`, `warning`, `danger`; the label
+always explains the state. Native badge-field decorations use the same theme
+roles. Explicit legacy color fields retain their meaning. RecordHeader supplies
+title/avatar/state/metadata/actions; RecordLayout reserves its304px aside only
+when a slot exists and `showAside` is true, then stacks it at smaller widths.
+Keep Edit/Save/validation in the ordinary native controller or the app's real
+revision-checked owner; these components never persist data or infer authority.
+
 Source41 also bridges Bootstrap's link RGB consumers and themed native-select
 indicator. Taskfiles0.1.7 demonstrates adopting shared semantic colours without
 changing layout, JavaScript, services or its justified component minimum.

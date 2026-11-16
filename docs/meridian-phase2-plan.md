@@ -145,6 +145,23 @@ old operation replay. Keep all checkpoints, failed diagnostics and prior images.
 
 ## Qualification and exit checklist
 
+First source checkpoint: shared ContextNav/Badge/RecordHeader/RecordLayout and
+their theme roles are implemented; native Shell now consumes ContextNav's
+filtered menu-tree projection. Native neutral/decorated badge presentation uses
+shared roles.45Node cases,22Python cases,122-file/11-row freeze and7actual Owl
+templates/10fake-DOM mounted checks pass. A final handled-key guard was checked
+with the seven affected ContextNav cases. No47image or installed47claim yet.
+The asset-fence test initially supplied only historical file hashes; the
+unchanged production guard correctly refused them, and the fixture now tests
+all actual appends plus each missing hash. Two private jsdom realm/layout
+fixture corrections are recorded, not presented as installed behavior.
+
+Phase2 is roughly10% from the first reusable source components and native
+composition. Pins/profile/help, full collection/header/scroll integration,
+native record slots and the private consumer remain. Partners11 stays exact
+until the core47 maintenance image is built. Continue core implementation
+before creating a47candidate; no phase2 exit or wider app adoption is claimed.
+
 1. Production-component/hook tests cover key validation, pin isolation/empty
    state/order/revocation/storage failure, native menu pruning, canceled/failed
    requests, modifier navigation, focus/disclosure and read/Edit/header fallback.

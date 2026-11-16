@@ -72,6 +72,16 @@ def native_asset_paths(bundle, web_manifest=None):
 
 
 class SharedIconAssetClosure(unittest.TestCase):
+    def test_shared_sidebar_badge_and_record_patterns_are_backend_only_exactly_once(self):
+        backend = native_asset_paths('web.assets_backend')
+        frontend = native_asset_paths('web.assets_frontend_lazy')
+        for name in ['badge.js', 'badge.xml', 'context_nav.js', 'context_nav.xml',
+                     'record_layout.js', 'record_layout.xml', 'patterns.css']:
+            path = 'web/static/src/interface/' + name
+            self.assertEqual(backend.count(path), 1)
+            self.assertNotIn(path, frontend)
+            self.assertTrue((ROOT / 'framework_addons' / path).is_file())
+
     def test_native_identity_field_has_its_actual_editing_and_template_dependencies(self):
         paths = native_asset_paths('web.assets_backend')
         for path in ['web/static/src/views/fields/identity/identity_field.' + suffix
@@ -195,11 +205,18 @@ class SharedIconMaintenanceFence(unittest.TestCase):
 
     def test_current_shared_component_append_uses_existing_inventory_fence(self):
         target = json.loads(json.dumps(ast.literal_eval((ROOT / 'framework_addons/web/__manifest__.py').read_text(encoding='utf-8'))))
-        paths = ['web/static/src/interface/record_sections.' + suffix for suffix in ['js', 'xml', 'css']]
+        previous_backend = self.target['assets']['web.assets_backend']
+        paths = target['assets']['web.assets_backend'][len(previous_backend):]
+        self.assertEqual(target['assets']['web.assets_backend'][:len(previous_backend)], previous_backend)
         files = {'addons/' + path: hashlib.sha256((ROOT / 'framework_addons' / path).read_bytes()).hexdigest() for path in paths}
         self.require(self.target, target, files)
         with self.assertRaises(self.error):
             self.require(self.target, target, {})
+        for path in paths:
+            missing = dict(files)
+            del missing['addons/' + path]
+            with self.subTest(missing=path), self.assertRaises(self.error):
+                self.require(self.target, target, missing)
 
 
 if __name__ == '__main__':

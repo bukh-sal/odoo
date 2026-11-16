@@ -17,11 +17,11 @@ async function shellFixture() {
         Icon: blank, useSubEnv: () => {}, useContextPreference: () => ({collapsed:false,toggle(){}}),
         Component: blank, Dialog: class {static props = {};}, Dropdown: blank, DropdownItem: blank,
         xml: strings => strings.join(''), window: {}, document: {activeElement:null},
-        ErrorHandler: blank, UserMenu: blank, PageHeader: blank, StatusMessage: blank,
+        ErrorHandler: blank, UserMenu: blank, PageHeader: blank, StatusMessage: blank, ContextNav: blank,
         useEffect: fn => effects.push(fn), useExternalListener: () => {}, useBus: () => {},
         useState: value => value, useRef: name => refs[name] = {el: {focus: () => focused.push(name), contains:()=>false}},
         useService: name => ({menu:{unavailable:false},action:{},command:{},dialog:{add:()=>{}},ui})[name],
-        registry:{category:()=>({contains:()=>false})}, browser:{}, user:{}, _t:value=>value,
+        registry:{category:()=>({contains:()=>false})}, browser:{location:{search:'?workspace=scoped-workspace'}}, user:{}, _t:value=>value,
     });
     const shell = new module.Shell(); shell.env = {bus:{},isSmall:true}; shell.setup();
     return {shell, ui, focused, effects, refs};
@@ -46,6 +46,27 @@ test('workspace presentation region partitions currently displayed utilities wit
     entries = [];
     assert.deepEqual(f.shell.workspaceUtilities, []);
     assert.deepEqual(f.shell.trailingUtilities, []);
+});
+
+test('shared native context keeps filtered menu groups and delegates normal action navigation',async()=>{
+    const f=await shellFixture(),calls=[];
+    const app={id:1,pluginID:'example.owner',name:'Directory',actionID:10,appIcon:'users'};
+    const child={id:3,name:'People',actionID:12,contextIcon:'users',childrenTree:[]};
+    const tree={childrenTree:[{id:2,name:'Directory',childrenTree:[child]},
+        {id:4,name:'Empty filtered group',childrenTree:[]}]};
+    f.shell.menu={getApps:()=>[app],getCurrentApp:()=>app,getMenuAsTree:()=>tree,selectMenu:async m=>calls.push(m)};
+    f.shell.action={currentController:{action:{id:12}}};
+    const groups=f.shell.contextGroups;
+    assert.equal(groups.length,1);assert.equal(groups[0].items.length,2);
+    const group=groups[0].items[1],row=group.children[0];
+    assert.equal(group.label,'Directory');assert.equal(group.href,undefined);
+    assert.equal(row.label,'People');assert.equal(row.icon,'users');assert.equal(row.current,true);
+    assert.match(row.href,/action-12\?workspace=scoped-workspace$/);
+    assert.equal(row.menu,child);
+    let prevented=0;await f.shell.selectContext(row,{button:0,preventDefault(){prevented++;}});
+    assert.equal(prevented,1);assert.deepEqual(calls,[child]);
+    await f.shell.selectContext(row,{button:0,ctrlKey:true,preventDefault(){throw Error('Keep native modified link');}});
+    assert.deepEqual(calls,[child]);
 });
 
 test('desktop context toggle restores focus to the newly mounted reopen or header control', async () => {
