@@ -3977,3 +3977,5 @@ Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
 2026-11-16T18:28:49.259462+00:00 Installed015 actual conflict recovery/current-winner fetch pass; storage3pages64heads74receipts, only coworker write persists. Deep1280 header55/overflow0, M3-C014/H014 bounded findings closed. Source audit/plan remaining authoring/integration next; whole goal1/5 active.
 
 2026-11-16T18:32:57.917312+00:00 Fresh remaining-authoring plan/source audit; existing bounded core binary seam supports JSON import without new core transport. Unpublished016 original-byte import backend + exact schema/registration/3new tests, total28Python pass. No image/live mutations. UI/Markdown/integrations remain, full goal active.
+
+2026-11-16T18:39:15.460999+00:00 Unpublished016 import UI freezes raw bytes/key/title through uncertainty, current-authorized saved export implemented;44Node pass/28Python carried. Official Markdown bridge + exact3.31.3 registry peers audited; actual tokenizer source identified, dependency not installed/pinned yet. No live changes. Full goal active.

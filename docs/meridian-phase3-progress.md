@@ -636,3 +636,32 @@ injection. Installed015 remains3pages64heads74receipts/config8 unchanged.
 NEXT finish transfer UI/original-byte confirmation/export, audit/pin Markdown
 parser before use, then organization/current-readable links/providers per plan.
 No half-working controls. Full goal ACTIVE1/5/all remaining gates retained.
+
+
+### Transfer UI and timely Markdown audit
+
+Unpublished016 now has actual Import dialog/file choice/title/confirmation,
+original-byte SHA/key freezing and same-input retry on unknown results. No editor
+coercion before server validation. Export saved JSON first fetches current page
+and verified current head, refuses denied reads, downloads only saved content;
+filename normalizes/strips controls and bounds Unicode length. Actual-controller
+and Owl compiler cases now44Node pass0fail (pages016-source-01/node-transfer.txt),
+28Python prior import/model evidence carried unchanged. No installed transfer
+claim,016 build or source injection. Private UI sourceHEAD recorded in capsule.
+
+Primary research16November:
+[Tiptap installation](https://tiptap.dev/docs/editor/markdown/getting-started/installation)
+and [MarkdownManager](https://tiptap.dev/docs/editor/markdown/api/markdown-manager)
+show the Markdown bridge/standalone parse+serialize seam, currently labeled Beta.
+Registry metadata saved pages016-source-01/markdown-3.31.3-registry.json verifies
+candidate @tiptap/markdown3.31.3 MIT peers EXACT core/pm3.31.3, dependency marked
+range^17.0.1. No install/lock change yet. Pin actual resolved parser before use.
+The [attribute-parser advisory](https://github.com/ueberdosis/tiptap/security/advisories/GHSA-j95f-988m-3j2f)
+still has broad affected metadata plus patched3.30.5; do not infer safety from
+version ordering alone. Actual existing core3.31.3 source has parseShortcodeAttributes
+using tokenizeAttributes and no old attributeUtils.ts at the cited path. This
+identifies the exact next audit/test target, not a safety waiver. Require actual
+complete-tokenizer scaling and unsupported-node/HTML/escaping tests on the lock.
+NEXT pin/inspect package source, bounded loss-aware Markdown conversion with
+worker timeout where appropriate; remaining controls/reorder/typed links/providers
+and all installed/recovery/lifecycle gates retained. Full goal ACTIVE1/5.
