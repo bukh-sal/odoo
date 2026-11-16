@@ -102,12 +102,14 @@ Do not weaken old frozen decisions or silently invent legacy evidence.
 First proof matrix: empty old schema, complete new empty/populated schema,
 partial schema refusal, foreign model/workspace/installation/principal,
 unknown capability, stale generation, current revoke after checkpoint,
-post-overlay mismatch and fresh continuation/resume binding. Then a real native
-core transition on an owned disposable target, current-authority recovery and
-an app-free eight-module/zero-policy check. Use a compatible immutable successor
-(next available core57 identity after rechecking allocation). Preserve all56
-images, original decisions, data and protected demos. No Pages install before
-this capability and its recovery boundary are proven.
+post-overlay mismatch and fresh continuation/resume binding. Prove the source/
+SQL/model closure and a real native core transition/app-free zero-policy state
+before installing Pages. The first thin real Pages model/service supplies the
+populated-policy installed consumer; do not invent a second disposable framework
+just to test this API. Its revoke/write/restore/current-authority proofs must
+pass before sharing/recovery is accepted or the cohort is presented as qualified.
+Use a compatible immutable successor (next available core57 identity after
+rechecking allocation). Preserve all56 images, decisions, data and demos.
 
 ## P3.1: private model, content and command contract
 
@@ -200,10 +202,13 @@ History is paged and editor/owner-authorized. Previewing does not mutate content
 restoring an old revision creates a new head under current CAS/access, preserving
 the originals. User copy/undo is distinct from durable revision recovery.
 
-Use a dedicated synthetic editor coworker in the fresh owned Pages cohort if
-the standard fixture's existing actors cannot prove page-specific restrictions
-(Alice/A is an administrator). Do not downgrade existing principals or broaden
-membership in protected demos. Preserve admin override as a separate control.
+Use a dedicated synthetic human editor coworker in the fresh owned Pages
+cohort: the standard fixture cannot prove every page-specific restriction
+because Alice/A is an administrator. Test that coworker as denied, page viewer,
+commenter and editor under the same base workspace-editor role. Keep Alice's
+admin override as a positive control and an existing workspace viewer as a
+ceiling control. Do not downgrade existing principals or broaden membership in
+protected demos; generate fixture credentials privately without printing them.
 
 ## P3.4: fitting reference features and explicit dependencies
 
