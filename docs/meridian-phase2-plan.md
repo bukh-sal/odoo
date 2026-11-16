@@ -6,6 +6,20 @@ The empty eight-addon45 counterpart is on18741/config1. Original demos stay
 protected. The full [roadmap](meridian-fidelity-plan.md) remains the objective;
 this plan does not substitute a narrower product or accept final visual fidelity.
 
+Current continuation: initial47sourceb8820e7fb7d built and installed normally on
+18740/config7 through219500f3.14layers/3763project files audited; all seven
+captured business/authority tables exact. Installed palette660px/y80/radius10,
+help and profile work; explicit zero pins survives reload, All apps remains
+reachable and default order restores. Actual browser found two unaccepted
+defects: table `border:0` reset inherited separator color to ink; the new palette
+button used optional `closeMe` instead of required `close`. Source48 replaces
+the shorthand with border-width only and uses close. Actual Owl reproduces the
+old invalid handler and invokes close exactly once with the correction. The
+permanent regression resolves the real template against its required callback
+contract. Evidence `.local/meridian-phase2-browser047-01/`; preserve original
+error/screenshot. Build/normal successor maintenance and installed recheck are
+required before private12 adoption. No47phase2 acceptance or native replay.
+
 ## Outcome and reference
 
 Make native and custom views speak the same visual language: grouped context,

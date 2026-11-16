@@ -1,3 +1,19 @@
+## Meridian phase2 first installed core review and narrow48 correction - 16 November2026
+
+Core47/b8820e7fb7d built/audited once as3083940e/14layers/3763project files.
+Normal reviewed maintenance219500f3 hash61182b6a completed/config7, exact
+Partners11 and all seven captured business/authority tables retained. In-app
+review confirms help, palette660x192/y80/radius10, account identity/customizer,
+zero pins after reload/All apps/default restore. Reference39 stays open.
+
+Actual review found two defects, retained in browser047 evidence: removing the
+table border by shorthand reset inherited row borders to ink; new palette close
+used optional closeMe, raising Invalid handler. Corrected source48 uses only
+border-width and required close. Exact pinned Owl differential fails old and
+passes new; permanent template/required-prop callback regression and10identity
+checks pass. These source results do not accept installed48. No app business
+mutation or native retry; next frozen48 build/normal maintenance/visual recheck.
+
 ## Meridian phase2 core surface composition - 16 November2026
 
 Completed the source47 core slice: scoped local rail preferences and accessible
