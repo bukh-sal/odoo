@@ -2,8 +2,11 @@
 
 Activated 16 November 2026 against source3944c5ecba1 and installed core0.2.41.
 This is the first phase of the [Meridian roadmap](meridian-fidelity-plan.md).
-The previous goal turn created the active goal and its status entry. No build,
-operation or test was left running. Phase1 is in progress, with acceptance pending.
+The first installed slice is qualified within its scope. The corrected46frame,
+14record directory and45empty-core counterpart establish the phase2 starting
+point. The [review packet](meridian-phase1-review.md) distinguishes demonstrated
+behavior from remaining phase2 design work; it does not claim human endorsement
+or completed full-roadmap fidelity. Phase2 now follows its fresh detailed plan.
 
 ## Deliverable and order
 
@@ -144,14 +147,15 @@ clipping rule or app-specific CSS exception is an acceptable correction.
 
 | Requirement | Proof and current state |
 | --- | --- |
-| Shared frame and reusable tokens | Installed45 dimensions verified; remaining1px scrollbar and review pending |
-| Native identity cell and Partners consumer | Actual field registry/asset closure, exact Partners11 and14row directory verified; visual review pending |
-| Light/dark hierarchy and aligned controls | Matched1440originals/DOM and390fallback retained; badge/context findings remain |
-| Search/open/Back, collapse/focus, keyboard and narrow | Actual45 interactions pass within recorded scope; phase2 owns full selection/paging coverage |
-| No-app core and independent app boundary | Installed eight-addon45/account/launcher/jobs plus packaged inventory verified; final review pending |
-| Human visual review | Original reference/installed pairs with named remaining findings; pending |
+| Shared frame and reusable tokens | Pass for first slice: actual46frame dimensions and corrected border budget |
+| Native identity cell and Partners consumer | Pass: actual field registry/asset closure, exact Partners11 and14row directory |
+| Light/dark hierarchy and aligned controls | First-slice pairs complete; phase2 explicitly owns badge/context/query completion |
+| Search/open/Back, collapse/focus, keyboard and narrow | Actual45 interactions retained across46's isolated width change;46launcher/palette focus and local overflow checked |
+| No-app core and independent app boundary | Pass within boundary: installed eight-addon45/account/launcher/jobs and packaged inventory;46changes only shared column budget/identities |
+| Visual judgment packet | Original pairs and critique delivered; human endorsement is not claimed |
 
-Rough phase1 progress is65%; milestones remain0/5. Source changes
+Phase1 first-slice exit is complete; milestones1/5, phase2 implementation0%.
+Source changes
 include full-width shell/workspace regions, moving context focus, neutral
 identity cells and the private Partners11 consumer. The targeted run passed
 63 Node and29 Python checks plus the unchanged122-file/11-row freeze checker.
@@ -161,5 +165,14 @@ standard-library parser successfully checked the four changed templates.
 Private proof is in `.local/meridian-phase1-source042-01/`.
 Source and targeted checks are prerequisites; installed
 workflow and visual proof own most of phase acceptance. Keep later phase briefs
-fresh at activation. Phases2–5 remain unstarted. Do not rerun the completed
+fresh at activation. Phases3-5 remain unstarted. Do not rerun the completed
 canonical041 or any earlier native operation to qualify these new bytes.
+
+Installed46 final: operation60e113f2-ed3b-4ce2-9fe7-767634047387 completed once,
+config6/image1ad2671cbb253d1a5479623f2f09963ca00611add9c4931e6f96e63c00f7dd95.
+Natural1246px view now has equal863px client/scroll;1440has equal1057px. All
+14rows remain45px. Genuine390px table overflow stays local. After-browser all
+seven captured tables and14protected target hashes are exact. Logs/captures are
+`.local/meridian-phase1-browser046-01`; source counterexamples and9Node/21Python
+plus122/11freeze proof are source046. The broader badge/context/record/collection
+work remains required under [phase2](meridian-phase2-plan.md).

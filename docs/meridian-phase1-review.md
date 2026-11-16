@@ -1,7 +1,8 @@
 # Meridian phase1 installed review
 
-16 November2026. Phase1 remains open. Source0219e752ac9; installed core45,
-Partners0.1.11 on18740/config5. Eight-addon45 on18741/config1. The prototype
+16 November2026. Phase1 first-slice technical review is complete. Source839136685d3;
+installed core46/Partners0.1.11 on18740/config6. Eight-addon45 on18741/config1,
+with46's isolated column-budget delta explicitly distinguished. The prototype
 revisioncecb81593036 remains running at127.0.0.1:57994 in in-app tab39, retained
 at the user's request. The main review tab is36; human People tab38 is preserved.
 
@@ -24,7 +25,7 @@ claims. This frame and actual supported directory subset can still be judged.
 | --- | --- |
 | Shared frame now follows the reference | Actual56px bar,56px desktop rail,264px context,460px command field,24px content inset. The reference uses32px inset at this width;24px is the approved roomier target. |
 | Identity hierarchy now holds | Actual45px rows including borders,32px initials,18/13px two-line rhythm and isolated values. The approved ordinary row target is44px; border allowance is intentional. |
-| Desktop scrollbar still appears at one width | Natural1246px view has863px renderer client and864px table. At1440both measure1057px. Correct rounding/border allocation before acceptance; keep genuine table-local narrow scrolling. |
+| Desktop scrollbar corrected in46 | Original45 natural1246px view had863px renderer client and864px table. Actual46 has863/863;1440has1057/1057. Genuine390px overflow stays local. Original failure images and box measurements remain retained. |
 | Context is too plain | Three app links lack the reference's grouped icon/count vocabulary. Phase2 should expose generic groups/counts/footer slots with actual app data, without fictitious lead/vendor categories. |
 | Badge styling is too bright in dark mode | Existing native Kind badge renders nearly white. Phase2 shared badge roles should match the restrained ink/fill/border hierarchy and keep readable contrast. |
 | Directory priorities remain weak | Organization column is empty for these organization rows; main action still says New. Phase2 must let authors choose useful columns and precise primary-action text. No invented optional app data to fill space. |
@@ -50,5 +51,9 @@ Fixture intents and per-item results: `.local/meridian-phase1-fixture045-01/`.
 After-browser seven-table equality and13protected target hashes:
 `.local/meridian-phase1-browser045-01/data-check.json`. No existing human demo
 was changed. No new full canonical run, native200% qualification, Pages app or
-phase acceptance is claimed. Next correct the desktop scrollbar and finish
-the phase1 judgment packet before activating phase2's detailed plan.
+final visual/product acceptance is claimed. Phase1's bounded first installed
+comparison is complete; phases2-5 remain required. Human endorsement is not
+claimed. Current46 originals, launcher/palette focus and after-browser equality
+are in `.local/meridian-phase1-browser046-01/`. The phase2 detailed plan now
+owns completing shared surfaces and native templates, including the remaining
+context, badge, column, reader and scroll findings above.

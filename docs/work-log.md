@@ -1,3 +1,21 @@
+## Meridian phase1 installed exit and phase2 activation - 16 November2026
+
+Operation60e113f2 completed once/config6/image1ad2671c; actual natural1246px
+renderer client/scroll863/863 and1440client/scroll1057/1057 close the1px defect.
+All14rows remain45px,390px overflow remains table-local. Launcher and command
+palette show real app/actions; Escape returns to trigger. After browser seven
+tables and14protected target hashes exact; reference39retained, overrides cleared,
+light restored. Human38 is preserved (its old release is now safely hidden),
+never reloaded. No operation or fixture is left running.
+
+Phase1 first installed-slice exit is qualified1/5, not full fidelity or human
+endorsement. Empty45counterpart's unchanged-specific boundary is explicit.
+Fresh phase2 plan follows actual menu/Layout/controller seams and recorded
+prototype record target. It covers shared primitives, navigation/pins/profile,
+collections, reader/create/edit, normal core/app packaging order and installed
+qualification. No progress credited merely for planning. Core implementation
+starts next; phases3-5 remain intact.
+
 ## Meridian table-border correction46 - 16 November2026
 
 Installed45 natural-width inspection traced the1px scrollbar to outer borders
