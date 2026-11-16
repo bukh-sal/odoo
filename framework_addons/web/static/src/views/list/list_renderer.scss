@@ -385,7 +385,7 @@
             .o_list_activity_cell,
             .o_list_number {
                 white-space: nowrap;
-                .o_field_widget:not(.o_row_handle):not(.o_field_handle):not(.o_field_badge) {
+                .o_field_widget:not(.o_row_handle):not(.o_field_handle):not(.o_field_badge):not(.o_field_mp_identity) {
                     display: inline;
                     &.o_field_percent_pie{
                         @include o-text-overflow(inline-flex);

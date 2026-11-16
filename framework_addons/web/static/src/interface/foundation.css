@@ -170,6 +170,11 @@
     .o_web_client .o_list_view .o_list_table .mp-choose-columns {
         min-height: 24px;
     }
+    .o_web_client .o_list_view .o_list_table > thead > tr > .o_list_actions_header {
+        width: 56px;
+        min-width: 56px;
+        padding-inline: 8px;
+    }
     .o_web_client .o_list_view .o_list_table > tbody > .o_data_row { height: var(--mp-ui-row); }
     .o_web_client .o_list_view .o_list_table > tbody > .o_data_row > td {
         vertical-align: middle;
@@ -178,6 +183,17 @@
     .o_web_client .o_form_sheet { border-radius: var(--mp-ui-radius); }
     .o_web_client .o_form_view .oe_title h1,
     .mp-page .mp-page-title { font: var(--mp-ui-title); letter-spacing: -.025em; }
+}
+
+@media screen and (max-width: 767px), screen and (pointer: coarse) {
+    .o_web_client .o_list_view .o_list_table > thead > tr > .o_list_actions_header {
+        width: 64px;
+        min-width: 64px;
+    }
+    .o_web_client .o_list_view .o_list_table .mp-choose-columns {
+        min-width: 44px;
+        min-height: 44px;
+    }
 }
 
 .mp-query { position: relative; }

@@ -222,3 +222,10 @@ SDK/core/web identities advance to0.2.42/19.0.0.2.42/19.0.2.42.0. Existing actio
 workspace and permission services remain the behavior owners. Targeted source
 checks pass; installed asset/visual qualification remains pending in
 docs/meridian-phase1-plan.md. Existing attribution and licence files retained.
+
+16November2026 Meridian phase1 successor43 addresses two defects seen in the
+installed42 native list. The legacy character-cell truncation selector excludes
+the structured generic identity widget. The shared actions header fits its
+chooser and padding at desktop and coarse/narrow sizes. Core43/native43/web43
+record these shipped changes.21 targeted source checks pass; installed43 is
+pending. Original42 images and captured failures remain retained.

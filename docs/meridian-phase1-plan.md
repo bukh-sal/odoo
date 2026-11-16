@@ -46,6 +46,29 @@ action lifecycle, typed fields, scoped menus, data and independent approval path
    with the reference and roomier target, recording actual font/row/header/
    region measurements. Review the screenshots before accepting phase1.
 
+## Installed42 findings and successor43
+
+The fresh18740 site completed its empty-core bootstrap and exact Partners11
+install. A normal native create saved one synthetic Leah Ortiz contact and
+returned to its reader and list. The top bar renders and its command field
+measures460px; table headings now measure37px. Two remaining installed defects
+prevent acceptance: the inherited character-cell span truncation rule flattens
+the identity widget's nested layout, and the36px column chooser overflows its
+32px header cell by about8px. Original captures and computed values are in
+`.local/meridian-phase1-browser042-01/`.
+
+Fix those producer boundaries in core43: exclude the structured identity
+widget from legacy span flattening and size the action header for its actual
+control and padding, including the larger narrow-screen target. Keep the
+Partners11 archive exact. Build a normal core-maintenance successor and recheck
+the installed identity, chooser, search and context focus. Preserve the42images,
+checkpoint, one created contact and the failed private verification/proposal
+receipts. Never replay operation891ad0ec.
+
+The reference is now kept open at127.0.0.1:57994 (in-app tab39, server session94394).
+Use that actual prototype alongside each installed screen, and retain it across
+turns. If the server stops, inspect its handle before restarting it.
+
 ## Acceptance checklist
 
 | Requirement | Proof and current state |
