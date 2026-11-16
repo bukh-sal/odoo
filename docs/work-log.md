@@ -3981,3 +3981,29 @@ Full five-phase goal ACTIVE, milestones1/5; phase2 native200 footer defect OPEN.
 2026-11-16T18:39:15.460999+00:00 Unpublished016 import UI freezes raw bytes/key/title through uncertainty, current-authorized saved export implemented;44Node pass/28Python carried. Official Markdown bridge + exact3.31.3 registry peers audited; actual tokenizer source identified, dependency not installed/pinned yet. No live changes. Full goal active.
 
 2026-11-16T18:45:59.401782+00:00 Exact local Markdown3.31.3/marked17.0.6 pins, prior dependencies exact; supported conversion/refusal primitives and complete-tokenizer advisory worker/scaling proof added.48Node pass. No vendored rebuild/live mutation; browser worker and loss-aware UI next. Full goal1/5 active.
+
+
+## Pages016 coherent transfer/controls source checkpoint -16November
+
+Private4561be47202207f9ab243576c684dbade9f138f2/unpublished016 now implements
+JSON and supported Markdown import/export plus paragraph/heading/alignment
+controls. Dedicated2s worker terminates on timeout/cancel/error, no main-thread
+fallback. Export re-parses and compares semantic content, refusing unsupported
+or silently lossy structures with JSON fallback; Markdown identity/history/sharing
+loss requires acknowledgement. Actual parser link-title output differed from
+the app schema: unsupported titles now refuse, ordinary links normalize to the
+existing app attributes. New-import missing block IDs are deterministic per
+page/path, supplied IDs/old bodies unchanged. Same-input unknown import retry
+freezes bytes/key/title; export confirmation rechecks current head and authority.
+
+57Node pass (actual worker bundle/real editor commands/controllers/Owl plus
+counterexamples),30Python pass (actual import handler with bounded persistence).
+Evidence .local/meridian-phase3-pages016-source-01/node-release-source.txt and
+python-worker-final.txt. Shipped editor remains byte-exact440010B/608d5cf8;
+new worker482495B/5e7347a7,43licensed package closure/notices. Actual bundled
+worker parses useful heading/task/link without DOM. Source proof only; no016
+archive/image/installed acceptance yet. Live015/config8/3pages64heads74receipts/
+2comments remains unchanged. Next deterministic package/ONE clean image/normal
+reviewed upgrade and real transfer/controls visual workflow, then remaining
+reorder/current-readable links/providers/system recovery/lifecycle. Full goal
+all5phases ACTIVE1/5; phase3 zero exit acceptance; phase2native200/4/5 retained.
