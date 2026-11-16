@@ -232,6 +232,17 @@ protected demos; generate fixture credentials privately without printing them.
 
 ## P3.4: fitting reference features and explicit dependencies
 
+Before further features, successor0.1.2 closes the installed0.1.1 editor event
+loop: Tiptap setEditable emits update by default, which must not be treated as
+document authoring. Suppress that event and filter actual non-document update
+transactions; detach old flows before destroying editors and guard late save
+callbacks. Prove this with the pinned real editor, then installed idle revision
+stability across sharing/access refresh and navigation. Retain all redundant
+historical revisions from the discovered loop. In the same app release, use the
+reference's continuous cover/icon/identity and one Outline/Comments/Info inspector
+navigation; remove the cramped header controls and unconditional tree-limit
+prose. No application-specific core CSS. Require corrected core59 for sharing.
+
 Carry cover/icon choice, favorites/recent, template creation/copy-on-use, page
 duplication, hierarchy/reorder, Trash/Restore, JSON/Markdown import/export,
 links/backlinks and linked-from metadata. Each has real persistence, permission,

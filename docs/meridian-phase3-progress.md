@@ -322,3 +322,47 @@ old apply. Main18740/empty18741 remain protected; phase2/phase4/phase5 intact.
 Open visual findings: Comments text squeezed in32px icon button; cover/icon lack
 reference continuity; rail underscore normalization and native200 footer remain.
 No gate acceptance; goal ACTIVE1/5.
+
+
+### Core59 installed; Pages012 corrects actual editor-event loop
+
+ONE normal maintenance build35.297s/image8b7ca04bf3ba7085c7895615f8ebf6d7ea88e447b08413d28788d69b42e0d1de.
+Original wrapper expected platform_sdk instead of actual packages/platform_sdk
+inventory prefix; failure retained. Verification-only audit passes14layers3769
+files/exact3deltas/samePages011, no rebuild. Normal operation2287b4d1-ad60-4040-8a7b-517884870b14,
+plan32f4d2c1a8dd615adcd5167b6ed3715ea7e3b7c453dccbeea281b64165dcc03e,
+completed once161.672s/config4/target9f7ddcae. A postcheck incorrectly expected a
+workspace policy bump: actual core-only deploy preserves all baseline tables
+exactly (install_metadata.py139 excludes all-deploy targets). Fresh readonly
+reconciled-complete.json binds original success/failure, no replay/table edit.
+
+Fresh GUI Share now succeeds: restricted page, Robin read+comment, policy2.
+This then exposed a real app integration bug: Tiptap setEditable emits update by
+default. Access refresh marked unchanged content dirty, and savedDetails changed
+editable again, forming an autosave loop. Normal Leave unmounted the editor and
+stopped it. A late callback then hit null page; trace retained/closed. Readonly
+proof finds handbook revision50/50 immutable revisions,48 redundant copies exactly
+equal to revision2,51receipts(1create49save1share),policy2/twoapproved grants,
+zero comments. Independent later readonly snapshot confirms counts stable. No
+data loss, pruning, normalization or manual repair. Actor/target unchanged.
+
+Successor0.1.2 filters actual non-doc Tiptap update transactions, suppresses mode
+events at all controller setters, detaches flow before destroy, and guards late
+callbacks before/after awaits. Real pinned editor regression proves default mode
+updates generate zero content callbacks, actual edits one. Total26Node19Python
+pass; one test fixture lacked full head DTO, corrected before final node-v2.txt.
+One log redirection used wrong cwd and refused before Node/build; corrected actual
+editor build440010B/41notices/hash608d5cf8. No dependency/global installation.
+
+Same successor carries reference continuous cover/icon/title, full writing width
+through the existing AppLayout, one Outline/Comments/Info inspector navigation,
+history under Info, quiet header, and tree-limit help only when truncated. These
+are app-owned layout selectors/shared tokens, no domain CSS in core. Core>=59
+required. Deterministic archivef3ac97d6addd1bd10da43ef3747e266870b798ac41d2a40cf50432f19f865d0b,
+209406B/27files/root-private equality/ArtifactValidator passes. Original011 kept.
+
+NEXT commit/source-build/audit ONE Pages012/core59 image; exact normal upgrade
+preserves all50 revisions/current policy2/grants. Then real comment/reply/resolve,
+history restore-as-new, idle stability/access refresh and two-session current
+revoke tests. Loop and native200/carryover gaps remain unaccepted until installed
+proof. No further current011 editor mutation. Goal ACTIVE1/5/all phases intact.
