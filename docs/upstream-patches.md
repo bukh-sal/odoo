@@ -229,3 +229,11 @@ the structured generic identity widget. The shared actions header fits its
 chooser and padding at desktop and coarse/narrow sizes. Core43/native43/web43
 record these shipped changes.21 targeted source checks pass; installed43 is
 pending. Original42 images and captured failures remain retained.
+
+16November2026 Meridian phase1 successor44: installed43 confirmed structured
+identity fixed but exposed the native column-width producer writing12px content
+width despite the CSS minimum. computeWidths now includes the declared action
+header minimum after subtracting padding, preserving the legacy deletion floor.
+Read-only list cells use6px block padding under the existing44px row token.
+SDK/core/web44 version the shipped change. Three real algorithm regressions
+and21 affected source checks pass; installed44 remains pending.

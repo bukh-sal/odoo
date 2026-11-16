@@ -180,6 +180,9 @@
         vertical-align: middle;
         font-size: 13.5px;
     }
+    .o_web_client .o_list_view .o_list_table > tbody > .o_data_row:not(.o_selected_row) > td {
+        padding-block: 6px;
+    }
     .o_web_client .o_form_sheet { border-radius: var(--mp-ui-radius); }
     .o_web_client .o_form_view .oe_title h1,
     .mp-page .mp-page-title { font: var(--mp-ui-title); letter-spacing: -.025em; }

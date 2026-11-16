@@ -214,7 +214,13 @@ function computeWidths(table, state, allowedWidth, startingWidths) {
         _columnWidths[index] = OPEN_FORM_VIEW_BUTTON_WIDTH;
     }
     if (state.hasActionsColumn) {
-        _columnWidths[_columnWidths.length - 1] = DELETE_BUTTON_WIDTH;
+        const header = headers[headers.length - 1];
+        // Widths here exclude cell padding. Honor the control column's declared
+        // minimum before freezing table layout, including larger touch targets.
+        const minimum = parseFloat(getComputedStyle(header).minWidth) || 0;
+        _columnWidths[_columnWidths.length - 1] = Math.max(
+            DELETE_BUTTON_WIDTH, minimum - getHorizontalPadding(header)
+        );
     }
     const columnWidthSpecs = getWidthSpecs(columns);
     const columnOffset = state.hasSelectors ? 1 : 0;

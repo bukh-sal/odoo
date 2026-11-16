@@ -69,6 +69,23 @@ The reference is now kept open at127.0.0.1:57994 (in-app tab39, server session94
 Use that actual prototype alongside each installed screen, and retain it across
 turns. If the server stops, inspect its handle before restarting it.
 
+Installed43 completed normal core maintenance237239c8 and preserved all seven
+captured tables exactly, including workspace policy generations. Its first
+private post-check incorrectly expected those generations to increase; the
+verification-only continuation records actual full equality. Browser confirms
+identity grid/flex and separate name/contact lines now work. The chooser still
+overflows because column_width_hook.computeWidths forces12px content width and
+then writes a28px inline total, bypassing the declared56px header minimum.
+Data rows measure53px with the32px identity tile and inherited cell padding.
+
+Successor44 must correct that width producer to respect the declared action
+header minimum after subtracting its padding. Exercise the actual algorithm
+against the recorded overflow case, including coarse/narrow widths, selectors
+and absent controls. Set shared read-only data-cell padding to6px per block edge
+so the existing44px row token governs ordinary identity rows. Preserve inline
+editing and print behavior. Recheck actual43-to44 data, then browser geometry
+and behavior, before accepting the visual correction.
+
 ## Acceptance checklist
 
 | Requirement | Proof and current state |
